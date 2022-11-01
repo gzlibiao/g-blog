@@ -6,4 +6,4 @@ git commit -m "${message}"
 
 git push origin master
 
-echo "tyh-blog 代码提交成功 🎉🎉🎉" 
+echo "g-blog 代码提交成功 🎉🎉🎉" 

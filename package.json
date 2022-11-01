@@ -18,5 +18,8 @@
     "fighting-design": "0.7.0-alpha.1",
     "prettier": "^2.6.2",
     "vite": "^3.0.8"
+  },
+  "volta": {
+    "node": "16.18.0"
   }
 }
