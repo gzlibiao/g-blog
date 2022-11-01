@@ -1,5 +1,4 @@
 import type { UserConfigExport, Plugin } from 'vite'
-import path from "path";
 import glob from "glob";
 
 
@@ -16,13 +15,6 @@ const NavLinkPatch = (): Plugin => ({
 
 export default (): UserConfigExport => {
   return {
-    root: path.join(__dirname, "src"),
-    build: {
-    outDir: path.join(__dirname, "dist"),
-      rollupOptions: {
-        input: glob.sync(path.resolve(__dirname, "src", "*.html")),
-      },
-    },
     plugins: [NavLinkPatch()],
     optimizeDeps: {
       exclude: ['vitepress']
