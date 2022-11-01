@@ -1,7 +1,8 @@
 {
-  "name": "tyh-blog",
+  "name": "smart-blog",
   "scripts": {
     "dev": "vitepress dev docs",
+    "start": "vitepress dev docs",
     "build": "vitepress build docs",
     "serve": "vitepress serve docs",
     "prettier": "prettier --write .",

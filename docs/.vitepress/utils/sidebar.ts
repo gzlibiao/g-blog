@@ -5,7 +5,7 @@ export const sidebar = {
       link: 'docs/hello/hello',
       items: [
         { text: 'Hello', link: 'docs/hello/hello' },
-        { text: '联盟录语', link: 'docs/hello/lol' }
+        { text: '常识', link: 'docs/hello/quotations' }
       ]
     },
     {
@@ -50,10 +50,25 @@ export const sidebar = {
       ]
     },
     {
-      text: 'Nest',
-      link: 'docs/nest/nest-1',
-      items: [{ text: '基础', link: 'docs/nest/nest-1' }]
-    }
+      text: '运维相关',
+      link: 'docs/operations/linux',
+      items: [
+        { text: 'linux', link: 'docs/operations/linux' },
+        { text: 'docker', link: 'docs/operations/docker' },
+      ]
+    },
+    {
+      text: '题目',
+      link: 'docs/subject/new',
+      items: [
+        { text: '更新面试题', link: 'docs/subject/new' },
+        { text: 'Web', link: 'docs/subject/web' },
+        { text: 'Html', link: 'docs/subject/html' },
+        { text: 'Css', link: 'docs/subject/css' },
+        { text: 'JavaScript', link: 'docs/subject/javascript' },
+        { text: 'Vue2', link: 'docs/subject/vue2' }
+      ]
+    },
   ],
   '/article/': [
     {
@@ -92,10 +107,6 @@ export const sidebar = {
           link: 'article/article/article-10'
         },
         {
-          text: 'Vue3 开源组件库 Fighting Design 成员招募',
-          link: 'article/article/article-11'
-        },
-        {
           text: '想参与开源贡献吗？Fighting Design 欢迎加入！',
           link: 'article/article/article-12'
         },
@@ -123,14 +134,10 @@ export const sidebar = {
           text: 'Linux 初级自动化打包部署',
           link: 'article/article/article-18'
         },
-        {
-          text: 'Vue3 组件库 Fighting Design 欢迎加入',
-          link: 'article/article/article-19'
-        }
       ]
     },
     {
-      text: 'JavaScript 设计模式',
+      text: '设计模式',
       link: 'article/design-mode/design-1',
       items: [
         { text: '基础知识', link: 'article/design-mode/design-1' },
@@ -168,17 +175,5 @@ export const sidebar = {
         }
       ]
     },
-    {
-      text: '前端面试题',
-      link: 'article/ques/ques-new',
-      items: [
-        { text: '更新面试题', link: 'article/ques/ques-new' },
-        { text: 'Web 相关', link: 'article/ques/ques-web' },
-        { text: 'Html 相关', link: 'article/ques/ques-html' },
-        { text: 'Css 相关', link: 'article/ques/ques-css' },
-        { text: 'JavaScript 相关', link: 'article/ques/ques-javascript' },
-        { text: 'Vue2 相关', link: 'article/ques/ques-vue2' }
-      ]
-    }
   ]
 }

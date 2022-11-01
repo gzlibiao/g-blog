@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Tyh
+title: GZ
 ---
 
 <Home />

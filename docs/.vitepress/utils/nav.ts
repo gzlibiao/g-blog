@@ -5,8 +5,11 @@ export const nav = [
     link: '/docs/hello/hello'
   },
   {
-    text: '文章记录',
-    activeMatch: '/article/',
-    link: '/article/milepost/milepost-2021'
+    text: '个人',
+    link: 'https://gz_lib.gitee.io/gz'
+  },
+  {
+    text: '记录',
+    link: 'https://gz_lib.gitee.io/gz/cdn/index.html?md'
   }
 ]
