@@ -1,6 +1,4 @@
 import type { UserConfigExport, Plugin } from 'vite'
-import glob from "glob";
-
 
 // https://github.com/vuejs/vitepress/discussions/1015#discussioncomment-3177860
 const NavLinkPatch = (): Plugin => ({
@@ -17,7 +15,6 @@ export default (): UserConfigExport => {
   return {
     base: './',
     build: {
-      base: './',
       //浏览器兼容性  "esnext"|"modules"
       target: "modules",
       //指定输出路径

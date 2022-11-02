@@ -12,4 +12,4 @@ You can also get to know me through [resume](https://gz_lib.gitee.io/gz)
 
 :envelope: Mail: **3437705679@qq.com**
 
-![](https://gz_lib.gitee.io/gz/static/wechat.jpeg)[![](https://github-readme-stats.vercel.app/api?username=Tyh2001)](https://github.com/Tyh2001/fighting-design)
+![](https://gz_lib.gitee.io/gz/static/wechat.jpeg)![](https://github-readme-stats.vercel.app/api?username=Tyh2001)

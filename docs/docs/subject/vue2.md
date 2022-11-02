@@ -357,10 +357,6 @@ Object.defineProperty(XiaoMing, 'name', {
 
 5. 虚拟 DOM
 
-6. 运行速度快
-
-相比 react 而言，同样是操作虚拟 dom，就性能而言 Vue 存在很大的优势。
-
 ## 什么是虚拟 DOM
 
 虚拟 DOM 就是一种可以预先通过 JavaScript 进行各种计算，把最终的 DOM 操作计算出来并优化，由于这个 DOM 操作属于预处理操作，并没有真实的操作 DOM，所以叫做虚拟 DOM。最后在计算完毕才真正将 DOM 操作提交，将 DOM 操作变化反映到 DOM 树上。

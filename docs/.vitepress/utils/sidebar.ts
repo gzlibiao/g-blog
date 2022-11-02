@@ -50,6 +50,16 @@ export const sidebar = {
       ]
     },
     {
+      text: 'java',
+      link: 'docs/java/java',
+      items: [
+        { text: '基础篇', link: 'docs/java/java' },
+        { text: 'mybatis', link: 'docs/java/mybatis' },
+        { text: 'springboot', link: 'docs/java/springboot' },
+        { text: 'springcloud', link: 'docs/java/springcloud' },
+      ]
+    },
+    {
       text: '运维相关',
       link: 'docs/operations/linux',
       items: [
@@ -66,121 +76,38 @@ export const sidebar = {
         { text: 'Html', link: 'docs/subject/html' },
         { text: 'Css', link: 'docs/subject/css' },
         { text: 'JavaScript', link: 'docs/subject/javascript' },
-        { text: 'Vue2', link: 'docs/subject/vue2' }
+        { text: 'Vue2', link: 'docs/subject/vue2' },
+        { text: 'Mysql', link: 'docs/subject/mysql' },
+        { text: '三次握手四次挥手', link: 'docs/subject/三次握手四次挥手' }
+      ]
+    },
+    {
+      text: '设计模式',
+      link: 'docs/design-mode/design-1',
+      items: [
+        { text: '基础知识', link: 'docs/design-mode/design-1' },
+        { text: '高阶函数', link: 'docs/design-mode/design-2' },
+        { text: '单例模式', link: 'docs/design-mode/design-3' },
+        { text: '策略模式', link: 'docs/design-mode/design-4' },
+        { text: '代理模式', link: 'docs/design-mode/design-5' },
+        { text: '迭代器模式', link: 'docs/design-mode/design-6' },
+        { text: '发布订阅模式', link: 'docs/design-mode/design-7' },
+        { text: '命令模式', link: 'docs/design-mode/design-8' },
+        { text: '组合模式', link: 'docs/design-mode/design-9' },
+        { text: '模板方法模式', link: 'docs/design-mode/design-10' },
+        { text: '享元模式', link: 'docs/design-mode/design-11' },
+        { text: '职责链模式', link: 'docs/design-mode/design-12' },
+        { text: '状态模式', link: 'docs/design-mode/design-13' },
+        { text: '适配器模式', link: 'docs/design-mode/design-14' }
       ]
     },
     {
       text: '其他',
       link: 'docs/other/dns',
       items: [
-        { text: 'host文件配置加速github访问', link: 'docs/other/dns' },
+        { text: 'host文件配置加速github', link: 'docs/other/dns' },
+        { text: 'git', link: 'docs/other/git' },
       ]
     },
   ],
-  '/article/': [
-    {
-      text: '里程碑',
-      link: 'article/milepost/milepost-2021',
-      items: [
-        { text: '里程碑 2021', link: 'article/milepost/milepost-2021' },
-        { text: '里程碑 2022', link: 'article/milepost/milepost-2022' }
-      ]
-    },
-    {
-      text: '年度总结',
-      link: 'article/annual-summary/2022',
-      items: [
-        { text: '2022 年度总结', link: 'article/annual-summary/2022' }
-      ]
-    },
-    {
-      text: '我的文章',
-      link: 'article/article/article-0',
-      items: [
-        { text: '别再写循环套循环了', link: 'article/article/article-1' },
-        { text: '关于组件库', link: 'article/article/article-2' },
-        { text: '看书的分享', link: 'article/article/article-3' },
-        { text: 'GitHubPages 部署项目', link: 'article/article/article-4' },
-        { text: 'highlightjs 使用方法', link: 'article/article/article-5' },
-        { text: 'Node.js 版本切换', link: 'article/article/article-6' },
-        {
-          text: 'Vue3 + pnpm 搭建 monorepo 项目',
-          link: 'article/article/article-7'
-        },
-        { text: 'Git 基础知识', link: 'article/article/article-8' },
-        { text: 'Vue3 的源码怎么看', link: 'article/article/article-9' },
-        {
-          text: 'Vite + TS 配置 .env 环境文件',
-          link: 'article/article/article-10'
-        },
-        {
-          text: '想参与开源贡献吗？Fighting Design 欢迎加入！',
-          link: 'article/article/article-12'
-        },
-        {
-          text: 'Github 如何提交 PR？',
-          link: 'article/article/article-13'
-        },
-        {
-          text: '我是如何学习的？',
-          link: 'article/article/article-14'
-        },
-        {
-          text: '分享一些我的开源项目',
-          link: 'article/article/article-15'
-        },
-        {
-          text: '关于图片加载，你需要学习一下',
-          link: 'article/article/article-16'
-        },
-        {
-          text: '远程计算机或设备将不接受链接-解决方案',
-          link: 'article/article/article-17'
-        },
-        {
-          text: 'Linux 初级自动化打包部署',
-          link: 'article/article/article-18'
-        },
-      ]
-    },
-    {
-      text: '设计模式',
-      link: 'article/design-mode/design-1',
-      items: [
-        { text: '基础知识', link: 'article/design-mode/design-1' },
-        { text: '高阶函数', link: 'article/design-mode/design-2' },
-        { text: '单例模式', link: 'article/design-mode/design-3' },
-        { text: '策略模式', link: 'article/design-mode/design-4' },
-        { text: '代理模式', link: 'article/design-mode/design-5' },
-        { text: '迭代器模式', link: 'article/design-mode/design-6' },
-        { text: '发布订阅模式', link: 'article/design-mode/design-7' },
-        { text: '命令模式', link: 'article/design-mode/design-8' },
-        { text: '组合模式', link: 'article/design-mode/design-9' },
-        { text: '模板方法模式', link: 'article/design-mode/design-10' },
-        { text: '享元模式', link: 'article/design-mode/design-11' },
-        { text: '职责链模式', link: 'article/design-mode/design-12' },
-        { text: '状态模式', link: 'article/design-mode/design-13' },
-        { text: '适配器模式', link: 'article/design-mode/design-14' }
-      ]
-    },
-    {
-      text: 'Vue.js 设计与实现',
-      link: 'article/vue-design/page-1',
-      items: [
-        { text: '第一章 权衡的艺术', link: 'article/vue-design/page-1' },
-        {
-          text: '第二章 框架设计的核心要素',
-          link: 'article/vue-design/page-2'
-        },
-        {
-          text: '第三章 Vue.js 3 的设计思路',
-          link: 'article/vue-design/page-3'
-        },
-        {
-          text: '第四章 响应系统的作用与实现',
-          link: 'article/vue-design/page-4'
-        }
-      ]
-    },
-  ]
 }
