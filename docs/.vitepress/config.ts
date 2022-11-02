@@ -11,14 +11,14 @@ const config = defineConfig({
   description,
   themeConfig: {
     logo: 'https://www.helloimg.com/images/2022/10/04/ZUXPTT.jpg',
-    socialLinks: [
-      {
-        icon: 'github',
-        link: 'https://github.com/gzlibiao'
-      }
-    ],
     nav,
     sidebar,
+    // socialLinks: [
+    //   {
+    //     icon: 'github',
+    //     link: 'https://github.com/gzlibiao'
+    //   }
+    // ],
     // editLink: {
     //   pattern: 'https://github.com/gzlibiao'
     // }
