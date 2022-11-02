@@ -69,6 +69,13 @@ export const sidebar = {
         { text: 'Vue2', link: 'docs/subject/vue2' }
       ]
     },
+    {
+      text: '其他',
+      link: 'docs/other/dns',
+      items: [
+        { text: 'host文件配置加速github访问', link: 'docs/other/dns' },
+      ]
+    },
   ],
   '/article/': [
     {
