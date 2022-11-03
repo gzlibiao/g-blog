@@ -108,7 +108,7 @@ export const sidebar = {
       items: [
         { text: 'host文件配置加速github', link: 'docs/other/dns' },
         { text: 'git', link: 'docs/other/git' },
-        { text: '依赖安装', link: 'docs/operations/依赖安装' },
+        { text: '依赖安装', link: 'docs/other/依赖安装' },
       ]
     },
   ],

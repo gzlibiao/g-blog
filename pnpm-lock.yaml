@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  fighting-design: 0.7.0-alpha.1
+  fighting-design: 0.8.0-alpha.4
   prettier: ^2.6.2
   sass: ^1.54.9
   vite: ^3.0.8
@@ -9,11 +9,11 @@ specifiers:
   vue: ^3.2.33
 
 dependencies:
+  fighting-design: 0.8.0-alpha.4
   vitepress: 1.0.0-alpha.4_sass@1.54.9
   vue: 3.2.38
 
 devDependencies:
-  fighting-design: 0.7.0-alpha.1
   prettier: 2.7.1
   sass: 1.54.9
   vite: 3.0.9_sass@1.54.9
@@ -592,9 +592,9 @@ packages:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
     dev: false
 
-  /fighting-design/0.7.0-alpha.1:
-    resolution: {integrity: sha512-8esHSij3xJkOmOpUw5Bd/2Bd5J9lONn2WPzyqD/Io8ICzjZv1wNfbxVpzjskSmjKCq0fs9AV3jNZY+OfjaZC4g==}
-    dev: true
+  /fighting-design/0.8.0-alpha.4:
+    resolution: {integrity: sha512-nvbjtpUGHXR2zJLXZQ0HniQXiEf19yg4qlk2k1UW/OBfwldE6CBowrGZ9dS2O9zWrkBhUeEZnhZgCYq/V8WAPw==}
+    dev: false
 
   /fill-range/7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}

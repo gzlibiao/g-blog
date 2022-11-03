@@ -10,20 +10,6 @@
 
     <!-- <f-text center size="25px" bold line-height="75px">blog</f-text> -->
 
-    <f-text center>
-      <f-button href="/docs/hello/hello.html" type="primary" round>
-        😊come
-      </f-button>
-      <!-- <f-button
-        href="https://gitee.com/gz_lib"
-        type="default"
-        round
-        target="_blank"
-      >
-        code
-      </f-button> -->
-    </f-text>
-
     <f-divider margin="32px" color="rgb(224, 224, 224)" />
     <!-- <f-text bold>写在前面</f-text>
     <f-text>🍉 文章记录</f-text> -->
@@ -41,8 +27,14 @@
     <f-text>🔨 java 相关</f-text>
     <!-- <f-text>📆 里程碑</f-text> -->
     <f-text>🏆 前端面试题</f-text>
+
+    <feedback></feedback>
   </f-main>
 </template>
+
+<script setup>
+  import Feedback from './components/Feedback.vue'
+</script>
 
 <style scoped>
   .f-main {
