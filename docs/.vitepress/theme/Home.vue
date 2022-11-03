@@ -8,20 +8,20 @@
       />
     </f-text>
 
-    <f-text center size="25px" bold line-height="75px">blog</f-text>
+    <!-- <f-text center size="25px" bold line-height="75px">blog</f-text> -->
 
     <f-text center>
       <f-button href="/docs/hello/hello.html" type="primary" round>
         😊come
       </f-button>
-      <f-button
+      <!-- <f-button
         href="https://gitee.com/gz_lib"
         type="default"
         round
         target="_blank"
       >
         code
-      </f-button>
+      </f-button> -->
     </f-text>
 
     <f-divider margin="32px" color="rgb(224, 224, 224)" />
@@ -36,9 +36,9 @@
     <f-text bold>内容</f-text>
     <f-text>⚡ 记录 JavaScript 的各种方法</f-text>
     <f-text>🌲 Vue2 和 Vue3 的一些使用</f-text>
-    <f-text>🔨 Vue 周边一些生态</f-text>
+    <!-- <f-text>🔨 Vue 周边一些生态</f-text> -->
     <f-text>📌 TypeScript 基础</f-text>
-    <!-- <f-text>📃 我的文章</f-text> -->
+    <f-text>📃 java 相关</f-text>
     <!-- <f-text>📆 里程碑</f-text> -->
     <f-text>🏆 前端面试题</f-text>
   </f-main>
