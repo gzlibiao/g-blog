@@ -27,10 +27,6 @@
   </f-main>
 </template>
 
-<script setup>
-  import feedback from './components/Feedback.vue'
-</script>
-
 <style scoped>
   .f-main {
     max-width: 620px;

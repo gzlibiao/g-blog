@@ -27,7 +27,7 @@
       </template>
     </waterfall>
 
-    <f-loading :show="loading" text="发送中" />
+    <f-loading :show="loading" text="发送中"></f-loading>
 
     <div class="more" @click="more">更多</div>
   </div>
@@ -35,9 +35,7 @@
 <script setup lange="ts">
   import axios from 'axios'
   import { FMessage } from 'fighting-design'
-  // import { FIconSnowflake } from '@fighting-design/fighting-icon'
   import { ref, reactive, onMounted } from 'vue'
-
   import Waterfall from './waterfall/src/waterfall.vue'
 
   const loading = ref(false)
