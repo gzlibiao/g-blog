@@ -3,8 +3,24 @@
 ## 生命周期
 
 ```
+就是vue实例从创建到销毁的过程就是生命周期
 
+创建、初始化数据、编译模板、挂载DOM->渲染、更新->渲染、卸载等一系列过程。
 
+在Vue中生命周期钩子会自动绑定this上下文到实例中，因此你可以访问数据，对property和方法进行运算，这意味着你不能使用箭头函数来定义一个生命周期，例如：create:() => this.fetchTodos()。
+
+在vue 生命周期中提供的钩子函数
+beforeCreate	组件实例被创建之前
+created	组件实例已经完全创建
+beforeMount	组件挂载之前
+mounted	组件挂载到实例上之后
+beforeUpdate	组件数据发生变化，更新之前
+updated	组件数据更新之后
+beforeDestroy	组件实例销毁之前
+destroyed	组件实例销毁之后
+activated	keep-alive 缓存的组件激活时
+deactivated	keep-alive 缓存的组件停用时调用
+errorCaptured	捕获一个来自子孙组件的错误时被调用
 ```
 
 ## 性能优化
@@ -105,6 +121,18 @@ observer.observer(article)
 
 // Promise  > MutationObserver > setImmediate > setTimeout
 ```
+
+## 数据请求在 created 和 mounted 的区别
+
+created 是在组件实例一旦创建完成的时候立即调用，这时候页面 DOM 节点并未生成
+
+mounted 是在页面 DOM 节点渲染完毕之后就立刻执行的，触发时机上 created 是比 mounte 要更早的
+
+两者的相同点：都能拿到实例对象的属性和方法
+
+由于触发的时机不同，放在 mounted 中的请求有可能导致页面闪动（因为此时页面 dom 结构已经生成），但如果在页面加载前完成请求，则不会出现此情况。建议对页面内容的改动放在 created 生命周期当中。
+
+##
 
 ## vue 设计原则的理解？
 
@@ -296,9 +324,5 @@ npm install -D stylus-loader stylus
 ● 组件应该是高内聚、低耦合的；
 ● 遵循单向数据流的原则。
 ● 组件创建顺序自上而下 ，组件挂载顺序自下而上
-
-```
-
-```
 
 ```
