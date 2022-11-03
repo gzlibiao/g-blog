@@ -139,7 +139,7 @@
     })
   }
 
-  let times: NodeJS.Timer | null = null
+  let times: Object | null = null
   const handleResize = (): void => {
     if (times) {
       clearTimeout(times)

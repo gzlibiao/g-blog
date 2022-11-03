@@ -1,0 +1,1 @@
+import{_ as p,o as e,c as t,a}from"./app.cfb6e6b3.js";const f=JSON.parse('{"title":"\u751F\u6D3B\u5E38\u8BC6","description":"","frontmatter":{},"headers":[],"relativePath":"docs/hello/quotations.md"}'),o={name:"docs/hello/quotations.md"},s=a("",50),_=[s];function r(n,c,d,i,h,l){return e(),t("div",null,_)}var m=p(o,[["render",r]]);export{f as __pageData,m as default};

@@ -27,15 +27,20 @@
       </template>
     </waterfall>
 
+    <f-loading :show="loading" text="发送中" />
+
     <div class="more" @click="more">更多</div>
   </div>
 </template>
 <script setup lange="ts">
+  import axios from 'axios'
   import { FMessage } from 'fighting-design'
+  // import { FIconSnowflake } from '@fighting-design/fighting-icon'
   import { ref, reactive, onMounted } from 'vue'
 
   import Waterfall from './waterfall/src/waterfall.vue'
 
+  const loading = ref(false)
   const msg = ref('')
   const message = reactive([])
   let size = 10
@@ -44,23 +49,19 @@
   let total = 0
 
   const post = async (url, data) => {
-    return await fetch(url, {
-      method: 'post',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then((res) => res.json())
+    return await axios.post(url, JSON.stringify(data))
   }
 
   const fetchData = async () => {
-    const res = await fetch(
+    let res = await axios.get(
       `https://e2625ac1-6ce5-473a-8f15-04f5ae12964e.bspapp.com/gz/message?current=${current}&size=${size}`
-    ).then((res) => res.json())
+    )
 
-    if (res.status) {
-      total = res.result.affectedDocs
-      res.result.data.forEach(
+    res = res.data
+    if (res?.status) {
+      console.log(res)
+      total = res?.result?.affectedDocs
+      res?.result.data.forEach(
         (o) =>
           (o.time =
             new Date(o.create_time).toLocaleDateString() +
@@ -68,8 +69,7 @@
             new Date(o.create_time).toLocaleTimeString())
       )
       message.length = 0
-
-      message.unshift(...res.result.data)
+      message.unshift(...res?.result.data)
     }
   }
 
@@ -83,20 +83,27 @@
       FMessage.warning('请先填写内容')
       return
     }
-
+    loading.value = true
     msg.value = ''
     const res = await post(
       'https://e2625ac1-6ce5-473a-8f15-04f5ae12964e.bspapp.com/gz/message',
       { msg: m, type: 'add' }
     )
-    if (res.status) {
+      .catch(() => {
+        FMessage.error('错误')
+      })
+      .finally(() => {
+        loading.value = false
+      })
+    if (res.data.status) {
       size = 0
       fetchData()
     }
   }
 
   const more = () => {
-    if (total <= size) {
+    console.log(total, size, 'totalsize')
+    if (message.length % size !== 0) {
       FMessage.warning('没有更多了')
       return
     }

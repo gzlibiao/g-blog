@@ -13,7 +13,6 @@ const NavLinkPatch = (): Plugin => ({
 
 export default (): UserConfigExport => {
   return {
-    base: './',
     build: {
       //浏览器兼容性  "esnext"|"modules"
       target: "modules",
