@@ -12,6 +12,8 @@
   file.addEventListener('change', (e) => {
     console.dir(e.target.files[0])
   })
+  // 拖拽
+  // 监控 drop 事件, 从 event.dataTransfer.files (或 event.dataTransfer.items) 中取文件
 </script>
 ```
 

@@ -65,6 +65,7 @@ export const sidebar = {
       items: [
         { text: 'linux', link: 'docs/operations/linux' },
         { text: 'docker', link: 'docs/operations/docker' },
+        { text: 'nginx', link: 'docs/operations/nginx' },
       ]
     },
     {
@@ -78,7 +79,7 @@ export const sidebar = {
         { text: 'JavaScript', link: 'docs/subject/javascript' },
         { text: 'Vue2', link: 'docs/subject/vue2' },
         { text: 'Mysql', link: 'docs/subject/mysql' },
-        { text: '三次握手四次挥手', link: 'docs/subject/三次握手四次挥手' }
+        { text: '三次握手四次挥手', link: 'docs/subject/三次握手四次挥手' },
       ]
     },
     {
@@ -107,6 +108,7 @@ export const sidebar = {
       items: [
         { text: 'host文件配置加速github', link: 'docs/other/dns' },
         { text: 'git', link: 'docs/other/git' },
+        { text: '依赖安装', link: 'docs/operations/依赖安装' },
       ]
     },
   ],

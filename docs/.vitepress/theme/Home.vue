@@ -25,8 +25,8 @@
     </f-text>
 
     <f-divider margin="32px" color="rgb(224, 224, 224)" />
-    <f-text bold>写在前面</f-text>
-    <f-text>🍉 文章记录</f-text>
+    <!-- <f-text bold>写在前面</f-text>
+    <f-text>🍉 文章记录</f-text> -->
     <f-text
       >🎃
       不要惧怕写出不完美的代码，只要在后续迭代过程中“见招拆招”，代码就会变得越来越完善，框架也会变得越来越健壮。</f-text
@@ -38,7 +38,7 @@
     <f-text>🌲 Vue2 和 Vue3 的一些使用</f-text>
     <!-- <f-text>🔨 Vue 周边一些生态</f-text> -->
     <f-text>📌 TypeScript 基础</f-text>
-    <f-text>📃 java 相关</f-text>
+    <f-text>🔨 java 相关</f-text>
     <!-- <f-text>📆 里程碑</f-text> -->
     <f-text>🏆 前端面试题</f-text>
   </f-main>

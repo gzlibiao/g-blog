@@ -6,7 +6,7 @@ export const nav = [
   },
   {
     text: '个人',
-    link: 'https://gz_lib.gitee.io/gz'
+    link: 'https://gz_lib.gitee.io/g-resume'
   },
   {
     text: '记录',
