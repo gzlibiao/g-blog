@@ -1,10 +1,10 @@
 ## 常用 sql
 
-```mysql
+```
 update 表名 set 指定字段 = replace(指定字段,'要替换的字符串','想要的字符串') where 条件
 ```
 
-```mysql
+```
 (二)多表查询：子查询 
 注意一：子查询的写法更符合人的思维方式 
 注意二：子查询属于高级查询，可以对查询效率进行优化。延迟加载。 
@@ -36,7 +36,7 @@ FROM (SELECT name n,comid c FROM member WHERE name = '小刘') t1,company c 
 WHERE t1.c = .c.id 
 ```
 
-```mysql
+```
 （1）添加，修改，删除这三个操作只用于单表 
 （2）多表的级联删除，多表的级联更新有时会出现。 
 （3）多表查询的策略有两种：多表联查，子查询 
@@ -98,7 +98,7 @@ FROM member m INNER JOIN company.c ON c.id = m.comid 
  
 ```
 
-```mysql
+```
 (1)SELECT子语句 
 SELECT * FROM person; 
 SELECT name,dep FROM person 
@@ -229,7 +229,7 @@ Using temporary： 查询有使用临时表, 一般出现于排序, 分组和多
 
 ## 数据性能排查
 
-```mysql
+```
 1,查看每个客户端IP过来的连接消耗了多少资源。
 mysql> select * from host_summary;
 

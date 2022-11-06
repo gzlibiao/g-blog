@@ -69,6 +69,20 @@ export const sidebar = {
       ]
     },
     {
+      text: 'mysql',
+      link: 'docs/mysql/mysql',
+      items: [
+        { text: 'mysql', link: 'docs/mysql/mysql' },
+      ]
+    },
+    {
+      text:"可视化",
+      link:'docs/echarts/echarts',
+      items: [
+        { text: 'echarts', link: 'docs/echarts/echarts' },
+      ]
+    },
+    {
       text: '题目',
       link: 'docs/subject/new',
       items: [
