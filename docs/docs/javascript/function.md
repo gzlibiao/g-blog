@@ -1,5 +1,19 @@
 # 函数
 
+## 箭头函数和 function 区别
+
+```
+写法不同
+let foo=()=>{console.log('foo');}
+function foo(){console.log('foo');}
+this的指向不一样
+使用function定义的函数，this的指向随着调用环境的变化而变化的，而箭头函数中的this指向是固定不变的，一直指向的是定义函数的环境。
+
+function的this指向function的调用者，箭头函数没有自己的this，this指向函数定义时所处的上下文。
+
+箭头函数拿不到 arguments
+```
+
 ## 回调函数
 
 回调函数是：在一个函数中，又调用了一个函数，叫回调函数

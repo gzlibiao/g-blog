@@ -187,3 +187,24 @@ console.log(art.article)
 art.article = [{ title: 'hello', name: 'http权威指南' }]
 console.log(art.article)
 ```
+
+## interface 和 type 两者不同点：
+
+```
+
+● interface（接口） 是 TS 设计出来用于定义对象类型的，可以对对象的形状进行描述。
+● type 是类型别名，用于给各种类型定义别名，让 TS 写起来更简洁、清晰。
+● type 可以声明基本类型、联合类型、交叉类型、元组，interface 不行
+● interface 可以合并重复声明，type 不行
+
+
+开发过程中尽量使用interface
+
+```
+
+## interface 和 type 相同点
+
+```
+● 都可以定义函数类型
+● 都可以定义类型
+```
