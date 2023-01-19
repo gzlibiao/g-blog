@@ -125,11 +125,10 @@ git config --global http.sslVerify "false"
 
 git config --global http.sslVerify "true"
 
-# github 慢
+# github 提速
 
-windows/system32/devices/etc/hosts
-
-# GitHub Start
+```
+目录 windows/system32/devices/etc/hosts
 
 192.30.253.112 github.com
 192.30.253.119 gist.github.com
@@ -147,5 +146,4 @@ windows/system32/devices/etc/hosts
 151.101.100.133 avatars6.githubusercontent.com
 151.101.100.133 avatars7.githubusercontent.com
 151.101.100.133 avatars8.githubusercontent.com
-
-# GitHub End
+```
