@@ -6,4 +6,4 @@
 
 :envelope: Mail: **3437705679@qq.com**
 
-![](https://gz_lib.gitee.io/gz/static/wechat.jpeg)[![](https://github-readme-stats.vercel.app/api?username=Tyh2001)](https://github.com/gzlibiao/g-blog)
+![](https://gz_lib.gitee.io/gz/static/wechat.jpeg)

@@ -8,6 +8,7 @@ const config = defineConfig({
   head: [
     ['link', { rel: 'icon', href: 'https://www.helloimg.com/images/2022/10/04/ZUXPTT.jpg' }]
   ],
+  outDir:'../public',
   description,
   themeConfig: {
     logo: 'https://www.helloimg.com/images/2022/10/04/ZUXPTT.jpg',
