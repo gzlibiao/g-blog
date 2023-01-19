@@ -117,15 +117,15 @@ git config core.ignorecase false
 
 ![](git/git.png)
 
-# 关闭 git 证书校验
+### 关闭 git 证书校验
 
 git config --global http.sslVerify "false"
 
-# 开启 git 证书校验
+### 开启 git 证书校验
 
 git config --global http.sslVerify "true"
 
-# github 提速
+### github 提速
 
 ```
 目录 windows/system32/devices/etc/hosts
