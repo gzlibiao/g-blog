@@ -1,43 +1,102 @@
-# 数据类型
+# typescript
 
-## number
+## 简介
 
-```ts
-const num: number = 12
+```
+typescript是js的超集，主要学习ts里面的
+1 原始类型
+2 字面量类型
+3 数组类型
+4 函数类型
+5 类类型
+6 接口类型
+7 类型别名
+8 联合与交叉类型
+9 枚举类型
+0 泛型等类型元素，以及类型推断，类型断言，类型缩小，类型放大等特性，使得代码更加严谨
 ```
 
-## string
+### 安装
 
-```ts
-const text: string = 'hello'
+```
+yarn add typescript -g or npm install
+
+
+// 初始化
+tsc -init
+
+
+// ts文件转译js
+tsc 文件名
+
 ```
 
-但是有些情况下，类型不一定是 `string`，也可以是指定的某些值
+### 数据类型
+
+#### 原始类型
 
 ```ts
-let admin: '张三' | '小明'
-admin = '张三'
+/// string,number,boolean,symbol,null,undefined
 
-console.log(admin)
+let num:number=1;
+
+let str:string="2"
+
+let bool:boolean=true;
+
+let sy:symbol=Symbol();
+
+let undef:undefined=undefined;
+
+let null:null=null;
+
+let vd:void=undefined;
+
+// 函数没有返回，那么就是void
+function fn():void{
+}
+
+// 总结 ts的原始类型就是js的基础数据类型
 ```
 
-## boolean
+#### 非原始类型
 
 ```ts
-const bol: boolean = true
+let o1: object = { name: 1 }
+let o2: object = [1]
+let o3: {} = { name: 1 }
+let o4: {} = true
 ```
 
-## object
-
-```js
-const obj: object = {}
-```
-
-那么使用下面方式可以限定对象中每个属性的类型
+##### 数组类型
 
 ```ts
-let obj: { name: string; age: number }
-obj = { name: 'admin', age: 12 }
+let arr1: number[] = [1, 2, 3]
+let arr2: Array<number> = [1, 2, 3] // 泛型
+let arr3: [boolean, number, string] = [false, 2, '3'] //元组
+let arr4: (string | number | object)[] = ['12121', 121, {}]
+```
+
+##### 联合类型
+
+```ts
+let o1: number | null = null
+
+let admin: '张三' | '小明' = '张三'
+let obj: { a: 1; b: 2; c: '3' }
+obj = { a: 1, b: 2, c: 3 } // 错
+obj = { a: 1, b: 2 } // 错
+obj = { a: 1, b: 2, c: '3', d: '4' } // 对
+```
+
+#### 交叉类型
+
+```ts
+// & 交叉类型
+
+let o1: number & string //可以这么写但是不可能满足
+let o2: { name: string } & { age: number }
+o2 = { name: 'sa', age: 18 }
 ```
 
 如果有些参数是可选的，那么可以使用 `?` 来标识
@@ -47,79 +106,166 @@ let obj: { name: string; age: number; url?: string }
 obj = { name: 'admin', age: 12 }
 ```
 
-## array
-
-数字或字符串的数组
+#### any 和 unknown 区别
 
 ```ts
-const numArr: number[] = [1, 2, 3, 4]
-const strArr: string[] = ['1', '2', '3']
-```
+不推荐使用any
 
-多类型数组
+let a: any = '1'
+a.toFixed() // 不做校验
 
-```ts
-const arr: (string | number | object)[] = ['12121', 121, {}]
-```
+let a: unknown = 1
+a.toFixed() // 做类型校验 变量a可以调用这个方法，但是会爆红
 
-数组还有另一种编写的格式
+// `unknown` 不知道是什么类型，但是其实是有类型的
 
-```ts
-const arr: Array<string | number> = ['1', '2']
-```
-
-## any
-
-可以用 `any` 标记任何类型
-
-```js
-let num: any
-
-num = 1
-num = true
-num = '123'
-```
-
-## unknown
-
-`unknown` 为不知道是什么类型，但是其实是有类型的
-
-```ts
 let num: unknown // 一个变成设置 unknown 类型代表不确定
 num = '这是一个文字' // 给变量赋值了字符串，现在知道类型了
 
 let res: string = num as string // 给 res 赋值 num 并通过关键字 as 告诉赋值的是什么类型
 
 console.log(res) // 这是一个文字
+
+// `unknown` 在有些时候还是很有意思的，比如在想将一个字符串赋值给一个数字的时候，这显然是不可以的，那么可以先使用 `as` 关键字赋值为 `unknown` 类型，再使用 `as` 转换为像要的类型
 ```
 
-`unknown` 在有些时候还是很有意思的，比如在想将一个字符串赋值给一个数字的时候，这显然是不可以的，那么可以先使用 `as` 关键字赋值为 `unknown` 类型，再使用 `as` 转换为像要的类型
+#### interface 类型
 
 ```ts
-let num: string = '1213'
+interface MyItf {
+  name: string
+  age: number
+}
+let obj: MyItf
 
-let res: number = num as unknown as number
+obj = {
+  name: 'sa',
+  age: 18
+}
 
-console.log(res) // 1213
+// 数组接口
+interface ArrItf {
+  [idx: number]: number | string
+}
+let arr: ArrItf = [1, '2']
+
+// 函数接口
+interface FnItf {
+  (p1: string, p2: number): void
+}
+let fn: FnItf = (p1: string, p2: number) => {}
+
+// 接口多继承 同名 缺省
+interface NameItf {
+  name: string
+}
+interface AgeItf {
+  age: number
+}
+
+interface PersonItf extends NameItf, AgeItf {
+  sex: string
+}
+
+interface PersonItf{
+  height:number
+}
+let p: PersonItf = {
+  name: '张三'
+  age:17,
+  sex:'男',
+  height:1.80
+}
+
 ```
 
-> 尽量少使用 any 类型
-
-## void
-
-`void` 类型也就是 `undefined` 类型
+#### 联合交叉类型
 
 ```ts
-let v1: void = undefined
+// | and &
+
+// && 优先 ||
+
+let obj:
+  | ({ name: string } & { age: number })
+  | ({ name: number } & { age: string })
+
+obj = {
+  name: 'string',
+  age: 18
+} // 正确
+obj = {
+  name: 'string',
+  age: '18'
+} // 报错
 ```
 
-比如一个函数，可能返回字符串，也有可能不返回值
+#### 类型别名
 
 ```ts
-function fun(): string | void {}
+type StrOrNum = string | number
+let str: StrOrNum = '1'
+str = 10
+
+interface AItf {
+  a: string
+}
+// 用类型iem报错接口上的某个属性类
+type Atype = AItf['a']
+let str2: Atype = '10'
+
+type color = 'red' | 'blue' | (string & {})
 ```
 
-如果是 `void` 类型返回值的函数返回值也就是 `undefined`
+##### 考点
+
+```
+interface 和 type区别
+
+1.都可以用来定义类型
+2.类型别名支持联合和交叉类型定义
+3.类型别名不支持重复定义，接口可以
+```
+
+#### ts 函数
+
+```ts
+function fn(a: number, b: number): number {
+  return a + b
+}
+
+// 接口定义函数类型
+interface FnItf {
+  (p: string): number
+}
+
+let fn: FnItf = (p: string) => {
+  return 1
+}
+
+// 类型别名定义函数类型
+type fType = (p: string) => void
+let fn2: FnType = (p: string) => {}
+```
+
+#### ts 中 promise
+
+```ts
+interface ResItf {
+  code: number
+  data: object
+  message: string
+}
+
+let p: Promise<ResItf> = new Promise((resolve, reject) => {
+  resolve({ code: 1, data: [], message: 'ok' })
+})
+
+p.then((res) => {
+  if (res.code === 0) {
+  }
+})
+```
 
 ## never
 
@@ -650,10 +796,6 @@ class Axios {
 }
 
 Axios.mark()
-Axios.mark()
-Axios.mark()
-Axios.mark()
-Axios.mark()
 // 创建实例
 ```
 
@@ -698,4 +840,8 @@ console.log(art.article)
 ```
 ● 都可以定义函数类型
 ● 都可以定义类型
+```
+
+```
+
 ```
