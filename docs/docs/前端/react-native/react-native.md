@@ -17,7 +17,7 @@ npm install -g react-native-cli
 npx react-native init myReact
 ```
 
-## 的另一种创建方式
+## 另一种创建方式
 
 ```
 npm install -g create-react-native-app
@@ -304,3 +304,15 @@ npx react-native bundle --platform ios --dev fase --entry-file index.js --bundle
 
 npx react-native bundle --platform android --dev fase --entry-file index.js --bundle-output realease/index.android.bundle
 ```
+
+# react native
+
+### 生命周期
+
+### 常用组件
+
+### api
+
+### 打包
+
+### 总结

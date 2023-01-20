@@ -119,11 +119,15 @@ git config core.ignorecase false
 
 ### 关闭 git 证书校验
 
+```
 git config --global http.sslVerify "false"
+```
 
 ### 开启 git 证书校验
 
+```
 git config --global http.sslVerify "true"
+```
 
 ### github 提速
 

@@ -9,6 +9,42 @@ export const sidebar = {
       ]
     },
     {
+      text:'前端相关',
+      items:[
+       {
+         text:'vue2',
+         link:'docs/前端/vue/vue2'
+       },
+       {
+         text:'vuex',
+         link:'docs/前端/vue/vuex'
+       },
+       {
+         text:'vue3',
+         link:'docs/前端/vue/vue3'
+       },
+       {
+         text:'pinia',
+         link:'docs/前端/vue/pinia'
+        },
+        {
+          text:'vue3-router',
+          link:'docs/前端/vue/vue3-router'
+        },
+        {
+          text:'typescript',
+          link:'docs/前端/typescript/typescript'
+        },
+        {
+          text:'echarts',
+          link:'docs/前端/echarts/echarts'
+        },
+        {
+         text:'react-native',link:'docs/前端/react-native/react-native'
+        } 
+      ]
+    },
+    {
       text: 'JavaScript',
       link: 'docs/javascript/basic',
       items: [
@@ -42,14 +78,6 @@ export const sidebar = {
       ]
     },
     {
-      text: 'TypeScript',
-      link: 'docs/typescript/type',
-      items: [
-        { text: '类型', link: 'docs/typescript/type' },
-        { text: '其它', link: 'docs/typescript/other' }
-      ]
-    },
-    {
       text: 'java',
       link: 'docs/java/java',
       items: [
@@ -73,13 +101,6 @@ export const sidebar = {
       link: 'docs/mysql/mysql',
       items: [
         { text: 'mysql', link: 'docs/mysql/mysql' },
-      ]
-    },
-    {
-      text:"可视化",
-      link:'docs/echarts/echarts',
-      items: [
-        { text: 'echarts', link: 'docs/echarts/echarts' },
       ]
     },
     {

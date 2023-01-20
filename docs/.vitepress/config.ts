@@ -8,6 +8,10 @@ const config = defineConfig({
   head: [
     ['link', { rel: 'icon', href: 'https://www.helloimg.com/images/2022/10/04/ZUXPTT.jpg' }]
   ],
+  markdown: {
+    theme: 'material-palenight',
+    lineNumbers: true
+  },
   outDir:'../public',
   description,
   themeConfig: {
