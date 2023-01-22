@@ -267,7 +267,188 @@ p.then((res) => {
 })
 ```
 
-## never
+#### ts 中 定义全局接口
+
+```ts
+function Person(pms: string) {}
+
+window.Person = Person
+window.Person('')
+// window 无法识别
+
+
+global.d.ts文件->{
+  export {}
+
+  interface Window{
+    function Person()=>void
+  }
+}
+```
+
+#### 枚举类型
+
+```ts
+// 列举数据
+enum StatusCode {
+  success = 200,
+  paramsError = 400,
+  serverError = 500
+}
+```
+
+#### 泛型
+
+```ts
+function fn<T>(n: T): T {
+  return n
+}
+
+fn<number>(123)
+fn<string>('123')
+
+// 泛型默认值
+type ObjType<N, G = string> = { name: N; getName: () => G }
+
+let obj: ObjType<number> = {
+  name: 1,
+  getName() {
+    return '1'
+  }
+}
+```
+
+#### 类
+
+```ts
+class Person{
+  myName:string,
+  static title:string='title'
+  protected readonly age:number
+  constructor(myName:string,age:number){
+    this.myName = myName;
+    this.age=age;
+  }
+}
+
+console.log(Person.title);
+
+class Male extends Person{
+  height:number
+  constructor(myName:number,age:number,height:number){
+    super(myName,age);
+    this.height=height;
+  }
+}
+let p=new Person('abc');
+```
+
+#### 工具类型
+
+```ts
+// 设置为可缺省类型
+// Partial
+type Partial<G> = { [T in keyof G]?: G[T] | undefined }
+// 设置为不可缺省类型
+// Require
+type Require<G> = { [T in keyof G]-?: G[T] }
+
+interface PItf {
+  name: string
+  age: number
+  height?: number
+}
+
+/*
+keyof T'name'|'age'
+
+{
+  name?:string|undefined
+  age?:number|undefined
+}
+
+for(key in 对象)
+*/
+
+let obj: Partial<PItf> = {
+  name: '',
+  age: undefined
+}
+
+let obj2:Required<PItf>=>{
+  name:'',
+  age:12,
+  height:1.80
+}
+
+```
+
+#### in & keyof & typeof
+
+```ts
+// 让p1 可以接收其他类型的值
+interface PItf {
+  [idx: number]: number
+  [idx: string]: string
+}
+// keyof 遍历 后面一般会跟接口 遍历接口的属性名定义到另一个类型别名上
+type Ptype = keyof PItf // 'name' | 'age' | 'height'
+
+let p1: Ptype
+p1 = 'name'
+p1 = 'age'
+
+// in 遍历 后面一般跟type, 在已有类型别名上去拷贝属性定义另一个类型别名
+type StrOrNum = string | number
+type PItf = {
+  [k in StrOrNum]: string
+}
+
+let obj: PItf = {
+  a: '',
+  10: ''
+}
+
+// typeof 一般用作 在已使用变量上去拷贝结构类型，声明另一个变量结构
+let str = 'abcd'
+
+type StrType = typeof str
+
+let str1: StrType
+
+let obj = {
+  name: '',
+  age: 18,
+  height: 1.8
+}
+type OType = typeof obj
+
+let obj1: OType = {
+  name: 'abc',
+  age: 18,
+  height: 2.0
+}
+```
+
+#### 泛型约束
+
+```ts
+// 一般是在 类型别名定义的类型 extends 约束到泛型上
+type StrOrNum = string | number
+interface PersonItf<N extends StrOrNum, G> {
+  name: N
+  getName: () => G
+}
+
+let obj: Person<number, number> = {
+  name: 1,
+  getName() {
+    return 1
+  }
+}
+```
+
+#### never
 
 `never` 和 `void` 不同，`never` 是什么结果都没有，比如下面函数就是什么结果都没有
 
@@ -277,29 +458,7 @@ function fun(): never {
 }
 ```
 
-## null
-
-```ts
-const n: null = null
-```
-
-## undefined
-
-```ts
-const n: undefined = undefined
-```
-
-## 多类型
-
-因为一个值可能会存在多种类型的时候，所以不能直接将某个值限定为一个类型
-
-```ts
-let text: number | string
-text = '123'
-text = 6666
-```
-
-## Function
+#### Function
 
 `Function` 类型的 `F` 必须要大写
 
@@ -313,96 +472,7 @@ function fun(a: number, b: number, c?: number) {
 }
 ```
 
-也可以定于函数的返回值类型
-
-```ts
-const add = (a: number, b: number = 12): string => {
-  return `幸运数字是${a + b}`
-}
-
-const res: string = add(10)
-console.log(res)
-```
-
-如果函数没有返回值，简直将返回值定义为 `void` 类型，方便一眼就可以看出来
-
-```ts
-function fun(): void {
-  console.log('hello')
-}
-```
-
-## type
-
-`type` 关键字可以将反复使用的类型以相当于定义变量的形式反复使用
-
-比如下面两个函数都接受一个对象，是两个类型相同的对象，就可以使用 `type` 定义的类型进行约束
-
-```ts
-type userType = { name: String; age: number }
-
-function add(user: userType): void {}
-function change(user: userType): void {}
-```
-
-type 可以合并多个
-
-```ts
-type Name = {
-  name: string
-}
-type Age = {
-  age: number
-}
-
-type User = Name & Age
-
-const user = {
-  name: '张三',
-  age: 12
-}
-```
-
-或者可以指定一个类型满足即可
-
-```ts
-type Name = {
-  name: string
-}
-type Age = {
-  age: number
-}
-
-type User = Name | Age
-
-const user = {
-  name: '张三'
-}
-```
-
-## 元组
-
-元组用于定义一个已知数量和数据类型的数组
-
-```ts
-const arr: [number, string, number] = [1, '123', 3]
-```
-
-## enum 枚举
-
-可以使用 `enum` 去定义枚举类型，这样可以把类型限制在指定的场景之内
-
-```ts
-enum isType {
-  type1 = '男',
-  type2 = '女'
-}
-
-const res: isType = isType.type1
-console.log(res)
-```
-
-## as 断言
+#### as 断言
 
 普通断言，规定类型
 

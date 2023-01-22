@@ -91,6 +91,65 @@ git log //打印日志信息
 git reflog //打印日志
 git reset --hard xxxx //版本回退
 
+git branch 分支名称 创建新分支
+git branch -d 分支名称 删除分支
+
+git checkout 分支名称 切换分支
+
+git merge 分支名称 合并代码
+
+
+git chekcout feature
+git rebase master
+等同于
+git rebase master feture
+
+不推荐使用 rebase
+推荐 checkout + merge
+
+git pull origin dev
+等同于
+git fetch origin dev
+git merge origin dev
+
+git tag -a v1(标签号) -m "提交信息"
+
+git checkout -b dev // 创建并且跳转分支
+```
+
+#### 面密操作
+
+```
+
+1.修改url
+源地址：https://gitub.com/gzlib/dbhot.git
+修改地址: https://用户名:密码@github.com/gzlib/dbhot.git
+
+2.SSH实现
+生成公私钥，将公钥保存到gitee
+id_rsa.pub公钥，id_rsa私钥
+
+ssh-keygen
+```
+
+#### .gitignore 文件
+
+```
+*.py // 忽略py文件
+!a.py // 忽略除了a.py之外的文件
+```
+
+### git 快速解决冲突
+
+```
+1 安装 beyond compare
+2 git 配置
+git config --local merge.tool bc3
+git config --local mergetool.path '/usr/local/bin/bcomp'
+git config --local mergetool.keepBackup false
+
+3 应用 beyond compare 解决冲突
+git mergetool
 ```
 
 ### 清缓存

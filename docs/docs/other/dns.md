@@ -1,5 +1,7 @@
-## host文件配置 加速github访问
-### https://ip.tool.chinaz.com/140.82.121.4
+#### host 文件配置 加速 github 访问
+
+##### https://ip.tool.chinaz.com/140.82.121.4
+
 ```
 修改本地hosts文件
 13.114.40.48	  github.com
