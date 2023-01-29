@@ -65,7 +65,7 @@ export const sidebar = {
         { text: '数学对象', link: 'docs/javascript/math-object' },
         { text: '异步函数', link: 'docs/javascript/fun-async' },
         { text: '面向对象编程', link: 'docs/javascript/fun-prototype' },
-        { text: 'Class 类的使用', link: 'docsE/javascript/fun-class' },
+        { text: 'Class 类的使用', link: 'docs/javascript/fun-class' },
         { text: 'JavaScript API', link: 'docs/javascript/javascript-api' },
         { text: '生成器', link: 'docs/javascript/generator' },
         { text: 'proxy 代理', link: 'docs/javascript/proxy' }
