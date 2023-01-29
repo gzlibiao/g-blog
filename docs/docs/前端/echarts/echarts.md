@@ -830,3 +830,41 @@ background-color: rgb(30, 30, 30,0.8); 
 </style> 
 
 ```
+
+#### 常用
+
+```
+
+yAixs y 轴
+
+xAixs x 轴
+
+legend{
+  right:20,
+  top:10,
+  height:100,
+  width:300
+  orient:'vertical'
+} 数据项名称布局
+
+emphasis 高亮状态下
+
+label
+labelLine
+itemStyle
+```
+
+#### 拖拽手柄
+
+```
+visualMap:{
+  min:0,
+  max:100,
+  inRange:[
+    color:['red','blue','green']
+  ],
+  calculable:true,
+  type:'continuous',
+
+}
+```

@@ -10,7 +10,7 @@
 185.199.108.153   assets-cdn.github.com
 13.230.158.120	  api.github.com
 52.192.72.89	  www.github.com
-
+151.101.2.132 echarts.apache.org
 
 在cmd中输入以下命令生效
 ipconfig/flushdns

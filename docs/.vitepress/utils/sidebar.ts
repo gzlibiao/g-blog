@@ -1,11 +1,12 @@
 export const sidebar = {
   '/docs/': [
     {
-      text: 'Hello',
+      text: '开篇',
       link: 'docs/hello/hello',
       items: [
         { text: 'Hello', link: 'docs/hello/hello' },
         { text: '常识', link: 'docs/hello/quotations' }
+        { text: '面试话术', link: 'docs/hello/面试话术' }
       ]
     },
     {
@@ -40,6 +41,10 @@ export const sidebar = {
           link:'docs/前端/echarts/echarts'
         },
         {
+          text:'promise',
+          link:'docs/前端/promise/promise'
+        },
+        {
          text:'react-native',link:'docs/前端/react-native/react-native'
         } 
       ]
@@ -67,14 +72,10 @@ export const sidebar = {
       ]
     },
     {
-      text: 'Vue',
-      link: 'docs/vue/vue2',
+      text: 'python',
+      link: 'docs/python/python',
       items: [
-        { text: 'Vue2 基础', link: 'docs/vue/vue2' },
-        { text: 'Vue3 基础', link: 'docs/vue/vue3' },
-        { text: 'Vue3 Router', link: 'docs/vue/vue3-router' },
-        { text: 'Vuex', link: 'docs/vue/vuex' },
-        { text: 'Pinia', link: 'docs/vue/pinia' }
+        { text: '基础', link: 'docs/python/python' }
       ]
     },
     {

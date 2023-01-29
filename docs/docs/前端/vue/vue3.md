@@ -19,16 +19,27 @@ Vue3.0 改进主要在以下几点：
 ● 对于TypeScript 支持更友好
 
 ● 优化 slots 的生成
-● 静态树提升
-● 静态属性提升
 ● 更小：通过摇树优化核心库体积
-● 更加友好
-● 跨平台：编译器核心和运行时核心与平台无关，使得 Vue 更容易与任何平台（Web、Android、iOS）一起使用
 ● setup 语法糖 代码量会少很多，可读性更好
 ● 独立的响应化模块
 ```
 
-## Vite 创建项目
+#### 生命周期
+
+```
+beforeCreate -> setup
+creaeted -> setup
+beforeMounte -> onBeforeMount
+mounted -> onMounted
+beforeUpdate -> onBeforeUpdate
+updated -> onUpdated
+beforeDestory -> onBeforeUnMount
+destoryed -> onUnMounted
+```
+
+#### 提示 vue3 要把 vetur 禁用 使用 volar
+
+#### Vite 创建项目
 
 使用 Vite 创建项目需要 node 的版本 >= 12.0.0
 
@@ -136,11 +147,19 @@ export default defineConfig({
 </template>
 
 <script>
+  import { toRefs, reactive } from 'vue'
   export default {
     setup() {
-      let text = 'hello vue3'
+      let obj = {
+        num: 31
+      }
+
+      let { num } = toRefs(reactive(obj))
+
+      let text = 'vue3'
 
       function change() {
+        num.value++
         text = '你好啊'
       }
 
@@ -154,6 +173,8 @@ export default defineConfig({
 ```
 
 如果想要使变量变成响应式，那么就需要创建响应式的变量，可以通过在 vue 来解构出一个函数来创建响应式变量
+
+可以通过 toRefs 结构 reactive 响应对象
 
 ```vue
 <template>
@@ -184,7 +205,34 @@ export default defineConfig({
 </script>
 ```
 
-### 响应式对象
+#### teleport 组件
+
+```ts
+teleport 组件能够将插槽内的元素生成到指定节点内容的最后一位
+
+<Teleport to='body'>
+<p>最后一位</p>
+</Teleport>
+```
+
+#### ts 配置项目路径别名
+
+```ts
+tsconfig.json文件
+'compilerOptions':{
+  baseUrl:'./',
+  paths:{
+    '@/*':{
+      'src/*'
+    },
+    '#/*':{
+      'types/*'
+    }
+  }
+}
+```
+
+#### 响应式对象
 
 使用解构出的 `reactive` 可以将对象变成响应式的对象：
 
@@ -222,38 +270,6 @@ export default {
     }
   }
 }
-```
-
-### 变量
-
-通过在 setup 中写入变量或者函数，在 return 出去提供给模板使用。
-
-但是 setup 是有个语法糖的写法，就是将 setup 当作属性直接作用到 script 标签上，如下：
-
-```vue
-<template>
-  {{ name }}
-</template>
-
-<script setup>
-  const name = '张三'
-</script>
-```
-
-将 `script` 标签添加 `setup` 属性之后，这样定义的变量 name 变量，**可以在模板中直接使用，并不需要 return 出去。**这样的代码段自然而然又变得简洁了很多。其实 script setup 就相当于在编译运行是把代码放到了 setup 函数中运行，然后把导出的变量定义到上下文中，并包含在返回的对象中。
-
-### 导入组件
-
-对于导入组件，导入之后可以直接在模板上使用，并不需要注册，也可以正常工作。
-
-```vue
-<template>
-  <my-button />
-</template>
-
-<script setup>
-  import MyButton from './components/MyButton.vue'
-</script>
 ```
 
 ### 获取 props
@@ -967,7 +983,23 @@ vue3 中可以在 `style` 中使用 `v-bind` 来绑定 js 中的变量，比如�
       console.log(newText, oldText)
     }
   )
+  // 或者
+  watc(text, (newVal, oldVal) => {})
+
+  // 多个监听
+  watch([text,...](newVal,oldVal)=>{})
+  // tips 监听只能监听getter/effect 函数 或者 ref数据 或是 reactive对象 或 数组对象
+
+  // 例如 如果是props数据 ，转为 watch(()=>props.name,(newVal,oldVal)=>())
 </script>
+```
+
+#### watchEffect
+
+```
+watcEffect(()=>{
+  同样是监听，界面加载就会立刻执行一次，并且在这里的变量发生变化也会执行一次监听函数
+})
 ```
 
 ## vue3 的特性

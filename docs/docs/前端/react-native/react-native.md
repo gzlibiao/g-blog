@@ -62,6 +62,10 @@ url "$rootDir/../node_modules/react-native/android"
 
 adb connect 127.0.0.1:7555
 
+adb devices // 查看所有可连接的设备
+adb kill-server
+adb connect 127.0.0.1:62001
+
 ### 夜神 模拟器
 
 connect 127.0.0.1:62001
