@@ -142,6 +142,8 @@ export const sidebar = {
       text: '其他',
       link: 'docs/other/dns',
       items: [
+        {text:'图床',link:'docs/other/图床'},
+        {text:'视频',link:'docs/other/视频'},
         { text: 'google调试技巧', link: 'docs/other/google调试技巧' },
         { text: '体验', link: 'docs/other/体验' },
         { text: 'git', link: 'docs/other/git' },
