@@ -114,6 +114,7 @@
     fetchData()
   })
 </script>
+
 <style scope>
   .feedback {
     display: flex;
