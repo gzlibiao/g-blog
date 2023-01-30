@@ -1080,3 +1080,10 @@ h1 {
 ```
 
 可以试一下效果依然可以实现
+
+#### 获取原型链上面的属性
+```vue
+import { getCurrentInstance } from "vue"
+// 使用getCurrentInstance方法获取当前vdom实例
+const axios = getCurrentInstance()?.appContext.config.globalProperties.属性名
+```

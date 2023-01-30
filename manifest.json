@@ -1,0 +1,16 @@
+{
+	"name": "G-Blog",
+	"short_name": "Blog",
+	"description": "Gz Smart Blog",
+	"icons": [
+		{
+			"src": "https://www.helloimg.com/images/2022/10/04/ZUXPTT.jpg",
+			"sizes": "288x288", 
+			"type": "image/png"
+		}
+	],
+	"start_url": "/",
+	"display": "standalone",
+	"theme_color": "#B12A34",
+	"background_color": "#B12A34"
+}

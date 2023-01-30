@@ -1,5 +1,61 @@
 # JavaScript API
 
+## Blob
+
+Blob（Binary Large Object）表示二进制类型的大对象。在数据库管理系统中，将二进制数据存储为一个单一个体的集合。Blob 通常是影像、声音或多媒体文件。在 JavaScript 中 Blob 类型的对象表示不可变的类似文件对象的原始数据
+
+```javascript
+let myBlobParts = ['<html><h2>Hello Semlinker</h2></html>']; 
+let myBlob = new Blob(myBlobParts, {type : 'text/html', endings: "transparent"}); // the blob
+
+let hello = new Uint8Array([72, 101, 108, 108, 111]); // 二进制格式的 "hello"
+let blob = new Blob([hello, ' ', 'semlinker'], {type: 'text/plain'});
+```
+
+相关api
+```
+slice([start[, end[, contentType]]])：返回一个新的 Blob 对象，包含了源 Blob 对象中指定范围内的数据。
+stream()：返回一个能读取 blob 内容的 ReadableStream。
+text()：返回一个 Promise 对象且包含 blob 所有内容的 UTF-8 格式的 USVString。
+arrayBuffer()：返回一个 Promise 对象且包含 blob 所有内容的二进制格式的 ArrayBuffer
+```
+
+#### 文件分片
+```
+const file = new File(["a".repeat(1000000)], "test.txt");
+
+const chunkSize = 40000;
+const url = "https://httpbin.org/post";
+
+async function chunkedUpload() {
+  for (let start = 0; start < file.size; start += chunkSize) {
+      const chunk = file.slice(start, start + chunkSize + 1);
+      const fd = new FormData();
+      fd.append("data", chunk);
+
+      await fetch(url, { method: "post", body: fd }).then((res) =>
+        res.text()
+      );
+  }
+}
+```
+
+#### 生成pdf
+
+```javascript
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+<script>
+  (function generatePdf() {
+    const doc = new jsPDF();
+    doc.text("Hello semlinker!", 66, 88);
+    const blob = new Blob([doc.output()], { type: "application/pdf" });
+    blob.text().then((blobAsText) => {
+      console.log(blobAsText);
+    });
+  })();
+</script>
+
+```
 ## File
 
 当选择一个文件时，可以获得这个文件的描述对象
@@ -410,4 +466,82 @@ xhr.open('get', url, false)
 xhr.send(null)
 console.log(xhr.status)
 console.log(xhr.statusText)
+```
+
+
+### 跨浏览器窗口通信的7种方式
+
+1. WebSocket
+2. 定时器 + 客户端存储
+```
+定时器：setTimeout/setInterval/requestAnimationFrame
+客户端存储：cookie/localStorage/sessionStorage/indexDB/chrome的FileSystem
+```
+3. postMessage window.opener window.open iframe
+4. stroage
+```
+localStorage.setItem('message',JSON.stringify({
+    message: '消息'，
+    from: 'Page 1',
+    date: Date.now()
+}))
+window.addEventListener("storage", function(e) {
+    console.log(e.key, e.newValue, e.oldValue)
+});
+```
+5. Broadcast Channel
+```
+var channel = new BroadcastChannel("channel-BroadcastChannel");
+channel.postMessage('Hello, BroadcastChannel!')
+
+var channel = new BroadcastChannel("channel-BroadcastChannel");
+channel.addEventListener("message", function(ev) {
+  console.log(ev.data)
+});
+```
+6. SharedWorker
+```
+var portList = [];
+
+onconnect = function(e) {
+  var port = e.ports[0];
+  ensurePorts(port);
+  port.onmessage = function(e) {
+    var data = e.data;
+    disptach(port, data);
+  };
+  port.start();
+};
+
+function ensurePorts(port) {
+  if (portList.indexOf(port) < 0) {
+    portList.push(port);
+  }
+}
+
+function disptach(selfPort, data) {
+  portList
+    .filter(port => selfPort !== port)
+    .forEach(port => port.postMessage(data));
+}
+```
+
+7. MessageChannel
+```
+var channel = new MessageChannel();
+var para = document.querySelector('p');
+
+var ifr = document.querySelector('iframe');
+var otherWindow = ifr.contentWindow;
+
+ifr.addEventListener("load", iframeLoaded, false);
+
+function iframeLoaded() {
+  otherWindow.postMessage('Hello from the main page!', '*', [channel.port2]);
+}
+
+channel.port1.onmessage = handleMessage;
+function handleMessage(e) {
+  para.innerHTML = e.data;
+}  
 ```

@@ -64,7 +64,6 @@
         )
       })
     )
-    console.log(ress, 'ress')
     initPhotos()
   }
 </script>
