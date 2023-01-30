@@ -13,6 +13,14 @@ export const sidebar = {
       text:'前端相关',
       items:[
        {
+         text:'threejs',
+         link:'docs/前端/threejs/threejs'
+       },
+       {
+         text:'pwa',
+         link:'docs/前端/pwa/pwa'
+       },
+       {
          text:'vue2',
          link:'docs/前端/vue/vue2'
        },
