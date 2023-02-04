@@ -1,6 +1,6 @@
 # typescript
 
-## 简介
+## 基础
 
 ```
 typescript是js的超集，主要学习ts里面的
@@ -14,24 +14,9 @@ typescript是js的超集，主要学习ts里面的
 8 联合与交叉类型
 9 枚举类型
 0 泛型等类型元素，以及类型推断，类型断言，类型缩小，类型放大等特性，使得代码更加严谨
-```
+``
 
-### 安装
-
-```
-yarn add typescript -g or npm install
-
-
-// 初始化
-tsc -init
-
-
-// ts文件转译js
-tsc 文件名
-
-```
-
-### 数据类型
+## 数据类型
 
 #### 原始类型
 
@@ -138,17 +123,6 @@ interface MyItf {
 }
 let obj: MyItf
 
-obj = {
-  name: 'sa',
-  age: 18
-}
-
-// 数组接口
-interface ArrItf {
-  [idx: number]: number | string
-}
-let arr: ArrItf = [1, '2']
-
 // 函数接口
 interface FnItf {
   (p1: string, p2: number): void
@@ -215,16 +189,6 @@ type Atype = AItf['a']
 let str2: Atype = '10'
 
 type color = 'red' | 'blue' | (string & {})
-```
-
-##### 考点
-
-```
-interface 和 type区别
-
-1.都可以用来定义类型
-2.类型别名支持联合和交叉类型定义
-3.类型别名不支持重复定义，接口可以
 ```
 
 #### ts 函数
@@ -343,45 +307,6 @@ class Male extends Person{
 let p=new Person('abc');
 ```
 
-#### 工具类型
-
-```ts
-// 设置为可缺省类型
-// Partial
-type Partial<G> = { [T in keyof G]?: G[T] | undefined }
-// 设置为不可缺省类型
-// Require
-type Require<G> = { [T in keyof G]-?: G[T] }
-
-interface PItf {
-  name: string
-  age: number
-  height?: number
-}
-
-/*
-keyof T'name'|'age'
-
-{
-  name?:string|undefined
-  age?:number|undefined
-}
-
-for(key in 对象)
-*/
-
-let obj: Partial<PItf> = {
-  name: '',
-  age: undefined
-}
-
-let obj2:Required<PItf>=>{
-  name:'',
-  age:12,
-  height:1.80
-}
-
-```
 
 #### in & keyof & typeof
 
@@ -448,16 +373,6 @@ let obj: Person<number, number> = {
 }
 ```
 
-#### never
-
-`never` 和 `void` 不同，`never` 是什么结果都没有，比如下面函数就是什么结果都没有
-
-```ts
-function fun(): never {
-  throw new Error('err')
-}
-```
-
 #### Function
 
 `Function` 类型的 `F` 必须要大写
@@ -484,15 +399,7 @@ console.log(res)
 
 `const` 断言
 
-比如使用 `let` 的时候声明一个变量，只要是字符串就可以随便修改
-
-```ts
-let a = '哈哈哈'
-a = '你好'
-console.log(a) // 你好
-```
-
-但是使用了 `const` 断言情况如下
+使用了 `const` 断言情况如下
 
 ```ts
 let a = 'hello' as const
@@ -530,7 +437,7 @@ const el1: HTMLDivElement = document.querySelector('.app') as const
 const el: HTMLDivElement = document.querySelector('.app')!
 ```
 
-## generics 泛型
+#### generics 泛型
 
 泛型代表的是不确定的类型，宽泛的类型，比如下面例子中：
 
@@ -556,50 +463,7 @@ console.log(msg<string>('hello'))
 console.log(msg<boolean>(true))
 ```
 
-## 类型的继承
-
-使用 `extends` 可以继承一个属性
-
-```ts
-// 这里让 t 继承一个 { length: number }
-function getLength<t extends { length: number }>(target: t): number {
-  // 类型 t 里面没用任何规范 可能不存在 length 属性
-  return target.length
-}
-
-console.log(getLength('setting'))
-console.log(getLength([1, 2, 3, 4]))
-```
-
-或者也可以继承一个有长度的类型，比如 `string`，或者联合类型
-
-```ts
-function getLength<t extends string>(target: t): number {
-  return target.length
-}
-
-function getLength2<t2 extends string | any[]>(target: t2): number {
-  return target.length
-}
-```
-
-## interface
-
-- 在类中使用
-
-定义一个类型的接口，比如下面类的定义，使用 `implements` 定义接口
-
-```ts
-interface AdminInterface {
-  name: string
-  age: number
-}
-
-class Admin implements AdminInterface {
-  name: string = '张三'
-  age: number = 12
-}
-```
+#### interface
 
 如果类中没有定义接口中约束的数据的话，就会报错
 
@@ -620,38 +484,6 @@ const user: UserInterface = {
     return this.name
   },
   sex: '男'
-}
-```
-
-- 接口继承
-
-```ts
-interface UserName {
-  name: string
-}
-interface UserAge extends UserName {
-  age: number
-}
-
-const user: UserAge = {
-  name: 'admin',
-  age: 12
-}
-```
-
-- 多接口
-
-```ts
-interface UserName {
-  name: string
-}
-interface UserAge {
-  age: number
-}
-
-class Admin implements UserName, UserAge {
-  name: string = '张三'
-  age: number = 12
 }
 ```
 
@@ -677,199 +509,11 @@ const user2: User = { name: '211', age: 122, sex: SexType.GIRL }
 const arr: User[] = [user1, user2]
 ```
 
-- 定义函数
+#### readonly
 
-```ts
-interface Pay {
-  (num: number): boolean
-}
+`readonly` 修饰的熟悉是不能更改的，但是 在构造函数中可以改
 
-const pay: Pay = (num: number): boolean => true
-```
-
-- 接口声明合并
-
-接口重复声明最终会合并
-
-```ts
-interface User {
-  num: number
-}
-interface User {
-  name: string
-}
-
-const pay: User = {
-  num: 123,
-  name: '张三'
-}
-```
-
-# 其它
-
-## 生成 ts 配置文件
-
-```shell
-tsc --init
-```
-
-## 在 ts 中定义类
-
-```ts
-class User {
-  name: string
-  age: number
-  constructor(n: string, a: number) {
-    this.name = n
-    this.age = a
-  }
-  info(): string {
-    return `${this.name} 的年龄是 ${this.age}`
-  }
-}
-
-const user: User = new User('张三', 12)
-
-console.log(user.info())
-```
-
-## public 修饰符
-
-`public` 修饰符可以定义某些变量是公开的，那上面的例子来举例：
-
-```ts
-class User {
-  public name: string
-  public age: number
-  constructor(n: string, a: number) {
-    this.name = n
-    this.age = a
-  }
-  public info(): string {
-    return `${this.name} 的年龄是 ${this.age}`
-  }
-}
-
-const user: User = new User('张三', 12)
-
-console.log(user.name) // 张三
-console.log(user.age) // 12
-console.log(user.info) // [Function: info]
-```
-
-## protected 修饰符
-
-`protected` 是受保护的数据类型，就只能在类的内部进行使用，在类的外部不能进行方法。
-
-但是可以通过类的继承进行访问
-
-```ts
-class User {
-  protected name: string
-  protected age: number
-  constructor(n: string, a: number) {
-    this.name = n
-    this.age = a
-  }
-  protected info(): string {
-    return `${this.name} 的年龄是 ${this.age}`
-  }
-}
-
-// console.log(user.name) 不能访问
-```
-
-## private
-
-`private` 修饰符仅限于当前构造函数使用，就算是继承的类也不能进行使用
-
-```ts
-class User {
-  private name: string
-  constructor(n: string) {
-    this.name = n
-  }
-}
-
-class Admin extends User {
-  constructor(name) {
-    super(name)
-    // console.log(this.name) // 不能访问
-  }
-}
-```
-
-## readonly
-
-`readonly` 修饰的熟悉是不能更改的，也就是说这个熟悉是只读的
-
-```ts
-class Axios {
-  readonly url: string = 'www.baidu.con'
-}
-
-const axios = new Axios()
-console.log(axios.url)
-
-// axios.url = 'http://localhost' // 不能进行更改
-```
-
-但也不一定是绝对不能更改的，比如下面例子，类在初始化的时候，也是可以进行更改的
-
-```ts
-class Axios {
-  readonly url: string = 'www.baidu.con'
-  public constructor(url) {
-    this.url = url
-  }
-}
-
-const axios = new Axios('github.com')
-console.log(axios.url)
-```
-
-## static
-
-`static` 方法可以定义静态熟悉和方法，只能在类中进行访问
-
-和原生是一样的
-
-```ts
-class User {
-  static url: string = 'baidu.com'
-}
-
-const user = new User()
-
-// console.log(user.url) // 获取不到
-
-console.log(User.url)
-```
-
-## 单例模式
-
-单利模式中，希望无论调用多少次的构造函数，它只执行一次，这样可以节约资源
-
-```ts
-class Axios {
-  private static instance: Axios | null = null
-  private constructor() {}
-
-  static mark() {
-    if (Axios.instance === null) {
-      console.log('创建实例')
-
-      Axios.instance = new Axios()
-    }
-    return Axios.instance
-  }
-}
-
-Axios.mark()
-// 创建实例
-```
-
-## get 和 set
+#### get 和 set
 
 ```ts
 class Article {
@@ -891,9 +535,11 @@ art.article = [{ title: 'hello', name: 'http权威指南' }]
 console.log(art.article)
 ```
 
-## interface 和 type 两者不同点：
+## 考点
 
+#### interface 和 type 
 ```
+两者不同点：
 
 ● interface（接口） 是 TS 设计出来用于定义对象类型的，可以对对象的形状进行描述。
 ● type 是类型别名，用于给各种类型定义别名，让 TS 写起来更简洁、清晰。
@@ -901,17 +547,371 @@ console.log(art.article)
 ● interface 可以合并重复声明，type 不行
 
 
+相同点
+
+● 都可以定义函数类型
+● 都可以定义类型
+
 开发过程中尽量使用interface
 
 ```
+#### never 和 void 的区别
+```
+● void 表示没有任何类型（可以被赋值为 null 和 undefined）。
+● never 表示一个不包含值的类型，即表示永远不存在的值。
+● 拥有 void 返回值类型的函数能正常运行。拥有 never 返回值类型的函数无法正常返回，无法终止，或会抛出异常
+```
+#### 元组越界
+```ts
+let aaa: [string, number] = ['aaa', 5];
+// 添加时不会报错
+aaa.push(6);
+// 打印整个元祖不会报错
+console.log(aaa); // ['aaa',5,6];
+// 打印添加的元素时会报错
+console.log(aaa[2]); // error
+```
+####  枚举成员的特点
 
-## interface 和 type 相同点
+```ts
+● 是只读属性，无法修改
+● 枚举成员值默认从 0 开始递增，可以自定义设置初始值
+
+enum Gender {
+  BOY = 1,
+  GRIL
+}
+console.log(Gender.BOY);// 1
+console.log(Gender);// { '1': 'BOY', '2': 'GRIL', BOY: 1, GRIL: 2 }
 
 ```
-● 都可以定义函数类型
-● 都可以定义类型
+
+#### declare
 ```
+declare 声明全局变量
+declare var a:number=1;
+
+declare module "*.css"{
+  const css:string;
+  export default csss;
+}
+
+declare module "*.src"{
+  const src:string;
+  export default src;
+}
+
+declare module '@vue/runtime-core'{
+  interface ComponentCustomProperties{
+    $axios:AxiosInstance;
+  }
+}
+
+app.config.globalProperties.$axios=axios;
+```
+
+#### type extends keyof
+```
+type Pick<T,K extends keyof T>={
+  [p in k]:t[p];
+}
+
+type PickedUser = Pick<User,"id"|"name">;
+type User={
+  id:number,
+  name:string,
+  address:string
+}
+
+type PickedUser={
+  id:number,
+  name:string
+}
+```
+
+
+##### 考点
+
+interface 和 type
+```
+相同点
+1.都可以用来描述对象或者函数
+type Point={
+  x:number;
+  y:number
+}
+type setPoint=(x:number,y:number)=>:void;
+
+interface Point{
+  x:number;
+  y:number
+}
+interface SetPoint{
+  (x:number,y:number):void
+}
+2.都可以扩展 & 和 extends
+type Type2 = number & Itf1;
+interface Itf extends Type2{
+  name:string
+}
+
+不同点
+1.类型别名支持联合和交叉类型定义
+2.类型别名不支持重复定义，接口可以
+
+使用场景
+类型别名
+定义基本类型别名
+定义元组类型
+定义函数类型
+定义联合类型
+定义映射类型
+
+接口使用场景
+需要利用接口自动合并特征
+定义对象类型并且无需使用type
+```
+
+## 进阶
+#### 工具类型
+
+##### Partial 设置为可缺省类型
+```ts
+interface 接口1 {
+  name: string
+}
+type 接口2 = Partial<IUser1>
+
+type Partial<G> = { [T in keyof G]?: G[T] | undefined }
+```
+##### Require 设置为不可缺省类型
+```ts
+interface 接口1 {
+  name?: string
+}
+type 接口2 = Partial<IUser1>
+
+
+type Require<G> = { [T in keyof G]-?: G[T] }
+```
+##### Record<K extends keyof any, T> 的作用是将 K 中所有的属性的值转化为 T 类型。
+```ts
+type Ktype = 'about' | 'home'
+interface TItf{
+  title:string
+}
+
+let value:Record<Ktype,Itf>={
+  home:{
+    title:'abc'
+  },
+  about:{
+    title:'efg'
+  }
+}
+```
+
+#### Pick 从某个类型中挑出一些属性出来
+```ts
+interface 接口1 {
+  name: string
+  age:number
+}
+
+type 接口2 = Pick<IUser1, 'age' | 'name'>
+
+```
+##### Omit 从某个类型中排除出一些属性出来
+```ts
+interface 接口1 {
+  name: string
+  age:number
+}
+
+type 接口2 = Pick<IUser1, 'name'> => {age:number}
+
+```
+##### NonNullable 的作用是用来过滤类型中的 null 及 undefined 类型。
+```ts
+// string | number
+type T0 = NonNullable<string | number | undefined>;
+// string[]
+type T1 = NonNullable<string[] | null | undefined>;
+
+type NonNullable<T> = T extends 
+null | undefined 
+? never : T;
+```
+##### ReturnType 用来得到一个函数的返回值类型
+```ts
+type Func = (value: number) => string;
+let str: ReturnType<Func>;
+
+const fun: Func = (value: number) => String(value)
+
+str = fun(1)
+```
+
+##### Exclude<T, U> 的作用是将某个类型中属于另一个的类型移除掉。
+```ts
+type T1 = Exclude<"a" | "b" | "c", "a">; // b c
+```
+##### Extract<T, U> - 用于从类型 T 中取出可分配给 U 类型的成员
+```ts
+type T0 = Extract<"a" | "b" | "c", "a" | "f">;
+// type T0 = "a"
+type T1 = Extract<string | number | (() => void), Function>;  
+ // type T1 = () => void
+```
+
+##### Readonly 的作用是将某个类型所有属性变为只读属性，也就意味着这些属性不能被重新赋值。
+```ts
+interface Todo {
+  title: string;
+}
+
+const todo: Readonly<Todo> = {
+  title: "Delete inactive users"
+};
+```
+
+##### Parameters 提取函数的参数返回元组 类型别名
+```ts
+const fn(a:number,b:string):void
+
+type tuple=Parameters<fn> => [a:number,b:string]
+```
+##### DeepReadonly 深度设置只读属性
+```ts
+type DeepReadonly<T> = {
+  readonly [P in keyof T]: DeepReadonly<T[P]>;
+}
+const a = { foo: { bar: 22 } }
+const b = a as DeepReadonly<typeof a>
+b.foo.bar = 33 // Cannot assign to 'bar' because it is a read-only property.ts(2540)
+```
+
+
+#### 操作符
+##### 非空断言
+
+```ts
+function sayHello(hello: string | undefined) {
+  const hi1 = hello!.toLowerCase() // OK
+  const hi2 = hello.toLowerCase() // Error: Object is possibly 'undefined'
+}
+
+```
+#### 类型守卫
+```ts
+function sayHello(hello: string | undefined) {
+  if(typeof hello === 'string') {
+    const hi = hello.toLowerCase()
+  }
+}
 
 ```
 
+## 安装
+
+```
+yarn add typescript -g or npm install
+
+
+// 初始化
+tsc -init
+
+
+// ts文件转译js
+tsc 文件名
+
+```
+#### 声明文件的定义
+
+通俗地来讲，在 TypeScript 中以 .d.ts 为后缀的文件，称之为 TypeScript 声明文件。它的主要作用是描述 JavaScript 模块内所有导出接口的类型信息
+
+#### 如何编写 TS 声明文件
+
+##### 全局变量
+
+全局变量的声明文件主要有以下几种语法：
+
+```ts
+declare let/const  // 声明全局变量
+declare function   // 声明全局方法
+declare class      // 声明全局类
+declare enum       // 声明全局枚举类型
+declare namespace  // 声明（含有子属性的）全局对象
+interface/type     // 声明全局类型
+
+
+// 类
+declare class Course {
+  cid: number;
+  constructor(cid){};
+  getCoursePrice(): number;
+}
+
+// 枚举
+declare enum Status {
+  Loading,
+  Success,
+  Failed,
+}
+
+// 接口 interface declare 可以不需要
+interface CourseInfo {
+  cid: number;
+  name: string;
+}
+
+interface CGIData<T> {
+  data: T;
+  retcode: 0;
+}
+
+// 命名空间
+declare namespace User {
+  // 局部 Test.User
+  interface User {
+    name: string;
+    age: number;
+  }
+
+  function getUserInfo(name: string): User {
+    return "";
+  }
+  namespace fn {
+    function extend(obj: any): any;
+  }
+}
+
+```
+
+#### 对于没有提供声明文件的 npm 包，可以创建一个 types 目录，来管理自己写的声明文件，同时需要在配置文件 tsconfig.json 中的 paths 和 basrUrl 中配置：
+
+```json
+{
+  "strict": true, /_ Enable all strict type-checking options. _/
+  "noImplicitAny": true, /_ Raise error on expressions and declarations with an implied 'any' type. _/
+  // 对 null 类型检查，设置为 false 就不会报错了
+  "strictNullChecks": true, /_ Enable strict null checks. _/
+  "strictFunctionTypes": true, /_ Enable strict checking of function types. _/
+  "strictBindCallApply": true, /_ Enable strict 'bind', 'call', and 'apply' methods on functions. _/
+  "strictPropertyInitialization": true, /_ Enable strict checking of property initialization in classes. _/
+  "noImplicitThis": true, /_ Raise error on 'this' expressions with an implied 'any' type. _/
+  "alwaysStrict": true, /_ Parse in strict mode and emit "use strict" for each source file. _/
+  "compilerOptions": {
+    "declaration": true,
+    "module": "commonjs",
+    "baseUrl": "./", // types 文件夹的相对路径
+    "paths": { "_": ["types/_"] }
+  },
+  "rules": {
+    "typedef": [
+        true,
+        "call-signature"
+    ]
+  }
+}
 ```

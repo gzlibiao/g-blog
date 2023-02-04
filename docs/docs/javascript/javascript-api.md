@@ -545,3 +545,22 @@ function handleMessage(e) {
   para.innerHTML = e.data;
 }  
 ```
+
+### fetch和ajax
+
+```
+fetch() 收到代表错误的 HTTP 状态码（譬如404 或500），会设置 Promise 的 resolve 值为false，但不会reject，只有 网络故障 或 请求被阻止 才会 reject。
+fetch() 可以接受跨域 cookies 和 建立跨域会话。
+fetch() 只有使用了credentials 选项，才会发送 cookies，但要符合同源( same-origin)规则。
+
+
+Axios 是可以发出 http 请求的 JavaScript 库，在 浏览器 和 node.js 环境中都可以运行。
+
+1、相同点：
+都是可以发出 http 请求的 JavaScript 库。
+
+2、不同点
+fetch 是 JavaScript 原生库，浏览器都支持，无需安装直接使用；axios 不是原生库，需要安装才能使用；
+fetch 只能在浏览器环境中运行；axios 既可以在浏览器、也可以在node.js 环境中运行。
+
+```
