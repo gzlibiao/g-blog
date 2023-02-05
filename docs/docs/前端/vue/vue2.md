@@ -21,7 +21,13 @@ destroyed	组件实例销毁之后
 activated	keep-alive 缓存的组件激活时
 deactivated	keep-alive 缓存的组件停用时调用
 errorCaptured	捕获一个来自子孙组件的错误时被调用
+
+
+父子组件生命周期
+
+父 beforeCreate -> 父 created -> 父 beforeMount -> 子 beforeCreate -> 子 created -> 子 beforeMount -> 子 mounted -> 父 mounted
 ```
+
 
 ## 性能优化
 
@@ -266,10 +272,15 @@ export default router
 ## Vue 组件 通信方式
 
 ```
-● 父子组件通信 props $emit
-● 嵌套层级比较多 或 当前父组件下多个子组件 用 provide - inject
-● 非嵌套关系 用 事件总线 Vue.$prototype.$bus = new Vue();  this.$bus.on   this.$bus.emit
-● $refs $parent $children $attrs $listeners  不推荐，存在耦合
+● 父传子，子组件通过 props 接收
+● 子传父，子组件使用 $emit 对父组件进行传值
+● 父子之间通过 $parent 和 $chidren 获取实例进而通信
+● 通过 Vuex 进行状态管理
+● 通过 eventBus 进行跨组件值传递（当前路由）
+● provide 和 inject，官方不建议使用
+● $ref 获取实例，进而传值
+● 路由传值
+● localStorage、sessionStorage
 ● vuex
 ```
 
@@ -324,5 +335,38 @@ npm install -D stylus-loader stylus
 ● 组件应该是高内聚、低耦合的；
 ● 遵循单向数据流的原则。
 ● 组件创建顺序自上而下 ，组件挂载顺序自下而上
+
+```
+## 说说 虚拟 dom 和 diff 算法 吧？
+```
+虚拟 dom
+● 是什么
+○ 虚拟 dom 是一个对象，一个描述真实 DOM 的对象，每次数据更新时，新旧虚拟 DOM 都会互相进行同层对比，而 diff 算法优化就是在此时做优化的。
+● 目的
+○ 为了解决频繁操作 DOM 导致性能开销大的问题
+● 方案
+○ JS 运算效率 远高于 操作 DOM 效率，所以把真实 DOM 树抽象成 JS 对象树，运用 patch 算法 来用 JS 计算出真正需要更新的节点，最大限度地减少 DOM 操作，从而显著提高性能
+
+
+
+diff 算法
+● 第一步：调用 patch 方法，传入新旧虚拟 DOM，开始同层对比
+● 第二步：调用 isSameNode 方法，对比新旧节点是否同类型节点（判断依据：标签相同，key 相同）
+● 第三步：如果不同，新节点直接代替旧节点
+● 第四步：如果相同，调用 patchNode 进行深层对比节点
+○ 如果旧节点和新节点都是文本节点，则新文本代替旧文本（都是文本，新替旧）
+○ 如果旧节点有子节点，新节点没，则删除旧节点的子节点（旧有新无，删旧子节点）
+○ 如果旧节点没有子节点，新节点有，则把子节点新增上去（旧无新有，新增子节点）
+○ 如果都有子节点，则调用 updateChildren 方法进行新旧子节点的对比（都有，diff 算法）
+○ 子节点对比为首尾对比法
+
+1. 旧前 vs 新前
+2. 旧后 vs 新后
+3. 旧前 vs 新后
+4. 旧后 vs 新前
+5. 以上都不满足，遍历查找
+6. 创建 or 删除
+
+当数据改变时，会触发 setter，并且通过 Dep.notify 去通知所有订阅者 Watcher，订阅者们就会调用 patch 方法，给真实 DOM 打补丁，更新相应的视图
 
 ```
