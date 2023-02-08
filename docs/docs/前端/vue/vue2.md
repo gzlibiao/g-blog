@@ -370,3 +370,35 @@ diff 算法
 当数据改变时，会触发 setter，并且通过 Dep.notify 去通知所有订阅者 Watcher，订阅者们就会调用 patch 方法，给真实 DOM 打补丁，更新相应的视图
 
 ```
+
+## Vue 的 hook 的使用
+```vue
+
+<!-- 组件销毁时清除定时器 -->
+export default{
+  methods:{
+    fn(){
+      let timer = setInterval(()=>{
+        //具体执行代码
+        console.log('1');
+      },1000);
+      this.$once('hook:beforeDestroy',()=>{
+        clearInterval(timer);
+        timer = null;
+      })
+    }
+  }
+}
+
+<!-- 子组件销毁触发父组件事件 -->
+//父组件
+<rl-child @hook:mounted="childMountedHandle"
+/>
+method () {
+  childMountedHandle() {
+    // do something...
+  }
+},
+
+
+```

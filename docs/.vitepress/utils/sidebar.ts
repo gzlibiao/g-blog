@@ -117,6 +117,7 @@ export const sidebar = {
       link: 'docs/subject/new',
       items: [
         { text: '更新面试题', link: 'docs/subject/new' },
+        { text: 'es6新特性', link: 'docs/subject/es6新特性' },
         { text: 'Web', link: 'docs/subject/web' },
         { text: 'Html', link: 'docs/subject/html' },
         { text: 'Css', link: 'docs/subject/css' },
