@@ -1,11 +1,12 @@
-#### api
+## 静态方法
+```
+1. promise.all 所有的 resolve
+2. promise.race 任何一个接口先完成就可以，无论是成功还是报错
+3. promise.any 任何一个接口先完成的，必须成功
+4. promise.allSellect 无论成功或者失败，全部执行 {status:'fulfilled'|'rejected',reason:''}
+```
 
-promise.all 所有的 resolve
-promise.race 第一个成功 resolve 的
-promise.any
-promise.allSellect
-
-#### 手写 promise
+## 手写 promise
 
 ```
 

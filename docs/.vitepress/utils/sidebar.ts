@@ -13,13 +13,36 @@ export const sidebar = {
       text:'前端相关',
       items:[
        {
-         text:'threejs',
-         link:'docs/前端/threejs/threejs'
+         text:'ast',
+         link:'docs/前端/ast/ast'
+        },
+        {
+          text:'echarts',
+          link:'docs/前端/echarts/echarts'
+        },
+       {
+         text:'nuxtjs',
+         link:'docs/前端/nuxtjs/nuxtjs'
        },
+        {
+          text:'promise',
+          link:'docs/前端/promise/promise'
+        },
        {
          text:'pwa',
          link:'docs/前端/pwa/pwa'
+        },
+        {
+         text:'react-native',link:'docs/前端/react-native/react-native'
+        },
+       {
+         text:'threejs',
+         link:'docs/前端/threejs/threejs'
        },
+        {
+          text:'typescript',
+          link:'docs/前端/typescript/typescript'
+        },
        {
          text:'vue2',
          link:'docs/前端/vue/vue2'
@@ -39,22 +62,7 @@ export const sidebar = {
         {
           text:'vue3-router',
           link:'docs/前端/vue/vue3-router'
-        },
-        {
-          text:'typescript',
-          link:'docs/前端/typescript/typescript'
-        },
-        {
-          text:'echarts',
-          link:'docs/前端/echarts/echarts'
-        },
-        {
-          text:'promise',
-          link:'docs/前端/promise/promise'
-        },
-        {
-         text:'react-native',link:'docs/前端/react-native/react-native'
-        } 
+        }
       ]
     },
     {
@@ -117,6 +125,10 @@ export const sidebar = {
       link: 'docs/subject/new',
       items: [
         { text: '更新面试题', link: 'docs/subject/new' },
+        { text: '浏览器缓存', link: 'docs/subject/浏览器缓存' },
+        { text: '三次握手四次挥手', link: 'docs/subject/三次握手四次挥手' },
+        { text: '微前端', link: 'docs/subject/微前端' },
+        { text: '虚拟dom', link: 'docs/subject/虚拟dom' },
         { text: 'es6新特性', link: 'docs/subject/es6新特性' },
         { text: 'Web', link: 'docs/subject/web' },
         { text: 'Html', link: 'docs/subject/html' },
@@ -124,7 +136,6 @@ export const sidebar = {
         { text: 'JavaScript', link: 'docs/subject/javascript' },
         { text: 'Vue2', link: 'docs/subject/vue2' },
         { text: 'Mysql', link: 'docs/subject/mysql' },
-        { text: '三次握手四次挥手', link: 'docs/subject/三次握手四次挥手' },
       ]
     },
     {

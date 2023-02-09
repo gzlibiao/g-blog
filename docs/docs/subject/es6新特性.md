@@ -1,12 +1,12 @@
-## es6新特性
+# es6新特性
 
-#### let 和 const
+## let 和 const
 ```js
 let：定义变量，只能在块作用域里访问，不能声明同名变量。不存在变量提升的问题
 const：定义常量，不能声明同名变量，只能在块作用域里访问，而且不能修改，但是在定义的对象时对象属性值可以改变，不存在变量提升的问题
 ```
 
-#### Symbol
+## Symbol
 ```js
 //这样创建一个 Symbol 值
 const newValue = Symbol();//或者使用 let 创建
@@ -18,7 +18,7 @@ console.log(newValue ); //Symbol()
 const newValue = new Symbol();
 ```
 
-#### 模板字符串
+## 模板字符串
 ```js
 1.includes
 let str = `apple,orange,banana`;
@@ -38,13 +38,13 @@ console.log('hello'.repeat(2)); //'hihi'
 4.padStart/padENd
 padStart()/padEnd()：用参数字符串按给定长度从前面或后面补全字符串，返回新字符串
 ```
-#### 解构表达式
+## 解构表达式
 
 #####  数组解构
 
 #####  对象解构
 
-#### Set()、map()数据结构
+## Set()、map()数据结构
 ```js
 map()是什么及写法？
 map 属于 es6 新增加的数据结构,map()是键值对，里面的键和值可以任意，Map 对象有一个 size 属性，存储了键值对的个数，而 object 对象没有类似属性。
@@ -85,7 +85,7 @@ size：表示 Set 解构的长度
 ```
 
 
-#### ES6 新加的数组方法及使用（Array）
+## ES6 新加的数组方法及使用（Array）
 ```
 map
 forEach
@@ -99,7 +99,7 @@ Array.from({1:'a',2:'b'})：用于将对象转换为数组，类数组转数组
 Array.of([1,2,3])
 ```
 
-#### ES6 新加的对象方法及使用（Object）
+## ES6 新加的对象方法及使用（Object）
 ```
 Object.assign()：用于对象的合并，将原对象的所有可枚举属性，复制到目标对象
 Object.keys
@@ -108,7 +108,7 @@ Object.entries 返回二维数组
 
 ```
 
-#### 箭头函数
+## 箭头函数
 
 ```js
 1、箭头函数有更简洁的写法，不用写 function
@@ -126,7 +126,7 @@ Object.entries 返回二维数组
 
 ```
 
-#### proxy
+## proxy
 ```js
 Proxy 用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种“元编程”（meta programming），即对编程语言进行编程。
 
@@ -163,7 +163,7 @@ construct(target, args)：拦截 Proxy 实例作为构造函数调用的操作�
 
 ```
 
-#### Promise
+## Promise
 ```js
 Promise 的特点
 1、Promise 有三种状态，分别是 peding(进行中)、resolve(成功)、rejected(失败)，并且状态一旦设定就不会改变
@@ -176,7 +176,7 @@ Promise 的特点
 3、 finally()方法：无论是成功状态还是失败状态，都执行 finally()中的方法
 ```
 
-#### class(面向对象编程)
+## class(面向对象编程)
 ```js
 //class 的固定写法
 class Person {
@@ -191,7 +191,7 @@ class Person {
 }
 ```
 
-#### 模块化开发
+## 模块化开发
 ```js
 导入 import 
 import '模块名称' from '路径'；
