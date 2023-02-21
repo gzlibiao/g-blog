@@ -10,65 +10,67 @@ export const sidebar = {
       ]
     },
     {
-      text:'前端相关',
-      items:[
-       {
-         text:'ast',
-         link:'docs/前端/ast/ast'
+      text: '前端相关',
+      items: [
+        {
+          text: 'ast',
+          link: 'docs/前端/ast/ast'
         },
         {
-          text:'echarts',
-          link:'docs/前端/echarts/echarts'
-        },
-       {
-         text:'nuxtjs',
-         link:'docs/前端/nuxtjs/nuxtjs'
-       },
-        {
-          text:'promise',
-          link:'docs/前端/promise/promise'
-        },
-       {
-         text:'pwa',
-         link:'docs/前端/pwa/pwa'
+          text: 'echarts',
+          link: 'docs/前端/echarts/echarts'
         },
         {
-         text:'react-native',link:'docs/前端/react-native/react-native'
+          text: 'nuxtjs',
+          link: 'docs/前端/nuxtjs/nuxtjs'
         },
         {
-         text:'seo',link:'docs/前端/seo/seo'
-        },
-       {
-         text:'threejs',
-         link:'docs/前端/threejs/threejs'
-       },
-        {
-          text:'typescript',
-          link:'docs/前端/typescript/typescript'
-        },
-       {
-         text:'vue2',
-         link:'docs/前端/vue/vue2'
-       },
-       {
-         text:'vuex',
-         link:'docs/前端/vue/vuex'
-       },
-       {
-         text:'vue3',
-         link:'docs/前端/vue/vue3'
-       },
-       {
-         text:'pinia',
-         link:'docs/前端/vue/pinia'
+          text: 'promise',
+          link: 'docs/前端/promise/promise'
         },
         {
-          text:'vue3-router',
-          link:'docs/前端/vue/vue3-router'
+          text: 'pwa',
+          link: 'docs/前端/pwa/pwa'
         },
         {
-          text:'uniapp',
-          link:'docs/前端/uniapp/uniapp'
+          text: 'react-native',
+          link: 'docs/前端/react-native/react-native'
+        },
+        {
+          text: 'seo',
+          link: 'docs/前端/seo/seo'
+        },
+        {
+          text: 'threejs',
+          link: 'docs/前端/threejs/threejs'
+        },
+        {
+          text: 'typescript',
+          link: 'docs/前端/typescript/typescript'
+        },
+        {
+          text: 'vue2',
+          link: 'docs/前端/vue/vue2'
+        },
+        {
+          text: 'vuex',
+          link: 'docs/前端/vue/vuex'
+        },
+        {
+          text: 'vue3',
+          link: 'docs/前端/vue/vue3'
+        },
+        {
+          text: 'pinia',
+          link: 'docs/前端/vue/pinia'
+        },
+        {
+          text: 'vue3-router',
+          link: 'docs/前端/vue/vue3-router'
+        },
+        {
+          text: 'uniapp',
+          link: 'docs/前端/uniapp/uniapp'
         }
       ]
     },
@@ -97,9 +99,7 @@ export const sidebar = {
     {
       text: 'python',
       link: 'docs/python/python',
-      items: [
-        { text: '基础', link: 'docs/python/python' }
-      ]
+      items: [{ text: '基础', link: 'docs/python/python' }]
     },
     {
       text: 'java',
@@ -108,7 +108,7 @@ export const sidebar = {
         { text: '基础篇', link: 'docs/java/java' },
         { text: 'mybatis', link: 'docs/java/mybatis' },
         { text: 'springboot', link: 'docs/java/springboot' },
-        { text: 'springcloud', link: 'docs/java/springcloud' },
+        { text: 'springcloud', link: 'docs/java/springcloud' }
       ]
     },
     {
@@ -117,15 +117,13 @@ export const sidebar = {
       items: [
         { text: 'linux', link: 'docs/operations/linux' },
         { text: 'docker', link: 'docs/operations/docker' },
-        { text: 'nginx', link: 'docs/operations/nginx' },
+        { text: 'nginx', link: 'docs/operations/nginx' }
       ]
     },
     {
       text: 'mysql',
       link: 'docs/mysql/mysql',
-      items: [
-        { text: 'mysql', link: 'docs/mysql/mysql' },
-      ]
+      items: [{ text: 'mysql', link: 'docs/mysql/mysql' }]
     },
     {
       text: '题目',
@@ -142,7 +140,7 @@ export const sidebar = {
         { text: 'Css', link: 'docs/subject/css' },
         { text: 'JavaScript', link: 'docs/subject/javascript' },
         { text: 'Vue2', link: 'docs/subject/vue2' },
-        { text: 'Mysql', link: 'docs/subject/mysql' },
+        { text: 'Mysql', link: 'docs/subject/mysql' }
       ]
     },
     {
@@ -169,15 +167,15 @@ export const sidebar = {
       text: '其他',
       link: 'docs/other/dns',
       items: [
-        {text:'图床',link:'docs/other/图床'},
-        {text:'视频',link:'docs/other/视频'},
+        { text: '图床', link: 'docs/other/图床' },
+        { text: '视频', link: 'docs/other/视频' },
         { text: 'google调试技巧', link: 'docs/other/google调试技巧' },
         { text: '体验', link: 'docs/other/体验' },
         { text: 'git', link: 'docs/other/git' },
         { text: 'dns', link: 'docs/other/dns' },
         { text: '产品和项目的区别', link: 'docs/other/产品和项目的区别' },
-        { text: '依赖安装', link: 'docs/other/依赖安装' },
+        { text: '依赖安装', link: 'docs/other/依赖安装' }
       ]
-    },
-  ],
+    }
+  ]
 }

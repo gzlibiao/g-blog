@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,a as e}from"./app.f360d8c4.js";const d=JSON.parse('{"title":"api","description":"","frontmatter":{},"headers":[],"relativePath":"docs/\u524D\u7AEF/promise/promise.md"}'),p={name:"docs/\u524D\u7AEF/promise/promise.md"},l=e("",4),r=[l];function c(o,i,t,b,m,A){return n(),a("div",null,r)}var u=s(p,[["render",c]]);export{d as __pageData,u as default};

@@ -1,0 +1,1 @@
+import{_ as t,o,c as a,e as r,r as n}from"./app.4520312e.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/other/\u56FE\u5E8A.md"}'),c={name:"docs/other/\u56FE\u5E8A.md"};function s(_,p,d,m,i,l){const e=n("tuchuang");return o(),a("div",null,[r(e)])}var h=t(c,[["render",s]]);export{f as __pageData,h as default};
