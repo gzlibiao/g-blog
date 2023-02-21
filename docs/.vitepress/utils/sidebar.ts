@@ -35,6 +35,9 @@ export const sidebar = {
         {
          text:'react-native',link:'docs/前端/react-native/react-native'
         },
+        {
+         text:'seo',link:'docs/前端/seo/seo'
+        },
        {
          text:'threejs',
          link:'docs/前端/threejs/threejs'
@@ -62,6 +65,10 @@ export const sidebar = {
         {
           text:'vue3-router',
           link:'docs/前端/vue/vue3-router'
+        },
+        {
+          text:'uniapp',
+          link:'docs/前端/uniapp/uniapp'
         }
       ]
     },
@@ -126,7 +133,7 @@ export const sidebar = {
       items: [
         { text: '更新面试题', link: 'docs/subject/new' },
         { text: '浏览器缓存', link: 'docs/subject/浏览器缓存' },
-        { text: '三次握手四次挥手', link: 'docs/subject/三次握手四次挥手' },
+        { text: 'http', link: 'docs/subject/http' },
         { text: '微前端', link: 'docs/subject/微前端' },
         { text: '虚拟dom', link: 'docs/subject/虚拟dom' },
         { text: 'es6新特性', link: 'docs/subject/es6新特性' },

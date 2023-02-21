@@ -1,6 +1,6 @@
-#### host 文件配置 加速 github 访问
+## host 文件配置 加速 github 访问
 
-##### https://ip.tool.chinaz.com/140.82.121.4
+### https://ip.tool.chinaz.com/140.82.121.4
 
 ```
 修改本地hosts文件
@@ -15,3 +15,8 @@
 在cmd中输入以下命令生效
 ipconfig/flushdns
 ```
+
+## cdn
+什么是cdn
+公司的一些静态文件 css sdk 图标这些放到 腾讯 阿里云
+客户端下次请求资源的时候cdn服务商就近提供网络节点资源 从而提高资源加载速度
