@@ -5,24 +5,21 @@
 Vue3.0 改进主要在以下几点：
 
 ```
+● 用 proxy 代替了 Object.defineProperty 重构响应式系统，可以监听到数组每个元素变化，以及对象动态属性变化 apply,has 等 13 种方法
+● 新增内置组件 fragment(多个根节点 ) ; Suspense异步组件（可以在组件渲染前等待时间显示指定内容）; teleport 可以让子组件能够在视觉上跳出父组件
 ● 同一元素上使用 v-if v-for 的优先级更改，但不推荐同时使用
-● 组件事件需要在emits选项中声明
-● 生命周期钩子函数名称变化
+● 生命周期钩子函数名称变化 创建前后变成 setup 其他的前面加个on
+● 可以直接在 style 中使用 v-bind,给 css 绑定 js 变量,color:v-bind(value)
+● v-model 可以绑定多个值 v-model:prop1 v-model:prop2 默认属性名称modelValue
+● $set $delete 函数删除 因为 使用了 proxy 后不需要了
 ● 自定义指令api更改为与组件生命周期一致
-● 新增三个组件 fragment 支持多个根节点，Suspense 可以在组件渲染前等待时间显示指定内容，teleport 可以让子组件能够在视觉上跳出父组件（如父组件overflow:hidden)
-● 新增智联 v-memo, 缓存html模板，比如v-for列表不变化的就可以使用，就是空间换时间
-● 用proxy代替了 Object.defineProperty 虫偶响应式系统，可以监听到数组下标变化，以及对象新增属性，新闻监听的不是对象属性，而是对象本身，还可拦截 apply,has等13种方法
+● 组件事件需要在emits选项中声明
+● 新增指令 v-memo, 缓存 v-memo="boolean值"，为true会跳过更新渲染，就是空间换时间
 ● 虚拟 DOM 重写，在编译时会将时间缓存，将slot编译为lazy函数，保存静态节点直接服用（静态提升），以及添加静态标记，diff算法使用最长递增子序列优化了对比流程，是的虚拟DOM生成速度提升200%
-● 可以直接在style 中使用v-bind,给css绑定js变量,color:v-bind(value)
-● Composition API(选项式api),更好的逻辑服用和代码组织，同i一功能的代码不至于像以前应用分散，虽然vue2中可以混入服用代码，但是方法或属性名称会冲突，而且来源不清晰
-● $set $delete 函数删除 因为 使用了proxy 后不需要了
 ● 对于TypeScript 支持更友好
-
-● 优化 slots 的生成
-● 更小：通过摇树优化核心库体积
-● setup 语法糖 代码量会少很多，可读性更好
-● 独立的响应化模块
 ```
+## Vue3.0 的优化思想就是，将可能影响性能的一些问题在编译时就提前解决好，无需手动解决。期待 3.0 时代的到来。
+
 
 #### 生命周期
 
@@ -39,7 +36,7 @@ destoryed -> onUnMounted
 
 #### 提示 vue3 要把 vetur 禁用 使用 volar
 
-#### Vite 创建项目
+## Vite 创建项目
 
 使用 Vite 创建项目需要 node 的版本 >= 12.0.0
 
