@@ -25,10 +25,10 @@ const config = defineConfig({
     logo: 'https://www.Helloimg.com/images/2022/10/04/ZUXPTT.jpg',
     nav,
     sidebar,
-    footer: {
-      message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2019-present Evan You'
-    }
+    // footer: {
+    //   message: 'Released under the MIT License.',
+    //   copyright: 'Copyright © 2019-present Evan You'
+    // }
     //基于algolia实现搜索功能
     // algolia: {
     //     appId: '66VPYW9RAD',
