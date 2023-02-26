@@ -44,7 +44,7 @@ padStart()/padEnd()：用参数字符串按给定长度从前面或后面补全�
 
 #####  对象解构
 
-## Set()、map()数据结构
+## Set()、map()数据结构 weakMap/weakSet/weakRef  
 ```js
 map()是什么及写法？
 map 属于 es6 新增加的数据结构,map()是键值对，里面的键和值可以任意，Map 对象有一个 size 属性，存储了键值对的个数，而 object 对象没有类似属性。
@@ -53,8 +53,8 @@ let newMap = new Map([['name','zhangsan'],['age',10]]);
 console.log(newMap ); //{'name'=>'zhangsan','age'=>10}
 
 let newMap = new Map([
-["name", "zhangsan"],
-["age", 10],
+  ["name", "zhangsan"],
+  ["age", 10],
 ]);
 newMap.set("sex", "man");
 console.log(newMap); //{'name' => 'zhangsan', 'age' => 10, 'sex' => 'man'}
@@ -83,6 +83,22 @@ Set.has(value)：判断该值是否为 Set 成员，返回一个布尔值
 Set.clear()：清除所有数据，没有返回值
 size：表示 Set 解构的长度
 ```
+
+### 弱引用对象的一大用处，就是作为缓存，未被清除时可以从缓存取值，一旦清除缓存就自动失效
+
+## bigint
+```
+new BigInt() // TypeError
+BigInt(undefined) //TypeError
+BigInt(null) // TypeError
+BigInt('123n') // SyntaxError
+BigInt('abc') // SyntaxError
+1n + 1.3 // 报错
+```
+
+### BigInt 是一种新的数据类型，用于当整数值大于 Number 数据类型支持的范围时( number只能存 2^53 -1 )。这种数据类型允许我们安全地对大整数执行算术操作，表示高分辨率的时间戳，使用大整数 ID 等等，而不需要使用库。
+
+9.1+0.2 => 0.30000000000000004  // 计算机对于浮点数无法精确表示二进制数
 
 
 ## ES6 新加的数组方法及使用（Array）
@@ -126,7 +142,7 @@ Object.entries 返回二维数组
 
 ```
 
-## proxy
+## proxy | reflect
 ```js
 Proxy 用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种“元编程”（meta programming），即对编程语言进行编程。
 

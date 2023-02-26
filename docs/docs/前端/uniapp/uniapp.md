@@ -127,3 +127,58 @@ rpx 是相对于基准宽度的单位，可以根据屏幕宽度进行自适应�
 /* #endif */
 
 ```
+
+# 路由
+uni.navigateTo(Object) ==> 保留当前界面跳转
+uni.redirectTo(object) ==> 关闭当前界面跳转
+uni.reLaunch({object}) ==> 关闭所有界面跳转
+uni.switchTab(object) ==> 跳转tabBar界面，并且关闭所有非tabBar界面
+uni.navigateBack(object) ==> 关闭当前界面，并返回之前界面 通过 getCurrentPages()获取当前界面栈觉得返回第几层
+
+# pages.json文件配置
+
+{
+  pages:[
+    {
+      path:"文件路径",
+      style:{
+        "navigationBarTitleText":"界面标题栏名称",
+        "navigationBarBackgroundColor":"#000",
+        "navigationBarTextStyle":"white|black",
+        "navigationBarShadow":{
+          colorType:"red"
+        },
+        enablePullDownRefresh:true, // uni.stopPullDownRefresh=>关闭
+        titlePenetrate:"NO", // 导航栏点击穿透
+      }
+    }
+  ],
+  globalStyle:{
+    navigationBarTextStyle:'black',
+    navigationBarTitleText:'全局顶栏标题',
+    navigationBarBackgroundColor:'#fff',
+    backgroundColor:"#fff"
+  },
+  tabbar:{
+    list:[
+      {
+        pagePath:'',
+        text:'',
+        iconPath:'默认图标',
+        selectedIconPath:''
+      }
+    ],
+    midButton:{ // ==> 监听 uni.onTabBarMidButtonTap
+      width:'',
+      height:'',
+      text:'',
+      iconPath:'',
+      iconWidth:'24px',
+      backgroundImage:'',
+      iconFont:'字体图标'
+    }
+  },
+  easycom:{
+    custom:"u-view"
+  }
+}
