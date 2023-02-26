@@ -167,14 +167,13 @@ export const sidebar = {
       text: '其他',
       link: '/docs/other/dns',
       items: [
-        { text: '图床', link: '/docs/other/图床' },
-        { text: '视频', link: '/docs/other/视频' },
-        { text: 'google调试技巧', link: '/docs/other/google调试技巧' },
-        { text: '体验', link: '/docs/other/体验' },
-        { text: 'git', link: '/docs/other/git' },
-        { text: 'dns', link: '/docs/other/dns' },
         { text: '产品和项目的区别', link: '/docs/other/产品和项目的区别' },
-        { text: '依赖安装', link: '/docs/other/依赖安装' }
+        { text: '视频', link: '/docs/other/视频' },
+        { text: '体验', link: '/docs/other/体验' },
+        { text: '图床', link: '/docs/other/图床' },
+        { text: 'dns', link: '/docs/other/dns' },
+        { text: 'git', link: '/docs/other/git' },
+        { text: 'google调试技巧', link: '/docs/other/google调试技巧' },
       ]
     }
   ],
