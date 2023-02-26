@@ -716,11 +716,11 @@ document.getElementById('app').classList.toggle('box2')
 获取一个元素的文本内容，也可以修改文本内容
 
 ```html
-<div id="app">hello</div>
+<div id="app">Hello</div>
 <script>
   const app = document.querySelector('#app')
-  console.log(app.textContent) // hello
-  app.textContent = 'hello world'
-  console.log(app.textContent) // hello world
+  console.log(app.textContent) // Hello
+  app.textContent = 'Hello world'
+  console.log(app.textContent) // Hello world
 </script>
 ```

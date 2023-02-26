@@ -6,4 +6,4 @@
 
 :envelope: Mail: **3437705679@qq.com**
 
-![](https://gz_lib.gitee.io/gz/static/wechat.jpeg)
+![](https://gz_lib.gitee.io/g-resume/static/wechat.jpeg)

@@ -126,10 +126,10 @@ switch (name) {
 那么如果想要有两个字段有统一的处理方式的话，也可以这么写：
 
 ```js
-let item = 'hello'
+let item = 'Hello'
 
 switch (item) {
-  case 'hello':
+  case 'Hello':
   case 'Hi':
     console.log('你好啊')
     break
@@ -139,7 +139,7 @@ switch (item) {
 }
 ```
 
-这里要判断的值是`item`上面代码意思是：`item`的值是`hello`或者`Hi`的其中一个，都是可以执行`break`前的内容的，两个内容使用统一的处理方式
+这里要判断的值是`item`上面代码意思是：`item`的值是`Hello`或者`Hi`的其中一个，都是可以执行`break`前的内容的，两个内容使用统一的处理方式
 
 ## console
 

@@ -35,12 +35,12 @@ console.log(foo.id) // 987
 const foo = { id: 123 }
 const proxy = new Proxy(foo, {
   get() {
-    return 'hello'
+    return 'Hello'
   }
 })
 
 console.log(foo.id) // 123
-console.log(proxy.id) // hello
+console.log(proxy.id) // Hello
 ```
 
 > 注意：捕获器获取函数的函数名必须是 get，其他名称不会触发捕获器效果
@@ -132,11 +132,11 @@ const foo = {
 }
 const revocable = Proxy.revocable(foo, {
   get() {
-    return 'hello'
+    return 'Hello'
   }
 })
 
-console.log(revocable.proxy.name) // hello
+console.log(revocable.proxy.name) // Hello
 proxy.revoke()
 console.log(revocable.proxy.name) // 1.html:23 Uncaught ReferenceError: proxy is not defined
 ```

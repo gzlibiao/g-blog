@@ -149,17 +149,17 @@ function fun1(n) {
 ```js
 // 函数声明
 function fun1 () {
-  console.log('hello')
+  console.log('Hello')
 }
 
 // 函数表达式
 const fun2 = function () {
-  console.log('hello')
+  console.log('Hello')
 }
 
 // 匿名函数
 function () {
-  console.log('hello')
+  console.log('Hello')
 }
 ```
 

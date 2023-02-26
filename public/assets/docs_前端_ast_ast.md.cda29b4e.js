@@ -1,1 +1,0 @@
-import{_ as t,o as a,c as e}from"./app.4520312e.js";const l=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/javascript/blob.md"}'),r={name:"docs/javascript/blob.md"};function o(s,c,n,p,d,i){return a(),e("div")}var m=t(r,[["render",o]]);export{l as __pageData,m as default};

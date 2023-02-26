@@ -2,7 +2,7 @@ export const nav = [
   {
     text: '文档',
     activeMatch: '/docs/',
-    link: '/docs/hello/hello'
+    link: '/docs/Hello/Hello'
   },
   {
     text: '个人',
@@ -10,6 +10,6 @@ export const nav = [
   },
   {
     text: '记录',
-    link: 'https://gz_lib.gitee.io/gz/cdn/index.html?md'
+    link: 'https://gz_lib.gitee.io/g-resume/cdn/index.html?md'
   }
 ]

@@ -402,15 +402,15 @@ console.log(res)
 使用了 `const` 断言情况如下
 
 ```ts
-let a = 'hello' as const
+let a = 'Hello' as const
 ```
 
-这样使用 const 断言之后，`a` 就不能随意赋值了，就只能赋值为 `hello`
+这样使用 const 断言之后，`a` 就不能随意赋值了，就只能赋值为 `Hello`
 
 也就相当于下面写法，`a` 只能是两个值其中的一个
 
 ```ts
-const a: 'hello' | 'world' = 'hello'
+const a: 'Hello' | 'world' = 'Hello'
 ```
 
 断言数组
@@ -446,7 +446,7 @@ function msg(num) {
   return num
 }
 
-console.log(msg('hello'))
+console.log(msg('Hello'))
 console.log(msg(true))
 ```
 
@@ -459,7 +459,7 @@ function msg<type>(num: type): type {
   return num
 }
 
-console.log(msg<string>('hello'))
+console.log(msg<string>('Hello'))
 console.log(msg<boolean>(true))
 ```
 
@@ -531,7 +531,7 @@ class Article {
 const art = new Article()
 console.log(art.article)
 
-art.article = [{ title: 'hello', name: 'http权威指南' }]
+art.article = [{ title: 'Hello', name: 'http权威指南' }]
 console.log(art.article)
 ```
 
@@ -796,17 +796,17 @@ b.foo.bar = 33 // Cannot assign to 'bar' because it is a read-only property.ts(2
 ##### 非空断言
 
 ```ts
-function sayHello(hello: string | undefined) {
-  const hi1 = hello!.toLowerCase() // OK
-  const hi2 = hello.toLowerCase() // Error: Object is possibly 'undefined'
+function sayHello(Hello: string | undefined) {
+  const hi1 = Hello!.toLowerCase() // OK
+  const hi2 = Hello.toLowerCase() // Error: Object is possibly 'undefined'
 }
 
 ```
 #### 类型守卫
 ```ts
-function sayHello(hello: string | undefined) {
-  if(typeof hello === 'string') {
-    const hi = hello.toLowerCase()
+function sayHello(Hello: string | undefined) {
+  if(typeof Hello === 'string') {
+    const hi = Hello.toLowerCase()
   }
 }
 

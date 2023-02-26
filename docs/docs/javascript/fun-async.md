@@ -211,7 +211,7 @@ console.log('循环结束')
   </head>
 
   <body>
-    <h1>hello</h1>
+    <h1>Hello</h1>
   </body>
 </html>
 ```
@@ -227,7 +227,7 @@ console.log('循环结束')
   </head>
 
   <body>
-    <h1>hello</h1>
+    <h1>Hello</h1>
     <script src="./js/1.js"></script>
   </body>
 </html>

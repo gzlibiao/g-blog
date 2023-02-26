@@ -4,7 +4,7 @@
       <f-avatar
         :size="160"
         round
-        src="https://www.helloimg.com/images/2022/10/04/ZUXPTT.jpg"
+        src="https://www.Helloimg.com/images/2022/10/04/ZUXPTT.jpg"
       />
     </f-text>
 

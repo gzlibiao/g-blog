@@ -53,8 +53,8 @@ class Render {
   }
 }
 
-const node1 = new Render('hello')
-const node2 = new Render('hello2')
+const node1 = new Render('Hello')
+const node2 = new Render('Hello2')
 
 console.log(node1 === node2) // true
 ```
@@ -89,8 +89,8 @@ class Render {
   }
 }
 
-const node1 = new Render('hello')
-const node2 = new Render('hello-121')
+const node1 = new Render('Hello')
+const node2 = new Render('Hello-121')
 
 console.log(node1 === node2) // true
 ```

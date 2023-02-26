@@ -33,7 +33,7 @@ str.endsWith('peach');//false
 
 3.repeat
 let a='hi'
-console.log('hello'.repeat(2)); //'hihi'
+console.log('Hello'.repeat(2)); //'hihi'
 
 4.padStart/padENd
 padStart()/padEnd()：用参数字符串按给定长度从前面或后面补全字符串，返回新字符串

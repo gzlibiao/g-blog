@@ -29,7 +29,7 @@ console.log(c) // 1121哈哈哈
 - 字符串结束的位置
 
 ```js
-const a = 'hello world'
+const a = 'Hello world'
 console.log(a.slice(2)) // llo world
 console.log(a.slice(2, 5)) // llo
 ```
@@ -42,7 +42,7 @@ console.log(a.slice(2, 5)) // llo
 - 字符串结束的位置
 
 ```js
-const a = 'hello world'
+const a = 'Hello world'
 console.log(a.substring(2)) // llo world
 console.log(a.substring(2, 5)) // llo
 ```
@@ -55,8 +55,8 @@ console.log(a.substring(2, 5)) // llo
 - 截取长度
 
 ```js
-const a = 'hello world'
-console.log(a.substr(3)) // hello world
+const a = 'Hello world'
+console.log(a.substr(3)) // Hello world
 console.log(a.substr(3, 7)) // lo worl
 ```
 
@@ -68,7 +68,7 @@ console.log(a.substr(3, 7)) // lo worl
 - 字符串开始的位置
 
 ```js
-const a = 'hello world'
+const a = 'Hello world'
 console.log(a.startsWith('hel')) // true
 console.log(a.startsWith('llo')) // false
 ```
@@ -81,7 +81,7 @@ console.log(a.startsWith('llo')) // false
 - 字符串开始的位置
 
 ```js
-const a = 'hello world'
+const a = 'Hello world'
 console.log(a.endsWith('rld')) // true
 console.log(a.endsWith('llo')) // false
 ```
@@ -91,7 +91,7 @@ console.log(a.endsWith('llo')) // false
 可以在整个字符串中进行搜索
 
 ```js
-const a = 'hello world'
+const a = 'Hello world'
 console.log(a.includes('rld')) // true
 console.log(a.includes('llo')) // true
 ```
@@ -101,8 +101,8 @@ console.log(a.includes('llo')) // true
 可以删除字符串前后的空格
 
 ```js
-const a = ' hello world '
-console.log(a.trim()) // hello world
+const a = ' Hello world '
+console.log(a.trim()) // Hello world
 ```
 
 ## repeat()
@@ -112,8 +112,8 @@ console.log(a.trim()) // hello world
 - 要复制的次数
 
 ```js
-const a = 'hello world'
-console.log(a.repeat(2)) // hello worldhello world
+const a = 'Hello world'
+console.log(a.repeat(2)) // Hello worldHello world
 ```
 
 ## padStart()
@@ -124,9 +124,9 @@ console.log(a.repeat(2)) // hello worldhello world
 - 填充字符串
 
 ```js
-const a = 'hello'
-console.log(a.padStart(10)) //      hello
-console.log(a.padStart(10, '-')) // -----hello
+const a = 'Hello'
+console.log(a.padStart(10)) //      Hello
+console.log(a.padStart(10, '-')) // -----Hello
 ```
 
 ## padStart()
@@ -137,9 +137,9 @@ console.log(a.padStart(10, '-')) // -----hello
 - 填充字符串
 
 ```js
-const a = 'hello'
-console.log(a.padEnd(10)) // hello
-console.log(a.padEnd(10, '-')) // hello-----
+const a = 'Hello'
+console.log(a.padEnd(10)) // Hello
+console.log(a.padEnd(10, '-')) // Hello-----
 ```
 
 ## match()
@@ -147,8 +147,8 @@ console.log(a.padEnd(10, '-')) // hello-----
 可以匹配字符串，接收一个正则表达式的参数进行匹配
 
 ```js
-const a = 'hello'
-console.log(a.match(/.lo/)) // ['llo', index: 2, input: 'hello', groups: undefined]
+const a = 'Hello'
+console.log(a.match(/.lo/)) // ['llo', index: 2, input: 'Hello', groups: undefined]
 ```
 
 ## localeCompare()

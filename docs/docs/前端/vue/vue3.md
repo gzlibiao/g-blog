@@ -117,7 +117,7 @@ export default defineConfig({
 <script>
   export default {
     setup() {
-      const text = 'hello vue3'
+      const text = 'Hello vue3'
 
       function onclick() {
         console.log('被点击了')
@@ -186,7 +186,7 @@ export default defineConfig({
   export default {
     setup() {
       // 使变量变成响应式变量
-      let text = ref('hello vue3')
+      let text = ref('Hello vue3')
 
       function change() {
         // 通过变量名.value 来改变变量

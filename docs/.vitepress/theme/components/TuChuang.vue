@@ -36,7 +36,7 @@
 
   // 圖床初始化
   function initPhotos() {
-    get('https://www.helloimg.com/get-user-images/glib').then((res) => {
+    get('https://www.Helloimg.com/get-user-images/glib').then((res) => {
       state.photos = res
       console.log(state, 'res')
     })
@@ -51,19 +51,27 @@
     state.visiblePreview = true
   }
 
-  function upload(files) {
-    const ress = Promise.all(
+  async function upload(files) {
+    const ress =await Promise.all(
       files.map((file) => {
         const formData = new FormData()
         formData.append('login-subject', 'glib')
-        formData.append('login-subject', '1qaz@WSX')
-        formData.append('login-subject', file)
+        formData.append('password', '1qaz@WSX')
+        formData.append('source', file)
         return postBlob(
           'https://www.elloimg.com/newapi/2/upload/?format=json',
           formData
         )
       })
-    )
+    ).catch((err)=>{
+      console.log(err)
+    })
+
+    // if(ress.status_code!==200){
+
+    // }
+    console.log(ress,'ress')
+
     initPhotos()
   }
 </script>

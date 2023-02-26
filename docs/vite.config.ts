@@ -14,7 +14,6 @@ const NavLinkPatch = (): Plugin => ({
 export default (): UserConfigExport => {
   return {
     build: {
-      // sourcemap: false,
       chunkSizeWarningLimit: 1500,
       // terserOptions: {
       //   compress: {
@@ -47,6 +46,12 @@ export default (): UserConfigExport => {
     plugins: [NavLinkPatch()],
     optimizeDeps: {
       exclude: ['vitepress']
+    },
+    ssr: {
+      format: 'cjs'
+    },
+    legacy: {
+      buildSsrCjsExternalHeuristics: true
     },
     css: {
       postcss: {

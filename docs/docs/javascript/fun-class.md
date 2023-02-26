@@ -207,11 +207,11 @@ class User {
     console.log('你好')
   }
   static sayName() {
-    console.log('hello')
+    console.log('Hello')
   }
 }
 
-User.sayName() // hello
+User.sayName() // Hello
 new User().sayName() // 你好
 ```
 
@@ -572,7 +572,7 @@ Admin
 ```js
 class User {
   say() {
-    console.log('hello')
+    console.log('Hello')
   }
 }
 
@@ -584,7 +584,7 @@ class Admin extends User {
 }
 
 const admin = new Admin('张三')
-admin.say() // hello
+admin.say() // Hello
 ```
 
 > 类和原型继承的原理是完全一样的，所以 class 类的性质，只不过是将之前的构造函数形式转换成了一个简写的形式。

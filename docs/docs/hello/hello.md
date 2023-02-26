@@ -4,7 +4,7 @@ I am an independent developer,Now I work in [长沙](https://map.baidu.com/@1258
 
 <!-- My favorite development framework is [Vue.js](https://v3.cn.vuejs.org),I also created my own vue component library [Fighting Design](https://fighting.tianyuhao.cn). -->
 
-You can also get to know me through [resume](https://gz_lib.gitee.io/gz)
+You can also get to know me through [resume](https://gz_lib.gitee.io/g-resume)
 
 :phone: 电话: **16670148215**
 
@@ -12,4 +12,10 @@ You can also get to know me through [resume](https://gz_lib.gitee.io/gz)
 
 :envelope: Mail: **3437705679@qq.com**
 
-![](https://gz_lib.gitee.io/gz/static/wechat.jpeg)![](https://github-readme-stats.vercel.app/api?username=Tyh2001)
+![](https://gz_lib.gitee.io/g-resume/static/wechat.jpeg)![](https://github-readme-stats.vercel.app/api?username=Tyh2001)
+
+
+
+---
+prev: 'Get Started | Markdown'
+---

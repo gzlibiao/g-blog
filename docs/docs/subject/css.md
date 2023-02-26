@@ -750,7 +750,7 @@ translate：位移 `transform: translate(100px);`
 </style>
 
 <body>
-  <div id="box">hello</div>
+  <div id="box">Hello</div>
 </body>
 ```
 

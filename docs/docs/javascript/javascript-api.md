@@ -8,8 +8,8 @@ Blob（Binary Large Object）表示二进制类型的大对象。在数据库管
 let myBlobParts = ['<html><h2>Hello Semlinker</h2></html>']; 
 let myBlob = new Blob(myBlobParts, {type : 'text/html', endings: "transparent"}); // the blob
 
-let hello = new Uint8Array([72, 101, 108, 108, 111]); // 二进制格式的 "hello"
-let blob = new Blob([hello, ' ', 'semlinker'], {type: 'text/plain'});
+let Hello = new Uint8Array([72, 101, 108, 108, 111]); // 二进制格式的 "Hello"
+let blob = new Blob([Hello, ' ', 'semlinker'], {type: 'text/plain'});
 ```
 
 相关api

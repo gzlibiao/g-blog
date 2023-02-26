@@ -2,11 +2,11 @@ export const sidebar = {
   '/docs/': [
     {
       text: '开篇',
-      link: 'docs/hello/hello',
+      link: 'docs/Hello/Hello',
       items: [
-        { text: 'Hello', link: 'docs/hello/hello' },
-        { text: '常识', link: 'docs/hello/quotations' },
-        { text: '面试话术', link: 'docs/hello/面试话术' }
+        { text: 'Hello', link: 'docs/Hello/Hello' },
+        { text: '常识', link: 'docs/Hello/quotations' },
+        { text: '面试话术', link: 'docs/Hello/面试话术' },
       ]
     },
     {
