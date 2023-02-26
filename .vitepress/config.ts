@@ -15,7 +15,7 @@ const config = defineConfig({
     ]
   ],
   cacheDir: '../../node_modules',
-  outDir: '../../public',
+  outDir: './public',
   description,
   markdown: {
     theme: 'material-palenight',
