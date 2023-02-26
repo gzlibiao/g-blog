@@ -15,19 +15,17 @@ const config = defineConfig({
     ]
   ],
   cacheDir: '../../node_modules',
+  outDir: '../../public',
   description,
   markdown: {
     theme: 'material-palenight',
     lineNumbers: true
   },
-  outDir: '../public',
-
   // lastUpdated:true,
   themeConfig: {
     logo: 'https://www.Helloimg.com/images/2022/10/04/ZUXPTT.jpg',
     nav,
     sidebar
-
     // footer: {
     //   message: 'Released under the MIT License.',
     //   copyright: 'Copyright © 2019-present Evan You'

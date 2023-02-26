@@ -1,1 +1,0 @@
-import{_ as t,c as o,e as s,o as n,r}from"./app.116e60de.js";const h=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/other/视频.md"}'),a={name:"docs/other/视频.md"};function c(p,_,i,d,m,l){const e=r("shiping");return n(),o("div",null,[s(e)])}const u=t(a,[["render",c]]);export{h as __pageData,u as default};

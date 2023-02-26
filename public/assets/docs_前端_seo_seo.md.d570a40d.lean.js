@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as s,a as r}from"./app.116e60de.js";const x=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/前端/seo/seo.md"}'),o={name:"docs/前端/seo/seo.md"},n=r("",1),a=[n];function u(c,i,l,d,p,m){return s(),t("div",null,a)}const g=e(o,[["render",u]]);export{x as __pageData,g as default};

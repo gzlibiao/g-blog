@@ -1,1 +1,0 @@
-import{_ as a,c as e,o as s,a as n}from"./app.116e60de.js";const b=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/hello/面试话术.md"}'),i={name:"docs/hello/面试话术.md"},r=n("",20),l=[r];function d(h,t,c,o,p,_){return s(),e("div",null,l)}const f=a(i,[["render",d]]);export{b as __pageData,f as default};

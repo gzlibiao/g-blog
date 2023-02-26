@@ -1,1 +1,0 @@
-import{_ as e,c as p,o as a,a as t}from"./app.116e60de.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/other/产品和项目的区别.md"}'),_={name:"docs/other/产品和项目的区别.md"},r=t("",18),o=[r];function s(d,n,c,i,h,l){return a(),p("div",null,o)}const u=e(_,[["render",s]]);export{m as __pageData,u as default};
