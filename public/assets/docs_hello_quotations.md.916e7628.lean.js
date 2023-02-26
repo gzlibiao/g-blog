@@ -1,0 +1,1 @@
+import{_ as i,c as l,o as p,a as e}from"./app.116e60de.js";const f=JSON.parse('{"title":"生活常识","description":"","frontmatter":{},"headers":[],"relativePath":"docs/hello/quotations.md"}'),a={name:"docs/hello/quotations.md"},t=e("",4),o=[t];function s(r,n,_,c,d,h){return p(),l("div",null,o)}const m=i(a,[["render",s]]);export{f as __pageData,m as default};

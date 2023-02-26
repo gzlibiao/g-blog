@@ -1,0 +1,1 @@
+import{_ as s,c as n,o as a,a as e}from"./app.116e60de.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/前端/vue/开发vue3的配置.md"}'),l={name:"docs/前端/vue/开发vue3的配置.md"},p=e("",11),r=[p];function i(c,t,o,b,u,C){return a(),n("div",null,r)}const m=s(l,[["render",i]]);export{d as __pageData,m as default};

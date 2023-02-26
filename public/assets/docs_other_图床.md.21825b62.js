@@ -1,0 +1,1 @@
+import{_ as t,c as o,e as a,o as n,r}from"./app.116e60de.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/other/图床.md"}'),c={name:"docs/other/图床.md"};function s(_,p,d,m,i,l){const e=r("tuchuang");return n(),o("div",null,[a(e)])}const h=t(c,[["render",s]]);export{f as __pageData,h as default};
