@@ -1,10 +1,9 @@
 {
   "name": "smart-blog",
   "scripts": {
-    "dev": "vitepress dev docs",
-    "start": "vitepress dev docs",
-    "build": "vitepress build docs",
-    "serve": "vitepress serve docs",
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "serve": "vitepress serve",
     "prettier": "prettier --write .",
     "push": "sh push.sh"
   },
