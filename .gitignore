@@ -6,8 +6,6 @@ node_modules
 
 /public
 
-.*
-
 # Generated files
 .docusaurus
 .cache-loader

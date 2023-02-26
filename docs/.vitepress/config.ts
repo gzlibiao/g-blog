@@ -14,17 +14,19 @@ const config = defineConfig({
       }
     ]
   ],
+  description,
   markdown: {
     theme: 'material-palenight',
     lineNumbers: true
   },
   outDir: '../public',
-  description,
+
   // lastUpdated:true,
   themeConfig: {
     logo: 'https://www.Helloimg.com/images/2022/10/04/ZUXPTT.jpg',
     nav,
-    sidebar,
+    sidebar
+
     // footer: {
     //   message: 'Released under the MIT License.',
     //   copyright: 'Copyright © 2019-present Evan You'
