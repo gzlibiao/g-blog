@@ -12,6 +12,14 @@ export const sidebar = {
       text: '前端相关',
       items: [
         {
+          text: 'webpack',
+          link: '/docs/前端/打包/webpack'
+        },
+        {
+          text: 'vite',
+          link: '/docs/前端/打包/vite'
+        },
+        {
           text: 'ast',
           link: '/docs/前端/ast/ast'
         },

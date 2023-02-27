@@ -1,0 +1,56 @@
+# webpack
+## webpack是什么
+webpack 是一个打包工具
+将es6转es5代码用babel
+将非js资源通过loader转成js
+
+## webpack打包过程
+1. 识别入口文件
+2. 通过逐层识别模块依赖
+3. webpack做的就是分析，转换代码，编译代码，输出代码
+4. 最终形成打包后的代码
+
+## webpack打包原理
+1. 构建依赖关系
+2. 将代码转为ast抽象语法树
+3. ast阶段处理代码
+4. 将ast代码转为浏览器识别的代码
+
+## 总结
+
+### webpack缺点
+1. 服务器启动慢
+2. 使用node.js的方式实现
+3. 热更新效率低
+
+## webpack优化方案
+1. 构建过程提速策略
+1.1 不要让loader做太多事情
+最常见的优化方式是，用 include 或 exclude 来帮我们避免不必要的转译，比如 webpack 官方在介绍 babel-loader 时给出的示例：
+```
+module:{
+  rules:[
+    {
+      test:/\.js$/,
+      exclude:/(node_modules|brower_components)/,
+      use:{
+        loader:'babel-loader',
+        options:{
+          presets:['@babel/preset-env']
+        }
+      }
+    }
+  ]
+}
+```
+
+## gzip压缩
+request-header 中加入
+accept-encoding: gzip
+
+### webpack 的 Gzip 和服务端的 Gzip
+● 一般来说，Gzip 压缩是服务器的活儿：服务器了解到我们这边有一个 Gzip 压缩的需求，它会启动自己的 CPU 去为我们完成这个任务。而压缩文件这个过程本身是需要耗费时间的，大家可以理解为我们以服务器压缩的时间开销和 CPU 开销（以及浏览器解析压缩文件的开销）为代价，省下了一些传输过程中的时间开销。
+
+● 既然存在着这样的交换，那么就要求我们学会权衡。服务器的 CPU 性能不是无限的，如果存在大量的压缩需求，服务器也扛不住的。服务器一旦因此慢下来了，用户还是要等。Webpack 中 Gzip 压缩操作的存在，事实上就是为了在构建过程中去做一部分服务器的工作，为服务器分压。
+
+● 压缩，谁也不能替代谁。它们必须和平共处，好好合作。作为开发者，我们也应该结合业务压力的实际强度情况，去做好这其中的权衡。

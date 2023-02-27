@@ -196,3 +196,13 @@ Uses document.write()
 Num.40 具有包含 width 或 initial-scale 的 标记
 Does not have a tag with width or initial-scale
 ```
+
+## performance
+点击录制按钮，开始录制，在对应页面进行有关操作，然后点击停止，停止录制、处理数据并生成性能报告。
+![](./img/performance.webp)
+### 分析每一秒的帧
+
+FPS（frames per second）是用来分析动画的一个主要性能指标。能保持在 60 的 FPS 的话，那么用户体验就是不错的。观察 FPS 图表，如果你发现了一个红色的长条，那么就说明这些帧存在严重问题，有可能导致非常差的用户体验。一般来说，绿色的长条越高，说明 FPS 越高，用户体验越好。
+
+就在 FPS 图表下方，你会看到 CPU 图表。在 CPU 图表中的各种颜色与 Summary 面板里的颜色是相互对应的，Summary 面板就在 Performance 面板的下方。CPU 图表中的各种颜色代表着在这个时间段内，CPU 在各种处理上所花费的时间。如果你看到了某个处理占用了大量的时间，那么这可能就是一个可以找到性能瓶颈的线索。
+![](./img/performance1.webp)
