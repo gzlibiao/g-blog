@@ -2,7 +2,6 @@ export const sidebar = {
   '/docs/': [
     {
       text: '开篇',
-      link: '/docs/Hello/Hello',
       items: [
         { text: 'Hello', link: '/docs/Hello/Hello' },
         { text: '常识', link: '/docs/Hello/quotations' },
@@ -76,7 +75,6 @@ export const sidebar = {
     },
     {
       text: 'JavaScript',
-      link: '/docs/javascript/basic',
       items: [
         { text: '基础', link: '/docs/javascript/basic' },
         { text: 'DOM 相关', link: '/docs/javascript/dom' },
@@ -98,12 +96,10 @@ export const sidebar = {
     },
     {
       text: 'python',
-      link: '/docs/python/python',
       items: [{ text: '基础', link: '/docs/python/python' }]
     },
     {
       text: 'java',
-      link: '/docs/java/java',
       items: [
         { text: '基础篇', link: '/docs/java/java' },
         { text: 'mybatis', link: '/docs/java/mybatis' },
@@ -113,7 +109,6 @@ export const sidebar = {
     },
     {
       text: '运维相关',
-      link: '/docs/operations/linux',
       items: [
         { text: 'linux', link: '/docs/operations/linux' },
         { text: 'docker', link: '/docs/operations/docker' },
@@ -122,12 +117,10 @@ export const sidebar = {
     },
     {
       text: 'mysql',
-      link: '/docs/mysql/mysql',
       items: [{ text: 'mysql', link: '/docs/mysql/mysql' }]
     },
     {
       text: '题目',
-      link: '/docs/subject/new',
       items: [
         { text: '更新面试题', link: '/docs/subject/new' },
         { text: '浏览器缓存', link: '/docs/subject/浏览器缓存' },
@@ -145,7 +138,6 @@ export const sidebar = {
     },
     {
       text: '设计模式',
-      link: '/docs/design-mode/design-1',
       items: [
         { text: '基础知识', link: '/docs/design-mode/design-1' },
         { text: '高阶函数', link: '/docs/design-mode/design-2' },
@@ -165,7 +157,6 @@ export const sidebar = {
     },
     {
       text: '其他',
-      link: '/docs/other/dns',
       items: [
         { text: '产品和项目的区别', link: '/docs/other/产品和项目的区别' },
         { text: '视频', link: '/docs/other/视频' },
