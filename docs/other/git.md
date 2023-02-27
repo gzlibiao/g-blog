@@ -131,6 +131,7 @@ id_rsa.pub公钥，id_rsa私钥
 
 ssh-keygen
 ```
+![](./img/git.png)
 
 #### .gitignore 文件
 
