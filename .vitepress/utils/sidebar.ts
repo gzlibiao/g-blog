@@ -9,6 +9,12 @@ export const sidebar = {
       ]
     },
     {
+      text: '年度目标',
+      items: [
+        { text: '2023', link: '/docs/年度目标/2023' },
+      ]
+    },
+    {
       text: '前端相关',
       items: [
         {
@@ -72,8 +78,8 @@ export const sidebar = {
           link: '/docs/前端/vue/pinia'
         },
         {
-          text: 'vue3-router',
-          link: '/docs/前端/vue/vue3-router'
+          text: 'router',
+          link: '/docs/前端/vue/router'
         },
         {
           text: 'uniapp',

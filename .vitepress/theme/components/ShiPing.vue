@@ -47,7 +47,7 @@
       <div>
         <f-image
           lazy
-          alt="fds"
+          alt=""
           width="200px"
           height="200px"
           :src="state.currentVideo.cover"
@@ -176,6 +176,7 @@
 
   // 开始播放
   function play(playSrc) {
+    console.log(playSrc,'play');
     videoInfo.url = playSrc
     state.status = 3
     nextTick(() => {

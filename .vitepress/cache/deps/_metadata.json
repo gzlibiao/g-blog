@@ -1,0 +1,32 @@
+{
+  "hash": "fb815b26",
+  "browserHash": "f2086c48",
+  "optimized": {
+    "vue": {
+      "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "564dd51d",
+      "needsInterop": false
+    },
+    "fighting-design": {
+      "src": "../../../node_modules/fighting-design/es/index.js",
+      "file": "fighting-design.js",
+      "fileHash": "08ef6d0b",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "320e93f9",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-FHDTU4AX": {
+      "file": "chunk-FHDTU4AX.js"
+    },
+    "chunk-4EOJPDL2": {
+      "file": "chunk-4EOJPDL2.js"
+    }
+  }
+}

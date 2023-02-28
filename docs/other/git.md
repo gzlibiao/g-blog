@@ -175,7 +175,7 @@ git config core.ignorecase false
   ssh-keygen -t rsa -C "3437705679@qq.com"
 ```
 
-![](git/git.png)
+![](./img/git.png)
 
 ### 关闭 git 证书校验
 
