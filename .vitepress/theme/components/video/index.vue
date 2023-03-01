@@ -1,8 +1,8 @@
 <template>
   <div class="container">
 
-    <f-page-header title="视频" :on-back="goBack" v-show="state !== 0" />
-
+    <f-page-header title="视频" :on-back="goBack" v-show="state.status !== 0" />
+    
     <div class="search" v-show="state.status === 0">
       <f-input
         v-model="state.value"
@@ -81,6 +81,9 @@
         v-for="item in state.currentVideo.chapterList"
         @click="play(item.chapterPath,item.title)"
       >
+        <span @click="goDownload(item.chapterPath)">
+          ^
+        </span>
         {{ item.title }}
       </span>
     </div>
@@ -97,12 +100,27 @@
   const state = reactive({
     infos: [], // 根据关键字搜索到的影片
     currentVideo: {}, // 当前查看的视频信息
-    status: 0, // 状态
+    status: 3, // 状态
     playSrc: '' ,// 播放地址
-    url:'',// 播放地址
+    url:''||'https://vip.lz-cdn4.com/20220321/9_f3e6f975/index.m3u8',// 播放地址
     title:'',// 标题
     value:''// 搜索关键字
   })
+
+  // 下载
+  function goDownload(url){
+    console.log(url,'download')
+    // window.open(url,"_blank")
+
+    //支持a标签download的浏览器
+    const link = document.createElement("a"); //创建a标签
+    link.download = url.split('/').pop(); //a标签添加属性
+    link.style.display = "none";
+    link.href = url;
+    document.body.appendChild(link);
+    link.click(); //执行下载
+    document.body.removeChild(link); //释放标签
+  }
 
   // 操作回退
   function goBack() {
@@ -159,29 +177,28 @@
   }
 
   .card-num {
-    /* te: 10px; */
     cursor: pointer;
     display: inline-block;
     width: 80px;
     color: #333;
     flex-grow:1;
-    background-color:#8b8;
+    background-color:#f8f9fa;
     margin:1px;
     text-align: center;
     font-size: 12px;
     &:hover{
-      background-color:#8ff;
+      background-color:#c6fdd5;
     }
   }
 
   .search {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    height: 30px;
-    margin: auto;
+    // position: absolute;
+    // left: 0;
+    // right: 0;
+    // top: 0;
+    // bottom: 0;
+    // height: 30px;
+    // margin: auto;
   }
 
   .video-box {
