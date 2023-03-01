@@ -8,7 +8,7 @@
         type="text"
         :on-search="search"
         search
-        placeholder="请输入...."
+        placeholder="请输入..."
       />
     </div>
 
@@ -90,8 +90,10 @@
 
 <script lang="ts" setup>
   import 'video.js/dist/video-js.css'
-  // import Hls from 'hls.js'
-  // import DPlayer from 'dplayer'
+  
+  import 'vue3-video-play/dist/style.css'
+  import { videoPlay } from 'vue-video-play'
+  
   import { ref, reactive, nextTick } from 'vue'
   import { get, postBlob } from '../../utils/request.js'
 

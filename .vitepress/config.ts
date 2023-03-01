@@ -10,7 +10,7 @@ const config = defineConfig({
       'link',
       {
         rel: 'icon',
-        href: 'https://www.Helloimg.com/images/2022/10/04/ZUXPTT.jpg'
+        href: 'https://cdn.jsdelivr.net/gh/gzlibiao/cdn-delivr@0.0.1/img/wechat.bmp'
       }
     ]
   ],
@@ -23,7 +23,7 @@ const config = defineConfig({
   },
   // lastUpdated:true,
   themeConfig: {
-    logo: 'https://www.Helloimg.com/images/2022/10/04/ZUXPTT.jpg',
+    logo: 'https://cdn.jsdelivr.net/gh/gzlibiao/cdn-delivr@0.0.1/img/wechat.bmp',
     nav,
     sidebar
     // footer: {

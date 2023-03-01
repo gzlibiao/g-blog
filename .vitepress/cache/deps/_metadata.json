@@ -1,23 +1,23 @@
 {
-  "hash": "fb815b26",
-  "browserHash": "f2086c48",
+  "hash": "c3702885",
+  "browserHash": "b8dcf158",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "564dd51d",
+      "fileHash": "247804f7",
       "needsInterop": false
     },
     "fighting-design": {
       "src": "../../../node_modules/fighting-design/es/index.js",
       "file": "fighting-design.js",
-      "fileHash": "08ef6d0b",
+      "fileHash": "c9e20cbc",
       "needsInterop": false
     },
     "axios": {
       "src": "../../../node_modules/axios/index.js",
       "file": "axios.js",
-      "fileHash": "320e93f9",
+      "fileHash": "abf1a088",
       "needsInterop": false
     }
   },
