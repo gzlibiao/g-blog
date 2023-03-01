@@ -1,6 +1,6 @@
 {
   "hash": "c3702885",
-  "browserHash": "b8dcf158",
+  "browserHash": "2d5c8731",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
@@ -19,6 +19,24 @@
       "file": "axios.js",
       "fileHash": "abf1a088",
       "needsInterop": false
+    },
+    "vue3-video-play": {
+      "src": "../../../node_modules/vue3-video-play/dist/index.es.js",
+      "file": "vue3-video-play.js",
+      "fileHash": "e28114e3",
+      "needsInterop": false
+    },
+    "DPlayer": {
+      "src": "../../../node_modules/DPlayer/dist/DPlayer.min.js",
+      "file": "DPlayer.js",
+      "fileHash": "8ed9534a",
+      "needsInterop": true
+    },
+    "hls.js": {
+      "src": "../../../node_modules/hls.js/dist/hls.js",
+      "file": "hls__js.js",
+      "fileHash": "dfb562d5",
+      "needsInterop": true
     }
   },
   "chunks": {

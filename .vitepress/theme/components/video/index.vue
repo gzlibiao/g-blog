@@ -1,10 +1,11 @@
 <template>
   <div class="container">
+
     <f-page-header title="视频" :on-back="goBack" v-show="state !== 0" />
 
     <div class="search" v-show="state.status === 0">
       <f-input
-        v-model="value"
+        v-model="state.value"
         type="text"
         :on-search="search"
         search
@@ -67,88 +68,47 @@
       </div>
     </div>
 
+    <div v-if="state.status === 3">
+      <Play :url="state.url" :title="state.title"/>
+    </div>
+
     <div
-      v-if="state.currentVideo.chapterList && state.status === 2"
+      v-if="state.currentVideo.chapterList && state.status >= 2"
       style="display: flex; flex-flow: row wrap"
     >
       <span
-        class="card_num"
+        class="card-num"
         v-for="item in state.currentVideo.chapterList"
-        @click="play(item.chapterPath)"
+        @click="play(item.chapterPath,item.title)"
       >
         {{ item.title }}
       </span>
     </div>
 
-    <div v-if="state.status === 3">
-      <div id="myVideo">
-        <div id="dplayer" :ref="player" class="dplayer video-box"></div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-  import 'video.js/dist/video-js.css'
-  
-  import 'vue3-video-play/dist/style.css'
-  import { videoPlay } from 'vue-video-play'
-  
+
   import { ref, reactive, nextTick } from 'vue'
-  import { get, postBlob } from '../../utils/request.js'
-
-  const value = ref('')
-  const player = ref()
-  let dp = null
-
-  let videoInfo = {
-    img: '',
-    url: ''
-  }
+  import { get, postBlob } from '../../../utils/request.js'
+  import Play from './Play.vue'
 
   const state = reactive({
-    infos: [], // 搜索到的视频信息
+    infos: [], // 根据关键字搜索到的影片
     currentVideo: {}, // 当前查看的视频信息
     status: 0, // 状态
-    playSrc: '' // 播放地址
+    playSrc: '' ,// 播放地址
+    url:'',// 播放地址
+    title:'',// 标题
+    value:''// 搜索关键字
   })
-
-  // // 销毁
-  // onBeforeUnmount(() => {
-  //   if (dp) {
-  //     dp.dispose() // dispose()会直接删除Dom元素
-  //   }
-  // })
 
   // 操作回退
   function goBack() {
     if (state.status > 0) {
       state.status--
     }
-  }
-
-  // 加载视频
-  function loadVideo(videoInfo) {
-    // import('DPlayer').then((DPlayer) => {
-    //   console.log(DPlayer, 'dpler')
-    //   dp = new DPlayer.default({
-    //     element: player.value,
-    //     loop: false,
-    //     video: {
-    //       url: videoInfo.url,
-    //       type: 'customHls',
-    //       customType: {
-    //         customHls: (video, player) => {
-    //           import('hls.js').then((Hls) => {
-    //             const hls = new Hls.default()
-    //             hls.loadSource(video.src)
-    //             hls.attachMedia(video)
-    //           })
-    //         }
-    //       }
-    //     }
-    //   })
-    // })
   }
 
   // 搜索
@@ -177,17 +137,15 @@
   }
 
   // 开始播放
-  function play(playSrc) {
-    console.log(playSrc,'play');
-    videoInfo.url = playSrc
+  function play(playSrc,title) {
+    console.log(playSrc,'play',title);
+    state.url = playSrc
+    state.title = title
     state.status = 3
-    nextTick(() => {
-      loadVideo(videoInfo)
-    })
   }
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
   .item {
     width: 100%;
     display: flex;
@@ -200,13 +158,20 @@
     flex-flow: column nowrap;
   }
 
-  .card_num {
-    margin-right: 10px;
+  .card-num {
+    /* te: 10px; */
     cursor: pointer;
     display: inline-block;
     width: 80px;
     color: #333;
+    flex-grow:1;
+    background-color:#8b8;
+    margin:1px;
+    text-align: center;
     font-size: 12px;
+    &:hover{
+      background-color:#8ff;
+    }
   }
 
   .search {
