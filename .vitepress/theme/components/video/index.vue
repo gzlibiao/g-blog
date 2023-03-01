@@ -12,6 +12,8 @@
         placeholder="请输入..."
       />
     </div>
+    
+    <input type="file" @change="chooseFileAndPlay"/>
 
     <div
       v-show="state.status === 1"
@@ -106,6 +108,22 @@
     title:'',// 标题
     value:''// 搜索关键字
   })
+
+  function blobToDataURI(blob, callback) {
+    var reader = new FileReader();
+    reader.readAsDataURL(blob);
+    reader.onload = function (e) {
+        callback(e.target.result);
+    }
+  }
+
+  function chooseFileAndPlay(){
+    const file=event.target.files[0];
+    blobToDataURI(file,(url)=>{
+      state.status=3;
+      state.url=url;
+    })
+  }
 
   // 下载
   function goDownload(url){
