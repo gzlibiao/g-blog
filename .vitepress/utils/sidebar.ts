@@ -5,14 +5,12 @@ export const sidebar = {
       items: [
         { text: 'Hello', link: '/docs/Hello/Hello' },
         { text: '常识', link: '/docs/Hello/quotations' },
-        { text: '面试话术', link: '/docs/Hello/面试话术' },
+        { text: '面试话术', link: '/docs/Hello/面试话术' }
       ]
     },
     {
       text: '年度目标',
-      items: [
-        { text: '2023', link: '/docs/年度目标/2023' },
-      ]
+      items: [{ text: '2023', link: '/docs/年度目标/2023' }]
     },
     {
       text: '前端相关',
@@ -174,12 +172,12 @@ export const sidebar = {
       items: [
         { text: '产品和项目的区别', link: '/docs/other/产品和项目的区别' },
         { text: '视频', link: '/docs/other/视频' },
-        { text: '体验', link: '/docs/other/体验' },
+        { text: '开发体验', link: '/docs/other/开发体验' },
         { text: '图床', link: '/docs/other/图床' },
         { text: 'dns', link: '/docs/other/dns' },
         { text: 'git', link: '/docs/other/git' },
-        { text: 'google调试技巧', link: '/docs/other/google调试技巧' },
+        { text: 'google调试技巧', link: '/docs/other/google调试技巧' }
       ]
     }
-  ],
+  ]
 }
