@@ -12,7 +12,7 @@
         placeholder="请输入..."
       />
     </div>
-    
+
     <input type="file" @change="chooseFileAndPlay"/>
 
     <div
@@ -102,9 +102,9 @@
   const state = reactive({
     infos: [], // 根据关键字搜索到的影片
     currentVideo: {}, // 当前查看的视频信息
-    status: 3, // 状态
+    status: 0, // 状态
     playSrc: '' ,// 播放地址
-    url:''||'https://vip.lz-cdn4.com/20220321/9_f3e6f975/index.m3u8',// 播放地址
+    url:''&&'https://vip.lz-cdn4.com/20220321/9_f3e6f975/index.m3u8',// 播放地址
     title:'',// 标题
     value:''// 搜索关键字
   })
@@ -120,6 +120,7 @@
   function chooseFileAndPlay(){
     const file=event.target.files[0];
     blobToDataURI(file,(url)=>{
+      console.log(file,'file',url)
       state.status=3;
       state.url=url;
     })
