@@ -170,6 +170,7 @@ export const sidebar = {
     {
       text: '其他',
       items: [
+        // { text: '数据可视化', link: '/docs/other/数据可视化' },
         { text: '产品和项目的区别', link: '/docs/other/产品和项目的区别' },
         { text: '视频', link: '/docs/other/视频' },
         { text: '开发体验', link: '/docs/other/开发体验' },

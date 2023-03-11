@@ -32,10 +32,10 @@ import {
   withDirectives,
   withKeys,
   withModifiers
-} from "./chunk-FHDTU4AX.js";
+} from "./chunk-GOZHMCMR.js";
 import "./chunk-4EOJPDL2.js";
 
-// node_modules/vue3-video-play/dist/index.es.js
+// node_modules/.pnpm/vue3-video-play@1.3.1-beta.6/node_modules/vue3-video-play/dist/index.es.js
 var t = Object.defineProperty;
 var e = Object.defineProperties;
 var r = Object.getOwnPropertyDescriptors;
@@ -8447,7 +8447,7 @@ var It = ["dplayerKeyCode"];
 var Ct = createBaseVNode("input", { class: "d-player-copyText" }, null, -1);
 popScopeId();
 var wt = defineComponent({ setup(t2) {
-  const e2 = reactive({ show: false, dialogType: "", dialogTitle: "", version: "1.3.1", mouseX: 0, mouseY: 0 }), r2 = [{ label: "视频色彩调整", key: "filter" }, { label: "快捷键说明", key: "hotkey" }, { label: "复制视频网址", key: "copy" }, { label: "版本：1.3.1", key: "version" }], i2 = [{ key: "Space", label: "播放/暂停" }, { key: "→", label: "单次快进10s，长按5倍速播放" }, { key: "←", label: "快退5s" }, { key: "↑", label: "音量增加10%" }, { key: "↓", label: "音量增加降低10%" }, { key: "Esc", label: "退出全屏/退出网页全屏" }, { key: "F", label: "全屏/退出全屏" }], n2 = reactive({ saturate: 0.392, brightness: 0.392, contrast: 0.392 }), a2 = computed(() => ({ left: e2.mouseX + "px", top: e2.mouseY + "px" }));
+  const e2 = reactive({ show: false, dialogType: "", dialogTitle: "", version: "1.3.1-beta.6", mouseX: 0, mouseY: 0 }), r2 = [{ label: "视频色彩调整", key: "filter" }, { label: "快捷键说明", key: "hotkey" }, { label: "复制视频网址", key: "copy" }, { label: "版本：1.3.1-beta.6", key: "version" }], i2 = [{ key: "Space", label: "播放/暂停" }, { key: "→", label: "单次快进10s，长按5倍速播放" }, { key: "←", label: "快退5s" }, { key: "↑", label: "音量增加10%" }, { key: "↓", label: "音量增加降低10%" }, { key: "Esc", label: "退出全屏/退出网页全屏" }, { key: "F", label: "全屏/退出全屏" }], n2 = reactive({ saturate: 0.392, brightness: 0.392, contrast: 0.392 }), a2 = computed(() => ({ left: e2.mouseX + "px", top: e2.mouseY + "px" }));
   watch(n2, (t3) => {
     let e3 = document.querySelector("#dPlayerVideo"), r3 = (2.55 * t3.saturate).toFixed(2), i3 = (2.55 * t3.brightness).toFixed(2), n3 = (2.55 * t3.contrast).toFixed(2);
     e3.style.filter = `saturate(${r3}) brightness(${i3}) contrast(${n3})`;

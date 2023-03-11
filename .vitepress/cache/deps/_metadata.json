@@ -1,47 +1,50 @@
 {
-  "hash": "c3702885",
-  "browserHash": "2d5c8731",
+  "hash": "d2e0176b",
+  "browserHash": "2296340a",
   "optimized": {
     "vue": {
-      "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "src": "../../../node_modules/.pnpm/vue@3.2.47/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "247804f7",
+      "fileHash": "520225ac",
       "needsInterop": false
     },
     "fighting-design": {
-      "src": "../../../node_modules/fighting-design/es/index.js",
+      "src": "../../../node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/index.js",
       "file": "fighting-design.js",
-      "fileHash": "c9e20cbc",
+      "fileHash": "acb6b27f",
       "needsInterop": false
     },
     "axios": {
-      "src": "../../../node_modules/axios/index.js",
+      "src": "../../../node_modules/.pnpm/axios@1.3.4/node_modules/axios/index.js",
       "file": "axios.js",
-      "fileHash": "abf1a088",
+      "fileHash": "e75f0348",
+      "needsInterop": false
+    },
+    "@antv/f-vue": {
+      "src": "../../../node_modules/.pnpm/@antv+f-vue@0.0.35_vue@3.2.47/node_modules/@antv/f-vue/es/index.js",
+      "file": "@antv_f-vue.js",
+      "fileHash": "55834ac5",
+      "needsInterop": false
+    },
+    "@antv/f2": {
+      "src": "../../../node_modules/.pnpm/@antv+f2@4.0.41/node_modules/@antv/f2/es/index.js",
+      "file": "@antv_f2.js",
+      "fileHash": "0f953d65",
       "needsInterop": false
     },
     "vue3-video-play": {
-      "src": "../../../node_modules/vue3-video-play/dist/index.es.js",
+      "src": "../../../node_modules/.pnpm/vue3-video-play@1.3.1-beta.6/node_modules/vue3-video-play/dist/index.es.js",
       "file": "vue3-video-play.js",
-      "fileHash": "e28114e3",
+      "fileHash": "4cf91cc5",
       "needsInterop": false
-    },
-    "DPlayer": {
-      "src": "../../../node_modules/DPlayer/dist/DPlayer.min.js",
-      "file": "DPlayer.js",
-      "fileHash": "8ed9534a",
-      "needsInterop": true
-    },
-    "hls.js": {
-      "src": "../../../node_modules/hls.js/dist/hls.js",
-      "file": "hls__js.js",
-      "fileHash": "dfb562d5",
-      "needsInterop": true
     }
   },
   "chunks": {
-    "chunk-FHDTU4AX": {
-      "file": "chunk-FHDTU4AX.js"
+    "chunk-E7FFEZEH": {
+      "file": "chunk-E7FFEZEH.js"
+    },
+    "chunk-GOZHMCMR": {
+      "file": "chunk-GOZHMCMR.js"
     },
     "chunk-4EOJPDL2": {
       "file": "chunk-4EOJPDL2.js"

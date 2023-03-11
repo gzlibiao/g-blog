@@ -1,4 +1,8 @@
 import type { UserConfigExport, Plugin } from 'vite'
+// import vueJsx from "@vitejs/plugin-vue-jsx";
+// import { babel } from '@rollup/plugin-babel'
+// import vue from '@vitejs/plugin-vue'
+
 
 // https://github.com/vuejs/vitepress/discussions/1015#discussioncomment-3177860
 const NavLinkPatch = (): Plugin => ({
@@ -13,13 +17,28 @@ const NavLinkPatch = (): Plugin => ({
 
 export default (): UserConfigExport => {
   return {
-    plugins: [NavLinkPatch()],
+    plugins: [
+      // vue(),
+      NavLinkPatch(),
+      // vueJsx(),
+      // babel({
+      //   plugins: [
+      //     [
+      //       '@babel/plugin-transform-react-jsx',
+      //       {
+      //         runtime: 'automatic',
+      //         importSource: '@antv/f2'
+      //       }
+      //     ]
+      //   ]
+      // })
+    ],
     optimizeDeps: {
       exclude: ['vitepress']
     },
     server: {
-      hmr:{
-        overlay:false
+      hmr: {
+        overlay: false
       }
     },
     // ssr: {
