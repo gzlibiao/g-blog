@@ -69,6 +69,10 @@ git commit -m"x"
 git push
 git pull //保持本地仓库和远程仓库的同步
 
+
+git relog // 查看 历史 commit 版本  代码丢失
+
+git reset --hard 47acc35
 ```
 
 ### 分支管理

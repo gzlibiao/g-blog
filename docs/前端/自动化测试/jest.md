@@ -6,52 +6,48 @@
 
 - 高质量代码实现
 
-
-
-### Jest简介和环境搭建
+### Jest 简介和环境搭建
 
 - 主流前端测试框架
-  1. Jasmine ： JavaScript测试框架（BDD-集成测试开发框架），这个也算是比较早的测试框架。
-  2. MOCHA: 它是一个功能丰富的JavaScript测试框架，运行在`Node.js`和浏览器中，使异步测试变得简单有趣。
+
+  1. Jasmine ： JavaScript 测试框架（BDD-集成测试开发框架），这个也算是比较早的测试框架。
+  2. MOCHA: 它是一个功能丰富的 JavaScript 测试框架，运行在`Node.js`和浏览器中，使异步测试变得简单有趣。
   3. Jest：目前最流行的前端测试框架，几乎国内所有的大型互联网公司都在使用。具体好处会在下面详细说清楚。
 
-- Jest测试框架优点
+- Jest 测试框架优点
   1. 比较新：喜新厌旧是人的天性，作为一个程序员，你更要有拥抱全新知识的态度。绝不能固步自封，顽固不化。
-  2. 基础很好：框架基础好就是性能好、功能多、简单易用，Jest在这三个方面你可以完全放心。
-  3. 速度快： 单独模块测试功能，比如说有两个模块A和B，以前都测试过了，这时候你只改动A模块，再次测试，模块B不会再跑一次，而是直接测试A模块。
+  2. 基础很好：框架基础好就是性能好、功能多、简单易用，Jest 在这三个方面你可以完全放心。
+  3. 速度快： 单独模块测试功能，比如说有两个模块 A 和 B，以前都测试过了，这时候你只改动 A 模块，再次测试，模块 B 不会再跑一次，而是直接测试 A 模块。
   4. `API`简单 ：等你基础知识学完后，你就会发现`API`非常简单，数量也少。
-  5. 隔离性好：Jest里会有很多的测试文件等待我们使用，Jest的执行环境都是隔离，这样就避免不同的测试文件执行的时候互相影响而造成出错。
-  6. `IDE`整合：Jest直接可以和很多编辑器`（VSCode）`进行融合，让测试变的更加简单。
-  7. 多项目并行：比如我们写了`Node.js`的后台项目，用React写了一个前台项目，Jest是支持他们并行运行，让我们的效率更加提高了。
-  8. 快出覆盖率：（测试代码覆盖率） 对于一个项目的测试都要出覆盖率的，Jest就可以快速出这样的覆盖率统计结果，非常好用。
+  5. 隔离性好：Jest 里会有很多的测试文件等待我们使用，Jest 的执行环境都是隔离，这样就避免不同的测试文件执行的时候互相影响而造成出错。
+  6. `IDE`整合：Jest 直接可以和很多编辑器`（VSCode）`进行融合，让测试变的更加简单。
+  7. 多项目并行：比如我们写了`Node.js`的后台项目，用 React 写了一个前台项目，Jest 是支持他们并行运行，让我们的效率更加提高了。
+  8. 快出覆盖率：（测试代码覆盖率） 对于一个项目的测试都要出覆盖率的，Jest 就可以快速出这样的覆盖率统计结果，非常好用。
 
-
-
-### Jest环境搭建
+### Jest 环境搭建
 
 - 生成`package.json`
 
   `npm init`
 
-- 安装Jest框架
+- 安装 Jest 框架
 
   `npm install jest@24.8.0 -D`
 
-
-
-### Jest实例
+### Jest 实例
 
 1. 编写`bao.js`文件
 
    ```js
-   function bao1(money){
-       return money>=200? '至尊享受':'基本按摩'
+   function bao1(money) {
+     return money >= 200 ? '至尊享受' : '基本按摩'
    }
-   function bao2(money){
-       return money>=1000? '双人服务':'单人服务'
+   function bao2(money) {
+     return money >= 1000 ? '双人服务' : '单人服务'
    }
    module.exports = {
-       bao1,bao2  
+     bao1,
+     bao2
    }
    ```
 
@@ -59,12 +55,12 @@
 
    ```js
    const bao = require('./bao.js')
-   const { bao1 , bao2 }  = bao
-   test('保健1 300元',()=>{
-       expect(bao(300)).toBe('至尊享受')
+   const { bao1, bao2 } = bao
+   test('保健1 300元', () => {
+     expect(bao(300)).toBe('至尊享受')
    })
-   test('保健2  2000元',()=>{
-       expect(bao2(2000)).toBe('双人服务')
+   test('保健2  2000元', () => {
+     expect(bao2(2000)).toBe('双人服务')
    })
    ```
 
@@ -91,29 +87,25 @@
 
    `yarn test` 或者`npm run test`
 
-   
-
-### Jest基本配置
+### Jest 基本配置
 
 - 单元测试和集成测试的区别
-- Jest初始化配置
+- Jest 初始化配置
 - `coverageDirectory`详解
 
+### Jest 的匹配器
 
-
-### Jest的匹配器
-
-- **Jest中的匹配器（上）**
+- **Jest 中的匹配器（上）**
 
   1. `toBe()`匹配器
 
      `toBe()`匹配器，是在工作中最常用的一种匹配器，简单的理解它就是相等。
 
      ```js
-     test('测试严格相等',()=>{
-         const a = {number:'007'}   
-         expect(a).toBe({number:'007'})
-     }) 
+     test('测试严格相等', () => {
+       const a = { number: '007' }
+       expect(a).toBe({ number: '007' })
+     })
      ```
 
   2. `toEqual()`匹配器
@@ -121,10 +113,10 @@
      `toEqual（）`匹配器，不严格匹配但要求值相等时就可以使用。
 
      ```js
-     test('测试严格相等',()=>{
-         const a = {number:'007'}   
-         expect(a).toEqual({number:'007'})
-     }) 
+     test('测试严格相等', () => {
+       const a = { number: '007' }
+       expect(a).toEqual({ number: '007' })
+     })
      ```
 
   3. `toBeNull`匹配器
@@ -132,10 +124,10 @@
      `toBeNul()`匹配器只匹配`null`值，需要注意的是不匹配`undefined`的值。
 
      ```js
-     test('toBeNull测试',()=>{
-         const a = null   
-         expect(a).toBeNull()
-     }) 
+     test('toBeNull测试', () => {
+       const a = null
+       expect(a).toBeNull()
+     })
      ```
 
   4. `toBeUndifined()`匹配器
@@ -143,10 +135,10 @@
      要匹配`undefined`时，就可以使用`toBeUndifined()`匹配器。
 
      ```js
-     test('toBeUndefined测试',()=>{
-         const a = undefined   
-         expect(a).toBeUndefined()
-     }) 
+     test('toBeUndefined测试', () => {
+       const a = undefined
+       expect(a).toBeUndefined()
+     })
      ```
 
   5. `toBeDefined()`匹配器
@@ -154,10 +146,10 @@
      `toBeDefined()`匹配器的意思是只要定义过了，都可以匹配成功。
 
      ```js
-     test('toBeDefined测试',()=>{
-         const a = 'jspang'  
-         expect(a).toBeDefined()
-     }) 
+     test('toBeDefined测试', () => {
+       const a = 'jspang'
+       expect(a).toBeDefined()
+     })
      ```
 
   6. `toBeTruthy()`匹配器
@@ -165,10 +157,10 @@
      这个是`true`和`false`匹配器，就相当于判断真假的。
 
      ```js
-     test('toBeTruthy 测试',()=>{
-         const a = 0
-         expect(a).toBeTruthy()
-     }) 
+     test('toBeTruthy 测试', () => {
+       const a = 0
+       expect(a).toBeTruthy()
+     })
      ```
 
   7. `toBeFalsy()`匹配器
@@ -176,22 +168,22 @@
      这个匹配器只要是返回的`false`就可以通过测试。
 
      ```js
-     test('toBeFalsy 测试',()=>{
-         const a = 0
-         expect(a).toBeFalsy()
-     }) 
+     test('toBeFalsy 测试', () => {
+       const a = 0
+       expect(a).toBeFalsy()
+     })
      ```
 
-- **Jest中的匹配器（中）**
+- **Jest 中的匹配器（中）**
 
   1. `toBeGreaterThan()`匹配器
 
      这个是用来作数字比较的，大于什么数值，只要大于传入的数值，就可以通过测试。
 
      ```js
-     test('toBeGreaterThan匹配器',()=>{
-         const count = 10
-         expect(count).toBeGreaterThan(9)
+     test('toBeGreaterThan匹配器', () => {
+       const count = 10
+       expect(count).toBeGreaterThan(9)
      })
      ```
 
@@ -200,9 +192,9 @@
      `toBeLessThan`跟`toBeGreaterThan`相对应的，就是少于一个数字时，就可以通过测试。
 
      ```js
-     test('toBeLessThan匹配器',()=>{
-         const count = 10
-         expect(count).toBeLessThan(11)
+     test('toBeLessThan匹配器', () => {
+       const count = 10
+       expect(count).toBeLessThan(11)
      })
      ```
 
@@ -211,9 +203,9 @@
      当测试结果数据大于等于期待数字时，可以通过测试。
 
      ```js
-     test('toBeGreaterThan匹配器',()=>{
-         const count = 10
-         expect(count).toBeGreaterThan(10)
+     test('toBeGreaterThan匹配器', () => {
+       const count = 10
+       expect(count).toBeGreaterThan(10)
      })
      ```
 
@@ -228,39 +220,39 @@
      不通过
 
      ```js
-     test('toEqual匹配器',()=>{
-         const one = 0.1
-         const two = 0.2
-         expect(one + two).toEqual(0.3)
+     test('toEqual匹配器', () => {
+       const one = 0.1
+       const two = 0.2
+       expect(one + two).toEqual(0.3)
      })
      ```
 
      通过
 
      ```js
-     test('toBeCloseTo匹配器',()=>{
-         const one = 0.1
-         const two = 0.2
-         expect(one + two).toBeCloseTo(0.3)
+     test('toBeCloseTo匹配器', () => {
+       const one = 0.1
+       const two = 0.2
+       expect(one + two).toBeCloseTo(0.3)
      })
      ```
 
-- **Jest中的son配器（下）**
+- **Jest 中的 son 配器（下）**
 
   1. `toMatch()`匹配器
 
      字符串包含匹配器
 
      ```js
-     test('toMatch匹配器',()=>{
-         const str="谢大脚、刘英、小红"
-         expect(str).toMatch('谢大脚')
+     test('toMatch匹配器', () => {
+       const str = '谢大脚、刘英、小红'
+       expect(str).toMatch('谢大脚')
      })
-     
+
      // 可以写正则表达式
-     test('toMatch匹配器',()=>{
-         const str="谢大脚、刘英、小红"
-         expect(str).toMatch(/谢大脚/)
+     test('toMatch匹配器', () => {
+       const str = '谢大脚、刘英、小红'
+       expect(str).toMatch(/谢大脚/)
      })
      ```
 
@@ -269,15 +261,15 @@
      数组包含的匹配器
 
      ```js
-     test('toContain匹配器',()=>{
-         const arr=['谢大脚','刘英','小红']
-         expect(arr).toContain('谢大脚')
+     test('toContain匹配器', () => {
+       const arr = ['谢大脚', '刘英', '小红']
+       expect(arr).toContain('谢大脚')
      })
      // 完美的兼容set的测试
-     test('toContain匹配器',()=>{
-         const arr=['谢大脚','刘英','小红']
-         const data = new Set(arr)
-         expect(data).toContain('谢大脚')
+     test('toContain匹配器', () => {
+       const arr = ['谢大脚', '刘英', '小红']
+       const data = new Set(arr)
+       expect(data).toContain('谢大脚')
      })
      ```
 
@@ -286,39 +278,37 @@
      门对异常进行处理的匹配器，可以检测一个方法会不会抛出异常。
 
      ```js
-     const throwNewErrorFunc = ()=>{
-         throw new Error('this is a new error')
+     const throwNewErrorFunc = () => {
+       throw new Error('this is a new error')
      }
-     test('toThrow匹配器',()=>{
-         expect(throwNewErrorFunc).toThrow()
+     test('toThrow匹配器', () => {
+       expect(throwNewErrorFunc).toThrow()
      })
      // 可以对这个匹配器中加一些字符串，意思就是抛出的异常必须和字符串相对应。
-     test('toThrow匹配器',()=>{
-         expect(throwNewErrorFunc).toThrow('this is a new error')
+     test('toThrow匹配器', () => {
+       expect(throwNewErrorFunc).toThrow('this is a new error')
      })
      ```
 
   4. `not`匹配器
 
-      not`匹配器是`Jest`中比较特殊的匹配器，意思就是`相反`或者说`取反
-  
-      ```js
-   const throwNewErrorFunc = ()=>{
-         throw new Error('this is a new error')
+     not`匹配器是`Jest`中比较特殊的匹配器，意思就是`相反`或者说`取反
+
+     ```js
+     const throwNewErrorFunc = () => {
+       throw new Error('this is a new error')
      }
-     
-     test('toThrow匹配器',()=>{
-         expect(throwNewErrorFunc).not.toThrow()
+
+     test('toThrow匹配器', () => {
+       expect(throwNewErrorFunc).not.toThrow()
      })
      ```
-  
+
   5. 其它匹配器
-  
+
      `https://jestjs.io/docs/en/expect`
 
-
-
-### Jest支持`import`和`ES6`语法
+### Jest 支持`import`和`ES6`语法
 
 - **开启自动化测试（`package.js`）**
 
@@ -339,12 +329,12 @@
     }
   }
   ```
-  
+
 - **支持`import`和`ES6`语法**
 
-  目前我们的Jest是不支持`import...from....`这种形式，如果使用就会报错，因为Jest默认支持的是`CommonJS`规范，也就是`Node.js`中的语法，他只支持`require`这种引用。所以我们使用`import...from...`是`ES6`的语法，所以使用就会报错。
+  目前我们的 Jest 是不支持`import...from....`这种形式，如果使用就会报错，因为 Jest 默认支持的是`CommonJS`规范，也就是`Node.js`中的语法，他只支持`require`这种引用。所以我们使用`import...from...`是`ES6`的语法，所以使用就会报错。
 
-  1. Babel转换器的安装
+  1. Babel 转换器的安装
 
      `npm install @babel/core@7.4.5 @babel/preset-env@7.4.5 -D`
 
@@ -359,9 +349,9 @@
       },
      ```
 
-  2. Babel的基本配置
+  2. Babel 的基本配置
 
-     项目根目录下新建一个`.babelrc`的文件，写入babel的转换配置。
+     项目根目录下新建一个`.babelrc`的文件，写入 babel 的转换配置。
 
      ```js
      {
@@ -378,12 +368,10 @@
      ```
 
   3. 实现原理和流程
-  
-     通过babel把`import`形式转行成`require`
-  
+
+     通过 babel 把`import`形式转行成`require`
+
      在`Jest`里有一个`babel-jest`组件，我们在使用`yarn test`的时候，它先去检测开发环境中是否安装了`babel`，也就是查看有没有`babel-core`，如果有`bable-core`就会去查看`.babelrc`配置文件，根据配置文件进行转换，转换完成。
-
-
 
 ### 异步代码的测试方法
 
@@ -401,11 +389,11 @@
 
       ```js
       import axios from 'axios'
-      
-      export const fetchData = (fn)=>{
-          axios.get('http://a.jspang.com/jestTest.json').then((response)=>{
-              fn(response.data)
-          })
+
+      export const fetchData = (fn) => {
+        axios.get('http://a.jspang.com/jestTest.json').then((response) => {
+          fn(response.data)
+        })
       }
       ```
 
@@ -417,34 +405,34 @@
       // 错误写法
       // 方法还没有等到回调，我们的结果已经完成了
       import { fetchData } from './fetchData.js'
-      test('fetchData 测试',()=>{
-         fetchData((data)=>{
-             expect(data).toEqual({
-                 success: true
-             })
-         })
+      test('fetchData 测试', () => {
+        fetchData((data) => {
+          expect(data).toEqual({
+            success: true
+          })
+        })
       })
       // 正确写法
       import { fetchData } from './fetchData.js'
-      test('fetchData 测试',(done)=>{
-         fetchData((data)=>{
-             expect(data).toEqual({
-                 success: true
-             })
-             done()
+      test('fetchData 测试', (done) => {
+        fetchData((data) => {
+          expect(data).toEqual({
+            success: true
+          })
+          done()
         })
       })
       ```
 
-2. **直接返回promise**
+2. **直接返回 promise**
 
    1. 编写异步代码
 
       `fetchData.js`文件
 
       ```js
-      export const fetchTwoData = ()=>{
-          return axios.get('http://a.jspang.com/jestTest.json')
+      export const fetchTwoData = () => {
+        return axios.get('http://a.jspang.com/jestTest.json')
       }
       ```
 
@@ -453,14 +441,14 @@
       `fetchData.test.js`文件
 
       ```js
-      import { fetchData , fetchTwoData } from './fetchData.js'
-      test('FetchTwoData 测试', ()=>{
-             return  fetchTwoData().then((response)=>{
-                  expect(response.data).toEqual({
-                      success: true
-                  })
-              })
+      import { fetchData, fetchTwoData } from './fetchData.js'
+      test('FetchTwoData 测试', () => {
+        return fetchTwoData().then((response) => {
+          expect(response.data).toEqual({
+            success: true
+          })
         })
+      })
       ```
 
 3. **不存在接口的测试**
@@ -470,8 +458,8 @@
       `fetchData.js`文件
 
       ```js
-      export const fetchThreeData = ()=>{
-          return axios.get('http://a.jspang.com/jestTest_error.json')
+      export const fetchThreeData = () => {
+        return axios.get('http://a.jspang.com/jestTest_error.json')
       }
       ```
 
@@ -481,21 +469,19 @@
 
       ```js
       // 错误写法
-      test('FetchThreeData 测试', ()=>{
-            return fetchThreeData().catch((e)=>{
-              //console.log(e.toString())   
-              expect(e.toString().indexOf('404')> -1).toBe(true)
-      
-            })
+      test('FetchThreeData 测试', () => {
+        return fetchThreeData().catch((e) => {
+          //console.log(e.toString())
+          expect(e.toString().indexOf('404') > -1).toBe(true)
         })
+      })
       // 正确写法
-      test('FetchThreeData 测试', ()=>{
-            expect.assertions(1)  // 断言，必须执行一次expect
-            return fetchThreeData().catch((e)=>{
-              expect(e.toString().indexOf('404')> -1).toBe(true)
-      
-            })
+      test('FetchThreeData 测试', () => {
+        expect.assertions(1) // 断言，必须执行一次expect
+        return fetchThreeData().catch((e) => {
+          expect(e.toString().indexOf('404') > -1).toBe(true)
         })
+      })
       ```
 
 4. **`async...await`**
@@ -505,8 +491,8 @@
       `fetchData.js`文件
 
       ```js
-       export const fetchFourData = ()=>{
-          return axios.get('http://a.jspang.com/jestTest.json')
+      export const fetchFourData = () => {
+        return axios.get('http://a.jspang.com/jestTest.json')
       }
       ```
 
@@ -516,35 +502,33 @@
 
       ```js
       // 复杂的
-      test('FetchFourData 测试', async()=>{
-              //resolves把现有对象转换成Promise对象，
-              //toMatchObject 匹配对象中的属性
-              await expect(fetchFourData()).resolves.toMatchObject({
-                  data:{
-                      success:true
-                  }
-              })
+      test('FetchFourData 测试', async () => {
+        //resolves把现有对象转换成Promise对象，
+        //toMatchObject 匹配对象中的属性
+        await expect(fetchFourData()).resolves.toMatchObject({
+          data: {
+            success: true
+          }
+        })
       })
       // 简单的
-      test('FetchFourData 测试', async()=>{
-              const response  = await fetchFourData()
-              expect(response.data).toEqual({
-                  success : true
-              })
+      test('FetchFourData 测试', async () => {
+        const response = await fetchFourData()
+        expect(response.data).toEqual({
+          success: true
+        })
       })
       ```
-      
-      
 
-### Jest中的四个钩子函数
+### Jest 中的四个钩子函数
 
 - **`beforeAll()`钩子函数**
 
   `beforeAll()`钩子函数的意思是在所有测试用例之前进行执行。
 
   ```js
-  beforeAll(()=>{
-      console.log('吃完饭后，走进了红浪漫洗浴')
+  beforeAll(() => {
+    console.log('吃完饭后，走进了红浪漫洗浴')
   })
   ```
 
@@ -553,8 +537,8 @@
   `afterAll()`钩子函数是在完成所有测试用例之后才执行的函数。
 
   ```js
-  afterAll(()=>{
-      console.log('有钱人的生活就是这么的枯燥且寂寞')
+  afterAll(() => {
+    console.log('有钱人的生活就是这么的枯燥且寂寞')
   })
   ```
 
@@ -563,8 +547,8 @@
   `beforeEach()`钩子函数，是在每个测试用例前都会执行一次的钩子函数。
 
   ```js
-  beforeEach(()=>{
-      console.log('给了300元钱后......')
+  beforeEach(() => {
+    console.log('给了300元钱后......')
   })
   ```
 
@@ -573,8 +557,8 @@
   `afterEach()`钩子函数，是在每次测试用例完成测试之后执行一次的钩子函数。
 
   ```js
-  afterEach(()=>{
-      console.log('完成后，我心满意足的坐在沙发上！！！')
+  afterEach(() => {
+    console.log('完成后，我心满意足的坐在沙发上！！！')
   })
   ```
 
@@ -583,90 +567,88 @@
   ```js
   import NewBaoJian from './newBaoJian'
   const baojian = new NewBaoJian()
-  
-  beforeAll(()=>{
-      console.log('吃完饭后，走进了红浪漫洗浴')
+
+  beforeAll(() => {
+    console.log('吃完饭后，走进了红浪漫洗浴')
   })
-  
-  beforeEach(()=>{
-      console.log('给了300元钱后......')
+
+  beforeEach(() => {
+    console.log('给了300元钱后......')
   })
-  
-  test('测试 大脚足浴  方法',()=>{
-      baojian.gongzhu(1)
-      baojian.anjiao()
-      console.log(baojian.fuwu)
-      expect(baojian.fuwu).toEqual('大脚走进房间为你_足疗')
+
+  test('测试 大脚足浴  方法', () => {
+    baojian.gongzhu(1)
+    baojian.anjiao()
+    console.log(baojian.fuwu)
+    expect(baojian.fuwu).toEqual('大脚走进房间为你_足疗')
   })
-  
-  test('测试 刘英按摩  方法',()=>{
-      baojian.gongzhu(2)
-      baojian.anmo()
-      console.log(baojian.fuwu)
-      expect(baojian.fuwu).toEqual('刘英走进房间为你_按摩')
+
+  test('测试 刘英按摩  方法', () => {
+    baojian.gongzhu(2)
+    baojian.anmo()
+    console.log(baojian.fuwu)
+    expect(baojian.fuwu).toEqual('刘英走进房间为你_按摩')
   })
-  
-  afterEach(()=>{
-      console.log('完成后，我心满意足的坐在沙发上！！！')
+
+  afterEach(() => {
+    console.log('完成后，我心满意足的坐在沙发上！！！')
   })
-  
-  afterAll(()=>{
-      console.log('有钱人的生活就是这么的枯燥且寂寞')
+
+  afterAll(() => {
+    console.log('有钱人的生活就是这么的枯燥且寂寞')
   })
   ```
 
-  
-
-### Jest中对测试用例进行分组
+### Jest 中对测试用例进行分组
 
 - **全部测试用例**
 
   ```js
   import NewBaoJian from './newBaoJian'
   const baojian = new NewBaoJian()
-  
-  beforeAll(()=>{
-      console.log('吃完饭后，走进了红浪漫洗浴')
+
+  beforeAll(() => {
+    console.log('吃完饭后，走进了红浪漫洗浴')
   })
-  
-  beforeEach(()=>{
-      console.log('给了300元钱后......')
+
+  beforeEach(() => {
+    console.log('给了300元钱后......')
   })
-  
-  test('测试 大脚足浴  方法',()=>{
-      baojian.gongzhu(1)
-      baojian.anjiao()
-      console.log(baojian.fuwu)
-      expect(baojian.fuwu).toEqual('大脚走进房间为你_足疗')
+
+  test('测试 大脚足浴  方法', () => {
+    baojian.gongzhu(1)
+    baojian.anjiao()
+    console.log(baojian.fuwu)
+    expect(baojian.fuwu).toEqual('大脚走进房间为你_足疗')
   })
-  
-  test('测试 刘英按摩  方法',()=>{
-      baojian.gongzhu(2)
-      baojian.anmo()
-      console.log(baojian.fuwu)
-      expect(baojian.fuwu).toEqual('刘英走进房间为你_按摩')
+
+  test('测试 刘英按摩  方法', () => {
+    baojian.gongzhu(2)
+    baojian.anmo()
+    console.log(baojian.fuwu)
+    expect(baojian.fuwu).toEqual('刘英走进房间为你_按摩')
   })
-  
-  test('测试 大脚泰式保健  方法',()=>{
-      baojian.gongzhu(1)
-      baojian.taishi()
-      console.log(baojian.fuwu)
-      expect(baojian.fuwu).toEqual('大脚走进房间为你_泰式保健')
+
+  test('测试 大脚泰式保健  方法', () => {
+    baojian.gongzhu(1)
+    baojian.taishi()
+    console.log(baojian.fuwu)
+    expect(baojian.fuwu).toEqual('大脚走进房间为你_泰式保健')
   })
-  
-  test('测试 刘英宫廷御疗  方法',()=>{
-      baojian.gongzhu(2)
-      baojian.gongting()
-      console.log(baojian.fuwu)
-      expect(baojian.fuwu).toEqual('刘英走进房间为你_宫廷御疗')
+
+  test('测试 刘英宫廷御疗  方法', () => {
+    baojian.gongzhu(2)
+    baojian.gongting()
+    console.log(baojian.fuwu)
+    expect(baojian.fuwu).toEqual('刘英走进房间为你_宫廷御疗')
   })
-  
-  afterEach(()=>{
-      console.log('完成后，我心满意足的坐在沙发上！！！')
+
+  afterEach(() => {
+    console.log('完成后，我心满意足的坐在沙发上！！！')
   })
-  
-  afterAll(()=>{
-      console.log('有钱人的生活就是这么的枯燥且寂寞')
+
+  afterAll(() => {
+    console.log('有钱人的生活就是这么的枯燥且寂寞')
   })
   ```
 
@@ -677,59 +659,57 @@
   ```js
   import NewBaoJian from './newBaoJian'
   const baojian = new NewBaoJian()
-  
-  beforeAll(()=>{
-      console.log('吃完饭后，走进了红浪漫洗浴')
+
+  beforeAll(() => {
+    console.log('吃完饭后，走进了红浪漫洗浴')
   })
-  
-  beforeEach(()=>{
-      console.log('给了300元钱后......')
+
+  beforeEach(() => {
+    console.log('给了300元钱后......')
   })
-  
-  describe('大脚相关服务',()=>{
-    test('测试 大脚足浴  方法',()=>{
+
+  describe('大脚相关服务', () => {
+    test('测试 大脚足浴  方法', () => {
       baojian.gongzhu(1)
       baojian.anjiao()
       console.log(baojian.fuwu)
       expect(baojian.fuwu).toEqual('大脚走进房间为你_足疗')
     })
-    test('测试 大脚泰式保健  方法',()=>{
+    test('测试 大脚泰式保健  方法', () => {
       baojian.gongzhu(1)
       baojian.taishi()
       console.log(baojian.fuwu)
       expect(baojian.fuwu).toEqual('大脚走进房间为你_泰式保健')
     })
   })
-  
-  describe('刘英相关服务',()=>{
-      test('测试 刘英按摩  方法',()=>{
-          baojian.gongzhu(2)
-          baojian.anmo()
-          console.log(baojian.fuwu)
-          expect(baojian.fuwu).toEqual('刘英走进房间为你_按摩')
-      })
-      test('测试 刘英宫廷御疗  方法',()=>{
-          baojian.gongzhu(2)
-          baojian.gongting()
-          console.log(baojian.fuwu)
-          expect(baojian.fuwu).toEqual('刘英走进房间为你_宫廷御疗')
-      })
+
+  describe('刘英相关服务', () => {
+    test('测试 刘英按摩  方法', () => {
+      baojian.gongzhu(2)
+      baojian.anmo()
+      console.log(baojian.fuwu)
+      expect(baojian.fuwu).toEqual('刘英走进房间为你_按摩')
+    })
+    test('测试 刘英宫廷御疗  方法', () => {
+      baojian.gongzhu(2)
+      baojian.gongting()
+      console.log(baojian.fuwu)
+      expect(baojian.fuwu).toEqual('刘英走进房间为你_宫廷御疗')
+    })
   })
-  
-  afterEach(()=>{
-      console.log('完成后，我心满意足的坐在沙发上！！！')
+
+  afterEach(() => {
+    console.log('完成后，我心满意足的坐在沙发上！！！')
   })
-  
-  afterAll(()=>{
-      console.log('有钱人的生活就是这么的枯燥且寂寞')
+
+  afterAll(() => {
+    console.log('有钱人的生活就是这么的枯燥且寂寞')
   })
   ```
 
-
-
 ### 钩子函数的作用域
 
-1. **Jest钩子函数作用域特点**
+1. **Jest 钩子函数作用域特点**
 
    - 钩子函数在父级分组可作用域子集，类似继承
    - 钩子函数同级分组作用域互不干扰，各起作用
@@ -744,57 +724,54 @@
    ```js
    import NewBaoJian from './newBaoJian'
    const baojian = new NewBaoJian()
-   
-   describe('最外层分组',()=>{
-       beforeAll(()=>{
-           console.log('吃完饭后，走进了红浪漫洗浴')
+
+   describe('最外层分组', () => {
+     beforeAll(() => {
+       console.log('吃完饭后，走进了红浪漫洗浴')
+     })
+
+     beforeEach(() => {
+       console.log('给了300元钱后......')
+     })
+
+     describe('大脚相关服务', () => {
+       test('测试 大脚足浴  方法', () => {
+         baojian.gongzhu(1)
+         baojian.anjiao()
+         console.log(baojian.fuwu)
+         expect(baojian.fuwu).toEqual('大脚走进房间为你_足疗')
        })
-   
-       beforeEach(()=>{
-           console.log('给了300元钱后......')
+       test('测试 大脚泰式保健  方法', () => {
+         baojian.gongzhu(1)
+         baojian.taishi()
+         console.log(baojian.fuwu)
+         expect(baojian.fuwu).toEqual('大脚走进房间为你_泰式保健')
        })
-   
-       describe('大脚相关服务',()=>{
-           test('测试 大脚足浴  方法',()=>{
-               baojian.gongzhu(1)
-               baojian.anjiao()
-               console.log(baojian.fuwu)
-               expect(baojian.fuwu).toEqual('大脚走进房间为你_足疗')
-   
-           })
-           test('测试 大脚泰式保健  方法',()=>{
-               baojian.gongzhu(1)
-               baojian.taishi()
-               console.log(baojian.fuwu)
-               expect(baojian.fuwu).toEqual('大脚走进房间为你_泰式保健')
-           })
-   
+     })
+
+     describe('刘英相关服务', () => {
+       test('测试 刘英按摩  方法', () => {
+         baojian.gongzhu(2)
+         baojian.anmo()
+         console.log(baojian.fuwu)
+         expect(baojian.fuwu).toEqual('刘英走进房间为你_按摩')
        })
-   
-       describe('刘英相关服务',()=>{
-           test('测试 刘英按摩  方法',()=>{
-               baojian.gongzhu(2)
-               baojian.anmo()
-               console.log(baojian.fuwu)
-               expect(baojian.fuwu).toEqual('刘英走进房间为你_按摩')
-           })
-   
-           test('测试 刘英宫廷御疗  方法',()=>{
-               baojian.gongzhu(2)
-               baojian.gongting()
-               console.log(baojian.fuwu)
-               expect(baojian.fuwu).toEqual('刘英走进房间为你_宫廷御疗')
-           })
-   
+
+       test('测试 刘英宫廷御疗  方法', () => {
+         baojian.gongzhu(2)
+         baojian.gongting()
+         console.log(baojian.fuwu)
+         expect(baojian.fuwu).toEqual('刘英走进房间为你_宫廷御疗')
        })
-   
-       afterEach(()=>{
-           console.log('完成后，我心满意足的坐在沙发上！！！')
-       })
-   
-       afterAll(()=>{
-           console.log('有钱人的生活就是这么的枯燥且寂寞')
-       })
+     })
+
+     afterEach(() => {
+       console.log('完成后，我心满意足的坐在沙发上！！！')
+     })
+
+     afterAll(() => {
+       console.log('有钱人的生活就是这么的枯燥且寂寞')
+     })
    })
    ```
 
@@ -802,14 +779,14 @@
 
 3. **钩子函数同级分组作用域互不干扰**
 
-   现在“大脚”和“刘英”都希望在服务客人后有小费，但是价格不同。这时候就可以在两个同级的`describe`中分别加入不同的`afterEach`，比如大脚要30元小费，刘英要50元小费。
+   现在“大脚”和“刘英”都希望在服务客人后有小费，但是价格不同。这时候就可以在两个同级的`describe`中分别加入不同的`afterEach`，比如大脚要 30 元小费，刘英要 50 元小费。
 
    ```js
-    afterEach(()=>{
-       console.log('------大脚，你服务的很好，给你30元小费')
+   afterEach(() => {
+     console.log('------大脚，你服务的很好，给你30元小费')
    })
-    afterEach(()=>{
-       console.log('------刘英，你服务的很好，给你50元小费')
+   afterEach(() => {
+     console.log('------刘英，你服务的很好，给你50元小费')
    })
    ```
 
@@ -818,25 +795,25 @@
    ```js
    console.log newBaoJian.test.js:27
        大脚走进房间为你_足疗
-   
+
      console.log newBaoJian.test.js:41
        ------大脚，你服务的很好，给你30元小费
-   
+
      console.log newBaoJian.test.js:35
        大脚走进房间为你_泰式保健
-   
+
      console.log newBaoJian.test.js:41
        ------大脚，你服务的很好，给你30元小费
-   
+
      console.log newBaoJian.test.js:52
        刘英走进房间为你_按摩
-   
+
      console.log newBaoJian.test.js:64
        ------刘英，你服务的很好，给你50元小费
-   
+
      console.log newBaoJian.test.js:59
        刘英走进房间为你_宫廷御疗
-   
+
      console.log newBaoJian.test.js:64
        ------刘英，你服务的很好，给你50元小费
    ```
@@ -848,41 +825,38 @@
    钩子函数要有个先后执行的关系。这个关系就是外部先执行，内部后执行。
 
    现在把已经注释的外层的`beforeAll`钩子函数注释去掉，然后在`describe`中加入`beforeAll`钩子函数。
-   
+
    ```js
-   beforeAll(()=>{
-       console.log('------然后走进了666号包房')
+   beforeAll(() => {
+     console.log('------然后走进了666号包房')
    })
    ```
-   
+
    这时候你再看“控制台”的结果，就变成了下面的样子。
-   
+
    ```js
     console.log newBaoJian.test.js:15
       吃完饭后，走进了红浪漫洗浴
-   
+
      console.log newBaoJian.test.js:25
        ------然后走进了666号包房
-   
+
      console.log newBaoJian.test.js:31
        大脚走进房间为你_足疗
-   
+
      console.log newBaoJian.test.js:45
        ------大脚，你服务的很好，给你30元小费
    ```
-   
-   这时候为你让你看的清楚，我再第一个test测试用例这里加入一个`only`，加入后，其它的用例都会`skipped`掉，只执行这一个。
-   
+
+   这时候为你让你看的清楚，我再第一个 test 测试用例这里加入一个`only`，加入后，其它的用例都会`skipped`掉，只执行这一个。
+
    ```js
-   test.only('测试 大脚足浴  方法',()=>{
-       baojian.gongzhu(1)
-       baojian.anjiao()
-       console.log(baojian.fuwu)
-       expect(baojian.fuwu).toEqual('大脚走进房间为你_足疗')
-   
+   test.only('测试 大脚足浴  方法', () => {
+     baojian.gongzhu(1)
+     baojian.anjiao()
+     console.log(baojian.fuwu)
+     expect(baojian.fuwu).toEqual('大脚走进房间为你_足疗')
    })
    ```
-   
+
    这个例子正好说明了，外部的钩子函数先执行，下级的分组后执行，也就是执行顺序是“由外到内”的.`only`的使用在工作中也是经常使用的，因为有时候测试用例很多，不好调试，就可以使用`only`的形式单独调试。
-
-
