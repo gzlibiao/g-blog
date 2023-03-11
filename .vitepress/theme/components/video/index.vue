@@ -71,7 +71,7 @@
     </div>
 
     <div v-if="state.status === 3">
-      <Play :url="state.url" :title="state.title"/>
+      <!-- <Play :url="state.url" :title="state.title"/> -->
     </div>
 
     <div
@@ -97,7 +97,7 @@
 
   import { ref, reactive, nextTick } from 'vue'
   import { get, postBlob } from '../../../utils/request.js'
-  import Play from './Play.vue'
+  // import Play from './Play.vue'
 
   const state = reactive({
     infos: [], // 根据关键字搜索到的影片

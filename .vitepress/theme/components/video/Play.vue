@@ -11,7 +11,7 @@
   import {reactive} from 'vue';
   
   const props=defineProps(['title','url']);
-  console.log(props,'props')
+  
   const options = reactive({
     width: '100%', //播放器高度
     height: '100%', //播放器高度
