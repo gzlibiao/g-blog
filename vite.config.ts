@@ -36,17 +36,17 @@ export default (): UserConfigExport => {
     optimizeDeps: {
       exclude: ['vitepress']
     },
-    // server: {
-    //   hmr: {
-    //     overlay: false
-    //   }
-    // },
-    // ssr: {
-    //   format: 'cjs'
-    // },
-    // legacy: {
-    //   buildSsrCjsExternalHeuristics: true
-    // },
+    server: {
+      hmr: {
+        overlay: false
+      }
+    },
+    ssr: {
+      format: 'cjs'
+    },
+    legacy: {
+      buildSsrCjsExternalHeuristics: true
+    },
     css: {
       postcss: {
         plugins: [
