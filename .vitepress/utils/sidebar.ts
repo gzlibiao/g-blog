@@ -20,6 +20,14 @@ export const sidebar = {
           link: '/docs/前端/打包/webpack'
         },
         {
+          text: 'jest',
+          link: '/docs/前端/自动化测试/jest'
+        },
+        {
+          text: 'nest',
+          link: '/docs/前端/seo/nest/nest'
+        },
+        {
           text: 'vite',
           link: '/docs/前端/打包/vite'
         },
@@ -33,7 +41,7 @@ export const sidebar = {
         },
         {
           text: 'nuxtjs',
-          link: '/docs/前端/nuxtjs/nuxtjs'
+          link: '/docs/前端/seo/nuxtjs/nuxtjs'
         },
         {
           text: 'promise',
