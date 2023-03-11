@@ -25,27 +25,30 @@ export default {
       chartData: data1,
     }
   },
+  setup(){
+    return <div></div>
+  },
   mounted() {
     setTimeout(() => {
       this.year = '2022';
       this.chartData = data2;
     }, 1000);
   },
-  render() {
-    const { year, chartData } = this;
-    return (
-      <div className="container">
-        <Canvas pixelRatio={ window.devicePixelRatio }>
-          <Chart data={ toRaw(chartData) }>
-            <Grahpic year={ year } />
-            <Axis field="genre"/>
-            <Axis field="sold"/>
-            <Interval x="genre" y="sold" color="genre" />
-          </Chart>
-        </Canvas>
-      </div>
-    );
-  },
+  // render() {
+    // const { year, chartData } = this;
+    // return (
+    //   <div className="container">
+    //     <Canvas pixelRatio={ window.devicePixelRatio }>
+    //       <Chart data={ toRaw(chartData) }>
+    //         <Grahpic year={ year } />
+    //         <Axis field="genre"/>
+    //         <Axis field="sold"/>
+    //         <Interval x="genre" y="sold" color="genre" />
+    //       </Chart>
+    //     </Canvas>
+    //   </div>
+    // );
+  // },
 };
 </script>
 

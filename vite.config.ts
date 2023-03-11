@@ -41,12 +41,12 @@ export default (): UserConfigExport => {
         overlay: false
       }
     },
-    // ssr: {
-    //   format: 'cjs'
-    // },
-    // legacy: {
-    //   buildSsrCjsExternalHeuristics: true
-    // },
+    ssr: {
+      format: 'cjs'
+    },
+    legacy: {
+      buildSsrCjsExternalHeuristics: true
+    },
     css: {
       postcss: {
         plugins: [
