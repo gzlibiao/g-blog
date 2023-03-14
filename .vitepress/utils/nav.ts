@@ -10,6 +10,6 @@ export const nav = [
   },
   {
     text: '记录',
-    link: 'https://gz_lib.gitee.io/g-resume/cdn/index.html?md'
+    link: 'https://gtols.netlify.app/#/markdown'
   }
 ]

@@ -10,7 +10,7 @@ const config = defineConfig({
       'link',
       {
         rel: 'icon',
-        href: 'https://cdn.jsdelivr.net/gh/gzlibiao/cdn-delivr@0.0.1/img/wechat.bmp'
+        href: "https://www.helloimg.com/images/2022/10/04/ZUXPTT.jpg"||'https://cdn.jsdelivr.net/gh/gzlibiao/cdn-delivr@0.0.1/img/wechat.bmp'
       }
     ]
   ],
@@ -23,7 +23,7 @@ const config = defineConfig({
   },
   // lastUpdated:true,
   themeConfig: {
-    logo: 'https://cdn.jsdelivr.net/gh/gzlibiao/cdn-delivr@0.0.1/img/wechat.bmp',
+    logo: "https://www.helloimg.com/images/2022/10/04/ZUXPTT.jpg"||'https://cdn.jsdelivr.net/gh/gzlibiao/cdn-delivr@0.0.1/img/wechat.bmp',
     nav,
     sidebar
     // footer: {

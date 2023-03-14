@@ -4,6 +4,11 @@ webpack 是一个打包工具
 将es6转es5代码用babel
 将非js资源通过loader转成js
 
+loader 和 plugin 的区别：
+
+loader 专门将 css,less，js，vue 等文件进行打包加载的。
+plugin 是插件，它是对 webpack 本身的扩展，是一个扩展器。
+
 ## webpack打包过程
 1. 识别入口文件
 2. 通过逐层识别模块依赖
@@ -54,3 +59,35 @@ accept-encoding: gzip
 ● 既然存在着这样的交换，那么就要求我们学会权衡。服务器的 CPU 性能不是无限的，如果存在大量的压缩需求，服务器也扛不住的。服务器一旦因此慢下来了，用户还是要等。Webpack 中 Gzip 压缩操作的存在，事实上就是为了在构建过程中去做一部分服务器的工作，为服务器分压。
 
 ● 压缩，谁也不能替代谁。它们必须和平共处，好好合作。作为开发者，我们也应该结合业务压力的实际强度情况，去做好这其中的权衡。
+
+
+## 手写一个webpack插件
+```js
+// 命名函数。
+function HelloPlugin(options) {
+// 使用 options 设置插件实例……
+console.log(options);
+}
+
+//插件函数的 prototype 上定义一个 apply 方法
+HelloPlugin.prototype.apply = compiler => {
+// 在将资产释放到输出目录后调用。
+compiler.hooks.emit.tapAsync('HelloPlugin', (compilation, callback) => {
+let fileList = `## in this build:\n\n`
+
+        console.log(compilation.assets);
+        const assets = compilation.assets
+        for(let key in assets){
+            console.log(key);
+            fileList+=`${key}\n`
+        }
+        compilation.assets['fileList.md'] = {
+            source:()=>{return fileList},
+            size:() => {return fileList.length}
+        }
+        callback()
+    })
+
+}
+module.exports = HelloPlugin
+```

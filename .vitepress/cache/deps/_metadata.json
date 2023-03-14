@@ -1,53 +1,13 @@
 {
-  "hash": "d2e0176b",
-  "browserHash": "2296340a",
+  "hash": "27ca558d",
+  "browserHash": "b048de6f",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/.pnpm/vue@3.2.47/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "520225ac",
-      "needsInterop": false
-    },
-    "fighting-design": {
-      "src": "../../../node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/index.js",
-      "file": "fighting-design.js",
-      "fileHash": "acb6b27f",
-      "needsInterop": false
-    },
-    "axios": {
-      "src": "../../../node_modules/.pnpm/axios@1.3.4/node_modules/axios/index.js",
-      "file": "axios.js",
-      "fileHash": "e75f0348",
-      "needsInterop": false
-    },
-    "@antv/f-vue": {
-      "src": "../../../node_modules/.pnpm/@antv+f-vue@0.0.35_vue@3.2.47/node_modules/@antv/f-vue/es/index.js",
-      "file": "@antv_f-vue.js",
-      "fileHash": "55834ac5",
-      "needsInterop": false
-    },
-    "@antv/f2": {
-      "src": "../../../node_modules/.pnpm/@antv+f2@4.0.41/node_modules/@antv/f2/es/index.js",
-      "file": "@antv_f2.js",
-      "fileHash": "0f953d65",
-      "needsInterop": false
-    },
-    "vue3-video-play": {
-      "src": "../../../node_modules/.pnpm/vue3-video-play@1.3.1-beta.6/node_modules/vue3-video-play/dist/index.es.js",
-      "file": "vue3-video-play.js",
-      "fileHash": "4cf91cc5",
+      "fileHash": "d821a095",
       "needsInterop": false
     }
   },
-  "chunks": {
-    "chunk-E7FFEZEH": {
-      "file": "chunk-E7FFEZEH.js"
-    },
-    "chunk-GOZHMCMR": {
-      "file": "chunk-GOZHMCMR.js"
-    },
-    "chunk-4EOJPDL2": {
-      "file": "chunk-4EOJPDL2.js"
-    }
-  }
+  "chunks": {}
 }
