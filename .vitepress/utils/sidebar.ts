@@ -9,10 +9,6 @@ export const sidebar = {
       ]
     },
     {
-      text: '年度目标',
-      items: [{ text: '2023', link: '/docs/年度目标/2023' }]
-    },
-    {
       text: '前端相关',
       items: [
         {
@@ -32,8 +28,16 @@ export const sidebar = {
           link: '/docs/前端/打包/vite'
         },
         {
+          text: '埋点',
+          link:"/docs/前端/埋点/埋点"
+        },
+        {
           text: 'ast',
           link: '/docs/前端/ast/ast'
+        },
+        {
+          text: 'd3',
+          link:'/docs/前端/d3/d3'
         },
         {
           text: 'echarts',
@@ -78,6 +82,10 @@ export const sidebar = {
         {
           text: 'vue3',
           link: '/docs/前端/vue/vue3'
+        },
+        {
+          text: '开发vue3配置',
+          link: '/docs/前端/vue/vue3_config'
         },
         {
           text: 'pinia',
@@ -187,6 +195,10 @@ export const sidebar = {
         { text: 'git', link: '/docs/other/git' },
         { text: 'google调试技巧', link: '/docs/other/google调试技巧' }
       ]
+    },
+    {
+      text: '年度目标',
+      items: [{ text: '2023', link: '/docs/年度目标/2023' }]
     }
   ]
 }
