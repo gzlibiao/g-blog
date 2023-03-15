@@ -2,7 +2,7 @@ export const nav = [
   {
     text: '文档',
     activeMatch: '/docs/',
-    link: '/docs/Hello/Hello'
+    link: '/docs/开篇/hello'
   },
   {
     text: '个人',

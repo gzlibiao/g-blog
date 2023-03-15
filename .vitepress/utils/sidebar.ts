@@ -3,7 +3,7 @@ export const sidebar = {
     {
       text: '开篇',
       items: [
-        { text: 'Hello', link: '/docs/开篇/Hello' },
+        { text: 'Hello', link: '/docs/开篇/hello' },
         { text: '常识', link: '/docs/开篇/quotations' },
         { text: '面试汇总', link: '/docs/开篇/面试汇总' }
       ]
