@@ -1,14 +1,14 @@
 {
-  "classic":{
-    "compilerOptions": {
-      "jsxFactory": "jsx",
-      "jsxFragmentFactory": "Fragment"
-    }
-  },
-  "automatic":{
-    "compilerOptions": {
-      "jsx": "react-jsx",
-      "jsxImportSource": "@antv/f2"
-    }
-  }
+  // "classic":{
+  //   "compilerOptions": {
+  //     "jsxFactory": "jsx",
+  //     "jsxFragmentFactory": "Fragment"
+  //   }
+  // },
+  // "automatic":{
+  //   "compilerOptions": {
+  //     "jsx": "react-jsx",
+  //     "jsxImportSource": "@antv/f2"
+  //   }
+  // }
 }

@@ -3,9 +3,9 @@ export const sidebar = {
     {
       text: '开篇',
       items: [
-        { text: 'Hello', link: '/docs/Hello/Hello' },
-        { text: '常识', link: '/docs/Hello/quotations' },
-        { text: '面试话术', link: '/docs/Hello/面试话术' }
+        { text: 'Hello', link: '/docs/开篇/Hello' },
+        { text: '常识', link: '/docs/开篇/quotations' },
+        { text: '面试汇总', link: '/docs/开篇/面试汇总' }
       ]
     },
     {
@@ -28,16 +28,12 @@ export const sidebar = {
           link: '/docs/前端/打包/vite'
         },
         {
-          text: '埋点',
-          link:"/docs/前端/埋点/埋点"
-        },
-        {
           text: 'ast',
           link: '/docs/前端/ast/ast'
         },
         {
           text: 'd3',
-          link:'/docs/前端/d3/d3'
+          link: '/docs/前端/d3/d3'
         },
         {
           text: 'echarts',
@@ -96,9 +92,13 @@ export const sidebar = {
           link: '/docs/前端/vue/router'
         },
         {
-          text: 'uniapp',
+          text: 'vue2.7',
+          link: '/docs/前端/vue/vue27'
+        },
+        {
+          text: 'uniapp1',
           link: '/docs/前端/uniapp/uniapp'
-        }
+        },
       ]
     },
     {
@@ -191,6 +191,7 @@ export const sidebar = {
         { text: '视频', link: '/docs/other/视频' },
         { text: '开发体验', link: '/docs/other/开发体验' },
         { text: '图床', link: '/docs/other/图床' },
+        { text: '埋点', link: '/docs/other/埋点' },
         { text: 'dns', link: '/docs/other/dns' },
         { text: 'git', link: '/docs/other/git' },
         { text: 'google调试技巧', link: '/docs/other/google调试技巧' }

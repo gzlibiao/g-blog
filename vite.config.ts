@@ -17,9 +17,6 @@ const NavLinkPatch = (): Plugin => ({
 
 export default (): UserConfigExport => {
   return {
-    resolve: {
-      extensions:["vue","js","ts"]
-    },
     plugins: [
       // vue(),
       NavLinkPatch(),

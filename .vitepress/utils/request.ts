@@ -25,7 +25,7 @@ export const postBlob = async (url:string, data:{}) => {
   return await (
     await fetch(url, {
       method: 'post',
-      body: data,
+      body: data as BodyInit,
       headers: {
         'Content-Type': 'multipart/form-data'
       }
