@@ -553,3 +553,11 @@ MVC 是一种软件设计典范，用一种业务逻辑、数据、界面显示�
 
 <meta http-equiv="Content-Security-Policy" content="script-src 'self'; base-uri 'none'; object-src 'none'"/>
 
+## csrf
+
+1、当用户发送重要的请求时需要输入原始密码
+2、设置随机 Token
+3、检验 referer 来源，请求时判断请求链接是否为当前管理员正在使用的页面（管理员在编辑文章，
+黑客发来恶意的修改密码链接，因为修改密码页面管理员并没有在操作，所以攻击失败）
+4、设置验证码
+5、限制请求方式只能为 POST
