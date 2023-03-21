@@ -96,9 +96,9 @@ export const sidebar = {
           link: '/docs/前端/vue/vue27'
         },
         {
-          text: 'uniapp1',
+          text: 'uniapp',
           link: '/docs/前端/uniapp/uniapp'
-        },
+        }
       ]
     },
     {
@@ -147,6 +147,17 @@ export const sidebar = {
       text: 'mysql',
       items: [{ text: 'mysql', link: '/docs/mysql/mysql' }]
     },
+    // {
+    //   text: '可视化',
+    //   items: [
+    //     { text: '个性标签', link: '/docs/mysql/mysql' },
+    //     { text: '落日', link: '/docs/mysql/mysql' },
+    //     { text: '气温', link: '/docs/mysql/mysql' },
+    //     { text: '平台', link: '/docs/mysql/mysql' },
+    //     { text: '流动', link: '/docs/mysql/mysql' }
+    //     { text: '控制台', link: '/docs/mysql/mysql' }
+    //   ]
+    // },
     {
       text: '题目',
       items: [
