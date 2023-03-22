@@ -46,8 +46,8 @@ const config = defineConfig({
     nav,
     sidebar,
     algolia: {
-      appId: 'UJ8S8CVGE1',
-      apiKey: '99324453564277e8f1282355a1dd7d15',
+      appId: '16NA1JC9XO',
+      apiKey: '839bf3f7b585e2af3d7bbf10e870f7c5',
       indexName: 'gsmart',
       placeholder: '请输入关键词',
       buttonText: '搜索'
