@@ -1,5 +1,5 @@
 {
-  "index_name": "gsmart",
+  "index_name": "DB",
   "start_urls": ["https://gsmart.netlify.app"], 
   "rateLimit": 8,
   "maxDepth": 10,
