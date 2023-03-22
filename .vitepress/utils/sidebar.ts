@@ -52,8 +52,12 @@ export const sidebar = {
           link: '/docs/前端/pwa/pwa'
         },
         {
+          text: 'react',
+          link: '/docs/前端/react/react'
+        },
+        {
           text: 'react-native',
-          link: '/docs/前端/react-native/react-native'
+          link: '/docs/前端/react/native'
         },
         {
           text: 'seo',

@@ -227,3 +227,120 @@ js脚本执行将同步代码加入到执行栈中，由上到下执行 ，如�
 
 微任务：Promise.then、nextTick、Object.Observe
 宏任务：setTimeout、setInterval
+
+### js实现继承的几种方式
+
+1. 构造函数 -> 改this指向
+```js
+function Cat(){
+  Animal.call(this);
+  this.name ='Tom';
+}
+var cat = new Cat();
+console.log(cat instanceof Animal); // false
+console.log(cat instanceof Cat); // true
+```
+
+2. 原型链
+```js
+
+Animal.prototype.body = ['head','arm'];
+
+function Cat() {
+  this.name = 'Tom';
+}
+Animal.prototype.eat = function () {
+  console.log('i can eat')
+}
+Cat.prototype = new Animal();
+var cat = new Cat();
+console.log(cat ,new Animal());
+console.log(cat instanceof Animal); //true
+console.log(cat instanceof Cat); //true
+```
+
+3. 组合继承
+```js
+function Cat() {
+  Animal.call(this);
+  instance.name = 'Tom';
+}
+Animal.prototype.eat = function () {
+  console.log('i can eat');
+}
+Cat.prototype = Object.create(Animal.prototype); //组合继承也是需要修复构造函数指向的
+Cat.prototype.constructor = Cat;
+var cat1 = new Cat();
+var cat2 = new Cat();
+cat1.body.push('foot')
+```
+
+4. 类继承
+```js
+class Animal{
+  constructor() {
+    this.name = 'Tom';
+  }
+  play() {
+    console.log('animal')
+  } 
+}
+
+class Cat extends Animal{
+  constructor(type) {
+    super(type);
+    this.type ='cat'
+  }
+}
+var cat = new Cat();
+```
+
+5. 实例继承
+```js
+function Cat(){
+  var instance = new Animal();
+  instance.name = 'Tom';
+  return instance;
+}
+var cat = new Cat();
+console.log(cat );
+console.log(cat instanceof Animal); // true
+console.log(cat instanceof Cat); // false
+```
+
+6. 拷贝
+```js
+function Cat(){
+  var animal = new Animal();
+  for(var p in animal){
+    Cat.prototype[p] = animal[p];
+  }
+  Cat.prototype.name = 'Tom';
+}
+var cat = new Cat();
+console.log(cat);
+console.log(cat instanceof Animal); // false
+console.log(cat instanceof Cat); // true
+
+```
+
+7. 寄生
+```js
+function Cat(name){
+  Animal.call(this);
+  this.name = name || 'Tom';
+}
+
+(function(){// 创建一个没有实例方法的类
+  var Super = function(){};
+  Super.prototype = Animal.prototype;
+  Cat.prototype = new Super();
+  Cat.prototype.constructor = Cat;
+})();
+
+var cat = new Cat();
+console.log(cat);
+console.log(cat instanceof Animal); // true
+console.log(cat instanceof Cat); //true
+
+```

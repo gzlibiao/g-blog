@@ -5,14 +5,33 @@ import { description } from './utils/description'
 
 const config = defineConfig({
   title: 'Smart',
+  lang: 'zh-CN',
+  lastUpdated: true,
   head: [
     [
       'link',
       {
-        rel: 'icon',
-        href: "https://www.helloimg.com/images/2022/10/04/ZUXPTT.jpg"||'https://cdn.jsdelivr.net/gh/gzlibiao/cdn-delivr@0.0.1/img/wechat.bmp'
+        href: 'https://cdn.jsdelivr.net/npm/@docsearch/css@alpha',
+        rel: 'stylesheet'
       }
-    ]
+    ],
+    ['script', { src: 'https://cdn.jsdelivr.net/npm/@docsearch/js@alpha' }],
+    [
+      'link',
+      {
+        rel: 'icon',
+        href:
+          'https://www.helloimg.com/images/2022/10/04/ZUXPTT.jpg' ||
+          'https://cdn.jsdelivr.net/gh/gzlibiao/cdn-delivr@0.0.1/img/wechat.bmp'
+      }
+    ],
+    // 统计代码
+    [
+      'script',
+      { src: 'https://hm.baidu.com/hm.js?3a995a34b126c8652c75166fa2690df9' }
+    ],
+    // 百度推送代码
+    ['script', { src: '/doc-react-ant-admin/push.js' }]
   ],
   // cacheDir: '../../node_modules',
   outDir: './public',
@@ -23,9 +42,16 @@ const config = defineConfig({
   },
   // lastUpdated:true,
   themeConfig: {
-    logo: "https://www.helloimg.com/images/2022/10/04/ZUXPTT.jpg"||'https://cdn.jsdelivr.net/gh/gzlibiao/cdn-delivr@0.0.1/img/wechat.bmp',
+    logo: 'https://www.helloimg.com/images/2022/10/04/ZUXPTT.jpg',
     nav,
-    sidebar
+    sidebar,
+    algolia: {
+      appId: 'UJ8S8CVGE1',
+      apiKey: '99324453564277e8f1282355a1dd7d15',
+      indexName: 'gsmart',
+      placeholder: '请输入关键词',
+      buttonText: '搜索'
+    }
     // footer: {
     //   message: 'Released under the MIT License.',
     //   copyright: 'Copyright © 2019-present Evan You'
