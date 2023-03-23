@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 import { nav } from './utils/nav'
 import { sidebar } from './utils/sidebar'
 import { description } from './utils/description'
+import { algolia } from './configs/algolia'
 
 const config = defineConfig({
   title: 'Smart',
@@ -25,16 +26,10 @@ const config = defineConfig({
     lineNumbers: true
   },
   themeConfig: {
-    logo: 'https://www.helloimg.com/images/2022/10/04/ZUXPTT.jpg',
     nav,
     sidebar,
-    algolia: {
-      appId: '16NA1JC9XO',
-      apiKey: '839bf3f7b585e2af3d7bbf10e870f7c5',
-      indexName: 'DB',
-      placeholder: '请输入搜索内容',
-      buttonText: '搜索'
-    },
+    algolia,
+    logo: 'https://www.helloimg.com/images/2022/10/04/ZUXPTT.jpg',
     outline: 'deep',
     docFooter: {
       prev: '上一篇',
