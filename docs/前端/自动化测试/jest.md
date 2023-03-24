@@ -1,4 +1,5 @@
-### 前端工程化
+# jest
+## 前端工程化
 
 - 前端自动化测试
 
@@ -6,7 +7,348 @@
 
 - 高质量代码实现
 
-### Jest 简介和环境搭建
+### vue3 + vite + typescript + eslint + jest 項目配置
+1. 项目初始化
+# 全局安裝 vite-app
+
+npm i -g vite-app
+
+# 建立項目
+
+yarn create vite-app <project-name>
+
+# 或者
+
+npm init vite-app <project-name>
+
+# 進入項目，安裝依賴
+
+cd <project-name>
+yarn # 或 npm i
+
+# 启动項目
+
+yarn dev
+
+
+2. 引入TypeScript
+
+yarn add --dev typescript
+
+在 項目根目錄下建立 typescript 的配置文件 tsconfig.json
+```json
+{
+  "compilerOptions": {
+    // 容許從沒有設置默認導出的模塊中默認導入。這並不影響代碼的輸出，僅爲了類型檢查。
+    "allowSyntheticDefaultImports": true,
+    
+    // 解析非相對模塊名的基準目錄
+    "baseUrl": ".",
+
+    "esModuleInterop": true,
+
+    // 從 tslib 導入輔助工具函數（好比 __extends， __rest等）
+    "importHelpers": true,
+
+    // 指定生成哪一個模塊系統代碼
+    "module": "esnext",
+
+    // 決定如何處理模塊。
+    "moduleResolution": "node",
+
+    // 啓用全部嚴格類型檢查選項。
+    // 啓用 --strict至關於啓用 --noImplicitAny, --noImplicitThis, --alwaysStrict， 
+    // --strictNullChecks和 --strictFunctionTypes和--strictPropertyInitialization。
+    "strict": true,
+
+    // 生成相應的 .map文件。
+    "sourceMap": true,
+
+    // 忽略全部的聲明文件（ *.d.ts）的類型檢查。
+    "skipLibCheck": true,
+
+    // 指定ECMAScript目標版本 
+    "target": "esnext",
+    
+    // 要包含的類型聲明文件名列表
+    "types": [
+
+    ],
+
+    "isolatedModules": true,
+
+    // 模塊名到基於 baseUrl的路徑映射的列表。
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    // 編譯過程當中須要引入的庫文件的列表。
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable",
+      "ScriptHost"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+```
+
+在 src 目錄下新加 shim.d.ts 文件
+```js
+/* eslint-disable */
+import type { DefineComponent } from 'vue'
+
+declare module '*.vue' {
+  const component: DefineComponent<{}, {}, any>
+  export default component
+}
+```
+
+index.html
+
+```
+<script type="module" src="/src/main.js"></script>
+
+修改成：
+
+<script type="module" src="/src/main.ts"></script>
+```
+
+
+引入 eslint
+```
+# 安裝 eslint prettier 依賴
+
+# @typescript-eslint/parser @typescr ipt-eslint/eslint-plugin 爲 eslint 對 typescript 支持
+
+yarn add --dev eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-vue @typescript-eslint/parser @typescr ipt-eslint/eslint-plugin
+
+```
+
+.eslintrc.js
+```js
+module.exports = {
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
+    }
+  },
+  extends: [
+    'plugin:vue/vue3-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended'
+  ],
+  rules: {
+    '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
+    'vue/custom-event-name-casing': 'off',
+    'no-use-before-define': 'off',
+    // 'no-use-before-define': [
+    //   'error',
+    //   {
+    //     functions: false,
+    //     classes: true,
+    //   },
+    // ],
+    '@typescript-eslint/no-use-before-define': 'off',
+    // '@typescript-eslint/no-use-before-define': [
+    //   'error',
+    //   {
+    //     functions: false,
+    //     classes: true,
+    //   },
+    // ],
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/ban-types': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^h$',
+        varsIgnorePattern: '^h$'
+      }
+    ],
+    'no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^h$',
+        varsIgnorePattern: '^h$'
+      }
+    ],
+    'space-before-function-paren': 'off',
+    quotes: ['error', 'single'],
+    'comma-dangle': ['error', 'never']
+  }
+};
+
+```
+
+prettier.config.js
+```js
+module.exports = {
+  printWidth: 100,
+  tabWidth: 2,
+  useTabs: false,
+  semi: false, // 未尾逗號
+  vueIndentScriptAndStyle: true,
+  singleQuote: true, // 單引號
+  quoteProps: 'as-needed',
+  bracketSpacing: true,
+  trailingComma: 'none', // 未尾分號
+  jsxBracketSameLine: false,
+  jsxSingleQuote: false,
+  arrowParens: 'always',
+  insertPragma: false,
+  requirePragma: false,
+  proseWrap: 'never',
+  htmlWhitespaceSensitivity: 'strict',
+  endOfLine: 'lf'
+}
+
+```
+
+引入 jest 測試
+```
+yarn add --dev @babel/core @babel/preset-env @testing-library/jest-dom @types/jest @vue/test-utils@next babel-jest jest ts-jst vue-jest@next
+```
+
+jest.config.js
+```js
+const path = require('path')
+
+module.exports = {
+  rootDir: path.resolve(__dirname),
+  clearMocks: true,
+  coverageDirectory: 'coverage',
+  coverageProvider: 'v8',
+  moduleFileExtensions: ['vue', 'js', 'json', 'jsx', 'ts', 'tsx', 'node'],
+  // 別名設置
+  moduleNameMapper: {
+    '@/(.*)$': '<rootDir>/src/components/$1'
+  },
+  preset: 'ts-jest',
+  testEnvironment: 'jsdom',
+  // 測試文件
+  testMatch: ['<rootDir>/tests/unit/*.spec.ts?(x)'],
+  
+  transform: {
+    '^.+\\.vue$': 'vue-jest',
+    '^.+\\js$': 'babel-jest',
+    '^.+\\.(t|j)sx?$': 'ts-jest'
+  }
+}
+
+```
+
+test/unit/HelloWorld.spec.ts
+```js
+import { mount } from '@vue/test-utils'
+import HelloWorld from '@/HelloWorld.vue'
+
+test('displays message', async () => {
+  const wrapper = await mount(HelloWorld)
+
+  // Assert the rendered text of the component
+  expect(wrapper.find('p').text()).toBe('0')
+  await wrapper.find('button').trigger('click')
+  expect(wrapper.find('p').text()).toBe('1')
+})
+```
+
+store
+
+```
+import { InjectionKey } from 'vue'
+import { createStore, Store } from 'vuex'
+
+export interface State {
+  count: number
+}
+
+export const key: InjectionKey<Store<State>> = Symbol()
+
+export const store = createStore<State>({
+  state() {
+    return {
+      count: 0
+    }
+  },
+  mutations: {
+    increment(state) {
+      state.count++
+    }
+  }
+})
+
+```
+
+main.ts
+```js
+import { createApp } from 'vue'
+import { store, key } from './store'
+import App from './App'
+import './index.css'
+
+const app = createApp(App)
+app.use(store, key)
+app.mount('#app')
+```
+组件
+···
+<template>
+  <h1>{{ msg }}</h1>
+  <button @click="inCrement"> count is: </button>
+  <p>{{ count }}</p>
+</template>
+
+<script>
+  import { defineComponent, computed } from 'vue'
+  import { useStore } from 'vuex'
+  import { key } from '../store'
+
+  export default defineComponent({
+    name: 'HelloWorld',
+    props: {
+      msg: {
+        type: String,
+        default: ''
+      }
+    },
+    setup() {
+      const store = useStore(key)
+
+      const count = computed(() => store.state.count)
+
+      return {
+        count,
+        inCrement: () => store.commit('increment')
+      }
+    }
+  })
+</script>
+···
+
+## Jest 简介和环境搭建
 
 - 主流前端测试框架
 
