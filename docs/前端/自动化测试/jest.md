@@ -348,6 +348,238 @@ app.mount('#app')
 </script>
 ···
 
+### mount 和 shallowMount区别
+mount-> 会渲染出子组件
+shallowMount-> 会用存根替换子组件
+
+测试类型
+1.单元测试
+2.端到端测试
+3.组件测试
+## vue/test-utils
+### api
+1. condition
+```js
+import { shallowMount,mount } from '@vue/test-utils'
+
+// const app = {
+//   template: `
+//     <div>
+//       <button type="button">all</button>
+//       <button v-if="admin" type="button" id="admin">admin</button>
+//       <button v-show="dev" type="button" id="dev">dev</button>
+//     </div>
+//   `,
+//   props: {
+//     dev: Boolean
+//   },
+//   data() {
+//     return {
+//       admin: true,
+//     }
+//   }
+// }
+
+// v-if 使用 exists
+// v-show 使用 isVisible
+// get 元素一定存在
+// find 可能不存在
+describe('测试条件渲染', () => {
+  it('admin 存在', () => {
+    const wrapper = shallowMount(app)
+    expect(wrapper.find('#admin').exists()).toBe(true)
+  })
+
+  it('admin 不存在', () => {
+    const wrapper = shallowMount(app, {
+      data() {
+        return {
+          admin: false,
+        }
+      },
+    })
+    expect(wrapper.find('#admin').exists()).toBe(false)
+  })
+
+  it('dev 不可见', () => {
+    const wrapper = shallowMount(app)
+    expect(wrapper.find('#dev').isVisible()).toBe(false)
+  })
+  it('dev 可见', () => {
+    const wrapper = mount(app, {
+      props: {
+        dev: true,
+      },
+    })
+    // expect(wrapper.find('#dev').exists()).toBe(true)
+    // expect(wrapper.find('#dev').isVisible()).toBe(true)
+  })
+})
+```
+2. throw
+```js
+
+const testFn = () => {
+  throw new Error('test')
+}
+
+const fetchData = async () => {
+  return new Promise((resolve) => {
+    resolve(new Error("test"));
+  })
+}
+
+describe('函数', () => {
+  test('should throw error', () => {
+    expect(testFn).toThrow()
+    expect(testFn).not.toThrow('a')
+    expect(testFn).toThrow('test')
+  })
+
+  test('异步函数', () => {
+    fetchData(n => {
+      expect(n).toThrow('test')
+    })
+  })
+})
+
+```
+3. slot
+```js
+import { shallowMount } from '@vue/test-utils'
+
+const Slot = {
+  data() {
+    return {
+      name:'right'
+    }
+  },
+  template:`<div>
+    <div class="left">
+      <slot name="left">
+        <p>插槽后备内容</p>
+      </slot>
+    </div>
+    <slot />
+    <p>hello center</p>
+    <slot name="right" :msg="name"></slot>
+  </div>`
+}
+
+// NOTE 测试插槽
+describe('测试插槽', () => {
+  test('测试默认插槽', () => {
+    const wrapper = shallowMount(Slot)
+    expect(wrapper.find('.left').text()).toBe('插槽后备内容')
+  })
+  it('测试传递的插槽', () => {
+    const defaultSlot = `<h2>默认插槽</h2>`
+    const wrapper = shallowMount(Slot, {
+      slots: {
+        default: defaultSlot,
+      },
+    })
+    // console.log(wrapper.html())
+    expect(wrapper.find('h2').html()).toContain(defaultSlot)
+  })
+
+  it('作用域插槽', () => {
+    const wrapper = shallowMount(Slot, {
+      slots: {
+        // 传递 html
+        /*html*/
+        right: `<p class="right">hello, {{name}}</p>`,
+        // 传递 jsx
+        // right: ({ msg }) => <div class='right'>hello,{msg}</div>,
+      },
+    })
+    console.log(wrapper.html())
+    expect(wrapper.find('.right').text()).toContain('hello')
+  })
+})
+
+```
+
+4. object api
+```js
+describe('对象和数组匹配器', () => {
+  test('toBe', () => {
+    // NOTE 相同，即同一个引用
+    const a = { name: 'jest' }
+    expect(a).toBe(a)
+    expect(a).not.toBe({ name: 'jest' })
+    // 数组
+    const arr = [1, { name: 'jest' }, 'hello']
+    expect(arr).toBe(arr)
+    expect(arr).not.toBe([1, { name: 'jest' }, 'hello'])
+    expect(arr).toContain(1)
+    const set = new Set([1, { name: 'jest' }, 'hello'])
+    expect(set).toContain(1)
+    expect(set).toContainEqual({ name: 'jest' })
+    expect(set).not.toContain({ name: 'jest' })
+  })
+
+  test('toEqual', () => {
+    // NOTE 值比较，值相同即可
+    const a = { name: 'jest' }
+    expect(a).toEqual({ name: 'jest' })
+    expect(a).toEqual(a)
+    // 数组
+    const arr = [1, { name: 'jest' }, 'hello']
+    expect(arr).toEqual(arr)
+    expect(arr).toEqual([1, { name: 'jest' }, 'hello'])
+  })
+
+  test('toBeNull', () => {
+    const a = null
+    expect(a).toBeNull()
+    expect(a).not.toBe(undefined)
+  })
+
+  test('toBeUndefined', () => {
+    const a = undefined
+    const b = ''
+    expect(a).toBeUndefined()
+    expect(b).toBeDefined()
+    expect(b).not.toBeUndefined()
+  })
+  test('测试属性', () => {
+    // toBeInstanceOf
+    expect({ name: 'jest' }).toHaveProperty('name')
+  })
+})
+
+describe('数值匹配器', () => {
+  test('大于等于', () => {
+    expect(100).toEqual(100)
+    expect(200).toBeGreaterThan(100)
+    expect(200).toBeGreaterThanOrEqual(20)
+  })
+  test('小于等于', () => {
+    expect(200).toBeLessThan(300)
+    expect(200).toBeLessThanOrEqual(300)
+  })
+  test('等于', () => {
+    // console.log(0.1 + 0.2) // NOTE js 浮点数预算不精确，无法计算全等
+    expect(0.1 + 0.2).toBeCloseTo(0.3)
+    expect(0.1 + 0.2).not.toEqual(0.3)
+  })
+})
+
+
+describe('字符串匹配器', () => {
+  test('包含', () => {
+    const hello = 'hello world'
+    expect(hello).toEqual('hello world')
+    expect(hello).toMatch('hello')
+    expect(hello).toContain("world")
+    expect(hello).not.toMatch('hello2')
+  })
+})
+
+```
+### 查看代码覆盖率 jest --coverage
+
 ## Jest 简介和环境搭建
 
 - 主流前端测试框架
