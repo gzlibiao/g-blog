@@ -227,59 +227,72 @@ describe('函数', () => {
 ```
 
 - **3. slot**
-
-```js
-import { shallowMount } from '@vue/test-utils'
-
-const Slot = {
-  data() {
-    return {
-      name: 'right'
-    }
-  },
-  template: `<div>
+```vue
+<template>
+  <div>
     <div class="left">
       <slot name="left">
         <p>插槽后备内容</p>
       </slot>
     </div>
-    <slot />
-    <p>hello center</p>
-    <slot name="right" :msg="name"></slot>
-  </div>`
+    <slot ></slot>
+    <p>hello {{globName}}</p>
+    <slot name="right" :msg="msg"></slot>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      msg:'right'
+    }
+  },
 }
+</script>
+```
+```js
+import { shallowMount } from '@vue/test-utils'
+import Slot from './Slot'
 
+const MyComponent = {
+  template:`<span>自定义组件</span>`
+}
 // NOTE 测试插槽
 describe('测试插槽', () => {
-  test('测试默认插槽', () => {
-    const wrapper = shallowMount(Slot)
-    expect(wrapper.find('.left').text()).toBe('插槽后备内容')
-  })
-  it('测试传递的插槽', () => {
-    const defaultSlot = `<h2>默认插槽</h2>`
+  it('测试插槽', () => {
     const wrapper = shallowMount(Slot, {
       slots: {
-        default: defaultSlot
+        default: [`<h2>默认插槽</h2>`,`<h2>默认插槽</h2>`,`<h2>默认插槽</h2>`],
+        left: '<div>left 插槽<MyComponent/></div>',
+      },
+      stubs: {
+        // 用来注册自定义组件
+        MyComponent,
+      },
+      mocks: {
+        // 用来向渲染上下文添加 property
+        globName: 'jest'
       }
     })
-    // console.log(wrapper.html())
-    expect(wrapper.find('h2').html()).toContain(defaultSlot)
+    console.log(wrapper.html())
+    expect(wrapper.html()).toContain('jest')
   })
 
   it('作用域插槽', () => {
     const wrapper = shallowMount(Slot, {
-      slots: {
-        // 传递 html
-        /*html*/
-        right: `<p class="right">hello, {{name}}</p>`
-        // 传递 jsx
-        // right: ({ msg }) => <div class='right'>hello,{msg}</div>,
-      }
+      data() {
+        return {msg:'老六'}
+      },
+      scopedSlots: {
+        right(props){
+          return <div class="right">hello {props.msg}</div>
+        }
+      },
     })
-    console.log(wrapper.html())
-    expect(wrapper.find('.right').text()).toContain('hello')
+    expect(wrapper.find('.right').text()).toContain('老六')
   })
 })
+
 ```
 
 - **4. object api**
@@ -356,6 +369,91 @@ describe('字符串匹配器', () => {
     expect(hello).toMatch('hello')
     expect(hello).toContain('world')
     expect(hello).not.toMatch('hello2')
+  })
+})
+```
+
+- **5. http api**
+```vue
+<template>
+<div>
+
+<button type="button" @click="onClick"></button>
+<subComponent />
+
+  </div>
+</template>
+
+<script>
+import axios from 'axios'
+export default {
+  mounted(){
+    axios.get('/')
+  },
+  methods:{
+      onClick() {
+        this.$emit('my-click', 'hello', 123)
+      }
+  }
+}
+</script>
+
+```
+```js
+
+import { shallowMount } from '@vue/test-utils'
+import HttpTest from './HttpTest.vue'
+
+function factory() {
+  return shallowMount(HttpTest, {
+    global: {
+      stubs: {
+        subComponent: {
+          template: `<span></span>`,
+        },
+        HelloWorld: true,
+      },
+    },
+  })
+}
+
+let mockGet = '' //jest.fn()
+
+jest.mock('axios', () => {
+  return { get: () => mockGet() }
+})
+describe('HttpTest', () => {
+  // 每个 it 都会执行
+  beforeEach(() => {
+    mockGet = jest.fn()
+  })
+
+  it('模拟子组件', () => {
+    console.log(HttpTest)
+    const wrapper = factory()
+    console.log(wrapper.html())
+  })
+
+  it('测试 http 请求', () => {
+    const wrapper = factory()
+    expect(mockGet).toHaveBeenCalled()
+    expect(mockGet).toHaveBeenCalledTimes(1)
+  })
+
+  it('测试自定义事件', () => {
+    const wrapper = factory()
+    const button = wrapper.find('button')
+    button.trigger('click')
+    button.trigger('click')
+    console.log(wrapper.emitted())
+    console.log(wrapper.emitted('my-click'))
+    // NOTE 自定义事件
+    expect(wrapper.emitted()).toHaveProperty('my-click')
+    // NOTE 自定义事件抛出的数据
+    // 第一次触发保存在 0 下标  第二次触发 保存在 1 下标
+    expect(wrapper.emitted('my-click')[0]).toEqual(['hello', 123])
+    expect(wrapper.emitted('my-click')[1]).toEqual(['hello', 123])
+    // expect(wrapper.emitted()['my-click'][0][0]).toBe('hello')
   })
 })
 ```
@@ -1534,6 +1632,47 @@ cypress、playwright
 
 > 追求 100% 的测试覆盖率，可能会浪费很多时间。
 
+
+
+
+##### vue2.6.14 jest package.json文件
+```json
+{
+  "name": "my-vue-jest-test2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "vue": "^2.6.14",
+    "vue-router": "^3.6.5",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-unit-jest": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/test-utils": "^1.1.3",
+    "@vue/vue2-jest": "^27.0.0-alpha.2",
+    "babel-jest": "^27.0.6",
+    "jest": "^27.0.5",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "jest": {
+    "preset": "@vue/cli-plugin-unit-jest"
+  }
+}
+
+```
 ## 总结
 
 前端应用常用的测试，按照占比或者重要程度排序：单元测试、快照测试和端到端测试。
