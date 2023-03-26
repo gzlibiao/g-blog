@@ -7,7 +7,7 @@ import { algolia } from './configs/algolia'
 const config = defineConfig({
   title: 'Smart',
   lang: 'zh-CN',
-  lastUpdated: true,
+  lastUpdated: false,
   head: [
     [
       'link',

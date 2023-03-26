@@ -1,4 +1,5 @@
 # jest
+
 ## 前端工程化
 
 - 前端自动化测试
@@ -7,232 +8,9 @@
 
 - 高质量代码实现
 
-### vue3 + vite + typescript + eslint + jest 項目配置
-1. 项目初始化
-# 全局安裝 vite-app
-
-npm i -g vite-app
-
-# 建立項目
-
-yarn create vite-app <project-name>
-
-# 或者
-
-npm init vite-app <project-name>
-
-# 進入項目，安裝依賴
-
-cd <project-name>
-yarn # 或 npm i
-
-# 启动項目
-
-yarn dev
-
-
-2. 引入TypeScript
-
-yarn add --dev typescript
-
-在 項目根目錄下建立 typescript 的配置文件 tsconfig.json
-```json
-{
-  "compilerOptions": {
-    // 容許從沒有設置默認導出的模塊中默認導入。這並不影響代碼的輸出，僅爲了類型檢查。
-    "allowSyntheticDefaultImports": true,
-    
-    // 解析非相對模塊名的基準目錄
-    "baseUrl": ".",
-
-    "esModuleInterop": true,
-
-    // 從 tslib 導入輔助工具函數（好比 __extends， __rest等）
-    "importHelpers": true,
-
-    // 指定生成哪一個模塊系統代碼
-    "module": "esnext",
-
-    // 決定如何處理模塊。
-    "moduleResolution": "node",
-
-    // 啓用全部嚴格類型檢查選項。
-    // 啓用 --strict至關於啓用 --noImplicitAny, --noImplicitThis, --alwaysStrict， 
-    // --strictNullChecks和 --strictFunctionTypes和--strictPropertyInitialization。
-    "strict": true,
-
-    // 生成相應的 .map文件。
-    "sourceMap": true,
-
-    // 忽略全部的聲明文件（ *.d.ts）的類型檢查。
-    "skipLibCheck": true,
-
-    // 指定ECMAScript目標版本 
-    "target": "esnext",
-    
-    // 要包含的類型聲明文件名列表
-    "types": [
-
-    ],
-
-    "isolatedModules": true,
-
-    // 模塊名到基於 baseUrl的路徑映射的列表。
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
-    // 編譯過程當中須要引入的庫文件的列表。
-    "lib": [
-      "ESNext",
-      "DOM",
-      "DOM.Iterable",
-      "ScriptHost"
-    ]
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
-}
-```
-
-在 src 目錄下新加 shim.d.ts 文件
-```js
-/* eslint-disable */
-import type { DefineComponent } from 'vue'
-
-declare module '*.vue' {
-  const component: DefineComponent<{}, {}, any>
-  export default component
-}
-```
-
-index.html
-
-```
-<script type="module" src="/src/main.js"></script>
-
-修改成：
-
-<script type="module" src="/src/main.ts"></script>
-```
-
-
-引入 eslint
-```
-# 安裝 eslint prettier 依賴
-
-# @typescript-eslint/parser @typescr ipt-eslint/eslint-plugin 爲 eslint 對 typescript 支持
-
-yarn add --dev eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-vue @typescript-eslint/parser @typescr ipt-eslint/eslint-plugin
-
-```
-
-.eslintrc.js
-```js
-module.exports = {
-  parser: 'vue-eslint-parser',
-  parserOptions: {
-    parser: '@typescript-eslint/parser',
-    ecmaVersion: 2020,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true
-    }
-  },
-  extends: [
-    'plugin:vue/vue3-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
-    'plugin:prettier/recommended'
-  ],
-  rules: {
-    '@typescript-eslint/ban-ts-ignore': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-var-requires': 'off',
-    '@typescript-eslint/no-empty-function': 'off',
-    'vue/custom-event-name-casing': 'off',
-    'no-use-before-define': 'off',
-    // 'no-use-before-define': [
-    //   'error',
-    //   {
-    //     functions: false,
-    //     classes: true,
-    //   },
-    // ],
-    '@typescript-eslint/no-use-before-define': 'off',
-    // '@typescript-eslint/no-use-before-define': [
-    //   'error',
-    //   {
-    //     functions: false,
-    //     classes: true,
-    //   },
-    // ],
-    '@typescript-eslint/ban-ts-comment': 'off',
-    '@typescript-eslint/ban-types': 'off',
-    '@typescript-eslint/no-non-null-assertion': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        argsIgnorePattern: '^h$',
-        varsIgnorePattern: '^h$'
-      }
-    ],
-    'no-unused-vars': [
-      'error',
-      {
-        argsIgnorePattern: '^h$',
-        varsIgnorePattern: '^h$'
-      }
-    ],
-    'space-before-function-paren': 'off',
-    quotes: ['error', 'single'],
-    'comma-dangle': ['error', 'never']
-  }
-};
-
-```
-
-prettier.config.js
-```js
-module.exports = {
-  printWidth: 100,
-  tabWidth: 2,
-  useTabs: false,
-  semi: false, // 未尾逗號
-  vueIndentScriptAndStyle: true,
-  singleQuote: true, // 單引號
-  quoteProps: 'as-needed',
-  bracketSpacing: true,
-  trailingComma: 'none', // 未尾分號
-  jsxBracketSameLine: false,
-  jsxSingleQuote: false,
-  arrowParens: 'always',
-  insertPragma: false,
-  requirePragma: false,
-  proseWrap: 'never',
-  htmlWhitespaceSensitivity: 'strict',
-  endOfLine: 'lf'
-}
-
-```
-
-引入 jest 測試
-```
-yarn add --dev @babel/core @babel/preset-env @testing-library/jest-dom @types/jest @vue/test-utils@next babel-jest jest ts-jst vue-jest@next
-```
 
 jest.config.js
+
 ```js
 const path = require('path')
 
@@ -250,17 +28,17 @@ module.exports = {
   testEnvironment: 'jsdom',
   // 測試文件
   testMatch: ['<rootDir>/tests/unit/*.spec.ts?(x)'],
-  
+
   transform: {
     '^.+\\.vue$': 'vue-jest',
     '^.+\\js$': 'babel-jest',
     '^.+\\.(t|j)sx?$': 'ts-jest'
   }
 }
-
 ```
 
 test/unit/HelloWorld.spec.ts
+
 ```js
 import { mount } from '@vue/test-utils'
 import HelloWorld from '@/HelloWorld.vue'
@@ -277,7 +55,7 @@ test('displays message', async () => {
 
 store
 
-```
+```js
 import { InjectionKey } from 'vue'
 import { createStore, Store } from 'vuex'
 
@@ -303,6 +81,7 @@ export const store = createStore<State>({
 ```
 
 main.ts
+
 ```js
 import { createApp } from 'vue'
 import { store, key } from './store'
@@ -313,9 +92,11 @@ const app = createApp(App)
 app.use(store, key)
 app.mount('#app')
 ```
+
 组件
-···
+```vue
 <template>
+
   <h1>{{ msg }}</h1>
   <button @click="inCrement"> count is: </button>
   <p>{{ count }}</p>
@@ -346,22 +127,21 @@ app.mount('#app')
     }
   })
 </script>
-···
 
-### mount 和 shallowMount区别
+```
+
+## vue/test-utils
+
+### mount 和 shallowMount 区别
+
 mount-> 会渲染出子组件
 shallowMount-> 会用存根替换子组件
 
-测试类型
-1.单元测试
-2.端到端测试
-3.组件测试
-## vue/test-utils
 ### api
-1. condition
-```js
-import { shallowMount,mount } from '@vue/test-utils'
 
+- **1. condition**
+
+```js
 // const app = {
 //   template: `
 //     <div>
@@ -379,11 +159,12 @@ import { shallowMount,mount } from '@vue/test-utils'
 //     }
 //   }
 // }
-
 // v-if 使用 exists
 // v-show 使用 isVisible
 // get 元素一定存在
 // find 可能不存在
+import { shallowMount, mount } from '@vue/test-utils'
+
 describe('测试条件渲染', () => {
   it('admin 存在', () => {
     const wrapper = shallowMount(app)
@@ -394,9 +175,9 @@ describe('测试条件渲染', () => {
     const wrapper = shallowMount(app, {
       data() {
         return {
-          admin: false,
+          admin: false
         }
-      },
+      }
     })
     expect(wrapper.find('#admin').exists()).toBe(false)
   })
@@ -408,24 +189,25 @@ describe('测试条件渲染', () => {
   it('dev 可见', () => {
     const wrapper = mount(app, {
       props: {
-        dev: true,
-      },
+        dev: true
+      }
     })
     // expect(wrapper.find('#dev').exists()).toBe(true)
     // expect(wrapper.find('#dev').isVisible()).toBe(true)
   })
 })
 ```
-2. throw
-```js
 
+- **2. throw**
+
+```js
 const testFn = () => {
   throw new Error('test')
 }
 
 const fetchData = async () => {
   return new Promise((resolve) => {
-    resolve(new Error("test"));
+    resolve(new Error('test'))
   })
 }
 
@@ -437,24 +219,25 @@ describe('函数', () => {
   })
 
   test('异步函数', () => {
-    fetchData(n => {
+    fetchData((n) => {
       expect(n).toThrow('test')
     })
   })
 })
-
 ```
-3. slot
+
+- **3. slot**
+
 ```js
 import { shallowMount } from '@vue/test-utils'
 
 const Slot = {
   data() {
     return {
-      name:'right'
+      name: 'right'
     }
   },
-  template:`<div>
+  template: `<div>
     <div class="left">
       <slot name="left">
         <p>插槽后备内容</p>
@@ -476,8 +259,8 @@ describe('测试插槽', () => {
     const defaultSlot = `<h2>默认插槽</h2>`
     const wrapper = shallowMount(Slot, {
       slots: {
-        default: defaultSlot,
-      },
+        default: defaultSlot
+      }
     })
     // console.log(wrapper.html())
     expect(wrapper.find('h2').html()).toContain(defaultSlot)
@@ -488,19 +271,19 @@ describe('测试插槽', () => {
       slots: {
         // 传递 html
         /*html*/
-        right: `<p class="right">hello, {{name}}</p>`,
+        right: `<p class="right">hello, {{name}}</p>`
         // 传递 jsx
         // right: ({ msg }) => <div class='right'>hello,{msg}</div>,
-      },
+      }
     })
     console.log(wrapper.html())
     expect(wrapper.find('.right').text()).toContain('hello')
   })
 })
-
 ```
 
-4. object api
+- **4. object api**
+
 ```js
 describe('对象和数组匹配器', () => {
   test('toBe', () => {
@@ -566,19 +349,221 @@ describe('数值匹配器', () => {
   })
 })
 
-
 describe('字符串匹配器', () => {
   test('包含', () => {
     const hello = 'hello world'
     expect(hello).toEqual('hello world')
     expect(hello).toMatch('hello')
-    expect(hello).toContain("world")
+    expect(hello).toContain('world')
     expect(hello).not.toMatch('hello2')
   })
 })
-
 ```
-### 查看代码覆盖率 jest --coverage
+
+### 测试覆盖率
+
+生成测试覆盖率 jest --coverage
+测试覆盖率：就是执行过的代码占总代码的比例，比如执行了多少行(Line)，执行了多少个分支(Branch)，执行了多少个函数(Function)，执行了多少条语句(Statement)。
+
+
+### vue3 + vite + typescript + eslint + jest 項目配置
+
+1. 项目初始化
+
+### 全局安裝 vite-app
+
+npm i -g vite-app
+
+### 建立項目
+
+yarn create vite-app project-name
+
+### 或者
+
+npm init vite-app project-name
+
+2. 引入 TypeScript
+
+yarn add --dev typescript
+
+3. 在 項目根目錄下建立 typescript 的配置文件 tsconfig.json
+
+```js
+{
+  "compilerOptions": {
+    // 容許從沒有設置默認導出的模塊中默認導入。這並不影響代碼的輸出，僅爲了類型檢查。
+    "allowSyntheticDefaultImports": true,
+
+    // 解析非相對模塊名的基準目錄
+    "baseUrl": ".",
+
+    "esModuleInterop": true,
+
+    // 從 tslib 導入輔助工具函數（好比 __extends， __rest等）
+    "importHelpers": true,
+
+    // 指定生成哪一個模塊系統代碼
+    "module": "esnext",
+
+    // 決定如何處理模塊。
+    "moduleResolution": "node",
+
+    // 啓用全部嚴格類型檢查選項。
+    // 啓用 --strict至關於啓用 --noImplicitAny, --noImplicitThis, --alwaysStrict，
+    // --strictNullChecks和 --strictFunctionTypes和--strictPropertyInitialization。
+    "strict": true,
+
+    // 生成相應的 .map文件。
+    "sourceMap": true,
+
+    // 忽略全部的聲明文件（ *.d.ts）的類型檢查。
+    "skipLibCheck": true,
+
+    // 指定ECMAScript目標版本
+    "target": "esnext",
+
+    // 要包含的類型聲明文件名列表
+    "types": [],
+
+    "isolatedModules": true,
+
+    // 模塊名到基於 baseUrl的路徑映射的列表。
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    // 編譯過程當中須要引入的庫文件的列表。
+    "lib": ["ESNext", "DOM", "DOM.Iterable", "ScriptHost"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": ["node_modules"]
+}
+```
+
+4. 在 src 目錄下新加 shim.d.ts 文件
+
+```js
+import type { DefineComponent } from 'vue'
+
+declare module '*.vue' {
+  const component: DefineComponent<{}, {}, any>
+  export default component
+}
+```
+
+5. index.html
+
+```js
+<script type="module" src="/src/main.js"></script>
+// 改成
+<script type="module" src="/src/main.ts"></script>
+```
+
+
+6. 引入 eslint 安裝 eslint prettier 依賴
+
+yarn add --dev eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-vue @typescript-eslint/parser @typescr ipt-eslint/eslint-plugin
+
+
+7. .eslintrc.js
+
+```js
+module.exports = {
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
+    }
+  },
+  extends: [
+    'plugin:vue/vue3-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended'
+  ],
+  rules: {
+    '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
+    'vue/custom-event-name-casing': 'off',
+    'no-use-before-define': 'off',
+    // 'no-use-before-define': [
+    //   'error',
+    //   {
+    //     functions: false,
+    //     classes: true,
+    //   },
+    // ],
+    '@typescript-eslint/no-use-before-define': 'off',
+    // '@typescript-eslint/no-use-before-define': [
+    //   'error',
+    //   {
+    //     functions: false,
+    //     classes: true,
+    //   },
+    // ],
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/ban-types': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^h$',
+        varsIgnorePattern: '^h$'
+      }
+    ],
+    'no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^h$',
+        varsIgnorePattern: '^h$'
+      }
+    ],
+    'space-before-function-paren': 'off',
+    quotes: ['error', 'single'],
+    'comma-dangle': ['error', 'never']
+  }
+}
+```
+
+8. prettier.config.js
+
+```js
+module.exports = {
+  printWidth: 100,
+  tabWidth: 2,
+  useTabs: false,
+  semi: false, // 未尾逗號
+  vueIndentScriptAndStyle: true,
+  singleQuote: true, // 單引號
+  quoteProps: 'as-needed',
+  bracketSpacing: true,
+  trailingComma: 'none', // 未尾分號
+  jsxBracketSameLine: false,
+  jsxSingleQuote: false,
+  arrowParens: 'always',
+  insertPragma: false,
+  requirePragma: false,
+  proseWrap: 'never',
+  htmlWhitespaceSensitivity: 'strict',
+  endOfLine: 'lf'
+}
+```
+
+9. 引入 jest 測試
+
+yarn add --dev @babel/core @babel/preset-env @testing-library/jest-dom @types/jest @vue/test-utils@next babel-jest jest ts-jst vue-jest@next
 
 ## Jest 简介和环境搭建
 
@@ -886,7 +871,7 @@ describe('字符串匹配器', () => {
 
 - **开启自动化测试（`package.js`）**
 
-  ```js
+  ```json
   {
     "name": "jesttest",
     "version": "1.0.0",
@@ -894,7 +879,7 @@ describe('字符串匹配器', () => {
     "main": "index.js",
     "scripts": {
       "test": "jest --watchAll",
-      "coverage":"jest --coverage"
+      "coverage": "jest --coverage"
     },
     "author": "",
     "license": "ISC",
@@ -903,8 +888,6 @@ describe('字符串匹配器', () => {
     }
   }
   ```
-
-- **支持`import`和`ES6`语法**
 
   目前我们的 Jest 是不支持`import...from....`这种形式，如果使用就会报错，因为 Jest 默认支持的是`CommonJS`规范，也就是`Node.js`中的语法，他只支持`require`这种引用。所以我们使用`import...from...`是`ES6`的语法，所以使用就会报错。
 
@@ -1434,15 +1417,6 @@ describe('字符串匹配器', () => {
    ```
 
    这个例子正好说明了，外部的钩子函数先执行，下级的分组后执行，也就是执行顺序是“由外到内”的.`only`的使用在工作中也是经常使用的，因为有时候测试用例很多，不好调试，就可以使用`only`的形式单独调试。
-
-
-
-
-
-
-
-
-
 
 # 前端应用测试简介
 
