@@ -13,6 +13,10 @@ export const sidebar = {
       text: '前端相关',
       items: [
         {
+          text: '布局',
+          link: '/docs/前端/布局/layout'
+        },
+        {
           text: 'webpack',
           link: '/docs/前端/打包/webpack'
         },
@@ -152,17 +156,6 @@ export const sidebar = {
       text: 'mysql',
       items: [{ text: 'mysql', link: '/docs/mysql/mysql' }]
     },
-    // {
-    //   text: '可视化',
-    //   items: [
-    //     { text: '个性标签', link: '/docs/mysql/mysql' },
-    //     { text: '落日', link: '/docs/mysql/mysql' },
-    //     { text: '气温', link: '/docs/mysql/mysql' },
-    //     { text: '平台', link: '/docs/mysql/mysql' },
-    //     { text: '流动', link: '/docs/mysql/mysql' }
-    //     { text: '控制台', link: '/docs/mysql/mysql' }
-    //   ]
-    // },
     {
       text: '题目',
       items: [
