@@ -13,8 +13,8 @@ export const sidebar = {
       text: '前端相关',
       items: [
         {
-          text: '布局',
-          link: '/docs/前端/布局/layout'
+          text: 'css',
+          link: '/docs/前端/css/css'
         },
         {
           text: 'webpack',
