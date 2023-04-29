@@ -29,7 +29,6 @@
 
     <iframe src="https://gtols.netlify.app/#/tag" height="350" width="100%" frameborder="0"/>
 
-    <!-- <feedback /> -->
   </f-main>
 </template>
 

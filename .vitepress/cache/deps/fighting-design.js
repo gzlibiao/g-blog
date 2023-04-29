@@ -2,6 +2,7 @@ import {
   Fragment,
   Teleport,
   Transition,
+  __export,
   computed,
   createApp,
   createBaseVNode,
@@ -44,12 +45,9 @@ import {
   withDirectives,
   withKeys,
   withModifiers
-} from "./chunk-GOZHMCMR.js";
-import {
-  __export
-} from "./chunk-JC4IRQUL.js";
+} from "./chunk-YKGVC3IO.js";
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/index3.js
+// node_modules/fighting-design/es/index3.js
 var index3_exports = {};
 __export(index3_exports, {
   FAlert: () => i5,
@@ -120,7 +118,7 @@ __export(index3_exports, {
   useLoadingBar: () => p3
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/alert/src/index3.js
+// node_modules/fighting-design/es/alert/src/index3.js
 var l = {
   type: {
     type: String,
@@ -194,7 +192,7 @@ var l = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/close-btn/src/index3.js
+// node_modules/fighting-design/es/close-btn/src/index3.js
 var e = {
   size: {
     type: [String, Number],
@@ -222,7 +220,7 @@ var e = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/svg-icon/src/index3.js
+// node_modules/fighting-design/es/svg-icon/src/index3.js
 var l2 = {
   icon: {
     type: Object,
@@ -242,7 +240,7 @@ var l2 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_utils/utils/index.js
+// node_modules/fighting-design/es/_utils/utils/index.js
 var r = (t36, e30 = 2) => Number(t36.toFixed(e30));
 var n = (t36, e30 = 200) => {
   let o4;
@@ -261,18 +259,18 @@ var l3 = (t36) => t36 > 9 ? t36.toString() : `0${t36}`;
 var s = (t36, e30 = "px") => t36 ? typeof t36 == "string" ? t36 : t36 + e30 : "";
 var j = (t36) => t36 ? typeof t36 == "number" ? t36 : Number.parseFloat(t36) || 0 : 0;
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_utils/error/index.js
+// node_modules/fighting-design/es/_utils/error/index.js
 var c2 = true;
 var e2 = (o4, n17) => {
   c2 && console.warn(`[${o4}]: ${n17}`);
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_utils/run-callback/index.js
+// node_modules/fighting-design/es/_utils/run-callback/index.js
 var r2 = (n17, o4) => {
   n17 && n17(o4);
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/svg-icon/src/index2.js
+// node_modules/fighting-design/es/svg-icon/src/index2.js
 var _ = defineComponent({
   name: "FSvgIcon"
 });
@@ -300,7 +298,7 @@ var B = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_utils/install/index.js
+// node_modules/fighting-design/es/_utils/install/index.js
 var n2 = (t36) => (t36.install = (l35) => {
   const { name: e30 } = t36;
   l35.component(e30, t36);
@@ -312,10 +310,10 @@ var s2 = (t36, l35) => (t36.install = (e30) => {
   e30.directive(l35, t36);
 }, t36);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/svg-icon/index.js
+// node_modules/fighting-design/es/svg-icon/index.js
 var i2 = n2(B);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_virtual/index.js
+// node_modules/fighting-design/es/_virtual/index.js
 var s3 = (t36, e30) => {
   const o4 = t36.__vccOpts || t36;
   for (const [r25, c27] of e30)
@@ -323,7 +321,7 @@ var s3 = (t36, e30) => {
   return o4;
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-cross/index.js
+// node_modules/fighting-design/es/_svg/f-icon-cross/index.js
 var r4 = {};
 var c3 = {
   width: "1em",
@@ -346,7 +344,7 @@ function l4(_26, d8) {
 }
 var a = s3(r4, [["render", l4]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/close-btn/src/index2.js
+// node_modules/fighting-design/es/close-btn/src/index2.js
 var y = defineComponent({
   name: "FCloseBtn"
 });
@@ -391,10 +389,10 @@ var V = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/close-btn/index.js
+// node_modules/fighting-design/es/close-btn/index.js
 var i4 = n2(V);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/alert/src/index2.js
+// node_modules/fighting-design/es/alert/src/index2.js
 var A = {
   key: 0,
   class: "f-alert__title"
@@ -495,10 +493,10 @@ var O = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/alert/index.js
+// node_modules/fighting-design/es/alert/index.js
 var i5 = n2(O);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/aside/src/index3.js
+// node_modules/fighting-design/es/aside/src/index3.js
 var t = {
   width: {
     type: [String, Number],
@@ -510,7 +508,7 @@ var t = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/aside/src/index2.js
+// node_modules/fighting-design/es/aside/src/index2.js
 var u2 = defineComponent({
   name: "FAside"
 });
@@ -534,10 +532,10 @@ var k = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/aside/index.js
+// node_modules/fighting-design/es/aside/index.js
 var f = n2(k);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/avatar/src/index3.js
+// node_modules/fighting-design/es/avatar/src/index3.js
 var e3 = {
   src: {
     type: String,
@@ -603,7 +601,7 @@ var e3 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/message/src/index3.js
+// node_modules/fighting-design/es/message/src/index3.js
 var e4 = {
   id: {
     type: String,
@@ -673,7 +671,7 @@ var e4 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/loading-bar/src/index3.js
+// node_modules/fighting-design/es/loading-bar/src/index3.js
 var t2 = {
   type: {
     type: String,
@@ -681,7 +679,7 @@ var t2 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/loading-bar/src/index2.js
+// node_modules/fighting-design/es/loading-bar/src/index2.js
 var m = defineComponent({
   name: "FLoadingBar"
 });
@@ -701,7 +699,7 @@ var d = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/message/src/index2.js
+// node_modules/fighting-design/es/message/src/index2.js
 var U = {
   key: 2,
   class: "f-message__text"
@@ -818,7 +816,7 @@ var ae = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/notification/src/index3.js
+// node_modules/fighting-design/es/notification/src/index3.js
 var e5 = {
   id: {
     type: String,
@@ -889,7 +887,7 @@ var e5 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-circle-cross/index.js
+// node_modules/fighting-design/es/_svg/f-icon-circle-cross/index.js
 var c4 = {};
 var n3 = {
   width: "1em",
@@ -918,7 +916,7 @@ function l5(_26, d8) {
 }
 var a2 = s3(c4, [["render", l5]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-lightbulb/index.js
+// node_modules/fighting-design/es/_svg/f-icon-lightbulb/index.js
 var r5 = {};
 var c5 = {
   width: "1em",
@@ -941,7 +939,7 @@ function _2(l35, d8) {
 }
 var u3 = s3(r5, [["render", _2]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-smile-line/index.js
+// node_modules/fighting-design/es/_svg/f-icon-smile-line/index.js
 var n4 = {};
 var r6 = {
   width: "32",
@@ -960,7 +958,7 @@ function _3(i44, a17) {
 }
 var m2 = s3(n4, [["render", _3]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-thumb-up/index.js
+// node_modules/fighting-design/es/_svg/f-icon-thumb-up/index.js
 var r7 = {};
 var c6 = {
   width: "1em",
@@ -983,7 +981,7 @@ function h2(_26, d8) {
 }
 var u4 = s3(r7, [["render", h2]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-warning/index.js
+// node_modules/fighting-design/es/_svg/f-icon-warning/index.js
 var r8 = {};
 var c7 = {
   width: "32",
@@ -1007,7 +1005,7 @@ function h3(i44, a17) {
 }
 var m3 = s3(r8, [["render", h3]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/notification/src/index2.js
+// node_modules/fighting-design/es/notification/src/index2.js
 var ie = {
   key: 0,
   class: "f-notification__icon"
@@ -1146,7 +1144,7 @@ var Ie = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_hooks/use-message-mange/index.js
+// node_modules/fighting-design/es/_hooks/use-message-mange/index.js
 var a3 = () => {
   const t36 = reactive({}), i44 = (e30, n17) => t36[e30] ? t36[e30].findIndex(
     (r25) => r25.id === n17
@@ -1168,7 +1166,7 @@ var a3 = () => {
   };
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_hooks/use-message/index.js
+// node_modules/fighting-design/es/_hooks/use-message/index.js
 var b2 = a3();
 var T = (o4) => {
   let a17 = 1;
@@ -1218,7 +1216,7 @@ var T = (o4) => {
   }), { instance: t36 };
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_hooks/use-filter-props/index.js
+// node_modules/fighting-design/es/_hooks/use-filter-props/index.js
 var c8 = (e30, t36) => {
   const r25 = reactive({});
   for (const o4 of t36)
@@ -1226,7 +1224,7 @@ var c8 = (e30, t36) => {
   return r25;
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_utils/load-image/index.js
+// node_modules/fighting-design/es/_utils/load-image/index.js
 var c9 = Object.defineProperty;
 var l8 = (o4, s27, r25) => s27 in o4 ? c9(o4, s27, { enumerable: true, configurable: true, writable: true, value: r25 }) : o4[s27] = r25;
 var t3 = (o4, s27, r25) => (l8(o4, typeof s27 != "symbol" ? s27 + "" : s27, r25), r25);
@@ -1277,7 +1275,7 @@ var h4 = class extends i9 {
 };
 var b3 = (o4, s27, r25) => s27.lazy ? new h4(o4, s27, r25).lazyCreateImg() : new i9(o4, s27, r25).loadCreateImg();
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_hooks/use-load-image/index.js
+// node_modules/fighting-design/es/_hooks/use-load-image/index.js
 var g = (o4) => {
   const r25 = ref(true), e30 = ref(o4.lazy);
   return {
@@ -1292,7 +1290,7 @@ var g = (o4) => {
   };
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/avatar/src/index2.js
+// node_modules/fighting-design/es/avatar/src/index2.js
 var V2 = {
   key: 1,
   class: "f-avatar__text"
@@ -1380,10 +1378,10 @@ var W2 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/avatar/index.js
+// node_modules/fighting-design/es/avatar/index.js
 var f2 = n2(W2);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/back-top/src/index3.js
+// node_modules/fighting-design/es/back-top/src/index3.js
 var e6 = {
   round: {
     type: Boolean,
@@ -1431,7 +1429,7 @@ var e6 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/back-top/src/index2.js
+// node_modules/fighting-design/es/back-top/src/index2.js
 var B2 = ["onClick"];
 var L = defineComponent({
   name: "FBackTop"
@@ -1498,10 +1496,10 @@ var H = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/back-top/index.js
+// node_modules/fighting-design/es/back-top/index.js
 var f3 = n2(H);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/badge/src/index3.js
+// node_modules/fighting-design/es/badge/src/index3.js
 var t4 = {
   value: {
     type: [String, Number],
@@ -1536,7 +1534,7 @@ var t4 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/badge/src/index2.js
+// node_modules/fighting-design/es/badge/src/index2.js
 var S = defineComponent({
   name: "FBadge"
 });
@@ -1579,10 +1577,10 @@ var x = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/badge/index.js
+// node_modules/fighting-design/es/badge/index.js
 var i10 = n2(x);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/breadcrumb/src/index3.js
+// node_modules/fighting-design/es/breadcrumb/src/index3.js
 var t5 = {
   separator: {
     type: Object,
@@ -1605,7 +1603,7 @@ var e7 = Symbol(
   "breadcrumb-props-key"
 );
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/breadcrumb/src/index2.js
+// node_modules/fighting-design/es/breadcrumb/src/index2.js
 var d2 = defineComponent({
   name: "FBreadcrumb"
 });
@@ -1623,10 +1621,10 @@ var b4 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/breadcrumb/index.js
+// node_modules/fighting-design/es/breadcrumb/index.js
 var i11 = n2(b4);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/breadcrumb-item/src/index3.js
+// node_modules/fighting-design/es/breadcrumb-item/src/index3.js
 var t6 = {
   color: {
     type: String,
@@ -1642,7 +1640,7 @@ var t6 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-chevron-right/index.js
+// node_modules/fighting-design/es/_svg/f-icon-chevron-right/index.js
 var r9 = {};
 var c10 = {
   width: "1em",
@@ -1665,7 +1663,7 @@ function _5(l35, d8) {
 }
 var a4 = s3(r9, [["render", _5]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/breadcrumb-item/src/index2.js
+// node_modules/fighting-design/es/breadcrumb-item/src/index2.js
 var B3 = { class: "f-breadcrumb-item__text" };
 var I = defineComponent({
   name: "FBreadcrumbItem"
@@ -1695,10 +1693,10 @@ var x2 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/breadcrumb-item/index.js
+// node_modules/fighting-design/es/breadcrumb-item/index.js
 var f4 = n2(x2);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/button/src/index3.js
+// node_modules/fighting-design/es/button/src/index3.js
 var t7 = {
   bold: {
     type: Boolean,
@@ -1806,7 +1804,7 @@ var t7 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/button-group/src/index3.js
+// node_modules/fighting-design/es/button-group/src/index3.js
 var l9 = {
   size: {
     type: String,
@@ -1820,7 +1818,7 @@ var l9 = {
 };
 var t8 = Symbol("button-group-props-key");
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-loading-a/index.js
+// node_modules/fighting-design/es/_svg/f-icon-loading-a/index.js
 var c11 = {};
 var n5 = {
   width: "32",
@@ -1839,7 +1837,7 @@ function _6(s27, i44) {
 }
 var m4 = s3(c11, [["render", _6]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_utils/ripples/index.js
+// node_modules/fighting-design/es/_utils/ripples/index.js
 var n6 = Object.defineProperty;
 var p2 = (s27, t36, e30) => t36 in s27 ? n6(s27, t36, { enumerable: true, configurable: true, writable: true, value: e30 }) : s27[t36] = e30;
 var i13 = (s27, t36, e30) => (p2(s27, typeof t36 != "symbol" ? t36 + "" : t36, e30), e30);
@@ -1883,7 +1881,7 @@ var l11 = class {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_utils/change-color/index.js
+// node_modules/fighting-design/es/_utils/change-color/index.js
 var l12 = Object.defineProperty;
 var g2 = (e30, t36, o4) => t36 in e30 ? l12(e30, t36, { enumerable: true, configurable: true, writable: true, value: o4 }) : e30[t36] = o4;
 var n7 = (e30, t36, o4) => (g2(e30, typeof t36 != "symbol" ? t36 + "" : t36, o4), o4);
@@ -1922,7 +1920,7 @@ var c12 = class {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/button/src/index2.js
+// node_modules/fighting-design/es/button/src/index2.js
 var U2 = ["href", "target"];
 var V3 = ["disabled", "autofocus", "name", "type"];
 var j3 = defineComponent({
@@ -2061,10 +2059,10 @@ var X = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/button/index.js
+// node_modules/fighting-design/es/button/index.js
 var i14 = n2(X);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/button-group/src/index2.js
+// node_modules/fighting-design/es/button-group/src/index2.js
 var d3 = defineComponent({
   name: "FButtonGroup"
 });
@@ -2095,14 +2093,14 @@ var z = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/button-group/index.js
+// node_modules/fighting-design/es/button-group/index.js
 var f5 = n2(z);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/calendar/src/index3.js
+// node_modules/fighting-design/es/calendar/src/index3.js
 var e8 = {
   date: {
     type: Date,
-    default: () => new Date(),
+    default: () => /* @__PURE__ */ new Date(),
     required: true
   },
   lunar: {
@@ -2143,7 +2141,7 @@ var e8 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/text/src/index3.js
+// node_modules/fighting-design/es/text/src/index3.js
 var l13 = {
   type: {
     type: String,
@@ -2205,7 +2203,7 @@ var l13 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/text/src/index2.js
+// node_modules/fighting-design/es/text/src/index2.js
 var b5 = defineComponent({
   name: "FText"
 });
@@ -2247,10 +2245,10 @@ var w = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/text/index.js
+// node_modules/fighting-design/es/text/index.js
 var i15 = n2(w);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-chevron-left/index.js
+// node_modules/fighting-design/es/_svg/f-icon-chevron-left/index.js
 var r11 = {};
 var c13 = {
   width: "1em",
@@ -2273,7 +2271,7 @@ function _7(l35, d8) {
 }
 var m5 = s3(r11, [["render", _7]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_utils/calendar-data/index.js
+// node_modules/fighting-design/es/_utils/calendar-data/index.js
 var b6 = ["日", "一", "二", "三", "四", "五", "六"];
 var f6 = [
   19416,
@@ -2814,10 +2812,10 @@ var B4 = [
   "7f0e27f1487f531b0b0bb0b6fb0722"
 ];
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_utils/calendar/index.js
+// node_modules/fighting-design/es/_utils/calendar/index.js
 var o = (t36, n17) => n17 === -1 ? 31 : n17 !== 1 ? [31, 0, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][n17] : t36 % 4 == 0 && t36 % 100 != 0 || t36 % 400 == 0 ? 29 : 28;
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_utils/calendar-lunar/index.js
+// node_modules/fighting-design/es/_utils/calendar-lunar/index.js
 var B5 = Object.defineProperty;
 var O2 = (c27, t36, e30) => t36 in c27 ? B5(c27, t36, { enumerable: true, configurable: true, writable: true, value: e30 }) : c27[t36] = e30;
 var u6 = (c27, t36, e30) => (O2(c27, typeof t36 != "symbol" ? t36 + "" : t36, e30), e30);
@@ -2880,7 +2878,7 @@ var j4 = class {
       if (a17 < 1900 || a17 > 2100 || a17 === 1900 && n17 === 1 && r25 < 31)
         return -1;
       let o4;
-      a17 ? o4 = new Date(a17, parseInt(n17.toString()) - 1, r25) : o4 = new Date();
+      a17 ? o4 = new Date(a17, parseInt(n17.toString()) - 1, r25) : o4 = /* @__PURE__ */ new Date();
       let s27, g8 = 0, D6 = 0;
       a17 = o4.getFullYear(), n17 = o4.getMonth() + 1, r25 = o4.getDate();
       let l35 = (Date.UTC(o4.getFullYear(), o4.getMonth(), o4.getDate()) - Date.UTC(1900, 0, 31)) / 864e5;
@@ -2928,15 +2926,15 @@ var j4 = class {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_hooks/use-calculi-time/index.js
+// node_modules/fighting-design/es/_hooks/use-calculi-time/index.js
 var N = (l35, e30) => {
   const o4 = ref(
-    new Date(`${l35.value}/${e30.value + 1}/1`).getDay()
+    (/* @__PURE__ */ new Date(`${l35.value}/${e30.value + 1}/1`)).getDay()
   ), v3 = new j4();
   watch(
     () => e30.value,
     (u11) => {
-      o4.value = new Date(`${l35.value}/${u11 + 1}/1`).getDay();
+      o4.value = (/* @__PURE__ */ new Date(`${l35.value}/${u11 + 1}/1`)).getDay();
     }
   );
   const i44 = computed(
@@ -3003,7 +3001,7 @@ var N = (l35, e30) => {
   };
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/calendar/src/index2.js
+// node_modules/fighting-design/es/calendar/src/index2.js
 var G2 = {
   key: 0,
   class: "f-calendar__header"
@@ -3123,10 +3121,10 @@ var Ce = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/calendar/index.js
+// node_modules/fighting-design/es/calendar/index.js
 var f7 = n2(Ce);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/card/src/index3.js
+// node_modules/fighting-design/es/card/src/index3.js
 var t10 = {
   title: {
     type: String,
@@ -3147,7 +3145,7 @@ var t10 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/card/src/index2.js
+// node_modules/fighting-design/es/card/src/index2.js
 var g3 = {
   key: 0,
   class: "f-card__header"
@@ -3189,10 +3187,10 @@ var S2 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/card/index.js
+// node_modules/fighting-design/es/card/index.js
 var i17 = n2(S2);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/checkbox/src/index3.js
+// node_modules/fighting-design/es/checkbox/src/index3.js
 var e10 = {
   modelValue: {
     type: [Boolean, Array],
@@ -3224,7 +3222,7 @@ var e10 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/checkbox-group/src/index3.js
+// node_modules/fighting-design/es/checkbox-group/src/index3.js
 var l14 = {
   modelValue: {
     type: [String, Number, Array],
@@ -3266,7 +3264,7 @@ var l14 = {
 };
 var t11 = Symbol("f-checkbox-group-props-key");
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/checkbox/src/index2.js
+// node_modules/fighting-design/es/checkbox/src/index2.js
 var O3 = ["value", "disabled"];
 var R = {
   key: 0,
@@ -3336,10 +3334,10 @@ var $2 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/checkbox/index.js
+// node_modules/fighting-design/es/checkbox/index.js
 var i18 = n2($2);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/checkbox-group/src/index2.js
+// node_modules/fighting-design/es/checkbox-group/src/index2.js
 var z2 = defineComponent({
   name: "FCheckboxGroup"
 });
@@ -3386,10 +3384,10 @@ var w2 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/checkbox-group/index.js
+// node_modules/fighting-design/es/checkbox-group/index.js
 var f8 = n2(w2);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/dialog/src/index3.js
+// node_modules/fighting-design/es/dialog/src/index3.js
 var l15 = {
   visible: {
     type: Boolean,
@@ -3455,7 +3453,7 @@ var l15 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/popup/src/index3.js
+// node_modules/fighting-design/es/popup/src/index3.js
 var t12 = {
   visible: {
     type: Boolean,
@@ -3525,7 +3523,7 @@ var t12 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/popup/src/index2.js
+// node_modules/fighting-design/es/popup/src/index2.js
 var $3 = ["onClick"];
 var A3 = defineComponent({
   name: "FPopup"
@@ -3616,10 +3614,10 @@ var q2 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/popup/index.js
+// node_modules/fighting-design/es/popup/index.js
 var f9 = n2(q2);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/dialog/src/index2.js
+// node_modules/fighting-design/es/dialog/src/index2.js
 var E2 = { class: "f-dialog__header" };
 var I2 = { class: "f-dialog__header-title" };
 var D2 = {
@@ -3702,10 +3700,10 @@ var U4 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/dialog/index.js
+// node_modules/fighting-design/es/dialog/index.js
 var f10 = n2(U4);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/divider/src/index3.js
+// node_modules/fighting-design/es/divider/src/index3.js
 var e11 = {
   position: {
     type: String,
@@ -3739,7 +3737,7 @@ var e11 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/divider/src/index2.js
+// node_modules/fighting-design/es/divider/src/index2.js
 var y2 = defineComponent({
   name: "FDivider"
 });
@@ -3776,10 +3774,10 @@ var $4 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/divider/index.js
+// node_modules/fighting-design/es/divider/index.js
 var f11 = n2($4);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/drawer/src/index3.js
+// node_modules/fighting-design/es/drawer/src/index3.js
 var t13 = {
   visible: {
     type: Boolean,
@@ -3845,7 +3843,7 @@ var t13 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/drawer/src/index2.js
+// node_modules/fighting-design/es/drawer/src/index2.js
 var _8 = { class: "f-drawer" };
 var $5 = { class: "f-drawer__header" };
 var E3 = { class: "f-drawer__header-title" };
@@ -3925,10 +3923,10 @@ var M2 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/drawer/index.js
+// node_modules/fighting-design/es/drawer/index.js
 var i19 = n2(M2);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/empty/src/index3.js
+// node_modules/fighting-design/es/empty/src/index3.js
 var t14 = {
   content: {
     type: String,
@@ -3960,7 +3958,7 @@ var t14 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-full-sharp/index.js
+// node_modules/fighting-design/es/_svg/f-icon-full-sharp/index.js
 var c15 = {};
 var n8 = {
   width: "32",
@@ -3984,7 +3982,7 @@ function s12(i44, d8) {
 }
 var m6 = s3(c15, [["render", s12]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/image/src/index3.js
+// node_modules/fighting-design/es/image/src/index3.js
 var t15 = {
   src: {
     type: String,
@@ -4053,7 +4051,7 @@ var t15 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/image/src/index2.js
+// node_modules/fighting-design/es/image/src/index2.js
 var L2 = ["draggable", "referrer-policy", "alt", "title"];
 var A4 = {
   key: 1,
@@ -4119,10 +4117,10 @@ var q3 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/image/index.js
+// node_modules/fighting-design/es/image/index.js
 var i20 = n2(q3);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/empty/src/index2.js
+// node_modules/fighting-design/es/empty/src/index2.js
 var F4 = { class: "f-empty__wrapper" };
 var v = {
   key: 0,
@@ -4170,10 +4168,10 @@ var V4 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/empty/index.js
+// node_modules/fighting-design/es/empty/index.js
 var f12 = n2(V4);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/expand-card/src/index3.js
+// node_modules/fighting-design/es/expand-card/src/index3.js
 var e12 = {
   imageList: {
     type: Array,
@@ -4201,7 +4199,7 @@ var e12 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/expand-card/src/index2.js
+// node_modules/fighting-design/es/expand-card/src/index2.js
 var I4 = ["onClick"];
 var S5 = defineComponent({
   name: "FExpandCard"
@@ -4252,10 +4250,10 @@ var D4 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/expand-card/index.js
+// node_modules/fighting-design/es/expand-card/index.js
 var a6 = n2(D4);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/footer/src/index3.js
+// node_modules/fighting-design/es/footer/src/index3.js
 var t16 = {
   height: {
     type: [String, Number],
@@ -4267,7 +4265,7 @@ var t16 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/footer/src/index2.js
+// node_modules/fighting-design/es/footer/src/index2.js
 var u7 = defineComponent({
   name: "FFooter"
 });
@@ -4291,10 +4289,10 @@ var k2 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/footer/index.js
+// node_modules/fighting-design/es/footer/index.js
 var i21 = n2(k2);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/header/src/index3.js
+// node_modules/fighting-design/es/header/src/index3.js
 var t17 = {
   height: {
     type: [String, Number],
@@ -4306,7 +4304,7 @@ var t17 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/header/src/index2.js
+// node_modules/fighting-design/es/header/src/index2.js
 var h6 = defineComponent({
   name: "FHeader"
 });
@@ -4330,10 +4328,10 @@ var k3 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/header/index.js
+// node_modules/fighting-design/es/header/index.js
 var f13 = n2(k3);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/image-preview/src/index3.js
+// node_modules/fighting-design/es/image-preview/src/index3.js
 var t18 = {
   visible: {
     type: Boolean,
@@ -4375,7 +4373,7 @@ var t18 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/toolbar/src/index3.js
+// node_modules/fighting-design/es/toolbar/src/index3.js
 var e13 = {
   round: {
     type: Boolean,
@@ -4412,7 +4410,7 @@ var e13 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/toolbar/src/index2.js
+// node_modules/fighting-design/es/toolbar/src/index2.js
 var z3 = defineComponent({
   name: "FToolbar"
 });
@@ -4458,10 +4456,10 @@ var P = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/toolbar/index.js
+// node_modules/fighting-design/es/toolbar/index.js
 var i22 = n2(P);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/toolbar-item/src/index3.js
+// node_modules/fighting-design/es/toolbar-item/src/index3.js
 var t19 = {
   color: {
     type: String,
@@ -4485,7 +4483,7 @@ var t19 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/toolbar-item/src/index2.js
+// node_modules/fighting-design/es/toolbar-item/src/index2.js
 var k4 = ["data-index"];
 var C3 = defineComponent({
   name: "FToolbarItem"
@@ -4513,10 +4511,10 @@ var B7 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/toolbar-item/index.js
+// node_modules/fighting-design/es/toolbar-item/index.js
 var i23 = n2(B7);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-layout-rows/index.js
+// node_modules/fighting-design/es/_svg/f-icon-layout-rows/index.js
 var r12 = {};
 var c16 = {
   width: "1em",
@@ -4539,7 +4537,7 @@ function _10(d8, l35) {
 }
 var m7 = s3(r12, [["render", _10]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-rotate-anti-clockwise/index.js
+// node_modules/fighting-design/es/_svg/f-icon-rotate-anti-clockwise/index.js
 var r13 = {};
 var c17 = {
   width: "1em",
@@ -4562,7 +4560,7 @@ function _11(l35, d8) {
 }
 var m8 = s3(r13, [["render", _11]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-rotate-clockwise/index.js
+// node_modules/fighting-design/es/_svg/f-icon-rotate-clockwise/index.js
 var r14 = {};
 var c18 = {
   width: "1em",
@@ -4585,7 +4583,7 @@ function _12(l35, d8) {
 }
 var m9 = s3(r14, [["render", _12]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-zoom-in/index.js
+// node_modules/fighting-design/es/_svg/f-icon-zoom-in/index.js
 var n9 = {};
 var c19 = {
   width: "1em",
@@ -4614,7 +4612,7 @@ function _13(d8, l35) {
 }
 var a7 = s3(n9, [["render", _13]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-zoom-out/index.js
+// node_modules/fighting-design/es/_svg/f-icon-zoom-out/index.js
 var c20 = {};
 var n10 = {
   width: "1em",
@@ -4643,7 +4641,7 @@ function _14(d8, l35) {
 }
 var a8 = s3(c20, [["render", _14]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_hooks/use-operation-img/index.js
+// node_modules/fighting-design/es/_hooks/use-operation-img/index.js
 var C4 = () => {
   const e30 = ref(1), o4 = ref(0), t36 = () => {
     r(e30.value, 1) >= 0.2 && (e30.value -= 0.2);
@@ -4670,7 +4668,7 @@ var C4 = () => {
   };
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/image-preview/src/index2.js
+// node_modules/fighting-design/es/image-preview/src/index2.js
 var K = ["src"];
 var Q2 = defineComponent({
   name: "FImagePreview"
@@ -4819,10 +4817,10 @@ var be = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/image-preview/index.js
+// node_modules/fighting-design/es/image-preview/index.js
 var i29 = n2(be);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/layout/src/index3.js
+// node_modules/fighting-design/es/layout/src/index3.js
 var r15 = {
   direction: {
     type: String,
@@ -4831,7 +4829,7 @@ var r15 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/layout/src/index2.js
+// node_modules/fighting-design/es/layout/src/index2.js
 var v2 = defineComponent({
   name: "FLayout"
 });
@@ -4856,10 +4854,10 @@ var h7 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/layout/index.js
+// node_modules/fighting-design/es/layout/index.js
 var i30 = n2(h7);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/link/src/index3.js
+// node_modules/fighting-design/es/link/src/index3.js
 var t20 = {
   type: {
     type: String,
@@ -4914,7 +4912,7 @@ var t20 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/link/src/index2.js
+// node_modules/fighting-design/es/link/src/index2.js
 var g4 = ["href", "target"];
 var L3 = defineComponent({
   name: "FLink"
@@ -4982,10 +4980,10 @@ var E4 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/link/index.js
+// node_modules/fighting-design/es/link/index.js
 var f14 = n2(E4);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/list/src/index3.js
+// node_modules/fighting-design/es/list/src/index3.js
 var l17 = {
   zebra: {
     type: Boolean,
@@ -5015,7 +5013,7 @@ var l17 = {
 };
 var t21 = Symbol("list-props-key");
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/list/src/index2.js
+// node_modules/fighting-design/es/list/src/index2.js
 var g5 = {
   key: 0,
   class: "f-list__header"
@@ -5069,10 +5067,10 @@ var B8 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/list/index.js
+// node_modules/fighting-design/es/list/index.js
 var f15 = n2(B8);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/list-item/src/index3.js
+// node_modules/fighting-design/es/list-item/src/index3.js
 var t22 = {
   background: {
     type: String,
@@ -5084,7 +5082,7 @@ var t22 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/list-item/src/index2.js
+// node_modules/fighting-design/es/list-item/src/index2.js
 var S6 = { class: "f-list-item__li" };
 var k6 = defineComponent({
   name: "FListItem"
@@ -5116,10 +5114,10 @@ var N2 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/list-item/index.js
+// node_modules/fighting-design/es/list-item/index.js
 var f16 = n2(N2);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_hooks/use-loading-bar/index.js
+// node_modules/fighting-design/es/_hooks/use-loading-bar/index.js
 var m10 = () => ({
   start: () => {
     const o4 = h(d);
@@ -5135,10 +5133,10 @@ var m10 = () => ({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/loading-bar/index.js
+// node_modules/fighting-design/es/loading-bar/index.js
 var p3 = r3(m10, "FLoadingBar");
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/main/src/index3.js
+// node_modules/fighting-design/es/main/src/index3.js
 var t23 = {
   padding: {
     type: [String, Number],
@@ -5146,7 +5144,7 @@ var t23 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/main/src/index2.js
+// node_modules/fighting-design/es/main/src/index2.js
 var h8 = defineComponent({
   props: t23,
   setup(o4) {
@@ -5166,18 +5164,18 @@ var h8 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/main/index.js
+// node_modules/fighting-design/es/main/index.js
 var f17 = n2(h8);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/message/index.js
+// node_modules/fighting-design/es/message/index.js
 var { instance: o2 } = T("message");
 var n11 = r3(o2, "FMessage");
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/notification/index.js
+// node_modules/fighting-design/es/notification/index.js
 var { instance: t24 } = T("notification");
 var m11 = r3(t24, "FMessage");
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/page-header/src/index3.js
+// node_modules/fighting-design/es/page-header/src/index3.js
 var t25 = {
   icon: {
     type: Object,
@@ -5217,7 +5215,7 @@ var t25 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-arrow-left/index.js
+// node_modules/fighting-design/es/_svg/f-icon-arrow-left/index.js
 var n12 = {};
 var c21 = {
   width: "1em",
@@ -5240,7 +5238,7 @@ function l18(_26, d8) {
 }
 var h9 = s3(n12, [["render", l18]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/page-header/src/index2.js
+// node_modules/fighting-design/es/page-header/src/index2.js
 var B9 = { class: "f-page-header" };
 var S7 = { class: "f-page-header__text" };
 var V5 = {
@@ -5301,10 +5299,10 @@ var A5 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/page-header/index.js
+// node_modules/fighting-design/es/page-header/index.js
 var a9 = n2(A5);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/progress/src/index3.js
+// node_modules/fighting-design/es/progress/src/index3.js
 var t26 = {
   percentage: {
     type: Number,
@@ -5360,7 +5358,7 @@ var t26 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/progress/src/index2.js
+// node_modules/fighting-design/es/progress/src/index2.js
 var C5 = ["aria-value"];
 var R2 = {
   key: 0,
@@ -5432,10 +5430,10 @@ var F5 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/progress/index.js
+// node_modules/fighting-design/es/progress/index.js
 var i32 = n2(F5);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/radio/src/index3.js
+// node_modules/fighting-design/es/radio/src/index3.js
 var e14 = {
   disabled: {
     type: Boolean,
@@ -5459,7 +5457,7 @@ var e14 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/radio-group/src/index3.js
+// node_modules/fighting-design/es/radio-group/src/index3.js
 var l19 = {
   disabled: {
     type: Boolean,
@@ -5499,7 +5497,7 @@ var t27 = Symbol(
   "radio-group-props-key"
 );
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/radio/src/index2.js
+// node_modules/fighting-design/es/radio/src/index2.js
 var O4 = ["value", "disabled", "name"];
 var T2 = {
   key: 0,
@@ -5571,10 +5569,10 @@ var G3 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/radio/index.js
+// node_modules/fighting-design/es/radio/index.js
 var f18 = n2(G3);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/radio-group/src/index2.js
+// node_modules/fighting-design/es/radio-group/src/index2.js
 var B10 = defineComponent({
   name: "FRadioGroup"
 });
@@ -5621,10 +5619,10 @@ var $6 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/radio-group/index.js
+// node_modules/fighting-design/es/radio-group/index.js
 var p4 = n2($6);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/rate/src/index3.js
+// node_modules/fighting-design/es/rate/src/index3.js
 var t28 = {
   modelValue: {
     type: Number,
@@ -5678,7 +5676,7 @@ var t28 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-star-b/index.js
+// node_modules/fighting-design/es/_svg/f-icon-star-b/index.js
 var l20 = {};
 var q4 = {
   width: "32",
@@ -5697,7 +5695,7 @@ function _15(s27, i44) {
 }
 var f19 = s3(l20, [["render", _15]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/rate/src/index2.js
+// node_modules/fighting-design/es/rate/src/index2.js
 var $7 = {
   class: "f-rate",
   role: "slider"
@@ -5758,10 +5756,10 @@ var O5 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/rate/index.js
+// node_modules/fighting-design/es/rate/index.js
 var i33 = n2(O5);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/ripple/src/index3.js
+// node_modules/fighting-design/es/ripple/src/index3.js
 var t29 = {
   ripplesColor: {
     type: String,
@@ -5795,7 +5793,7 @@ var t29 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/ripple/src/index2.js
+// node_modules/fighting-design/es/ripple/src/index2.js
 var z5 = defineComponent({
   name: "Ripple"
 });
@@ -5844,10 +5842,10 @@ var w3 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/ripple/index.js
+// node_modules/fighting-design/es/ripple/index.js
 var i34 = n2(w3);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/skeleton/src/index3.js
+// node_modules/fighting-design/es/skeleton/src/index3.js
 var l21 = {
   round: {
     type: Boolean,
@@ -5872,7 +5870,7 @@ var l21 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/skeleton/src/index2.js
+// node_modules/fighting-design/es/skeleton/src/index2.js
 var S8 = defineComponent({
   name: "FSkeleton"
 });
@@ -5900,10 +5898,10 @@ var B11 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/skeleton/index.js
+// node_modules/fighting-design/es/skeleton/index.js
 var f20 = n2(B11);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/space/src/index3.js
+// node_modules/fighting-design/es/space/src/index3.js
 var l22 = {
   vertical: {
     type: Boolean,
@@ -5928,7 +5926,7 @@ var l22 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/space/src/index2.js
+// node_modules/fighting-design/es/space/src/index2.js
 var k7 = defineComponent({
   name: "FSpace"
 });
@@ -5962,10 +5960,10 @@ var C6 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/space/index.js
+// node_modules/fighting-design/es/space/index.js
 var f21 = n2(C6);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/sticky-card/src/index3.js
+// node_modules/fighting-design/es/sticky-card/src/index3.js
 var e15 = {
   open: {
     type: Boolean,
@@ -6001,7 +5999,7 @@ var e15 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/sticky-card/src/index2.js
+// node_modules/fighting-design/es/sticky-card/src/index2.js
 var $8 = {
   key: 0,
   class: "f-sticky-card__source"
@@ -6060,10 +6058,10 @@ var V6 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/sticky-card/index.js
+// node_modules/fighting-design/es/sticky-card/index.js
 var f22 = n2(V6);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/switch/src/index3.js
+// node_modules/fighting-design/es/switch/src/index3.js
 var l23 = {
   modelValue: {
     type: Boolean,
@@ -6113,7 +6111,7 @@ var l23 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/switch/src/index2.js
+// node_modules/fighting-design/es/switch/src/index2.js
 var z7 = defineComponent({
   name: "FSwitch"
 });
@@ -6187,10 +6185,10 @@ var B12 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/switch/index.js
+// node_modules/fighting-design/es/switch/index.js
 var f23 = n2(B12);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tag/src/index3.js
+// node_modules/fighting-design/es/tag/src/index3.js
 var l24 = {
   type: {
     type: String,
@@ -6244,7 +6242,7 @@ var l24 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tag/src/index2.js
+// node_modules/fighting-design/es/tag/src/index2.js
 var T3 = defineComponent({
   name: "FTag"
 });
@@ -6303,10 +6301,10 @@ var V7 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tag/index.js
+// node_modules/fighting-design/es/tag/index.js
 var i35 = n2(V7);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tooltip/src/index3.js
+// node_modules/fighting-design/es/tooltip/src/index3.js
 var e16 = {
   content: {
     type: String,
@@ -6348,7 +6346,7 @@ var e16 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tooltip/src/index2.js
+// node_modules/fighting-design/es/tooltip/src/index2.js
 var y3 = ["f-content"];
 var C7 = defineComponent({
   name: "FTooltip"
@@ -6390,10 +6388,10 @@ var z8 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tooltip/index.js
+// node_modules/fighting-design/es/tooltip/index.js
 var p5 = n2(z8);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tree/src/index3.js
+// node_modules/fighting-design/es/tree/src/index3.js
 var t30 = {
   data: {
     type: Array,
@@ -6401,7 +6399,7 @@ var t30 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_utils/tree/index.js
+// node_modules/fighting-design/es/_utils/tree/index.js
 var h10 = (s27) => {
   const n17 = [];
   return s27.forEach((r25) => {
@@ -6425,7 +6423,7 @@ var d5 = (s27) => {
   return n17(s27);
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tree/src/index2.js
+// node_modules/fighting-design/es/tree/src/index2.js
 var C8 = { class: "f-tree" };
 var F6 = ["onClick"];
 var L5 = defineComponent({
@@ -6455,10 +6453,10 @@ var S9 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tree/index.js
+// node_modules/fighting-design/es/tree/index.js
 var f24 = n2(S9);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/watermark/src/index3.js
+// node_modules/fighting-design/es/watermark/src/index3.js
 var e17 = {
   content: {
     type: String,
@@ -6494,7 +6492,7 @@ var e17 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_utils/create-watermark/index.js
+// node_modules/fighting-design/es/_utils/create-watermark/index.js
 var l25 = (t36) => {
   const i44 = document.createElement("canvas"), n17 = window.devicePixelRatio || 1;
   i44.width = t36.width * n17, i44.height = t36.height * n17, i44.style.width = t36.width + "px", i44.style.height = t36.height + "px";
@@ -6504,7 +6502,7 @@ var l25 = (t36) => {
   return e30 && (e30.rotate(-8 * Math.PI / 100), e30.font = `${s(t36.fontSize)} serif`, e30.fillStyle = t36.fontColor, e30.textAlign = "left", e30.textBaseline = "middle", e30.fillText(t36.content, t36.width / 20, t36.height)), i44.toDataURL("image/png");
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/watermark/src/index2.js
+// node_modules/fighting-design/es/watermark/src/index2.js
 var b8 = defineComponent({
   name: "FWatermark"
 });
@@ -6541,10 +6539,10 @@ var y4 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/watermark/index.js
+// node_modules/fighting-design/es/watermark/index.js
 var f25 = n2(y4);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/input/src/index3.js
+// node_modules/fighting-design/es/input/src/index3.js
 var l26 = {
   modelValue: {
     type: [String, Number],
@@ -6643,7 +6641,7 @@ var l26 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/swap/src/index3.js
+// node_modules/fighting-design/es/swap/src/index3.js
 var t31 = {
   modelValue: {
     type: Boolean,
@@ -6673,7 +6671,7 @@ var t31 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/swap/src/index2.js
+// node_modules/fighting-design/es/swap/src/index2.js
 var w4 = defineComponent({
   name: "FSwap"
 });
@@ -6708,10 +6706,10 @@ var S10 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/swap/index.js
+// node_modules/fighting-design/es/swap/index.js
 var f26 = n2(S10);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-eye-off-outline/index.js
+// node_modules/fighting-design/es/_svg/f-icon-eye-off-outline/index.js
 var n14 = {};
 var r17 = {
   width: "32",
@@ -6730,7 +6728,7 @@ function s19(i44, a17) {
 }
 var h11 = s3(n14, [["render", s19]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-eye-outline/index.js
+// node_modules/fighting-design/es/_svg/f-icon-eye-outline/index.js
 var n15 = {};
 var r18 = {
   width: "32",
@@ -6749,7 +6747,7 @@ function s20(i44, l35) {
 }
 var h12 = s3(n15, [["render", s20]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_hooks/use-update-input/index.js
+// node_modules/fighting-design/es/_hooks/use-update-input/index.js
 var g6 = (e30, t36) => ({
   onInput: (n17) => {
     t36(
@@ -6765,7 +6763,7 @@ var g6 = (e30, t36) => ({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/input/src/index2.js
+// node_modules/fighting-design/es/input/src/index2.js
 var H3 = ["type", "max", "min", "maxlength", "value", "disabled", "readonly", "autofocus", "name", "placeholder", "onKeyup"];
 var J2 = createTextVNode("搜索");
 var M3 = defineComponent({
@@ -6878,10 +6876,10 @@ var ue = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/input/index.js
+// node_modules/fighting-design/es/input/index.js
 var f27 = n2(ue);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/up-load/src/index3.js
+// node_modules/fighting-design/es/up-load/src/index3.js
 var e18 = {
   files: {
     type: Array,
@@ -6933,7 +6931,7 @@ var e18 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-notes/index.js
+// node_modules/fighting-design/es/_svg/f-icon-notes/index.js
 var r19 = {};
 var c22 = {
   width: "1em",
@@ -6956,7 +6954,7 @@ function _18(h15, d8) {
 }
 var a11 = s3(r19, [["render", _18]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-plus/index.js
+// node_modules/fighting-design/es/_svg/f-icon-plus/index.js
 var r20 = {};
 var c23 = {
   width: "1em",
@@ -6979,7 +6977,7 @@ function _19(l35, d8) {
 }
 var u8 = s3(r20, [["render", _19]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/up-load/src/index2.js
+// node_modules/fighting-design/es/up-load/src/index2.js
 var A7 = { class: "f-up-load" };
 var G4 = ["onDrop", "onDragover"];
 var H4 = createTextVNode("选择文件");
@@ -7087,10 +7085,10 @@ var ae4 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/up-load/index.js
+// node_modules/fighting-design/es/up-load/index.js
 var f28 = n2(ae4);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/pagination/src/index3.js
+// node_modules/fighting-design/es/pagination/src/index3.js
 var e19 = {
   current: {
     type: Number,
@@ -7152,7 +7150,7 @@ var e19 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/select/src/index3.js
+// node_modules/fighting-design/es/select/src/index3.js
 var e20 = {
   modelValue: {
     type: [String, Number, Boolean],
@@ -7182,7 +7180,7 @@ var e20 = {
 };
 var l28 = Symbol("f-select-props-key");
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/dropdown/src/index3.js
+// node_modules/fighting-design/es/dropdown/src/index3.js
 var l29 = {
   spacing: {
     type: [String, Number],
@@ -7223,7 +7221,7 @@ var l29 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/trigger/src/index3.js
+// node_modules/fighting-design/es/trigger/src/index3.js
 var l30 = {
   spacing: {
     type: [String, Number],
@@ -7265,7 +7263,7 @@ var l30 = {
 };
 var t32 = Symbol("trigger-close-key");
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/trigger/src/index2.js
+// node_modules/fighting-design/es/trigger/src/index2.js
 var K3 = {
   class: normalizeClass(["f-trigger__content"])
 };
@@ -7336,10 +7334,10 @@ var F7 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/trigger/index.js
+// node_modules/fighting-design/es/trigger/index.js
 var f29 = n2(F7);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/dropdown/src/index2.js
+// node_modules/fighting-design/es/dropdown/src/index2.js
 var p6 = { class: "f-dropdown" };
 var g7 = defineComponent({
   name: "FDropdown"
@@ -7372,10 +7370,10 @@ var w5 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/dropdown/index.js
+// node_modules/fighting-design/es/dropdown/index.js
 var f30 = n2(w5);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_utils/get-children/index.js
+// node_modules/fighting-design/es/_utils/get-children/index.js
 var p7 = (e30, n17) => {
   let r25 = [];
   return i(e30) && e30.length && e30.forEach((t36) => {
@@ -7390,7 +7388,7 @@ var p7 = (e30, n17) => {
   }), r25;
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/select/src/index2.js
+// node_modules/fighting-design/es/select/src/index2.js
 var N4 = defineComponent({
   name: "FSelect"
 });
@@ -7457,10 +7455,10 @@ var q5 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/select/index.js
+// node_modules/fighting-design/es/select/index.js
 var f31 = n2(q5);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/option/src/index3.js
+// node_modules/fighting-design/es/option/src/index3.js
 var e21 = {
   value: {
     type: [String, Number],
@@ -7476,7 +7474,7 @@ var e21 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/option/src/index2.js
+// node_modules/fighting-design/es/option/src/index2.js
 var _20 = defineComponent({
   name: "FOption"
 });
@@ -7505,10 +7503,10 @@ var h13 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/option/index.js
+// node_modules/fighting-design/es/option/index.js
 var p8 = n2(h13);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/pagination/src/index2.js
+// node_modules/fighting-design/es/pagination/src/index2.js
 var M5 = { class: "f-pagination" };
 var O7 = ["onClick"];
 var R3 = defineComponent({
@@ -7644,10 +7642,10 @@ var Y = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/pagination/index.js
+// node_modules/fighting-design/es/pagination/index.js
 var a12 = n2(Y);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/table/src/index3.js
+// node_modules/fighting-design/es/table/src/index3.js
 var l31 = {
   data: {
     type: Array,
@@ -7700,7 +7698,7 @@ var l31 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/table/src/components/table-colgroup/index3.js
+// node_modules/fighting-design/es/table/src/components/table-colgroup/index3.js
 var l32 = {
   columns: {
     type: Array,
@@ -7708,7 +7706,7 @@ var l32 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/table/src/components/table-colgroup/index2.js
+// node_modules/fighting-design/es/table/src/components/table-colgroup/index2.js
 var a13 = ["width"];
 var _21 = defineComponent({
   name: "FTableColgroup"
@@ -7727,7 +7725,7 @@ var C9 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/table/src/index2.js
+// node_modules/fighting-design/es/table/src/index2.js
 var $9 = {
   key: 0,
   class: "f-table__header"
@@ -7838,10 +7836,10 @@ var ee2 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/table/index.js
+// node_modules/fighting-design/es/table/index.js
 var i38 = n2(ee2);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/dropdown-item/src/index3.js
+// node_modules/fighting-design/es/dropdown-item/src/index3.js
 var e22 = {
   disabled: {
     type: Boolean,
@@ -7853,7 +7851,7 @@ var e22 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/dropdown-item/src/index2.js
+// node_modules/fighting-design/es/dropdown-item/src/index2.js
 var _22 = defineComponent({
   name: "FDropdownItem"
 });
@@ -7880,10 +7878,10 @@ var w6 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/dropdown-item/index.js
+// node_modules/fighting-design/es/dropdown-item/index.js
 var f32 = n2(w6);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/textarea/src/index3.js
+// node_modules/fighting-design/es/textarea/src/index3.js
 var t33 = {
   modelValue: {
     type: String,
@@ -7945,7 +7943,7 @@ var t33 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/textarea/src/index2.js
+// node_modules/fighting-design/es/textarea/src/index2.js
 var w7 = ["rows", "value", "disabled", "readonly", "autofocus", "placeholder", "name"];
 var N5 = defineComponent({
   name: "FTextarea"
@@ -7998,10 +7996,10 @@ var H5 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/textarea/index.js
+// node_modules/fighting-design/es/textarea/index.js
 var e23 = n2(H5);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/input-number/src/index3.js
+// node_modules/fighting-design/es/input-number/src/index3.js
 var l33 = {
   modelValue: {
     type: Number,
@@ -8080,7 +8078,7 @@ var l33 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-chevron-up/index.js
+// node_modules/fighting-design/es/_svg/f-icon-chevron-up/index.js
 var r21 = {};
 var c24 = {
   width: "1em",
@@ -8103,7 +8101,7 @@ function _23(l35, d8) {
 }
 var a14 = s3(r21, [["render", _23]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-chevron-down/index.js
+// node_modules/fighting-design/es/_svg/f-icon-chevron-down/index.js
 var r22 = {};
 var c25 = {
   width: "1em",
@@ -8126,7 +8124,7 @@ function _24(l35, d8) {
 }
 var a15 = s3(r22, [["render", _24]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/input-number/src/index2.js
+// node_modules/fighting-design/es/input-number/src/index2.js
 var M7 = { class: "f-input-number" };
 var R5 = { class: "f-input-number__wrapper" };
 var U7 = {
@@ -8226,10 +8224,10 @@ var T4 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/input-number/index.js
+// node_modules/fighting-design/es/input-number/index.js
 var f33 = n2(T4);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tabs/src/index3.js
+// node_modules/fighting-design/es/tabs/src/index3.js
 var t34 = {
   position: {
     type: String,
@@ -8258,7 +8256,7 @@ var t34 = {
 };
 var e24 = Symbol("f-tabs");
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tabs/src/components/tabs-nav/index3.js
+// node_modules/fighting-design/es/tabs/src/components/tabs-nav/index3.js
 var t35 = {
   navs: {
     type: Array
@@ -8286,7 +8284,7 @@ var t35 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tabs/src/components/tabs-nav/index2.js
+// node_modules/fighting-design/es/tabs/src/components/tabs-nav/index2.js
 var oe2 = {
   key: 0,
   class: "f-tabs-nav__prefix"
@@ -8453,7 +8451,7 @@ var me = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tabs/src/utils/index.js
+// node_modules/fighting-design/es/tabs/src/utils/index.js
 var f34 = Array.isArray;
 var u9 = (r25) => typeof r25 == "object" && r25 !== null;
 var s25 = (r25) => {
@@ -8468,7 +8466,7 @@ function i41(r25, n17) {
   ) : [];
 }
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tabs/src/index2.js
+// node_modules/fighting-design/es/tabs/src/index2.js
 var W3 = { class: "f-tabs-content" };
 var q7 = defineComponent({
   name: "FTabs"
@@ -8551,10 +8549,10 @@ var R6 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tabs/index.js
+// node_modules/fighting-design/es/tabs/index.js
 var i42 = n2(R6);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tabs-pane/src/index3.js
+// node_modules/fighting-design/es/tabs-pane/src/index3.js
 var e25 = {
   name: {
     type: [String, Number]
@@ -8569,7 +8567,7 @@ var e25 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tabs-pane/src/index2.js
+// node_modules/fighting-design/es/tabs-pane/src/index2.js
 var N6 = {
   key: 0,
   class: "f-tabs-pane"
@@ -8594,10 +8592,10 @@ var B13 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/tabs-pane/index.js
+// node_modules/fighting-design/es/tabs-pane/index.js
 var f35 = n2(B13);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/date-picker/src/index3.js
+// node_modules/fighting-design/es/date-picker/src/index3.js
 var l34 = {
   date: {
     type: String,
@@ -8622,7 +8620,7 @@ var l34 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/date-picker/src/index2.js
+// node_modules/fighting-design/es/date-picker/src/index2.js
 var Y2 = { class: "f-date-picker" };
 var z9 = { class: "f-date-picker__content" };
 var C10 = defineComponent({
@@ -8635,7 +8633,7 @@ var N7 = defineComponent({
     "update:date": (n17) => n17
   },
   setup(n17, { emit: k8 }) {
-    const r25 = n17, d8 = new Date(), o4 = computed({
+    const r25 = n17, d8 = /* @__PURE__ */ new Date(), o4 = computed({
       get: () => r25.date,
       set: (e30) => {
         k8("update:date", e30);
@@ -8683,10 +8681,10 @@ var N7 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/date-picker/index.js
+// node_modules/fighting-design/es/date-picker/index.js
 var e26 = n2(N7);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/time-picker/src/index3.js
+// node_modules/fighting-design/es/time-picker/src/index3.js
 var e27 = {
   time: {
     type: String,
@@ -8702,7 +8700,7 @@ var e27 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/_svg/f-icon-clock-time/index.js
+// node_modules/fighting-design/es/_svg/f-icon-clock-time/index.js
 var n16 = {};
 var r23 = {
   width: "32",
@@ -8721,7 +8719,7 @@ function i43(l35, h15) {
 }
 var f36 = s3(n16, [["render", i43]]);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/time-picker/src/index2.js
+// node_modules/fighting-design/es/time-picker/src/index2.js
 var L7 = { class: "f-time-picker" };
 var M8 = { class: "f-time-picker__content" };
 var N8 = { class: "f-time-picker__hour" };
@@ -8738,7 +8736,7 @@ var G6 = defineComponent({
     "update:time": (l35) => p(l35)
   },
   setup(l35, { emit: C11 }) {
-    const g8 = l35, d8 = new Date(), r25 = reactive({
+    const g8 = l35, d8 = /* @__PURE__ */ new Date(), r25 = reactive({
       hover: l3(d8.getHours()),
       minute: l3(d8.getMinutes())
     }), s27 = computed({
@@ -8793,13 +8791,13 @@ var G6 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/time-picker/index.js
+// node_modules/fighting-design/es/time-picker/index.js
 var e28 = n2(G6);
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/index4.js
+// node_modules/fighting-design/es/index4.js
 var o3 = "0.9.0-alpha.5";
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/loading/src/index4.js
+// node_modules/fighting-design/es/loading/src/index4.js
 var e29 = {
   visible: {
     type: Boolean,
@@ -8823,7 +8821,7 @@ var e29 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/loading/src/index3.js
+// node_modules/fighting-design/es/loading/src/index3.js
 var S12 = {
   key: 0,
   class: "f-loading__title"
@@ -8874,7 +8872,7 @@ var b9 = defineComponent({
   }
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/loading/src/index.js
+// node_modules/fighting-design/es/loading/src/index.js
 var c26 = (o4, t36) => {
   const e30 = (n17) => t36.value[n17], i44 = (n17) => e30(n17) || o4.getAttribute(`f-loading-${n17}`) || "";
   return {
@@ -8905,13 +8903,13 @@ var m12 = {
   }
 };
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/loading/index.js
+// node_modules/fighting-design/es/loading/index.js
 var r24 = s2(m12, "loading");
 var d6 = n2({
   directive: r24
 });
 
-// node_modules/.pnpm/fighting-design@0.9.0-alpha.5/node_modules/fighting-design/es/index2.js
+// node_modules/fighting-design/es/index2.js
 var m13 = (o4) => (Object.entries(index3_exports).forEach(([i44, t36]) => {
   o4.component(i44, t36);
 }), o4.config.globalProperties.FMessage = n11, o4.config.globalProperties.FNotification = m11, o4.directive("loading", d6.directive), o4);

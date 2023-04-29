@@ -1,10 +1,10 @@
 ---
 layout: home
-title: GZ
+title: BigOld
 ---
 
 <Home />
 
-<script setup>
+<script setup lang="ts">
 import Home from '@theme/index.vue'
 </script>
