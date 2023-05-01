@@ -206,3 +206,9 @@ FPS（frames per second）是用来分析动画的一个主要性能指标。能
 
 就在 FPS 图表下方，你会看到 CPU 图表。在 CPU 图表中的各种颜色与 Summary 面板里的颜色是相互对应的，Summary 面板就在 Performance 面板的下方。CPU 图表中的各种颜色代表着在这个时间段内，CPU 在各种处理上所花费的时间。如果你看到了某个处理占用了大量的时间，那么这可能就是一个可以找到性能瓶颈的线索。
 ![](../img/performance1.webp)
+
+
+### 话外: 
+破解csdn登录复制 document.designMode='on'
+
+https://www.yuque.com/qzhou/learning/lwhew1

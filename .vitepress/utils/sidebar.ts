@@ -176,20 +176,21 @@ export const sidebar = {
     {
       text: '设计模式',
       items: [
-        { text: '基础知识', link: '/docs/design-mode/design-1' },
-        { text: '高阶函数', link: '/docs/design-mode/design-2' },
-        { text: '单例模式', link: '/docs/design-mode/design-3' },
-        { text: '策略模式', link: '/docs/design-mode/design-4' },
-        { text: '代理模式', link: '/docs/design-mode/design-5' },
-        { text: '迭代器模式', link: '/docs/design-mode/design-6' },
-        { text: '发布订阅模式', link: '/docs/design-mode/design-7' },
-        { text: '命令模式', link: '/docs/design-mode/design-8' },
-        { text: '组合模式', link: '/docs/design-mode/design-9' },
-        { text: '模板方法模式', link: '/docs/design-mode/design-10' },
-        { text: '享元模式', link: '/docs/design-mode/design-11' },
-        { text: '职责链模式', link: '/docs/design-mode/design-12' },
-        { text: '状态模式', link: '/docs/design-mode/design-13' },
-        { text: '适配器模式', link: '/docs/design-mode/design-14' }
+        { text: 'solid设计原则', link: '/docs/design-mode/solid' },
+        { text: '基础知识', link: '/docs/design-mode/基础知识' },
+        { text: '高阶函数', link: '/docs/design-mode/高阶函数' },
+        { text: '单例模式', link: '/docs/design-mode/单例模式' },
+        { text: '策略模式', link: '/docs/design-mode/策略模式' },
+        { text: '代理模式', link: '/docs/design-mode/代理模式' },
+        { text: '迭代器模式', link: '/docs/design-mode/迭代器模式' },
+        { text: '发布订阅模式', link: '/docs/design-mode/发布订阅模式' },
+        { text: '命令模式', link: '/docs/design-mode/命令模式' },
+        { text: '组合模式', link: '/docs/design-mode/组合模式' },
+        { text: '模板方法模式', link: '/docs/design-mode/模板方法模式' },
+        { text: '享元模式', link: '/docs/design-mode/享元模式' },
+        { text: '职责链模式', link: '/docs/design-mode/职责链模式' },
+        { text: '状态模式', link: '/docs/design-mode/状态模式' },
+        { text: '适配器模式', link: '/docs/design-mode/适配器模式' }
       ]
     },
     {
