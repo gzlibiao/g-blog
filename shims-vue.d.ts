@@ -1,5 +1,9 @@
 declare module '*.vue' {
-  import type { DefineComponent } from 'vue'
-  const component: DefineComponent<{}, {}, unknown>
+  import { DefineComponent } from 'vue'
+  const component: DefineComponent<{}, {}, any>
   export default component
+}
+
+declare module '@vue/runtime-dom' {
+  export * from '@vue/runtime-dom/dist/runtime-dom'
 }

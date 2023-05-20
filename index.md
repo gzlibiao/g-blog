@@ -5,6 +5,6 @@ title: BigOld
 
 <Home />
 
-<script setup lang="ts">
+<script setup>
 import Home from '@theme/index.vue'
 </script>

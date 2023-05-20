@@ -9,15 +9,16 @@
     "noUnusedLocals": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "preserveValueImports": true,
-    "importsNotUsedAsValues": "error",
     "jsx": "preserve",
     "lib": ["ESNext", "DOM"]
   },
   "include": [
+    "*/**/.ts",
+    "*/**/.vue",
+    "*/**/*.d.ts",
     "docs",
-    "docs/.vitepress/components/*.vue",
-    "docs/.vitepress/*.ts"
+    ".vitepress/components/*.vue",
+    ".vitepress/*.ts"
   ],
   "exclude": ["**/node_modules/**", "**/dist/**"]
 }
