@@ -3,6 +3,20 @@
   --vp-c-brand-dark: #5d80f4;
   --vp-c-bg-alt: #fff; // 侧边栏
 }
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  body,html{
+    overflow:hidden;
+  }
+}
+
+#app{
+  overflow:auto;
+  height:100vh;
+  width:100vw;
+}
 
 .dark {
   --vp-c-bg-alt: #242424; // 深色模式侧边栏
