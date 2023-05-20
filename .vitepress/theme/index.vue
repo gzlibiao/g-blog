@@ -4,7 +4,7 @@
       <f-avatar
         :size="160"
         round
-        src="https://www.Helloimg.com/images/2022/10/04/ZUXPTT.jpg"
+        src="https://jf-temp-1301446188.cos.ap-guangzhou.myqcloud.com/R09TUw==/eyJpZCI6IjBkYWFmMGRlLTRjNGYtNDU0OS1iNzVmLTc3YmZlNTU0YjdjZSIsIm5hbWUiOiJ3ZWNoYXQuYm1wIiwiZGlyIjoi5aS05YOPIn0="
       />
     </f-text>
 
