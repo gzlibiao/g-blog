@@ -10,7 +10,8 @@
 
     <f-divider margin="32px" color="rgb(224, 224, 224)"></f-divider>
 
-    <f-text>🎃
+    <f-text
+      >🎃
       不要惧怕写出不完美的代码，只要在后续迭代过程中“见招拆招”，代码就会变得越来越完善。
     </f-text>
 
@@ -27,26 +28,31 @@
 
     <f-text bold>个性标签</f-text>
 
-    <iframe src="https://gtols.netlify.app/#/tag" height="350" width="100%" frameborder="0"/>
-
+    <iframe
+      src="https://gtols.netlify.app/#/tag"
+      height="350"
+      width="100%"
+      frameborder="0"
+    />
+    <div id="music" key="646868c966e23" api="https://player.qsdurl.cn"></div>
   </f-main>
 </template>
 
 <style scoped>
-  .f-main {
-    max-width: 620px;
-    margin: 40px auto;
-    box-sizing: border-box;
-    padding: 40px;
-    padding-bottom: 0;
-  }
+.f-main {
+  max-width: 620px;
+  margin: 40px auto;
+  box-sizing: border-box;
+  padding: 40px;
+  padding-bottom: 0;
+}
 
-  .f-button-default {
-    margin-left: 15px;
-  }
+.f-button-default {
+  margin-left: 15px;
+}
 
-  .f-text {
-    display: block;
-    line-height: 40px;
-  }
+.f-text {
+  display: block;
+  line-height: 40px;
+}
 </style>

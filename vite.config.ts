@@ -16,22 +16,7 @@ const NavLinkPatch = (): Plugin => ({
 
 export default (): UserConfigExport => {
   return {
-    plugins: [
-      // vue(),
-      NavLinkPatch()
-      // vueJsx(),
-      // babel({
-      //   plugins: [
-      //     [
-      //       '@babel/plugin-transform-react-jsx',
-      //       {
-      //         runtime: 'automatic',
-      //         importSource: '@antv/f2'
-      //       }
-      //     ]
-      //   ]
-      // })
-    ],
+    plugins: [NavLinkPatch()],
     optimizeDeps: {
       exclude: ['vitepress']
     },
