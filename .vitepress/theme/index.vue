@@ -34,7 +34,6 @@
       width="100%"
       frameborder="0"
     />
-    <div id="music" key="646868c966e23" api="https://player.qsdurl.cn"></div>
   </f-main>
 </template>
 
