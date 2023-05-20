@@ -43,6 +43,7 @@ const config = defineConfig({
     [
       'script',
       {
+        async: 'true',
         id: 'xplayer',
         src: 'https://player.qsdurl.cn/Static/player9/js/player.js'
       }
