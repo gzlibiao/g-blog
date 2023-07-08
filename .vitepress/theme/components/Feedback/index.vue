@@ -51,9 +51,11 @@
   }
 
   const fetchData = async () => {
-    let res = await axios.get(
-      `https://e2625ac1-6ce5-473a-8f15-04f5ae12964e.bspapp.com/gz/message?current=${current}&size=${size}`
-    ).catch(()=>{})
+    let res = await axios
+      .get(
+        `https://e2625ac1-6ce5-473a-8f15-04f5ae12964e.bspapp.com/gz/message?current=${current}&size=${size}`
+      )
+      .catch(() => {})
 
     res = res?.data
     if (res?.status) {

@@ -49,6 +49,7 @@ console.log(proxy.$router)
 ```
 
 ## 路由钩子
+
 全局钩子： beforeEach、 afterEach、beforeResolve
 单个路由里面的钩子： beforeEnter
 组件路由：beforeRouteEnter、 beforeRouteUpdate、 beforeRouteLeave

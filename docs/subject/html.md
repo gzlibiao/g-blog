@@ -142,9 +142,11 @@ window.localStorage.removeItem('user')
 ```
 
 ## 图片懒加载
+
 ```js
-var isSupportLoading = 'loading' in document.createElement('img');
+var isSupportLoading = 'loading' in document.createElement('img')
 ```
+
 lazy
 图片或框架懒加载，也就是元素资源快要被看到的时候加载。
 eager
@@ -159,15 +161,16 @@ Lazy loading 加载没有缓冲，滚动即会触发新的图片资源加载。
 Lazy loading 加载在窗口 resize 尺寸变化时候也会触发，例如屏幕高度从小变大的时候。
 Lazy loading 加载也有可能会先加载后面的图片资源，例如页面加载时滚动高度很高的时候。
 
-### 新的api IntersectionObserver
+### 新的 api IntersectionObserver
+
 ```js
-let viewport = document.getElementById("viewport"); // 可视区域
-let imgList = document.querySelectorAll(".imgs"); // 被观察元素
+let viewport = document.getElementById('viewport') // 可视区域
+let imgList = document.querySelectorAll('.imgs') // 被观察元素
 
 let options = {
   root: viewport
 }
-let IO = new IntersectionObserver(IOCallback, options);
+let IO = new IntersectionObserver(IOCallback, options)
 
 // 循环所有 img 标签，使它被观察
 imgList.forEach((item) => {
@@ -177,14 +180,13 @@ imgList.forEach((item) => {
 // 回调函数
 function IOCallback(entries, observer) {
   // 循环所有观察元素
-  entries.forEach(item => {
+  entries.forEach((item) => {
     // 如果出现在可视区内，则替换 src
     if (item.isIntersecting) {
-      console.info("出现在可视区内")
+      console.info('出现在可视区内')
       item.target.src = item.target.dataset.src // 替换 src
       IO.unobserve(item.target) // 停止观察当前元素 避免不可见时候再次调用 callback 函数
     }
-  });
+  })
 }
-
 ```

@@ -5,14 +5,18 @@
 Blob（Binary Large Object）表示二进制类型的大对象。在数据库管理系统中，将二进制数据存储为一个单一个体的集合。Blob 通常是影像、声音或多媒体文件。在 JavaScript 中 Blob 类型的对象表示不可变的类似文件对象的原始数据
 
 ```javascript
-let myBlobParts = ['<html><h2>Hello Semlinker</h2></html>']; 
-let myBlob = new Blob(myBlobParts, {type : 'text/html', endings: "transparent"}); // the blob
+let myBlobParts = ['<html><h2>Hello Semlinker</h2></html>']
+let myBlob = new Blob(myBlobParts, {
+  type: 'text/html',
+  endings: 'transparent'
+}) // the blob
 
-let Hello = new Uint8Array([72, 101, 108, 108, 111]); // 二进制格式的 "Hello"
-let blob = new Blob([Hello, ' ', 'semlinker'], {type: 'text/plain'});
+let Hello = new Uint8Array([72, 101, 108, 108, 111]) // 二进制格式的 "Hello"
+let blob = new Blob([Hello, ' ', 'semlinker'], { type: 'text/plain' })
 ```
 
-相关api
+相关 api
+
 ```
 slice([start[, end[, contentType]]])：返回一个新的 Blob 对象，包含了源 Blob 对象中指定范围内的数据。
 stream()：返回一个能读取 blob 内容的 ReadableStream。
@@ -21,6 +25,7 @@ arrayBuffer()：返回一个 Promise 对象且包含 blob 所有内容的二进�
 ```
 
 #### 文件分片
+
 ```
 const file = new File(["a".repeat(1000000)], "test.txt");
 
@@ -40,7 +45,7 @@ async function chunkedUpload() {
 }
 ```
 
-#### 生成pdf
+#### 生成 pdf
 
 ```javascript
 <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
@@ -56,6 +61,7 @@ async function chunkedUpload() {
 </script>
 
 ```
+
 ## File
 
 当选择一个文件时，可以获得这个文件的描述对象
@@ -468,17 +474,19 @@ console.log(xhr.status)
 console.log(xhr.statusText)
 ```
 
-
-### 跨浏览器窗口通信的7种方式
+### 跨浏览器窗口通信的 7 种方式
 
 1. WebSocket
 2. 定时器 + 客户端存储
+
 ```
 定时器：setTimeout/setInterval/requestAnimationFrame
 客户端存储：cookie/localStorage/sessionStorage/indexDB/chrome的FileSystem
 ```
+
 3. postMessage window.opener window.open iframe
 4. stroage
+
 ```
 localStorage.setItem('message',JSON.stringify({
     message: '消息'，
@@ -489,7 +497,9 @@ window.addEventListener("storage", function(e) {
     console.log(e.key, e.newValue, e.oldValue)
 });
 ```
+
 5. Broadcast Channel
+
 ```
 var channel = new BroadcastChannel("channel-BroadcastChannel");
 channel.postMessage('Hello, BroadcastChannel!')
@@ -499,7 +509,9 @@ channel.addEventListener("message", function(ev) {
   console.log(ev.data)
 });
 ```
+
 6. SharedWorker
+
 ```
 var portList = [];
 
@@ -527,6 +539,7 @@ function disptach(selfPort, data) {
 ```
 
 7. MessageChannel
+
 ```
 var channel = new MessageChannel();
 var para = document.querySelector('p');
@@ -543,10 +556,10 @@ function iframeLoaded() {
 channel.port1.onmessage = handleMessage;
 function handleMessage(e) {
   para.innerHTML = e.data;
-}  
+}
 ```
 
-### fetch和ajax
+### fetch 和 ajax
 
 ```
 fetch() 收到代表错误的 HTTP 状态码（譬如404 或500），会设置 Promise 的 resolve 值为false，但不会reject，只有 网络故障 或 请求被阻止 才会 reject。

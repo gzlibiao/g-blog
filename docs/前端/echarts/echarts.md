@@ -870,13 +870,23 @@ visualMap:{
 ```
 
 ## 实例
+
 ### 落日
+
 :::<iframe src="https://gtols.netlify.app/#/sunset" frameborder="0" height="300" width="100%"/>
+
 ### 控制中心
+
 :::<iframe src="https://gtols.netlify.app/#/ctrl-ctr" frameborder="0" height="300" width="100%"/>
+
 ### 物流
+
 :::<iframe src="https://gtols.netlify.app/#/flow" frameborder="0" height="300" width="100%"/>
+
 ### 气温
+
 :::<iframe src="https://gtols.netlify.app/#/temperature" frameborder="0" height="300" width="100%"/>
+
 ### 平台
+
 :::<iframe src="https://gtols.netlify.app/#/platform" frameborder="0" height="300" width="100%"/>

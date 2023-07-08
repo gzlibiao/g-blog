@@ -121,7 +121,7 @@ plugins
 环境变量
 The env property
 nuxt 配置环境变量有多种方式，因为是复制之前的 vue-home 项目，所以尽量用之前的 dotenv 方式。使用了 dotenv-module。
-上面的 process.env.ENV_FILE 来源于 script 配置，用了 cross-env 库，
+上面的 process.env.ENV*FILE 来源于 script 配置，用了 cross-env 库，
 上面的 script 中可以发现 nuxt --port 3001 --dotenv .env.production 后面还是用--dotenv 这种形式，这个写法是为了服务端的环境变量支持，如果缺了这个写法，则服务端无法正确取到对应文件，而是默认会取`.env`这个文件。
 通过以上写法，客户端和服务端都能正确读取到。
 改变 nuxt 标识
@@ -240,5 +240,5 @@ jest
 移动端项目
 整体区别不大，postcss 的配置在 nuxt.config 里面。
 查找没有 alt 标签的图片
-<img((?![^>]*\balt=('|")[^"']+('|"))|(?=.*alt=('|")\s+('|")._))[^>]_?> 这正则可以查没有 alt 的 img 标签, 放到 vscode 搜索就行，
+<img((?![^>]*\balt=('|")[^"']+('|"))|(?=.*alt=('|")\s+('|").*))[^>]\_?> 这正则可以查没有 alt 的 img 标签, 放到 vscode 搜索就行，
 有兴趣的可以写个 eslint 规则来实现

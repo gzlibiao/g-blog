@@ -2,7 +2,7 @@
 
 ## 基础
 
-```
+````
 typescript是js的超集，主要学习ts里面的
 1 原始类型
 2 字面量类型
@@ -42,7 +42,7 @@ function fn():void{
 }
 
 // 总结 ts的原始类型就是js的基础数据类型
-```
+````
 
 #### 非原始类型
 
@@ -307,7 +307,6 @@ class Male extends Person{
 let p=new Person('abc');
 ```
 
-
 #### in & keyof & typeof
 
 ```ts
@@ -537,7 +536,8 @@ console.log(art.article)
 
 ## 考点
 
-#### interface 和 type 
+#### interface 和 type
+
 ```
 两者不同点：
 
@@ -555,23 +555,28 @@ console.log(art.article)
 开发过程中尽量使用interface
 
 ```
+
 #### never 和 void 的区别
+
 ```
 ● void 表示没有任何类型（可以被赋值为 null 和 undefined）。
 ● never 表示一个不包含值的类型，即表示永远不存在的值。
 ● 拥有 void 返回值类型的函数能正常运行。拥有 never 返回值类型的函数无法正常返回，无法终止，或会抛出异常
 ```
+
 #### 元组越界
+
 ```ts
-let aaa: [string, number] = ['aaa', 5];
+let aaa: [string, number] = ['aaa', 5]
 // 添加时不会报错
-aaa.push(6);
+aaa.push(6)
 // 打印整个元祖不会报错
-console.log(aaa); // ['aaa',5,6];
+console.log(aaa) // ['aaa',5,6];
 // 打印添加的元素时会报错
-console.log(aaa[2]); // error
+console.log(aaa[2]) // error
 ```
-####  枚举成员的特点
+
+#### 枚举成员的特点
 
 ```ts
 ● 是只读属性，无法修改
@@ -587,6 +592,7 @@ console.log(Gender);// { '1': 'BOY', '2': 'GRIL', BOY: 1, GRIL: 2 }
 ```
 
 #### declare
+
 ```
 declare 声明全局变量
 declare var a:number=1;
@@ -611,6 +617,7 @@ app.config.globalProperties.$axios=axios;
 ```
 
 #### type extends keyof
+
 ```
 type Pick<T,K extends keyof T>={
   [p in k]:t[p];
@@ -629,10 +636,10 @@ type PickedUser={
 }
 ```
 
-
 ##### 考点
 
 interface 和 type
+
 ```
 相同点
 1.都可以用来描述对象或者函数
@@ -673,9 +680,11 @@ interface Itf extends Type2{
 ```
 
 ## 进阶
+
 #### 工具类型
 
 ##### Partial 设置为可缺省类型
+
 ```ts
 interface 接口1 {
   name: string
@@ -684,44 +693,49 @@ type 接口2 = Partial<IUser1>
 
 type Partial<G> = { [T in keyof G]?: G[T] | undefined }
 ```
+
 ##### Require 设置为不可缺省类型
+
 ```ts
 interface 接口1 {
   name?: string
 }
 type 接口2 = Partial<IUser1>
 
-
 type Require<G> = { [T in keyof G]-?: G[T] }
 ```
+
 ##### Record<K extends keyof any, T> 的作用是将 K 中所有的属性的值转化为 T 类型。
+
 ```ts
 type Ktype = 'about' | 'home'
-interface TItf{
-  title:string
+interface TItf {
+  title: string
 }
 
-let value:Record<Ktype,Itf>={
-  home:{
-    title:'abc'
+let value: Record<Ktype, Itf> = {
+  home: {
+    title: 'abc'
   },
-  about:{
-    title:'efg'
+  about: {
+    title: 'efg'
   }
 }
 ```
 
 #### Pick 从某个类型中挑出一些属性出来
+
 ```ts
 interface 接口1 {
   name: string
-  age:number
+  age: number
 }
 
-type 接口2 = Pick<IUser1, 'age' | 'name'>
-
+type 接口2 = Pick<IUser1, 'age' | 'name'>
 ```
+
 ##### Omit 从某个类型中排除出一些属性出来
+
 ```ts
 interface 接口1 {
   name: string
@@ -731,68 +745,77 @@ interface 接口1 {
 type 接口2 = Pick<IUser1, 'name'> => {age:number}
 
 ```
+
 ##### NonNullable 的作用是用来过滤类型中的 null 及 undefined 类型。
+
 ```ts
 // string | number
-type T0 = NonNullable<string | number | undefined>;
+type T0 = NonNullable<string | number | undefined>
 // string[]
-type T1 = NonNullable<string[] | null | undefined>;
+type T1 = NonNullable<string[] | null | undefined>
 
-type NonNullable<T> = T extends 
-null | undefined 
-? never : T;
+type NonNullable<T> = T extends null | undefined ? never : T
 ```
+
 ##### ReturnType 用来得到一个函数的返回值类型
+
 ```ts
-type Func = (value: number) => string;
-let str: ReturnType<Func>;
+type Func = (value: number) => string
+let str: ReturnType<Func>
 
-const fun: Func = (value: number) => String(value)
+const fun: Func = (value: number) => String(value)
 
-str = fun(1)
+str = fun(1)
 ```
 
 ##### Exclude<T, U> 的作用是将某个类型中属于另一个的类型移除掉。
+
 ```ts
-type T1 = Exclude<"a" | "b" | "c", "a">; // b c
+type T1 = Exclude<'a' | 'b' | 'c', 'a'> // b c
 ```
+
 ##### Extract<T, U> - 用于从类型 T 中取出可分配给 U 类型的成员
+
 ```ts
-type T0 = Extract<"a" | "b" | "c", "a" | "f">;
+type T0 = Extract<'a' | 'b' | 'c', 'a' | 'f'>
 // type T0 = "a"
-type T1 = Extract<string | number | (() => void), Function>;  
- // type T1 = () => void
+type T1 = Extract<string | number | (() => void), Function>
+// type T1 = () => void
 ```
 
 ##### Readonly 的作用是将某个类型所有属性变为只读属性，也就意味着这些属性不能被重新赋值。
+
 ```ts
-interface Todo {
-  title: string;
+interface Todo {
+  title: string
 }
 
-const todo: Readonly<Todo> = {
-  title: "Delete inactive users"
-};
+const todo: Readonly<Todo> = {
+  title: 'Delete inactive users'
+}
 ```
 
 ##### Parameters 提取函数的参数返回元组 类型别名
+
 ```ts
 const fn(a:number,b:string):void
 
 type tuple=Parameters<fn> => [a:number,b:string]
 ```
+
 ##### DeepReadonly 深度设置只读属性
+
 ```ts
 type DeepReadonly<T> = {
-  readonly [P in keyof T]: DeepReadonly<T[P]>;
+  readonly [P in keyof T]: DeepReadonly<T[P]>
 }
 const a = { foo: { bar: 22 } }
 const b = a as DeepReadonly<typeof a>
 b.foo.bar = 33 // Cannot assign to 'bar' because it is a read-only property.ts(2540)
 ```
 
-
 #### 操作符
+
 ##### 非空断言
 
 ```ts
@@ -800,16 +823,16 @@ function sayHello(Hello: string | undefined) {
   const hi1 = Hello!.toLowerCase() // OK
   const hi2 = Hello.toLowerCase() // Error: Object is possibly 'undefined'
 }
-
 ```
+
 #### 类型守卫
+
 ```ts
 function sayHello(Hello: string | undefined) {
-  if(typeof Hello === 'string') {
+  if (typeof Hello === 'string') {
     const hi = Hello.toLowerCase()
   }
 }
-
 ```
 
 ## 安装
@@ -826,6 +849,7 @@ tsc -init
 tsc 文件名
 
 ```
+
 #### 声明文件的定义
 
 通俗地来讲，在 TypeScript 中以 .d.ts 为后缀的文件，称之为 TypeScript 声明文件。它的主要作用是描述 JavaScript 模块内所有导出接口的类型信息

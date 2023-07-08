@@ -8,7 +8,6 @@
 
 - 高质量代码实现
 
-
 jest.config.js
 
 ```js
@@ -60,24 +59,26 @@ import { InjectionKey } from 'vue'
 import { createStore, Store } from 'vuex'
 
 export interface State {
-  count: number
+  count: number;
 }
 
 export const key: InjectionKey<Store<State>> = Symbol()
 
-export const store = createStore<State>({
-  state() {
-    return {
-      count: 0
-    }
-  },
-  mutations: {
-    increment(state) {
-      state.count++
+export const store =
+  createStore <
+  State >
+  {
+    state() {
+      return {
+        count: 0
+      }
+    },
+    mutations: {
+      increment(state) {
+        state.count++
+      }
     }
   }
-})
-
 ```
 
 main.ts
@@ -94,11 +95,11 @@ app.mount('#app')
 ```
 
 组件
+
 ```vue
 <template>
-
   <h1>{{ msg }}</h1>
-  <button @click="inCrement"> count is: </button>
+  <button @click="inCrement">count is:</button>
   <p>{{ count }}</p>
 </template>
 
@@ -127,7 +128,6 @@ app.mount('#app')
     }
   })
 </script>
-
 ```
 
 ## vue/test-utils
@@ -227,6 +227,7 @@ describe('函数', () => {
 ```
 
 - **3. slot**
+
 ```vue
 <template>
   <div>
@@ -235,39 +236,44 @@ describe('函数', () => {
         <p>插槽后备内容</p>
       </slot>
     </div>
-    <slot ></slot>
-    <p>hello {{globName}}</p>
+    <slot></slot>
+    <p>hello {{ globName }}</p>
     <slot name="right" :msg="msg"></slot>
   </div>
 </template>
 <script>
-export default {
-  data() {
-    return {
-      msg:'right'
+  export default {
+    data() {
+      return {
+        msg: 'right'
+      }
     }
-  },
-}
+  }
 </script>
 ```
+
 ```js
 import { shallowMount } from '@vue/test-utils'
 import Slot from './Slot'
 
 const MyComponent = {
-  template:`<span>自定义组件</span>`
+  template: `<span>自定义组件</span>`
 }
 // NOTE 测试插槽
 describe('测试插槽', () => {
   it('测试插槽', () => {
     const wrapper = shallowMount(Slot, {
       slots: {
-        default: [`<h2>默认插槽</h2>`,`<h2>默认插槽</h2>`,`<h2>默认插槽</h2>`],
-        left: '<div>left 插槽<MyComponent/></div>',
+        default: [
+          `<h2>默认插槽</h2>`,
+          `<h2>默认插槽</h2>`,
+          `<h2>默认插槽</h2>`
+        ],
+        left: '<div>left 插槽<MyComponent/></div>'
       },
       stubs: {
         // 用来注册自定义组件
-        MyComponent,
+        MyComponent
       },
       mocks: {
         // 用来向渲染上下文添加 property
@@ -281,18 +287,17 @@ describe('测试插槽', () => {
   it('作用域插槽', () => {
     const wrapper = shallowMount(Slot, {
       data() {
-        return {msg:'老六'}
+        return { msg: '老六' }
       },
       scopedSlots: {
-        right(props){
+        right(props) {
           return <div class="right">hello {props.msg}</div>
         }
-      },
+      }
     })
     expect(wrapper.find('.right').text()).toContain('老六')
   })
 })
-
 ```
 
 - **4. object api**
@@ -374,33 +379,31 @@ describe('字符串匹配器', () => {
 ```
 
 - **5. http api**
+
 ```vue
 <template>
-<div>
-
-<button type="button" @click="onClick"></button>
-<subComponent />
-
+  <div>
+    <button type="button" @click="onClick"></button>
+    <subComponent />
   </div>
 </template>
 
 <script>
-import axios from 'axios'
-export default {
-  mounted(){
-    axios.get('/')
-  },
-  methods:{
+  import axios from 'axios'
+  export default {
+    mounted() {
+      axios.get('/')
+    },
+    methods: {
       onClick() {
         this.$emit('my-click', 'hello', 123)
       }
+    }
   }
-}
 </script>
-
 ```
-```js
 
+```js
 import { shallowMount } from '@vue/test-utils'
 import HttpTest from './HttpTest.vue'
 
@@ -409,11 +412,11 @@ function factory() {
     global: {
       stubs: {
         subComponent: {
-          template: `<span></span>`,
+          template: `<span></span>`
         },
-        HelloWorld: true,
-      },
-    },
+        HelloWorld: true
+      }
+    }
   })
 }
 
@@ -462,7 +465,6 @@ describe('HttpTest', () => {
 
 生成测试覆盖率 jest --coverage
 测试覆盖率：就是执行过的代码占总代码的比例，比如执行了多少行(Line)，执行了多少个分支(Branch)，执行了多少个函数(Function)，执行了多少条语句(Statement)。
-
 
 ### vue3 + vite + typescript + eslint + jest 項目配置
 
@@ -562,11 +564,9 @@ declare module '*.vue' {
 <script type="module" src="/src/main.ts"></script>
 ```
 
-
 6. 引入 eslint 安裝 eslint prettier 依賴
 
 yarn add --dev eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-vue @typescript-eslint/parser @typescr ipt-eslint/eslint-plugin
-
 
 7. .eslintrc.js
 
@@ -1632,10 +1632,8 @@ cypress、playwright
 
 > 追求 100% 的测试覆盖率，可能会浪费很多时间。
 
+##### vue2.6.14 jest package.json 文件
 
-
-
-##### vue2.6.14 jest package.json文件
 ```json
 {
   "name": "my-vue-jest-test2",
@@ -1662,17 +1660,13 @@ cypress、playwright
     "jest": "^27.0.5",
     "vue-template-compiler": "^2.6.14"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ],
+  "browserslist": ["> 1%", "last 2 versions", "not dead"],
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest"
   }
 }
-
 ```
+
 ## 总结
 
 前端应用常用的测试，按照占比或者重要程度排序：单元测试、快照测试和端到端测试。

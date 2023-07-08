@@ -13,5 +13,3 @@ You can also get to know me through [resume](https://gz_lib.gitee.io/g-resume)
 :envelope: Mail: **3437705679@qq.com**
 
 ![](https://gz_lib.gitee.io/g-resume/static/wechat.jpeg)![](https://github-readme-stats.vercel.app/api?username=gzlibiao)
-
-

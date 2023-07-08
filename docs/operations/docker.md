@@ -1,29 +1,42 @@
-# Docker安装
+# Docker 安装
+
 ## yum 方式安装 Docker
 
-1、更新yum源
+1、更新 yum 源
+
 ```
 yum update
 ```
+
 2、安装所需环境
+
 ```
 yum install -y yum-utils device-mapper-persistent-data lvm2
 ```
-3、配置yum仓库
+
+3、配置 yum 仓库
+
 ```
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 ```
-4、安装Docker（社区版）
+
+4、安装 Docker（社区版）
+
 ```
 yum install docker-ce
 ```
-5、启动Docker 、添加自启动
+
+5、启动 Docker 、添加自启动
+
 ```
 systemctl start docker
 systemctl enable docker
 ```
+
 # 命令
+
 ## 启动
+
 ```
 docket systemctl start docker ## 启动
 docket systemctl stop         ## 停止
@@ -32,6 +45,7 @@ docket systemctl enable docker   ##跟随服务启动而自启
 ```
 
 ## 查看本地镜像列表
+
 ```
 docker images
 搜索镜像
@@ -40,30 +54,38 @@ docker search 镜像名
 docker search --filter=STARS=9000 mysql 搜索 STARS >9000的 mysql 镜像
 拉取镜像 不加tag(版本号) 即拉取docker仓库中 该镜像的最新版本latest 加:tag 则是拉取指定版本
 
-docker pull 镜像名 
+docker pull 镜像名
 docker pull 镜像名:tag
 
 ```
 
-## 运行镜像 
+## 运行镜像
+
 ```
 docker run 镜像名
 删除镜像 ———当前镜像没有被任何容器使用才可以删除
 ```
 
 ## 删除一个
+
 ```
 docker rmi -f 镜像名/镜像ID
 ```
-## 删除多个 其镜像ID或镜像用用空格隔开即可
-``` 
+
+## 删除多个 其镜像 ID 或镜像用用空格隔开即可
+
+```
 docker rmi -f 镜像名/镜像ID 镜像名/镜像ID 镜像名/镜像ID
 ```
-## 删除全部镜像  -a 意思为显示全部, -q 意思为只显示ID
+
+## 删除全部镜像 -a 意思为显示全部, -q 意思为只显示 ID
+
 ```
 docker rmi -f $(docker images -aq）
 ```
+
 ## 强制删除镜像
+
 ```
 docker image rm 镜像名称/镜像ID
 保存镜像
@@ -71,13 +93,19 @@ docker image rm 镜像名称/镜像ID
 
 docker save 镜像名/镜像ID -o 镜像保存在哪个位置与名字
 ```
+
 ## exmaple:
+
 ```
 docker save tomcat -o /myimg.tar
 ```
-## 保存镜像任务执行完毕，我们来看下指定位置下是否有该tar？
+
+## 保存镜像任务执行完毕，我们来看下指定位置下是否有该 tar？
+
 ## 加载镜像
+
 # 任何装 docker 的地方加载镜像保存文件,使其恢复为一个镜像
+
 ```
 docker load -i 镜像保存文件位置
 镜像标签
@@ -112,7 +140,7 @@ docker ps -a
 容器怎么来呢 可以通过run 镜像 来构建 自己的容器实例
 
 ## -it 表示 与容器进行交互式启动 -d 表示可后台运行容器 （守护式运行）  --name 给要运行的容器 起的名字  /bin/bash  交互路径
-docker run -it -d --name 别名 镜像名:Tag  /bin/bash 
+docker run -it -d --name 别名 镜像名:Tag  /bin/bash
 例如我们要启动一个redis 把它的别名取为redis001 并交互式运行 需要的命令 —我这里指定版本号为5.0.5
 #1. 拉取redis 镜像
 docker pull redis:5.0.5
@@ -126,20 +154,25 @@ docker run -itd --name redis002 -p 8888:6379 redis:5.0.5 /bin/bash
 ```
 
 #### 删除一个容器
+
 ```
 docker rm -f 容器名/容器ID
 ```
-#### 删除多个容器 空格隔开要删除的容器名或容器ID
+
+#### 删除多个容器 空格隔开要删除的容器名或容器 ID
+
 ```
 docker rm -f 容器名/容器ID 容器名/容器ID 容器名/容器ID
 ```
+
 #### 删除全部容器
+
 ```
 docker rm -f $(docker ps -aq)
 ```
 
-
 #### 进入、退出容器方式
+
 ```
 docker exec -it 容器名/容器ID /bin/bash
 docker exec -it redis001 /bin/bash
@@ -147,35 +180,51 @@ docker exec -it redis001 /bin/bash
 exit
 
 ```
+
 ```
 优雅退出 --- 无论是否添加-d 参数 执行此命令容器都不会被关闭
 Ctrl + p + q
 ```
+
 #### 停止容器
-docker stop 容器ID/容器名
+
+docker stop 容器 ID/容器名
+
 #### 重启容器
-docker restart 容器ID/容器名
+
+docker restart 容器 ID/容器名
+
 #### 启动容器
-docker start 容器ID/容器名
+
+docker start 容器 ID/容器名
+
 #### kill 容器
-docker kill 容器ID/容器名
+
+docker kill 容器 ID/容器名
 容器文件拷贝 —无论容器是否开启 都可以进行拷贝
 
-docker cp 容器ID/名称:文件路径  要拷贝到外部的路径   |     要拷贝到外部的路径  容器ID/名称:文件路径
+docker cp 容器 ID/名称:文件路径 要拷贝到外部的路径 | 要拷贝到外部的路径 容器 ID/名称:文件路径
+
 ##### 从容器内 拷出
+
 ```
 docker cp 容器ID/名称: 容器内路径  容器外路径
 ```
+
 ##### 从外部 拷贝文件到容器内
+
 ```
 docker  cp 容器外路径 容器ID/名称: 容器内路径
 ```
+
 ##### 查看容器日志
+
 ```
 docker logs -f --tail=要查看末尾多少行 默认all 容器ID
 ```
 
-##### 启动容器时，使用docker run命令时 添加参数--restart=always 便表示，该容器随docker服务启动而自动启动
+##### 启动容器时，使用 docker run 命令时 添加参数--restart=always 便表示，该容器随 docker 服务启动而自动启动
+
 ```
 
 docker run -itd --name redis002 -p 8888:6379 --restart=always  redis:5.0.5 /bin/bash
@@ -210,7 +259,7 @@ docker pull gitlab/gitlab-ce:14.3.6-ce.0
 docker run -d -p 8443:443 -p 8080:80 -p 8022:22 --restart always --name gitlab -v /data/gitlab/etc:/etc/gitlab -v /data/gitlab/log:/var/log/gitlab -v /data/gitlab/data:/var/opt/gitlab --privileged=true gitlab/gitlab-ce
 命令解释
 
-docker run 
+docker run
 -d                #后台运行，全称：detach
 -p 8443:443      #将容器内部端口向外映射
 -p 8090:80       #将容器内80端口映射至宿主机8090端口，这是访问gitlab的端口
@@ -233,8 +282,8 @@ docker exec -it gitlab bash
 2.2修改gitlab.rb文件
 
 //先进入到gitlab目录
-cd /etc/gitlab   
-//编辑gitlab.rb文件  
+cd /etc/gitlab
+//编辑gitlab.rb文件
 vi gitlab.rb
 2.3修改gitlab.rb文件中的IP与端口号
 
@@ -247,32 +296,39 @@ gitlab_rails['gitlab_shell_ssh_port'] = 8022 // 此端口是run时22端口映射
 2.4配置gitlab.yml文件
 ```
 
-
 #### 文件路径 /opt/gitlab/embedded/service/gitlab-rails/config
+
 ```
 cd /opt/gitlab/embedded/service/gitlab-rails/config
 ```
 
-##### 打开编辑gitlab.yml文件
+##### 打开编辑 gitlab.yml 文件
+
 ```
 vi gitlab.yml
 ```
-##### 修改host 与上面.rb文件修改的一致
-##### 修改port 为8090
 
-##### 启动、访问gitlab
+##### 修改 host 与上面.rb 文件修改的一致
+
+##### 修改 port 为 8090
+
+##### 启动、访问 gitlab
+
 ```
 //容器中应用配置，让修改后的配置生效
 gitlab-ctl reconfigure
 //容器中重启服务
-gitlab-ctl restart 
+gitlab-ctl restart
 ```
 
-##### 访问gitlab
+##### 访问 gitlab
+
 ```
 http://192.168.189.129:8080
 ```
-##### 查看root 账户密码
+
+##### 查看 root 账户密码
+
 ```
 docker exec -it gitlab /bin/bash
 cat /etc/gitlab/initial_root_password
@@ -280,26 +336,37 @@ cat /etc/gitlab/initial_root_password
 ```
 
 ##### 进入容器内部
+
 ```
 docker exec -it gitlab /bin/bash
 ```
+
 ##### 进入控制台
+
 ```
 gitlab-rails console -e production
 ```
-##### 查询id为1的用户，id为1的用户是超级管理员
+
+##### 查询 id 为 1 的用户，id 为 1 的用户是超级管理员
+
 ```
 user = User.where(id:1).first
 ```
-##### 修改密码为colin123456
+
+##### 修改密码为 colin123456
+
 ```
 user.password='colin123456'
 ```
+
 ##### 保存
+
 ```
 user.save!
 ```
+
 ##### 退出
+
 ```
 exit
 重新输入账户密码，成功访问页面啦！

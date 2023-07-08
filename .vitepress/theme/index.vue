@@ -38,35 +38,35 @@
 </template>
 
 <style scoped>
-.iframe {
-  width: 100%;
-  position: absolute;
-  right: 0;
-  left: 0;
-  @media (min-width: 1024px) {
-    position: static;
+  .iframe {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    @media (min-width: 1024px) {
+      position: static;
+    }
   }
-}
 
-.f-main {
-  max-width: 620px;
-  margin: 40px auto;
-  box-sizing: border-box;
-  padding: 40px;
-  padding-bottom: 0;
-  padding-bottom: 350px;
+  .f-main {
+    max-width: 620px;
+    margin: 40px auto;
+    box-sizing: border-box;
+    padding: 40px;
+    padding-bottom: 0;
+    padding-bottom: 350px;
 
-  @media (min-width: 1024px) {
-    padding-bottom: 40px;
+    @media (min-width: 1024px) {
+      padding-bottom: 40px;
+    }
   }
-}
 
-.f-button-default {
-  margin-left: 15px;
-}
+  .f-button-default {
+    margin-left: 15px;
+  }
 
-.f-text {
-  display: block;
-  line-height: 40px;
-}
+  .f-text {
+    display: block;
+    line-height: 40px;
+  }
 </style>

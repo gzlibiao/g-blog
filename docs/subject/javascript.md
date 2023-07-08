@@ -204,143 +204,149 @@ router.get('/getdata', async (ctx) => {
 ```
 
 ## 事件循环
+
 为什么会有事件循环：javascript 是单线程的语言，如果设计成多线程语言将会导致 DOM 操作冲突
 
 事件循环优点： 提供单线程 非阻塞 特点
 
 ### 浏览器相关的几个线程：
-1. gui渲染线程 -> 负责渲染浏览器界面，解析 HTML，CSS，构建 DOM 树和 RenderObject 树，布局和绘制等
+
+1. gui 渲染线程 -> 负责渲染浏览器界面，解析 HTML，CSS，构建 DOM 树和 RenderObject 树，布局和绘制等
 
 2. 计时器触发器线程 -> 浏览器定时计数器并不是由 JavaScript 引擎计数的
 
 3. 异步请求线程 -> XMLHttpRequest Fetch
 
-4. js引擎线程 -> 就是 JS 内核，负责处理 Javascript 脚本程序(例如 V8 引擎)
+4. js 引擎线程 -> 就是 JS 内核，负责处理 Javascript 脚本程序(例如 V8 引擎)
 
 5. 事件触发器线程 -> 当 js 执行碰到事件绑定和一些异步操作，会走事件触发线程将对应的事件添加到对应的线程中
 
-
-js脚本执行将同步代码加入到执行栈中，由上到下执行 ，如果有函数，创建执行环境，进入执行环境执行里面代码，
+js 脚本执行将同步代码加入到执行栈中，由上到下执行 ，如果有函数，创建执行环境，进入执行环境执行里面代码，
 接受返回值 回去 销毁执行环境 继续往下执行，在这个过程中如果碰到了异步代码会将异步代码入队列等待主线程栈中全部执行完后
-去执行 任务队列中的任务 ，任务队列先进先出 ，但是还分为宏任务和微任务 ，会先执行所有微任务在执行宏任务 
+去执行 任务队列中的任务 ，任务队列先进先出 ，但是还分为宏任务和微任务 ，会先执行所有微任务在执行宏任务
 ---这就是事件循环
 
 微任务：Promise.then、nextTick、Object.Observe
 宏任务：setTimeout、setInterval
 
-### js实现继承的几种方式
+### js 实现继承的几种方式
 
-1. 构造函数 -> 改this指向
+1. 构造函数 -> 改 this 指向
+
 ```js
-function Cat(){
-  Animal.call(this);
-  this.name ='Tom';
+function Cat() {
+  Animal.call(this)
+  this.name = 'Tom'
 }
-var cat = new Cat();
-console.log(cat instanceof Animal); // false
-console.log(cat instanceof Cat); // true
+var cat = new Cat()
+console.log(cat instanceof Animal) // false
+console.log(cat instanceof Cat) // true
 ```
 
 2. 原型链
-```js
 
-Animal.prototype.body = ['head','arm'];
+```js
+Animal.prototype.body = ['head', 'arm']
 
 function Cat() {
-  this.name = 'Tom';
+  this.name = 'Tom'
 }
 Animal.prototype.eat = function () {
   console.log('i can eat')
 }
-Cat.prototype = new Animal();
-var cat = new Cat();
-console.log(cat ,new Animal());
-console.log(cat instanceof Animal); //true
-console.log(cat instanceof Cat); //true
+Cat.prototype = new Animal()
+var cat = new Cat()
+console.log(cat, new Animal())
+console.log(cat instanceof Animal) //true
+console.log(cat instanceof Cat) //true
 ```
 
 3. 组合继承
+
 ```js
 function Cat() {
-  Animal.call(this);
-  instance.name = 'Tom';
+  Animal.call(this)
+  instance.name = 'Tom'
 }
 Animal.prototype.eat = function () {
-  console.log('i can eat');
+  console.log('i can eat')
 }
-Cat.prototype = Object.create(Animal.prototype); //组合继承也是需要修复构造函数指向的
-Cat.prototype.constructor = Cat;
-var cat1 = new Cat();
-var cat2 = new Cat();
+Cat.prototype = Object.create(Animal.prototype) //组合继承也是需要修复构造函数指向的
+Cat.prototype.constructor = Cat
+var cat1 = new Cat()
+var cat2 = new Cat()
 cat1.body.push('foot')
 ```
 
 4. 类继承
+
 ```js
-class Animal{
+class Animal {
   constructor() {
-    this.name = 'Tom';
+    this.name = 'Tom'
   }
   play() {
     console.log('animal')
-  } 
-}
-
-class Cat extends Animal{
-  constructor(type) {
-    super(type);
-    this.type ='cat'
   }
 }
-var cat = new Cat();
+
+class Cat extends Animal {
+  constructor(type) {
+    super(type)
+    this.type = 'cat'
+  }
+}
+var cat = new Cat()
 ```
 
 5. 实例继承
+
 ```js
-function Cat(){
-  var instance = new Animal();
-  instance.name = 'Tom';
-  return instance;
+function Cat() {
+  var instance = new Animal()
+  instance.name = 'Tom'
+  return instance
 }
-var cat = new Cat();
-console.log(cat );
-console.log(cat instanceof Animal); // true
-console.log(cat instanceof Cat); // false
+var cat = new Cat()
+console.log(cat)
+console.log(cat instanceof Animal) // true
+console.log(cat instanceof Cat) // false
 ```
 
 6. 拷贝
-```js
-function Cat(){
-  var animal = new Animal();
-  for(var p in animal){
-    Cat.prototype[p] = animal[p];
-  }
-  Cat.prototype.name = 'Tom';
-}
-var cat = new Cat();
-console.log(cat);
-console.log(cat instanceof Animal); // false
-console.log(cat instanceof Cat); // true
 
+```js
+function Cat() {
+  var animal = new Animal()
+  for (var p in animal) {
+    Cat.prototype[p] = animal[p]
+  }
+  Cat.prototype.name = 'Tom'
+}
+var cat = new Cat()
+console.log(cat)
+console.log(cat instanceof Animal) // false
+console.log(cat instanceof Cat) // true
 ```
 
 7. 寄生
+
 ```js
-function Cat(name){
-  Animal.call(this);
-  this.name = name || 'Tom';
+function Cat(name) {
+  Animal.call(this)
+  this.name = name || 'Tom'
 }
 
-(function(){// 创建一个没有实例方法的类
-  var Super = function(){};
-  Super.prototype = Animal.prototype;
-  Cat.prototype = new Super();
-  Cat.prototype.constructor = Cat;
-})();
+;(function () {
+  // 创建一个没有实例方法的类
+  var Super = function () {}
+  Super.prototype = Animal.prototype
+  Cat.prototype = new Super()
+  Cat.prototype.constructor = Cat
+})()
 
-var cat = new Cat();
-console.log(cat);
-console.log(cat instanceof Animal); // true
-console.log(cat instanceof Cat); //true
-
+var cat = new Cat()
+console.log(cat)
+console.log(cat instanceof Animal) // true
+console.log(cat instanceof Cat) //true
 ```

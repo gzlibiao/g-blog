@@ -1,12 +1,14 @@
 # 布局
 
 ## flex
+
 居中
+
 ```css
-.flex{
-  display:flex;
-  justify-content:center;
-  align-items:center;
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 ```
 
@@ -16,21 +18,24 @@
 .flex {
   display: flex;
 }
-.item{
-  flex:1; // grow shrink basis
+.item {
+  flex: 1; // grow shrink basis
 }
 ```
 
 根据内容选择大小
+
 ```css
-.flex{
-  display:flex;
+.flex {
+  display: flex;
 }
-.item{
-  flex:auto;
+.item {
+  flex: auto;
 }
 ```
+
 ### align-items 和 align-content
+
 flex 容器不设置高度并且子项只有一行时，align-content 属性是不起作用的。
 
 ## grid
@@ -44,12 +49,15 @@ flex 容器不设置高度并且子项只有一行时，align-content 属性是�
 }
 ```
 
-自动填充子容器宽度 最小宽度80px (最后一列居左)
+自动填充子容器宽度 最小宽度 80px (最后一列居左)
 
 ```css
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));  /* fit 铺满整行 fill 计算空轨道*/
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(80px, 1fr)
+  ); /* fit 铺满整行 fill 计算空轨道*/
   /* grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); */
 }
 ```
@@ -61,7 +69,6 @@ flex 容器不设置高度并且子项只有一行时，align-content 属性是�
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%; /* grid-template-columns: repeat(5,20%) */
   grid-template-rows: 20% 20% 20% 20% 20%;
-  
 }
 
 #box {
@@ -73,6 +80,7 @@ flex 容器不设置高度并且子项只有一行时，align-content 属性是�
 ```
 
 间隙
+
 ```css
 .grid{
   grid-column-gap、grid-row-gap、grid-gap（前俩的简写）
@@ -80,6 +88,7 @@ flex 容器不设置高度并且子项只有一行时，align-content 属性是�
 ```
 
 ### 容器属性
+
 grid-template-areas:'lt ct rt' 'lm cm rm' 'lb cb rb' 和 grid-area
 
 grid: 行、列、以及行列宽高、间距属性的简写
@@ -118,32 +127,37 @@ grid-row
 ![](../../img/gridline.png)
 
 ## 媒体查询
+
 ```css
-@media screen and (min-width:300px){
+@media screen and (min-width: 300px) {
   // 超出300像素屏幕
 }
 
-@media screen and (max-width:300px){
+@media screen and (max-width: 300px) {
   // 300像素屏幕以内
 }
 ```
 
 ## 文字溢出隐藏
+
 ```css
-.ellipsis{
+.ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 ```
 
-## 无影响触发bfc
-display为inline-block, table-cell, table-caption, flex,inline-flex
+## 无影响触发 bfc
+
+display 为 inline-block, table-cell, table-caption, flex,inline-flex
 overflow:overflow
 
 ## CSS3 四个自适应关键字——fill-available、max-content、min-content、fit-content
+
 ### fill-available
-　　 width:fill-available 表示撑满可用空间
+
+width:fill-available 表示撑满可用空间
 
 <iframe width='100%' height='auto' frameborder="0" srcdoc='
 <style>
@@ -159,16 +173,18 @@ div{
 
 ```html
 <style>
-div{
-  background-color: pink;
-  display:inline-block;
-  width:-webkit-fill-available;
-}
+  div {
+    background-color: pink;
+    display: inline-block;
+    width: -webkit-fill-available;
+  }
 </style>
 <div>小火柴的蓝色理想</div>
 ```
+
 ### fit-content
-　　 width:fit-content 表示将元素宽度收缩为内容宽度
+
+width:fit-content 表示将元素宽度收缩为内容宽度
 
 <iframe width='100%' height='auto' frameborder="0" srcdoc='
 <style>
@@ -183,7 +199,8 @@ div{
 </iframe>
 
 ### min-content
-　　 width:min-content 表示采用内部元素最小宽度值最大的那个元素的宽度作为最终容器的宽度
+
+width:min-content 表示采用内部元素最小宽度值最大的那个元素的宽度作为最终容器的宽度
 
 首先，要明白这里的“最小宽度值”是什么意思。替换元素，例如图片的最小宽度值就是图片呈现的宽度，对于文本元素，如果全部是中文，则最小宽度值就是一个中文的宽度值；如果包含英文，因为默认英文单词不换行，所以，最小宽度可能就是里面最长的英文单词的宽度
 
@@ -201,7 +218,8 @@ div{
 </iframe>
 
 ### max-content
-　　 width:max-content 表示采用内部元素宽度值最大的那个元素的宽度作为最终容器的宽度。如果出现文本，则相当于文本不换行
+
+width:max-content 表示采用内部元素宽度值最大的那个元素的宽度作为最终容器的宽度。如果出现文本，则相当于文本不换行
 
 <iframe width='100%' height='auto' frameborder="0" srcdoc='
 <style>
@@ -217,9 +235,9 @@ div{
 '>
 </iframe>
 
-
 ## css 元素混合
-   元素混合 mix-blend-mode 应用于两个元素之间的混合
+
+元素混合 mix-blend-mode 应用于两个元素之间的混合
 
 mix-blend-mode
 
@@ -230,7 +248,6 @@ mix-blend-mode
 继承性: 无
 
 值: normal(正常) | multiply(正片叠底) | screen(滤色) | overlay(叠加) | darken(变暗) | lighten(变亮) | color-dodge(颜色减淡) | color-burn(颜色加深) | hard-light(强光) | soft-light(柔光) | difference(差值) | exclusion(排除) | hue(色相) | saturation(饱和度) | color(颜色) | luminosity (亮度) | initial(初始) | inherit(继承) | unset(复原)
-
 
 <iframe width='100%' height='auto' frameborder="0" srcdoc='
 <html lang="en"><head>

@@ -1,4 +1,5 @@
 ## 静态方法
+
 ```
 1. promise.all 所有的 resolve
 2. promise.race 任何一个接口先完成就可以，无论是成功还是报错

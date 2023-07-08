@@ -1,5 +1,7 @@
 # threejs
+
 ## 概念
+
 ```
 1、场景（scene） ： 是物体、光源等元素的容器，抛出 window.scene 即可实时调整 obj 的信息和材质信息。
 
@@ -15,13 +17,14 @@
 ```
 
 ## 操作
+
 ```js
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 // 1 创建场景
 createScene(){
-  this.scene = new THREE.Scene(); 
+  this.scene = new THREE.Scene();
 }
 
 // 2 创建相机

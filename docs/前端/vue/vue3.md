@@ -18,8 +18,8 @@ Vue3.0 改进主要在以下几点：
 ● 虚拟 DOM 重写，在编译时会将时间缓存，将slot编译为lazy函数，保存静态节点直接服用（静态提升），以及添加静态标记，diff算法使用最长递增子序列优化了对比流程，是的虚拟DOM生成速度提升200%
 ● 对于TypeScript 支持更友好
 ```
-## Vue3.0 的优化思想就是，将可能影响性能的一些问题在编译时就提前解决好，无需手动解决。期待 3.0 时代的到来。
 
+## Vue3.0 的优化思想就是，将可能影响性能的一些问题在编译时就提前解决好，无需手动解决。期待 3.0 时代的到来。
 
 #### 生命周期
 
@@ -1079,8 +1079,9 @@ h1 {
 可以试一下效果依然可以实现
 
 #### 获取原型链上面的属性
+
 ```vue
-import { getCurrentInstance } from "vue"
-// 使用getCurrentInstance方法获取当前vdom实例
-const axios = getCurrentInstance()?.appContext.config.globalProperties.属性名
+import { getCurrentInstance } from "vue" //
+使用getCurrentInstance方法获取当前vdom实例 const axios =
+getCurrentInstance()?.appContext.config.globalProperties.属性名
 ```
