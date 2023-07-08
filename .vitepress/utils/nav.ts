@@ -5,7 +5,7 @@ export const nav = [
     link: '/docs/开篇/hello'
   },
   {
-    text: '个人',
+    text: '简介',
     link: 'https://gz_lib.gitee.io/g-resume'
   },
   {
@@ -14,6 +14,6 @@ export const nav = [
   },
   {
     text: '里程',
-    link: 'https://gmilepost.netlify.app/'
+    link: 'https://gmilepost.netlify.app'
   }
 ]

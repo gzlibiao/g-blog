@@ -5,9 +5,10 @@ import { description } from './utils/description'
 import { algolia } from './configs/algolia'
 
 const config = defineConfig({
-  title: 'Smart',
+  title: 'BigOld',
   lang: 'zh-CN',
   lastUpdated: false,
+  description,
   head: [
     [
       'link',
@@ -49,8 +50,8 @@ const config = defineConfig({
       }
     ]
   ],
+  cacheDir: undefined,
   outDir: './public',
-  description,
   markdown: {
     theme: 'material-palenight',
     lineNumbers: true

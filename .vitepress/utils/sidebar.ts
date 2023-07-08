@@ -1,3 +1,5 @@
+// jf-temp-1301446188.cos.ap-guangzhou.myqcloud.com/R09TUw==/eyJpZCI6IjI2NjE2MjUzLWNiYzktNDUzMC1iNzVjLWQ3YTBjODBlZGNhMyIsIm5hbWUiOiLkvaDkuI3nn6XpgZPnmoRKYXZhU2NyaXB077yI5LiL5Y2377yJLnBkZiIsImRpciI6IuS5piJ9
+
 export const sidebar = {
   '/docs/': [
     {
@@ -7,6 +9,27 @@ export const sidebar = {
         { text: '常识', link: '/docs/开篇/quotations' },
         { text: '面试汇总', link: '/docs/开篇/面试汇总' },
         { text: '环境配置', link: '/docs/开篇/环境配置' }
+      ]
+    },
+    {
+      text: '看书',
+      items: [
+        {
+          text: 'git进阶',
+          link: 'https://jf-temp-1301446188.cos.ap-guangzhou.myqcloud.com/R09TUw==/eyJpZCI6IjY4ZTk2YzhiLTQzOGEtNGU5OS05NjE2LWEyZTlkOGJjYmEwYyIsIm5hbWUiOiJwcm9naXQyLnBkZiIsImRpciI6IuS5piJ9'
+        },
+        {
+          text: '你所不知道的javascript上',
+          link: 'https://jf-temp-1301446188.cos.ap-guangzhou.myqcloud.com/R09TUw==/eyJpZCI6IjZlNmY5NzhlLTcyYmQtNGEzYi1iMzA4LWRkMmE0ZjkzNDJlNiIsIm5hbWUiOiLkvaDkuI3nn6XpgZPnmoRKYXZhU2NyaXB077yI5LiK5Y2377yJLnBkZiIsImRpciI6IuS5piJ9'
+        },
+        {
+          text: '你所不知道的javascript中',
+          link: 'https://jf-temp-1301446188.cos.ap-guangzhou.myqcloud.com/R09TUw==/eyJpZCI6Ijk2YjI5Mzc2LWIzNmEtNDQ4OS1iOWM2LWU4NDk1MzI3MzkyMSIsIm5hbWUiOiLkvaDkuI3nn6XpgZPnmoRKYXZhU2NyaXB077yI5Lit5Y2377yJLnBkZiIsImRpciI6IuS5piJ9'
+        },
+        {
+          text: '你所不知道的javascript下',
+          link: 'https://jf-temp-1301446188.cos.ap-guangzhou.myqcloud.com/R09TUw==/eyJpZCI6IjI2NjE2MjUzLWNiYzktNDUzMC1iNzVjLWQ3YTBjODBlZGNhMyIsIm5hbWUiOiLkvaDkuI3nn6XpgZPnmoRKYXZhU2NyaXB077yI5LiL5Y2377yJLnBkZiIsImRpciI6IuS5piJ9'
+        }
       ]
     },
     {

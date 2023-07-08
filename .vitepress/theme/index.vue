@@ -31,19 +31,34 @@
     <iframe
       src="https://gtols.netlify.app/#/tag"
       height="350"
-      width="100%"
+      class="iframe"
       frameborder="0"
     />
   </f-main>
 </template>
 
 <style scoped>
+.iframe {
+  width: 100%;
+  position: absolute;
+  right: 0;
+  left: 0;
+  @media (min-width: 1024px) {
+    position: static;
+  }
+}
+
 .f-main {
   max-width: 620px;
   margin: 40px auto;
   box-sizing: border-box;
   padding: 40px;
   padding-bottom: 0;
+  padding-bottom: 350px;
+
+  @media (min-width: 1024px) {
+    padding-bottom: 40px;
+  }
 }
 
 .f-button-default {
