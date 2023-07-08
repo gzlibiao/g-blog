@@ -16,6 +16,13 @@ export const sidebar = {
       items: [
         {
           text: 'git进阶',
+          target: '_blank',
+          attrs: {
+            test: 1
+          },
+          props: {
+            test: 12
+          },
           link: 'https://jf-temp-1301446188.cos.ap-guangzhou.myqcloud.com/R09TUw==/eyJpZCI6IjY4ZTk2YzhiLTQzOGEtNGU5OS05NjE2LWEyZTlkOGJjYmEwYyIsIm5hbWUiOiJwcm9naXQyLnBkZiIsImRpciI6IuS5piJ9'
         },
         {
