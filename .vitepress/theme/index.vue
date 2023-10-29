@@ -9,7 +9,7 @@
     </f-text>
 
     <f-divider margin="32px" color="rgb(224, 224, 224)"></f-divider>
-
+    块
     <f-text
       >🎃
       不要惧怕写出不完美的代码，只要在后续迭代过程中“见招拆招”，代码就会变得越来越完善。
@@ -38,35 +38,35 @@
 </template>
 
 <style scoped>
-  .iframe {
-    width: 100%;
-    position: absolute;
-    right: 0;
-    left: 0;
-    @media (min-width: 1024px) {
-      position: static;
-    }
+.iframe {
+  width: 100%;
+  position: absolute;
+  right: 0;
+  left: 0;
+  @media (min-width: 1024px) {
+    position: static;
   }
+}
 
-  .f-main {
-    max-width: 620px;
-    margin: 40px auto;
-    box-sizing: border-box;
-    padding: 40px;
-    padding-bottom: 0;
-    padding-bottom: 350px;
+.f-main {
+  max-width: 620px;
+  margin: 40px auto;
+  box-sizing: border-box;
+  padding: 40px;
+  padding-bottom: 0;
+  padding-bottom: 350px;
 
-    @media (min-width: 1024px) {
-      padding-bottom: 40px;
-    }
+  @media (min-width: 1024px) {
+    padding-bottom: 40px;
   }
+}
 
-  .f-button-default {
-    margin-left: 15px;
-  }
+.f-button-default {
+  margin-left: 15px;
+}
 
-  .f-text {
-    display: block;
-    line-height: 40px;
-  }
+.f-text {
+  display: block;
+  line-height: 40px;
+}
 </style>
