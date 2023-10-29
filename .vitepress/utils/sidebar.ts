@@ -239,7 +239,7 @@ export const sidebar = {
     },
     {
       text: '年度目标',
-      items: [{ text: '2023', link: '/docs/年度目标/2023' }]
+      items: [{ text: '年度目标', link: '/docs/年度目标/2023' }]
     }
   ]
 }
