@@ -141,6 +141,12 @@ export const sidebar = {
       ]
     },
     {
+      text:"测试相关",
+      items:[
+        {text:'测试方法',link:'/docs/testing/测试方法'}
+      ]
+    },
+    {
       text: 'JavaScript',
       items: [
         { text: '基础', link: '/docs/javascript/basic' },
