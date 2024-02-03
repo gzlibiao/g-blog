@@ -9,7 +9,7 @@
     </f-text>
 
     <f-divider margin="32px" color="rgb(224, 224, 224)"></f-divider>
-    块
+
     <f-text
       >🎃
       不要惧怕写出不完美的代码，只要在后续迭代过程中“见招拆招”，代码就会变得越来越完善。

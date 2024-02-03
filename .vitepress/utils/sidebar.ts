@@ -141,10 +141,8 @@ export const sidebar = {
       ]
     },
     {
-      text:"测试相关",
-      items:[
-        {text:'测试方法',link:'/docs/testing/测试方法'}
-      ]
+      text: '测试相关',
+      items: [{ text: '测试方法', link: '/docs/testing/测试方法' }]
     },
     {
       text: 'JavaScript',
@@ -242,10 +240,10 @@ export const sidebar = {
         { text: 'git', link: '/docs/other/git' },
         { text: 'google调试技巧', link: '/docs/other/google调试技巧' }
       ]
-    },
-    {
-      text: '年度目标',
-      items: [{ text: '年度目标', link: '/docs/年度目标/2023' }]
     }
+    // {
+    //   text: '年度目标',
+    //   items: [{ text: '年度目标', link: '/docs/年度目标/2023' }]
+    // }
   ]
 }
