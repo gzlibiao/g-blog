@@ -4,6 +4,15 @@
 update 表名 set 指定字段 = replace(指定字段,'要替换的字符串','想要的字符串') where 条件
 ```
 
+### 修改mysql密码
+
+##### 更改密码
+alter user 'root'@'localhost' identified with mysql_native_password by 'xxxxx';
+
+##### 刷新权限
+flush privileges;
+
+
 ```
 (二)多表查询：子查询 
 注意一：子查询的写法更符合人的思维方式 

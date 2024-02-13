@@ -17,8 +17,23 @@
 
 ```
 
-### 出错
+### 分支篇
+* master（主分支，永远是可用的稳定版本，不能直接在该分支上开发）
+* develop（开发主分支，所有新功能以这个分支来创建自己的开发分支，该分支只做合并操作，不能直接在该分支上进行开发）
+* feature-xxx（功能开发分支，在develop上创建分支，以自己开发功能模块命名，功能测试正常后合并到develop分支）
+* feature-xxx-fix（功能bug修复分支，feature分支合并之后发现bug，在develop上创建分支进行修复，之后合并回develop分支）
+##### (PS：feature分支在申请合并之后，未合并之前还是可以提交代码的，所以feature在合并之前还可以在原分支上继续修复bug)
+* hotfix-xxx（紧急bug修改分支，在master分支上创建，修复完成后合并到master）
+* bugfix/*分支 （短期从develop创建）
+* release/*分支（短期从develop创建）
+* 
+#### 注意事项：
+一个分支尽量开发一个功能模块。不要多个功能模块在一个分支上开发
+feature分支在申请合并之前，最好是先pull一下主分支develop，看一下有没有冲突，如果有，先解决冲突后再申请合并
+#### 分支命名
+feature/20231030/功能名
 
+### 推送出错
 ```
 
 1 使用如下命令
@@ -216,3 +231,4 @@ git config --global http.sslVerify "true"
 151.101.100.133 avatars7.githubusercontent.com
 151.101.100.133 avatars8.githubusercontent.com
 ```
+

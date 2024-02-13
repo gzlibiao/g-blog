@@ -7,7 +7,6 @@ export const sidebar = {
       items: [
         { text: 'Hello', link: '/docs/开篇/hello' },
         { text: '常识', link: '/docs/开篇/quotations' },
-        { text: '面试汇总', link: '/docs/开篇/面试汇总' },
         { text: '环境配置', link: '/docs/开篇/环境配置' }
       ]
     },
@@ -121,6 +120,22 @@ export const sidebar = {
         {
           text: '开发vue3配置',
           link: '/docs/前端/vue/vue3_config'
+        },
+        {
+          text: 'react',
+          link: '/docs/前端/react/react'
+        },
+        {
+          text: 'react路由',
+          link: '/docs/前端/react/路由'
+        },
+        {
+          text: 'react题目',
+          link: '/docs/前端/react/题目'
+        },
+        {
+          text: 'ReactNative',
+          link: '/docs/前端/react/native'
         },
         {
           text: 'pinia',
@@ -237,7 +252,10 @@ export const sidebar = {
         { text: '图床', link: '/docs/other/图床' },
         { text: '埋点', link: '/docs/other/埋点' },
         { text: 'dns', link: '/docs/other/dns' },
+        { text: '架构篇', link: '/docs/other/架构' },
+        { text: '电脑整理', link: '/docs/other/电脑整理' },
         { text: 'git', link: '/docs/other/git' },
+        { text: '面试汇总', link: '/docs/开篇/面试汇总' },
         { text: 'google调试技巧', link: '/docs/other/google调试技巧' }
       ]
     }
