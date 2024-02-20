@@ -134,7 +134,7 @@ export const sidebar = {
           link: '/docs/前端/react/题目'
         },
         {
-          text: 'ReactNative',
+          text: 'RepactNative',
           link: '/docs/前端/react/native'
         },
         {

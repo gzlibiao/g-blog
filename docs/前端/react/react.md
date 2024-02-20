@@ -1,3 +1,18 @@
+## react vs vue
+共同点
+* 组件化
+* 函数时编程
+* 单项数据流 + 数据驱动视图
+* virtual dom + diff 算法操作dom
+* 都支持ssr
+
+不同点
+* vue使用模板拥抱html,react使用jsx 拥抱js
+* vue 自动档(双绑) react 手动档 (setState)(api生态)
+* vue createVNode , react.createElement
+## 创建项目
+npx create-react-app demo
+
 ## 4. 创建项目的基本结构
 
     api: ajax请求的模块
@@ -640,3 +655,163 @@
         a. 问题: 刷新某个路由路径时, 会出现404的错误
         b. 原因: 项目根路径后的path路径会被当作后台路由路径, 去请求对应的后台路由, 但没有
         c. 解决: 使用自定义中间件去读取返回index页面展现
+
+## 判断组件是否做出更新动作的钩子  memo PureComponent useMemo
+```javascript
+shouldComponentUpdate(nextProps,nextState){
+    return boolean
+}
+```
+
+## 组件异步加载
+```javascript
+const Sub=Lazy(()=>import('./Sub'));
+<Suspense fallback={<div>loading</div>}>
+    <Sub/>
+</Suspense>
+```
+
+## react18 更新了什么
+1. React 18 中的自动批量处理功能允许将多个状态更新分组到一个重新渲染中，以提高性能。这包括在 Promise、setTimeout 回调和原生事件处理程序中的状态更新。这意味着，以前需要手动批处理的操作，如在 setState 中调用多个函数，现在会被自动合并，减少重新渲染的次数，从而提升性能。
+```javascript
+// react17
+this.setState({ a: 100 });// 异步
+setTimeout(()=>{
+    this.setState({ a: 100 });// 同步
+})
+// react18 
+this.setState({ a: 100 });// 异步
+setTimeout(()=>{
+    this.setState({ a: 100 });// 异步
+})
+// react18 同步方式
+flushSync(() => {
+    this.setState({ a: 100 });
+});
+
+```
+2. 并发 API：React 18 引入了新的并发 API，这些 API 允许开发者更好地控制应用在并发环境下的行为。例如，Transition API 允许开发者在动画期间控制事件循环，而 Strict Mode 的更新则提供了更严格的错误检查和性能优化。
+
+3. SSR for Suspense：React 18 还支持服务端渲染（SSR）中的 Suspense 功能，这意味着开发者可以在服务端渲染时加载组件，而不需要等到客户端。这有助于提高应用的性能和用户体验。
+## react 生命周期
+1. 初始化
+
+1、getDefaultProps()
+设置默认的props，也可以用dufaultProps设置组件的默认属性.
+
+2、getInitialState()
+在使用es6的class语法时是没有这个钩子函数的，可以直接在constructor中定义this.state。此时可以访问this.props
+
+3、componentWillMount()
+组件初始化时只调用，以后组件更新不调用，整个生命周期只调用一次，此时可以修改state。
+在渲染前调用,在客户端也在服务端。
+
+2. 挂载
+
+4、 render()
+react最重要的步骤，创建虚拟dom，进行diff算法，更新dom树都在此进行。此时就不能更改state了。
+
+5、componentDidMount()
+组件渲染之后调用，只调用一次。
+
+在第一次渲染后调用，只在客户端。之后组件已经生成了对应的DOM结构，可以通过this.getDOMNode()来进行访问。
+
+如果你想和其他JavaScript框架一起使用，可以在这个方法中调用setTimeout, setInterval或者发送AJAX请求等操作(防止异步操作阻塞UI)。
+
+3. 更新
+
+6、componentWillReceiveProps(nextProps)
+组件初始化时不调用，组件接受新的props时调用。
+
+使用componentWillReceiveProps的时候，不要去向上分发，调用父组件的相关setState方法，否则会成为死循环
+
+在组件接收到一个新的 prop (更新后)时被调用。这个方法在初始化render时不会被调用。
+
+7、shouldComponentUpdate(nextProps, nextState)
+react性能优化非常重要的一环。组件接受新的state或者props时调用，我们可以设置在此对比前后两个props和state是否相同，
+
+8、componentWillUpdata(nextProps, nextState)
+组件初始化时不调用，只有在组件将要更新时才调用，此时可以修改state
+
+9、render()
+组件渲染
+
+10、componentDidUpdate()
+组件初始化时不调用，组件更新完成后调用，此时可以获取dom节点。
+
+4. 销毁
+11、componentWillUnmount()
+组件将要卸载时调用，一些事件监听和定时器需要在此时清除。
+
+#### 组件生命周期的执行次数是什么样子的
+1. 只执行一次： constructor、componentWillMount、componentDidMount
+
+2. 执行多次：render 、子组件的componentWillReceiveProps、componentWillUpdate、componentDidUpdate
+
+3. 有条件的执行：componentWillUnmount（页面离开，组件销毁时）
+
+4. 不执行的：根组件（ReactDOM.render在DOM上的组件）的componentWillReceiveProps（因为压根没有父组件给传递props）
+## react 数据传递的方式
+1. 父传子
+父组件 传值给 子组件 然后this.props 接收
+
+2. 子传父
+父组件传递回调函数给子组件 ，子组件去触发回调
+
+3. 兄弟
+4. 无关联传递
+```javascript
+const ctx1 = React.createContext()
+const ctx2 = React.createContext()
+
+
+const Son=()=>{
+    return (<div>
+        <ctx1.Consumer>
+            {value=><div>{value}</div>}
+        </ctx1.Consumer>
+
+        <ctx2.Consumer>
+            {fn=><div>{fn()}</div>}
+        </ctx2.Consumer>
+    </div>)
+}
+
+const Parent=()=>{
+    return (<div>
+        <ctx1.Provider value={1}>
+            <ctx2.Provider value={()=>1}>
+                <Son />
+            </ctx2.Provider>
+        </ctx1.Provider>
+    </div>)
+}
+
+// 设置全局createContext
+const overallContext = React.createContext(
+    test.value
+);
+
+class Communication9 extends Component {
+    onfunction() {
+        return `数据`
+    }
+    render() {
+        return (
+            {this.context.val}
+        )
+    }
+}
+Communication9.contextType = overallContext;
+```
+
+## react 五个常用 hook
+1. useState：这是React中最基本的`Hook`之一，用于在函数组件中添加和管理状态。`useState`接收一个初始值，并返回一个数组，其中第一个元素是当前的状态值，第二个元素是更新状态值的函数。通过调用这个函数，可以更新组件的状态。
+
+2. useEffect：这个`Hook`用于处理副作用操作，比如数据获取、订阅事件等。它在每次渲染后执行，可以用来处理组件的生命周期事件，如`componentDidMount`、`componentDidUpdate`和`componentWillUnmount`。`useEffect`接受两个参数，第一个参数是一个函数，用于执行副作用操作，第二个参数是一个数组，用于指定副作用操作的依赖项。
+
+3. useMemo：这个`Hook`用于缓存函数的结果，确保只有当其输入变化时才会重新计算。它可以用来避免不必要的重复计算，从而提升性能。
+
+4. useReducer：这个`Hook`与`useMemo`相似，但它专门用于缓存reducers（即状态更新函数）。这使得状态更新更加高效，尤其是在有多个 reducer 需要同时更新的情况下。
+
+5. useContext：这个`Hook`用于在组件树中使用上下文对象。它允许开发者在不同组件之间共享数据，而无需进行复杂的props传递。

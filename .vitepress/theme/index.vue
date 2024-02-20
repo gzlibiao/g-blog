@@ -37,6 +37,11 @@
   </f-main>
 </template>
 
+<script>
+export default {
+    provide
+}
+</script>
 <style scoped>
 .iframe {
   width: 100%;
