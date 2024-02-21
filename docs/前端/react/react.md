@@ -694,6 +694,7 @@ flushSync(() => {
 
 3. SSR for Suspense：React 18 还支持服务端渲染（SSR）中的 Suspense 功能，这意味着开发者可以在服务端渲染时加载组件，而不需要等到客户端。这有助于提高应用的性能和用户体验。
 ## react 生命周期
+
 1. 初始化
 
 1、getDefaultProps()
@@ -743,6 +744,9 @@ react性能优化非常重要的一环。组件接受新的state或者props时�
 11、componentWillUnmount()
 组件将要卸载时调用，一些事件监听和定时器需要在此时清除。
 
+
+![img](./react.webp)
+
 #### 组件生命周期的执行次数是什么样子的
 1. 只执行一次： constructor、componentWillMount、componentDidMount
 
@@ -764,8 +768,9 @@ react性能优化非常重要的一环。组件接受新的state或者props时�
 const ctx1 = React.createContext()
 const ctx2 = React.createContext()
 
-
 const Son=()=>{
+    const ctx2Pms=useContext(ctx2);
+
     return (<div>
         <ctx1.Consumer>
             {value=><div>{value}</div>}
