@@ -86,14 +86,6 @@ export const sidebar = {
           link: '/docs/前端/pwa/pwa'
         },
         {
-          text: 'react',
-          link: '/docs/前端/react/react'
-        },
-        {
-          text: 'react-native',
-          link: '/docs/前端/react/native'
-        },
-        {
           text: 'seo',
           link: '/docs/前端/seo/seo'
         },
@@ -122,22 +114,6 @@ export const sidebar = {
           link: '/docs/前端/vue/vue3_config'
         },
         {
-          text: 'react',
-          link: '/docs/前端/react/react'
-        },
-        {
-          text: 'react路由',
-          link: '/docs/前端/react/路由'
-        },
-        {
-          text: 'react题目',
-          link: '/docs/前端/react/题目'
-        },
-        {
-          text: 'RepactNative',
-          link: '/docs/前端/react/native'
-        },
-        {
           text: 'pinia',
           link: '/docs/前端/vue/pinia'
         },
@@ -152,6 +128,22 @@ export const sidebar = {
         {
           text: 'uniapp',
           link: '/docs/前端/uniapp/uniapp'
+        },
+        {
+          text: 'react',
+          link: '/docs/前端/react/react'
+        },
+        {
+          text: 'react路由',
+          link: '/docs/前端/react/路由'
+        },
+        {
+          text: 'react题目',
+          link: '/docs/前端/react/题目'
+        },
+        {
+          text: 'RepactNative',
+          link: '/docs/前端/react/native'
         }
       ]
     },
