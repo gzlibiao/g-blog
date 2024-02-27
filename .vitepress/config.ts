@@ -50,7 +50,7 @@ const config = defineConfig({
       }
     ]
   ],
-  cacheDir: undefined,
+  // cacheDir: undefined,
   outDir: './public',
   markdown: {
     theme: 'material-palenight',

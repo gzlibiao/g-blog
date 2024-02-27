@@ -53,7 +53,7 @@
   }
 
   const init = (load = true): void => {
-    let containerWidth = waterfall.value.clientWidth
+    let containerWidth = Waterfall1.value.clientWidth
 
     // 容器可分配宽度=容器原宽度 -（列数-1）* 列间隙
     containerWidth =
@@ -65,16 +65,16 @@
     }
 
     // 以最终的列数 - 1 * 间隙
-    if (cols !== Math.floor(waterfall.value.clientWidth / prop.minWidth)) {
+    if (cols !== Math.floor(Waterfall1.value.clientWidth / prop.minWidth)) {
       containerWidth =
-        waterfall.value.clientWidth - (Number(cols) - 1) * parseInt(prop.colGap)
+        Waterfall1.value.clientWidth - (Number(cols) - 1) * parseInt(prop.colGap)
     }
     columns.value = cols
 
     const itemWidth = containerWidth / Number(cols) + 'px'
     colWidth.value = itemWidth
 
-    containerWidth = waterfall.value.clientWidth
+    containerWidth = Waterfall1.value.clientWidth
     data.length = 0
     data.push(
       ...prop.list.map((o: rt) => ({
@@ -91,7 +91,7 @@
       if (load) {
         await preload(data)
       }
-      const nodes: HTMLDivElement = waterfall.value.querySelectorAll(
+      const nodes: HTMLDivElement = Waterfall1.value.querySelectorAll(
         '.f-waterfall__block'
       )
       let hs = Object.values(nodes).map((n: HTMLElement, index) => ({

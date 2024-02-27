@@ -7,11 +7,11 @@ import type { UserConfigExport, Plugin } from 'vite'
 const NavLinkPatch = (): Plugin => ({
   name: 'override-target-blank',
   enforce: 'pre',
-  transform: (code, id) => {
-    if (id.endsWith('VPLink.vue')) {
-      return code.replace('_blank', '_self')
-    }
-  }
+  // transform: (code, id) => {
+  //   if (id.endsWith('VPLink.vue')) {
+  //     return code.replace('_blank', '_self')
+  //   }
+  // }
 })
 
 export default (): UserConfigExport => {

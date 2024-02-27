@@ -6,9 +6,9 @@ I am an independent developer,Now I work in [长沙](https://map.baidu.com/@1258
 
 You can also get to know me through [resume](https://gz_lib.gitee.io/g-resume)
 
-:phone: 电话: **16670148215**
+:phone: 电话: **15397232864**
 
-:speech_balloon: 微信: **16670148215**
+:speech_balloon: 微信: **15397232864**
 
 :envelope: Mail: **3437705679@qq.com**
 

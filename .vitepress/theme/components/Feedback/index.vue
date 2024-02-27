@@ -36,7 +36,7 @@
   import axios from 'axios'
   import { FMessage } from 'fighting-design'
   import { ref, reactive, onMounted } from 'vue'
-  import Waterfall from '../waterfall/src/waterfall.vue'
+  import Waterfall from '../waterfall/src/Waterfall.vue'
 
   const loading = ref(false)
   const msg = ref('')
