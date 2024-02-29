@@ -398,3 +398,163 @@ console.log(obj instanceof Object)
 这样就可以很好的分清楚是对象还是数组了
 
 > 注意：instanceof 只能进行检查引用类型，检查原始类型全部返回 false！
+
+
+## bind call apply
+bind 稍后执行 参数多个传递 fn.bind(this,pms1,pms2)
+call 立刻执行 参数多个传递 fn.call(this,pms1,pms2)
+apply 立刻执行 参数为数组传递 fn.apply(this,[pms1,pms2])
+
+## js实现继承的方式
+1. 类继承
+```javascript
+class B{
+  say(){
+
+  }
+}
+class A extends B{
+  say(){
+    
+  }
+}
+```
+
+2. 原型继承
+```javascript
+let animal = {
+  type: 'animal',
+  sayType: function() {
+    console.log('I am a ' + this.type);
+  }
+};
+  
+let dog = Object.create(animal); // 使用animal对象作为dog对象的原型
+dog.type = 'dog';
+  
+dog.sayType(); // 'I am a dog'复制代码
+```
+3. 原型链继承
+```javascript
+// 定义父类构造函数
+function Parent(name) {
+  this.name = name;
+}
+  
+// 父类原型上的方法
+Parent.prototype.sayName = function() {
+  console.log('My name is ' + this.name);
+}
+  
+// 定义子类构造函数
+function Child(name, age) {
+  this.age = age;
+}
+  
+// 将子类的原型设置为父类的实例
+Child.prototype = new Parent();
+  
+// 子类原型上的方法
+Child.prototype.sayAge = function() {
+  console.log('I am ' + this.age + ' years old');
+}
+  
+// 创建子类实例
+var child = newChild('Tom', 10);
+  
+// 调用子类实例的方法
+child.sayName(); // My name is Tom
+child.sayAge(); // I am 10 years old
+```
+
+4. 构造函数
+```javascript
+function Animal(name) {
+  this.name = name;
+}
+  
+Animal.prototype.sayName = function() {
+  console.log('My name is ' + this.name);
+}
+  
+function Dog(name, age) {
+  Animal.call(this, name); // 借用Animal构造函数，并将this指向Dog实例this.age = age;
+}
+  
+let dog1 = newDog('旺财', 2);
+let dog2 = newDog('小白', 1);
+  
+console.log(dog1.name); // '旺财'console.log(dog2.age); // 1
+dog1.sayName(); // TypeError: dog1.sayName is not a function
+```
+
+5. 组合
+```javascript
+function Animal(name) {
+  this.name = name;
+}
+  
+Animal.prototype.sayName = function() {
+  console.log('My name is ' + this.name);
+}
+  
+function Dog(name, age) {
+  Animal.call(this, name); // 借用Animal构造函数，并将this指向Dog实例this.age = age;
+}
+  
+Dog.prototype = new Animal(); // 原型链继承Animal类的属性和方法Dog.prototype.constructor = Dog; // 修复构造函数指向
+let dog1 = newDog('旺财', 2);
+let dog2 = newDog('小白', 1);
+  
+console.log(dog1.name); // '旺财'console.log(dog2.age); // 1
+dog1.sayName(); // 'My name is 旺财
+```
+
+6. 寄生
+```javascript
+function createAnimal(type) {
+  let animal = {
+    type: type,
+    sayType: function() {
+      console.log('I am a ' + this.type);
+    }
+  };
+  // 基于animal对象进行寄生增强let dog = Object.create(animal);
+  dog.bark = function() {
+    console.log('woof woof');
+  };
+  return dog;
+}
+  
+let myDog = createAnimal('canine');
+myDog.sayType(); // 'I am a canine'
+myDog.bark(); // 'woof woof'复制代码
+```
+
+7. 寄生式组合继承
+```javascript
+function Animal(name) {
+  this.name = name;
+  this.type = 'mammal';
+}
+  
+Animal.prototype.sayName = function() {
+  console.log('My name is ' + this.name);
+};
+  
+function Dog(name, breed) {
+  Animal.call(this, name);
+  this.breed = breed;
+}
+  
+// 使用寄生式继承继承Animal.prototypeDog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+  
+Dog.prototype.sayBreed = function() {
+  console.log('I am a ' + this.breed);
+};
+  
+let myDog = newDog('Max', 'Golden Retriever');
+myDog.sayName(); // 'My name is Max'
+myDog.sayBreed(); // 'I am a Golden Retriever'
+```

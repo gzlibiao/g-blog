@@ -20,7 +20,7 @@ Object
   [[Prototype]]: Object
 ```
 
-想要获取到对象的原型可以使用 `__porto__` 来获取到
+想要获取到对象的原型可以使用 `__proto__` 来获取到
 
 ```js
 const user = {}
