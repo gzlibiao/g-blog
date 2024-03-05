@@ -434,6 +434,7 @@ dog.type = 'dog';
   
 dog.sayType(); // 'I am a dog'复制代码
 ```
+
 3. 原型链继承
 ```javascript
 // 定义父类构造函数
@@ -502,7 +503,8 @@ function Dog(name, age) {
   Animal.call(this, name); // 借用Animal构造函数，并将this指向Dog实例this.age = age;
 }
   
-Dog.prototype = new Animal(); // 原型链继承Animal类的属性和方法Dog.prototype.constructor = Dog; // 修复构造函数指向
+Dog.prototype = new Animal(); // 原型链继承Animal类的属性和方法
+Dog.prototype.constructor = Dog; // 修复构造函数指向
 let dog1 = newDog('旺财', 2);
 let dog2 = newDog('小白', 1);
   

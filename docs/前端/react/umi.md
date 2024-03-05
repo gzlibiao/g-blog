@@ -34,3 +34,9 @@ import user from '../assets/imgs/userBj.png'
 ```
 
 3 服务器资源
+
+
+镜像管理 yrm
+yrm ls 
+yrm test
+yrm use taobao

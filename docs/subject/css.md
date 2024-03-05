@@ -1,5 +1,12 @@
 # Css 相关
 
+## css函数
+1. calc
+2. attr 获取dom上的属性 attr(data-bg) data-bg='#fff'
+3. bind
+4. min
+5. max
+ 
 ## line-height:150%与 1.5 啥区别
 
 - 150%是根据父元素的字体大小计算出行高，并且子元素依然沿用这个计算后的行高。
