@@ -167,6 +167,10 @@ export const sidebar = {
             ]
         },
         {
+            text: '小程序相关',
+            items: [{text: '小程序', link: '/docs/前端/小程序/支付宝'}]
+        },
+        {
             text: '测试相关',
             items: [{text: '测试方法', link: '/docs/testing/测试方法'}]
         },

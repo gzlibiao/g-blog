@@ -23,7 +23,7 @@ public 无需打包的资源
 1 assets 目录下
 
 ```js
-import user from '../assets/imgs/userBj.png'
+import user from '../assets/imgs/userBj.png';
 <img src={user} />
 <img src={require('../assets/imgs/userBj.png')} />
 ```
