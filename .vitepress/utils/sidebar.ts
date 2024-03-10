@@ -267,7 +267,8 @@ export const sidebar = {
                 {text: '电脑整理', link: '/docs/other/电脑整理'},
                 {text: 'git', link: '/docs/other/git'},
                 // { text: '面试汇总', link: '/docs/开篇/面试汇总' },
-                {text: 'google调试技巧', link: '/docs/other/google调试技巧'}
+                {text: 'google调试技巧', link: '/docs/other/google调试技巧'},
+                {text: 'web安全', link: '/docs/other/web安全'}
             ]
         }
         // {

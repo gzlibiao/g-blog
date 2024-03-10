@@ -218,7 +218,7 @@ router.get('/getdata', async (ctx) => {
 
 ---上述过程会不断重复 这就是事件循环
 
-微任务：Promise.then、nextTick、Object.Observe
+微任务：Promise.then、nextTick、Object.Observe、async await之下
 宏任务：setTimeout、setInterval
 
 为什么会有事件循环：javascript 是单线程的语言，如果设计成多线程语言将会导致 DOM 操作冲突
