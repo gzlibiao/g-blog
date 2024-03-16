@@ -17,38 +17,38 @@ const config = defineConfig({
         href: 'https://jf-temp-1301446188.cos.ap-guangzhou.myqcloud.com/R09TUw==/eyJpZCI6IjBkYWFmMGRlLTRjNGYtNDU0OS1iNzVmLTc3YmZlNTU0YjdjZSIsIm5hbWUiOiJ3ZWNoYXQuYm1wIiwiZGlyIjoi5aS05YOPIn0='
       }
     ],
-    // [
-    //   'link',
-    //   {
-    //     rel: 'stylesheet',
-    //     id: 'font-awesome-css',
-    //     href: 'https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css',
-    //     type: 'text/css',
-    //     media: 'all'
-    //   }
-    // ],
-    // [
-    //   'script',
-    //   {
-    //     src: 'https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js'
-    //   }
-    // ],
-    // [
-    //   'div',
-    //   {
-    //     id: 'music',
-    //     key: '646868c966e23',
-    //     api: 'https://player.qsdurl.cn'
-    //   }
-    // ],
-    // [
-    //   'script',
-    //   {
-    //     async: 'true',
-    //     id: 'xplayer',
-    //     src: 'https://player.qsdurl.cn/Static/player9/js/player.js'
-    //   }
-    // ]
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        id: 'font-awesome-css',
+        href: 'https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css',
+        type: 'text/css',
+        media: 'all'
+      }
+    ],
+    [
+      'script',
+      {
+        src: 'https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js'
+      }
+    ],
+    [
+      'div',
+      {
+        id: 'music',
+        key: '646868c966e23',
+        api: 'https://player.qsdurl.cn'
+      }
+    ],
+    [
+      'script',
+      {
+        async: 'true',
+        id: 'xplayer',
+        src: 'https://player.qsdurl.cn/Static/player9/js/player.js'
+      }
+    ]
   ],
   // cacheDir: undefined,
   outDir: './public',
