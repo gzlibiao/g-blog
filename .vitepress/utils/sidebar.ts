@@ -274,6 +274,13 @@ export const sidebar = {
                 {text: 'google调试技巧', link: '/docs/other/google调试技巧'},
                 {text: 'web安全', link: '/docs/other/web安全'}
             ]
+        },
+        {
+          text: '自考',
+          items: [
+              { text: '06093', link: '/docs/自考/06093_人力资源开发与管理' },
+              { text: '03453', link: '/docs/自考/03453_创业学' }
+          ]
         }
         // {
         //   text: '年度目标',
