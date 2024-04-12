@@ -280,8 +280,8 @@ export const sidebar = {
           items: [
               { text: '人力资源开发管理', link: '/docs/自考/06093_人力资源开发与管理' },
               { text: '创业学', link: '/docs/自考/03453_创业学' },
-              { text: '马克思', link: '/docs/自考/03709_创业学' },
-              { text: '公共关系学', link: '/docs/自考/00182_创业学' }
+              { text: '马克思', link: '/docs/自考/03709_马克思' },
+              { text: '公共关系学', link: '/docs/自考/00182_公共关系学' }
           ]
         }
         // {
