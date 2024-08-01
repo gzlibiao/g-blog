@@ -1085,3 +1085,14 @@ import { getCurrentInstance } from "vue" //
 使用getCurrentInstance方法获取当前vdom实例 const axios =
 getCurrentInstance()?.appContext.config.globalProperties.属性名
 ```
+
+#### Vue3内部proxy怎么处理数组变化
+
+1. 对于数组，Vue 3 的响应式系统通过 Proxy 来代理数组，使得数组的变化可以被追踪。Vue 3 内部的响应式系统对数组的处理方式如下：
+
+2. 数组代理：Vue 3 使用 Proxy 来代理数组，这样任何对数组的修改（如 push、pop、splice 等）都会被代理并触发视图的更新。
+拦截器：Proxy 允许定义拦截器（Interceptors），Vue 3 在这里拦截了数组的索引访问和长度属性的访问。当这些属性被访问时，Vue 会检查是否有依赖于这些属性的响应式计算，并在数组变化时重新计算
+
+3. 响应式数组方法：Vue 3 重写了数组的一些方法（如 push、pop、splice 等），使得这些方法在执行时能够触发视图的更新。这些方法被封装在 reactive 函数返回的对象中，并且当它们被调用时，会触发依赖项的重新计算
+
+4. 依赖收集：当组件的模板或计算属性访问数组时，Vue 会收集这些访问点作为依赖。当数组通过响应式方法被修改时，Vue 会通知这些依赖项重新计算
