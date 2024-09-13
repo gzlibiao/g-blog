@@ -196,6 +196,12 @@ export const sidebar = {
             ]
         },
         {
+            text: 'HarmoneyOS',
+            items: [
+                {text: '基础', link: '/docs/javascript/basic'},
+            ]
+        },
+        {
             text: 'python',
             items: [{text: '基础', link: '/docs/python/python'}]
         },
@@ -261,8 +267,8 @@ export const sidebar = {
             text: '其他',
             items: [
                 // { text: '数据可视化', link: '/docs/other/数据可视化' },
-                {text: '产品和项目的区别', link: '/docs/other/产品和项目的区别'},
-                {text: '视频', link: '/docs/other/视频'},
+                // {text: '产品和项目的区别', link: '/docs/other/产品和项目的区别'},
+                // {text: '视频', link: '/docs/other/视频'},
                 {text: '开发体验', link: '/docs/other/开发体验'},
                 {text: '图床', link: '/docs/other/图床'},
                 {text: '埋点', link: '/docs/other/埋点'},
