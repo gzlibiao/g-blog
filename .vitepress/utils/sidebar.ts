@@ -198,12 +198,14 @@ export const sidebar = {
         {
             text: 'HarmoneyOS',
             items: [
-                {text: '基础', link: '/docs/javascript/basic'},
+                {text: '基础', link: '/docs/harmoneyOS/01'},
             ]
         },
         {
             text: 'python',
-            items: [{text: '基础', link: '/docs/python/python'}]
+            items: [
+                {text: '基础', link: '/docs/python/python'}
+            ]
         },
         {
             text: 'java',
