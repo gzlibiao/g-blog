@@ -269,6 +269,7 @@ export const sidebar = {
                 // { text: '数据可视化', link: '/docs/other/数据可视化' },
                 // {text: '产品和项目的区别', link: '/docs/other/产品和项目的区别'},
                 // {text: '视频', link: '/docs/other/视频'},
+                {text: '渲染优化', link: '/docs/other/渲染优化'},
                 {text: '开发体验', link: '/docs/other/开发体验'},
                 {text: '图床', link: '/docs/other/图床'},
                 {text: '埋点', link: '/docs/other/埋点'},
