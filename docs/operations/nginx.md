@@ -167,6 +167,28 @@ gzip_vary on;
 ```
 
 ## 跨域
+浏览器同源策略 同一协议，域名，端口的站点是同源，非同源的站点在数据返回会被浏览器拦截
+
+解决方式：
+1. cors 跨站资源共享 服务器响应头 设置允许跨域的站点
+在进行cors请求会判断是简单请求还是复杂请求 
+get post head text/plain 文件 application
+简单请求：发起请求时会携带origin,服务器会进行源站点的对比，通过才行响应
+复杂请求：会发起一个options预检请求, 服务端通过才会进行真正的请求
+
+2. jsonp
+script标签不受同源策略限制
+客户端直接用script 标签请求服务器资源并且告知服务器回调函数名称，服务器接收请求，返回一个执行函数
+缺点：只能get请求,可能被xss,无法处理404,500
+
+3. nginx 
+
+CORS中Cookie相关问题
+默认情况下在跨域请求，浏览器是不带 cookie 的。如果想要传递Cookie，就要满足以下三个条件：
+
+在请求中设置 withCredentials （axios.defaults.withCredentials = true）
+Access-Control-Allow-Credentials ： true
+Access-Control-Allow-Origin 设置为非 *
 
 ```
 location ^~ /prefix {

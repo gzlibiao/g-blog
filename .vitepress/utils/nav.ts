@@ -6,7 +6,7 @@ export const nav = [
   },
   {
     text: '简介',
-    link: 'https://gz_lib.gitee.io/g-resume'
+    link: 'https://hfyf.netlify.app/'
   },
   {
     text: '记录',
