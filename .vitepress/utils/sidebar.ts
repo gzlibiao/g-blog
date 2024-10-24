@@ -36,7 +36,7 @@ export const sidebar = {
             ]
         },
         {
-            text: '前端相关',
+            text: '前端扩展',
             items: [
                 {
                     text: 'css',
@@ -53,10 +53,6 @@ export const sidebar = {
                 {
                     text: 'nest',
                     link: '/docs/前端/seo/nest/nest'
-                },
-                {
-                    text: 'ast',
-                    link: '/docs/前端/ast/ast'
                 },
                 {
                     text: 'd3',
