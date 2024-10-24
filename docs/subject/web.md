@@ -140,8 +140,6 @@ src="../图片/GetImage.jpg" alt="图片"
 
 301 Moved Permanently 请求的⽹⻚已永久移动到新位置。
 302 Found 临时性重定向。
-303 See Other 临时性重定向，且总是使⽤ GET 请求新的 URI 。
-304 Not Modified ⾃从上次请求后，请求的⽹⻚未修改过。
 
 - 4XX ：客户端错误
 

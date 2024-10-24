@@ -89,6 +89,42 @@ npx create-react-app demo
         高阶组件是特别的高阶函数
         接收一个组件函数, 返回是一个新的组件函数
 
+## react-create-app使用less
+```shell
+yarn add @craco/craco craco-less less
+```
+
+#### 新建文件 craco.config.js
+```javascript
+const CracoLessPlugin = require('craco-less');
+
+module.exports = {
+    plugins: [
+        {
+            plugin: CracoLessPlugin,
+            options: {
+                lessLoaderOptions: {
+                    lessOptions: {
+                        modifyVars: { '@primary-color': '#1DA57A' }, // 可以在此修改默认的主题变量
+                        javascriptEnabled: true,
+                    },
+                },
+            },
+        },
+    ],
+};
+```
+#### package.json
+```json
+{
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
+  }
+}
+```
 # day02
 
 ## 1. 后台应用

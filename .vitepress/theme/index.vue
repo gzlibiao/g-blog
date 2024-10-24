@@ -19,7 +19,7 @@
     <f-text bold>内容</f-text>
     <f-text>⚡ 记录开发中碰到的东西</f-text>
     <f-text>🌲 Vue 的周边生态</f-text>
-    <f-text>📌 TypeScript 相关</f-text>
+    <f-text>📌 React 相关</f-text>
     <f-text>🔨 java 相关</f-text>
     <f-text>🏆 面试 相关</f-text>
 

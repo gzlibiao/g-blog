@@ -8,315 +8,508 @@ npm config set disturl https://npm.taobao.org/dist --global
 ## 安装脚手架
 
 ```
+npm uninstall -g react-native-cli
 npm install -g react-native-cli
+npm install -g react-native@0.72.17
 ```
 
 ## 创建项目
 
-```
-npx react-native init myReact
-```
-
-## 另一种创建方式
+* 注意node版本 > 18
+* java版本 11
 
 ```
-npm install -g create-react-native-app
-1.安装好环境
+npx react-native@0.72 init MyApp --version 0.72
+```
 
-2.npm install -g create-react-native-app
+* 修改 android/gradle/wrapper/gradle-wrapper.properties
+  文件镜像源设置 https\://mirrors.aliyun.com/macports/distfiles/gradle
 
-3.create-react-native-app Demo
+```
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://mirrors.aliyun.com/macports/distfiles/gradle/gradle-8.0.1-all.zip
+networkTimeout=10000
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+```
 
-4 在 Demo 下创建一个 android 目录，在 android studio 中创建一个本地的工程，将工程复制到 Demo 的 android 目录下
+* build.gradle文件配置ali镜像
 
-5 修改 package.json 文件，npm install(按照官方文档保留，通过自己创建的 react native 工程，package.json 中的文件会生成更多)
-
-6 配置 maven
-在你的 app 中 build.gradle 文件中添加 React Native 依赖:
-
-dependencies {
-...
-compile "com.facebook.react:react-native:+" // From node_modules.
+```
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+ 
+buildscript {
+    ext {
+        buildToolsVersion = "33.0.0"
+        minSdkVersion = 21
+        compileSdkVersion = 33
+        targetSdkVersion = 33
+ 
+        // We use NDK 23 which has both M1 support and is the side-by-side NDK version from AGP.
+        ndkVersion = "23.1.7779620"
+    }
+    repositories {
+        // google()
+        // mavenCentral()
+        maven{ url 'https://maven.aliyun.com/repository/google'}
+        google()
+        mavenCentral()
+ 
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle")
+        classpath("com.facebook.react:react-native-gradle-plugin")
+    }
 }
+```
 
-7 在项目的 build.gradle 文件中为 React Native 添加一个 maven 依赖的入口，必须写在 "allprojects" 代码块中:
+### npm i react-native-gradle-plugin
 
+* 修改 build.gradle.kts
 
-allprojects {
+```
 repositories {
-...
-maven {
-// All of React Native (JS, Android binaries) is installed from npm
-url "$rootDir/../node_modules/react-native/android"
-}
-}
-...
-}
-在 sync 的时候，出现了错误，一个是原生的 minSdkVersion 与 RN 的不一致
-第二个是需要在清单文件中
+  //google()
+  //mavenCentral()
 
-<use-sdk tools:overrideLibrary="com.facebook.react">
+  maven { url = uri("https://maven.aliyun.com/repository/google/") }
+  maven { url = uri("https://maven.aliyun.com/repository/jcenter/") }
+  maven { url = uri("https://maven.aliyun.com/repository/gradle-plugin") }
+  maven { url = uri("https://maven.aliyun.com/repository/public") }
+}
 ```
 
-### 链接到 mumu 模拟器
+* 修改 settings.gradle.kts
 
+```
+pluginManagement {
+  repositories {
+    //mavenCentral()
+    //google()
+    //gradlePluginPortal()
+
+    maven { url = uri("https://maven.aliyun.com/repository/google/") }
+    maven { url = uri("https://maven.aliyun.com/repository/jcenter/") }
+    maven { url = uri("https://maven.aliyun.com/repository/gradle-plugin") }
+    maven { url = uri("https://maven.aliyun.com/repository/public") }
+  }
+}
+```
+
+### 最后
+
+```
+yarn android
+```
+
+### 装完依赖 跑起来有问题
+```
+删除 build/output/app.apk
+npm start --reset-cache
+npm run android
+```
+
+### 连接 mumu 模拟器
+
+```
 adb connect 127.0.0.1:7555
+// connected to 127.0.0.1:7555
+// 查看所有devices
+// adb devices
+// adb kill-server
+```
 
-adb devices // 查看所有可连接的设备
-adb kill-server
-adb connect 127.0.0.1:62001
+### mumu 模拟器开启root权限 和开发者usb调试
 
 ### 夜神 模拟器
 
 connect 127.0.0.1:62001
 
-### 项目跑起来
-
-yarn android or npx react-native run-android
-
 ### 低于 0.67 版本的 React Native 需要 JDK 1.8 版本（官方也称 8 版本）。
+
+# stylesheet
+
+* 没有继承性
+* 小驼峰
+* 尺寸没有单位
+* 特殊样式名 marginVertical[垂直外边距] marginHorizontal[水平外边距]
+* StyleSheet.create({})
+* flex 主轴垂直方向 交叉轴水平方向
+
+## 响应式布局 dimensions 获取设备宽高
+
+```javascript
+import {Dimensions} from 'react-native'
+const windowWidth=Dimensions.get('window').width;
+const heightWidth=Dimensions.get('window').height;
+```
+## 获取设备平台
+```javascript
+import {PlatForm} from 'react-native'
+Platform.OS==='android' // android
+Platform.OS==='ios' // ios
+```
 
 # 组件篇
 
-## RN 基础组件 1 —— Text
+## 原生组件 android or ios 组件
+
+## 核心组件 react-native 内置常用组件
+
+#### 基础组件 交互控件 列表视图
+
+* View div
+* Text span
+* Button button
+```
+<Button title={'btn'} color={'#f00'} onPress={fn}/>
+```
+
+* StatusBar 状态栏
+```
+  <StatusBar
+        hidden={false}
+        backgroundColor={'#f00'}
+        barStyle={'light-content'}
+      />
+```
+* Switch checkbox
+```
+<Switch
+  value={check}
+  onValueChange={v => setCheck(v)}
+  trackColor={{false: '#f00', true: '#0f0'}}
+  thumbColor={'#00f'}
+/>
+```
+ActivityIndicator loading 加载指示器组件
+```
+<ActivityIndicator size={'small'} color={'#f0f'} />
+```
+* Image img
+```
+<Image
+  style={{width: 100, height: 100}}
+  source={{
+    uri: 'https://cdn.jsdelivr.net/gh/gzlibiao/cdn-delivr@0.0.1/img/wechat.bmp',
+  }}
+/>
+<Image
+  style={{width: 100, height: 100}}
+  source={require('./wechat.png')}
+/>
+```
+* TextInput input
+```
+<TextInput
+  value={username}
+  onChangeText={setUsername}
+  placeholder={'请输入用户名'}
+  style={styles.input}
+/>
+
+<TextInput
+  value={password}
+  placeholder={'请输入密码'}
+  onChangeText={v => setPassword(v)}
+  style={styles.input}
+  secureTextEntry
+/>
+<TextInput
+  autoFocus={true}
+  textAlignVertical={'bottom'}
+  textAlign={'right'}
+  style={styles.textarea}
+  numberOfLines={5}
+  multiline={true}
+/>
+```
+* Touchable 触碰组件
+```
+<TouchableHighlight>
+  <Text style={styles.item}>点击了{text}</Text>
+</TouchableHighlight>
+<TouchableOpacity>
+  <Text style={styles.item}>点击了{text}</Text>
+</TouchableOpacity>
+<TouchableWithoutFeedback>
+  <Text style={styles.item}>点击了{text}</Text>
+</TouchableWithoutFeedback>
+```
+* ScrollView 滚动视图组件
+* SafeAreaView 适配刘海屏滚动 其他效果同 ScrollView
+```javascript
+<ScrollView
+        horizontal
+        contentContainerStyle={{margin: 4}}
+        showsVerticalScrollIndicator={false}
+        style={styles.scrollView}>
+  {[
+    '诚信',
+    '程序',
+    '道德',
+    '哲學',
+    '体育',
+    '科学',
+    '财经',
+    '经济',
+    '政治',
+    '社会',
+    '法制',
+    '军事',
+  ].map(o => (
+          <Text key={o + 'tab'}>{o}</Text>
+  ))}
+</ScrollView>
+```
+* SectionList 分组列表组件
+```javascript
+<SectionList
+        onEndReached={() => {
+          console.log('到底了');
+        }}
+        onEndReachedThreshold={0.1}
+        refreshing={false}
+        onRefresh={() => Alert.alert('下拉刷新')}
+        keyExtractor={(item, i) => i + 'sec'}
+        renderItem={item => <Text style={{}}>{item.item}</Text>}
+        renderSectionHeader={item => (
+                <Text style={{fontSize: 20, fontWeight: 'bold'}}>
+                  {item.section.title}
+                </Text>
+        )}
+        sections={[
+          {
+            title: '魏国',
+            data: ['曹操', '张辽', '邹氏', '甄宓'],
+          },
+          {
+            title: '蜀国',
+            data: [
+              '刘备',
+              '诸葛亮',
+              '黄月英',
+              '孙尚香',
+              '糜夫人',
+              '甘夫人',
+            ],
+          },
+          {
+            title: '吴国',
+            data: ['孙权', '甘宁', '周瑜', '大乔', '小乔'],
+          },
+        ]}
+/>
+```
+* FlatList 高性能列表组件
+* Animated 动画组件
+```javascript
+import {Alert, Animated, Button, Text, View} from 'react-native';
+
+export default () => {
+  let fadeAnim = new Animated.Value(0);
+  const fadeIn = () => {
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 5000,
+      useNativeDriver: true,
+    }).start(() => {
+      Alert.alert('fadeIN');
+    });
+  };
+
+  function fadeOut() {
+    Animated.timing(fadeAnim, {
+      toValue: 0,
+      duration: 5000,
+      useNativeDriver: true,
+    }).start(() => {
+      Alert.alert('fadeOUT');
+    });
+  }
+
+  return (
+    <View style={{backgroundColor: '#f0f'}}>
+      <Animated.View style={{height: 100, width: 100, opacity: fadeAnim}}>
+        <Text>fadein view</Text>
+      </Animated.View>
+
+      <View style={{display: 'flex', alignItems: 'center'}}>
+        <Button title={'fade in'} onPress={fadeIn} />
+        <Button title={'fade out'} onPress={fadeOut} />
+      </View>
+    </View>
+  );
+};
 
 ```
 
-import { Text } from 'react-native'
-
-<Text></Text>
-
-常用属性：
-
-        numberOfLines：显示的行数，溢出部分会隐藏
-
-        ellipsizeMode： tail / head / middle / clip
-
-常用事件：
-
-        onPress：点击
-
-        onLongPress：长按
-
-注意：RN 中容器（如 View）中不能放置文本，文本字符串只能放在 Text 中
+## 第三方组件
+* webview iframe
+```javascript
+<WebView
+        domStorageEnabled={true}
+        javaScriptEnabled={true}
+        source={{uri: 'https://hfyf.netlify.app'}}
+        style={{
+          width: Dimensions.get('window').width,
+          height: Dimensions.get('window').height,
+        }}
+/>
 ```
-
-## 二、RN 基础组件 2 —— View 和 ScrollView
-
+* picker 下拉框 value为0 貌似有问题
+```javascript
+<Picker
+        style={{marginTop: 30}}
+        onValueChange={setFoot}
+        selectedValue={foot}
+        mode={'dropdown'}>
+  <Picker.Item label={'橘子'} value={1} />
+  <Picker.Item label={'苹果'} value={2} />
+  <Picker.Item label={'香蕉'} value={3} />
+</Picker>
 ```
-import { View } from 'react-native'
-
-<View></View>
-
-说明：
-
-①View 默认没有高度，要靠内容撑起来
-
-②View 可以任意指定高度，也可以指定高度为 100%，从而撑满屏幕
-
-③View 中内容溢出了，不能滚动！如果希望滚动，请使用 ScrollView
-
-import { ScrollView } from 'react-native'
-
-<ScrollView ></ScrollView >
-
-说明：
-
-①ScrollView 默认有高度，撑满父容器
-
-②ScrollView 不能任意指定高度
-
-③ScrollView 中内容溢出了，自动滚动！—— 默认是竖直滚动
-
-④ScrollView 默认是竖直滚动，想水平滚动，指定属性 horizontal={true}
-
-⑤ScrollView 可以实现“滚动到顶部”动画效果：
-
-        import  {useRef}  from  'react'
-
-        function XzGoTop(){
-
-                let sv = useRef()
-
-                function goTop(){  sv.current.scrollTo({y: 0})  }
-
-                return (<ScrollView ref={sv}></ScrollView>)
-
-        }
-
-总结：
-
-React 官方为函数式组件提供了三个 Hook：
-
-①useState( )
-
-②useEffect( )
-
-③useRef( )
+* swiper 展示轮播效果
+```javascript
+<ScrollView>
+  <Swiper style={{height: 300}} autoplay showsButtons>
+    <Image
+            style={{height: 300, width: Dimensions.get('window').width}}
+            source={require('./wechat.png')}
+    />
+    <Image
+            style={{height: 300, width: Dimensions.get('window').width}}
+            source={{
+              uri: 'https://t12.baidu.com/it/app=106&amp;f=JPEG&amp;fm=30&amp;fmt=auto&amp;q=85&amp;size=f218_146&amp;u=2916590090%2C245984963?w=312&amp;h=208&amp;s=F9078B50E47284291B27775A0300A0EE',
+            }}
+    />
+    <Image
+            style={{height: 300, width: Dimensions.get('window').width}}
+            source={{
+              uri: 'https://t10.baidu.com/it/app=106&f=JPEG&fm=30&fmt=…63?w=312&h=208&s=15706536FBC0565D83BA4FEE0300F026',
+            }}
+    />
+  </Swiper>
+</ScrollView>
 ```
-
-## 三、RN 基础组件 3 —— Image 和 ImageBackground
+* asyncStorage 持久化存储系统 localStorage
+```javascript
 
 ```
-import { Image } from 'react-native'
-
- <Image />
-
-说明：
-
-① 本地图片：需要在打包时一起编译到手机 APP 中，可以使用 require()或 import 进行导入；可以不指定尺寸
-
-        <Image source={require('./xx/xx.png')}/>
-
-② 远程图片：不能使用 require 或 import 导入，只能使用选项对象指定地址： { uri: '远程服务器上的地址' }；必须手工指定图片尺寸，否则不显示（默认尺寸为 0）—— 为了避免页面重绘
-
-        <Image style={width:x, height:y} source={{uri: 'http://xxx/x.png'}}/>
-
-③ 图片的 resizeMode 属性指定如何缩放图片：
-
-                center：图片不缩不放，直接显示在Image区域中央
-
-                cover：覆盖，图片进行等比例缩放，保证最小边可以覆盖Image区域，大边可能溢出
-
-                contain：包含，图片进行等比例缩放，保证所有边都在Image区域，可能出现空白
-
-                stretch：拉伸，图片进行不等比例缩放，保证完美覆盖Image区域
-
-                repeat：重复/平铺，图片进行等比例缩放，保证所有边都在Image区域，空白区域继续平铺
-
-④ 如果希望获得服务器端图片的默认尺寸，可以使用 Image.getSize() 方法
-
-        Image.getSize(uri,  (w, h)=>{ } )
-
-行业小知识：
-
-URI： Unified Resource Identifier， 统一的资源识别符号 URI = URL + URN
-
-URL： Unified Resource Locator，统一的资源定位符，例如：http://www.baidu.com/img/logo.png
-
-URN: Unified Resource Naming，统一的资源命名符，例如： mailto:xx@tedu.cn
-
-<a href="mailto:admin@tedu.cn">联系管理员</a>
-
-<a href="tel: 13501234567">给我打电话吧</a>
-
-<a href="javascript:window.close()">关闭页面</a>
-
-import { ImageBackground } from 'react-native'
-
-<ImageBackground>内容</ImageBackground>
-
-说明：
-
-①RN 的样式体系中没有 backgroundImage 相关的属性，想使用背景图片，就用 ImageBackground
-
-②ImageBackground 和 Image 的属性完全一样 —— 只是 ImageBackground 内部可以放置内容
-
-③ 可以使用 blurRadius 属性控制图片或背景图片的“模糊半径”
-
-四、RN 基础组件 4 —— Button 和 TouchableOpacity
-
-import { Button } from 'react-native'
-
- <Button />
-
-说明：
-
-①Button 没有 innerHTML 部分，是一个单标记标签
-
-②Button 有两个必需的属性： title——指定按钮上方的文字、onPress——单击事件
-
-③Button 没有 onLongPress 事件、也没有 style 属性 —— 不能指定样式
-
-④Button 只有一个样式相关的属性：color，指定按钮的背景颜色
-
-注意：因为 Button 的限制太多，项目开发中一般使用 TouchableOpacity 组件代替
-
-import { TouchableOpacity } from 'react-native'
-
-<TouchableOpacity>子组件</TouchableOpacity>
-
-说明：
-
-① 翻译：触摸时能够发生透明度改变的组件，该组件内可以放置任何其它组件，实现“触摸变透明”
-
-② 有一个 activeOpacity 的属性，可以指定当触摸时透明度值：0~1 小数
-
-五、RN 基础组件 5 —— TextInput
-
-import { TextInput } from 'react-native'
-
- <TextInput />
-
-说明：
-
-① 输入框默认没有外观效果，需要的话手工添加 style
-
-② 想获得输入框中内容，只能使用“受控组件”方式——输入框的 value 属性无法获得用户的输入
-
-        <TextInput value={uname} onChangeText={(val)={}}/>
-
-③ 监听输入框内容改变不用 onChange 事件，使用 onChangeText，形参就是用户的输入
-
-④TextInput 默认是单行文本输入框；声明 secureTextEntry={true} 属性变为单行密码输入框；声明 multiline={true} numberOfLines={3} 两个属性变为多行文本输入框
-
-一、RN 基础组件 6 —— ActivityIndicator
-
-import { ActivityIndicator } from 'react-native'
-
- <ActivityIndicator />
-
-说明：
-
-①Activity：活动/进程 Indicator：指示器
-
-② 常用属性：
-
-                size:  small | large | 数字
-
-                color:  颜色
-
-                animating:  true(显示) | false(不显示但仍占用布局空间)
-
-二、RN 基础组件 7 —— StatusBar
-
-import { StatusBar } from 'react-native'
-
- <StatusBar />
-
-说明：
-
-①Status：状态 Bar：条/栏
-
-② 常用属性：
-
-        backgroundColor: 状态栏背景色，可以用半透明色
-
-        barStyle：状态栏中图标和文字的颜色，dark-content 、 light-content
-
-        hidden：是否隐藏状态栏，隐藏的话，App就是全屏显示
-
-        translucent：是否启用沉浸式状态栏，是的话页面内容可以扎到状态栏下方，一般和半透明背景色配合
-
-————————————————
+* geolocation 获取定位信息
+```javascript
+
+```
+* camera 摄像头
+```
+
+```
+## 路由导航
+* 依赖
+``` 
+"@react-navigation/native": "^6.1.18",
+"@react-navigation/native-stack": "^6.11.0",
+"react-native-safe-area-context": "^4.11.0",
+"react-native-screens": "^3.34.0",
+```
+* code
+```javascript
+import React from 'react';
+
+import {NavigationContainer} from '@react-navigation/native';
+
+import {createNativeStackNavigator} from 'react-native-screens/native-stack';
+import {SCREENS} from './view/constants';
+
+const Stack = createNativeStackNavigator();
+
+export default ({navigation}) => {
+  function go(name){
+    navigation.navigate(name)
+  }
+  
+  return (
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+          headerHideShadow: false,
+          headerBackTitleVisible: false,
+        }}>
+        {SCREENS.filter(o => o.single).map(o => {
+          return (
+            <Stack.Screen
+              key={o.name}
+              name={o.name}
+              options={{
+                title: o.title,
+              }}
+              component={o.screen}
+            />
+          );
+        })}
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+```
+
+## 底部导航
+* 依赖
+``` 
+"@react-navigation/bottom-tabs": "^6.6.1",
+```
+* code
+```javascript
+import {SCREENS} from './constants';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export default ({navigation}) => {
+  return (
+    <Tab.Navigator>
+      {SCREENS.filter(o => !o.single).map(o => (
+        <Tab.Screen
+          key={o.name}
+          options={{title: o.title, header: () => <></>}}
+          name={o.name}
+          component={o.screen}
+        />
+      ))}
+    </Tab.Navigator>
+  );
+};
+
+```
+
+## icon
+```
+npm i react-native-vector-icons
 ```
 
 ## 打包
 
 ```
-npx react-native bundle --platform ios --dev fase --entry-file index.js --bundle-output realease/index.ios.bundle
-
-npx react-native bundle --platform android --dev fase --entry-file index.js --bundle-output realease/index.android.bundle
+"scripts": {
+  "android": "react-native run-android",
+  "ios": "react-native run-ios",
+  "lint": "eslint .",
+  "start": "react-native start",
+  "test": "jest",
+  "bundle-android": "node node_modules/react-native/local-cli/cli.js bundle --entry-file index.js --platform android --dev false --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+  "build:android": "npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+  "build:ios": "npx react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ./ios/main.jsbundle --assets-dest ./ios",
+  "generator": "keytool -genkeypair -v -keystore my-release-key.keystore -alias my-alias -keyalg RSA -keysize 2048 -validity 10000",
+  "clean": "./gradlew clean",// 清除缓存apk
+  "build:release": "cd android && ./gradlew assembleRelease"
+},
 ```
 
-# react native
+* build:release 报错 -> 检测版本语法兼容性
+```
+gradlew --warning-mode all
+```
 
-### 生命周期
-
-### 常用组件
-
-### api
-
-### 打包
-
-### 总结

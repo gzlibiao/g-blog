@@ -29,8 +29,7 @@ action 是把数据从应用传递到store的载体，他是store数据的唯一
 函数会接收两个参数，第一个参数是初始化state,第二个参数是action
 
 ```javascript
-const initState={...};
-rootReducer=(state=initState,action)=>{...return{...}}
+
 ```
 
 ### store
