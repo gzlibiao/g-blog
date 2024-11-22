@@ -11,6 +11,7 @@
     <f-divider margin="32px" color="rgb(224, 224, 224)"></f-divider>
 
     <f-text
+            center
       >🎃 对于可控的事情保持警惕 , 对于不可控的事情保持乐观。
     </f-text>
 

@@ -15,6 +15,9 @@
 
 7、git push origin master 将本地仓库推送到远程仓库
 
+8、git 忽略 husky校验 git commit -m "feat: 接口对接" --no-verify
+
+
 ```
 
 ### 分支篇
