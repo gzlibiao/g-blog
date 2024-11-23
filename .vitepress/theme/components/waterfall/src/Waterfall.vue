@@ -67,7 +67,8 @@
     // 以最终的列数 - 1 * 间隙
     if (cols !== Math.floor(Waterfall1.value.clientWidth / prop.minWidth)) {
       containerWidth =
-        Waterfall1.value.clientWidth - (Number(cols) - 1) * parseInt(prop.colGap)
+        Waterfall1.value.clientWidth -
+        (Number(cols) - 1) * parseInt(prop.colGap)
     }
     columns.value = cols
 
