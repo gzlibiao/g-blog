@@ -1,25 +1,41 @@
+// {
+//   "index_name": "docs", // 填写自己的索引名称
+//   "start_urls": ["https://gsmart.netlify.app/"], // 填写自己的网站地址
+//   "rateLimit": 8,
+//   "maxDepth": 10,
+//   "selectors": {
+//     "lvl0": {
+//       "selector": "",
+//       "defaultValue": "Documentation"
+//     },
+//     "lvl1": ".content h1",
+//     "lvl2": ".content h2",
+//     "lvl3": ".content h3",
+//     "lvl4": ".content h4",
+//     "lvl5": ".content h5",
+//     "content": ".content p, .content li"
+//   },
+//   "selectors_exclude": [
+//     "aside",
+//     ".page-footer",
+//     ".next-and-prev-link",
+//     ".table-of-contents"
+//   ],
+//   "js_render": true
+// }
+
 {
-  "index_name": "docs", // 填写自己的索引名称
-  "start_urls": ["https://gsmart.netlify.app/"], // 填写自己的网站地址
-  "rateLimit": 8,
-  "maxDepth": 10,
+  "baseUrl": "https://gsmart.netlify.app", // 网站的基础 URL
+  "appId": "16NA1JC9XO",
+  "apiKey": "839bf3f7b585e2af3d7bbf10e870f7c5",
+  "indexName": "docs",
   "selectors": {
-    "lvl0": {
-      "selector": "",
-      "defaultValue": "Documentation"
-    },
-    "lvl1": ".content h1",
-    "lvl2": ".content h2",
-    "lvl3": ".content h3",
-    "lvl4": ".content h4",
-    "lvl5": ".content h5",
-    "content": ".content p, .content li"
-  },
-  "selectors_exclude": [
-    "aside",
-    ".page-footer",
-    ".next-and-prev-link",
-    ".table-of-contents"
-  ],
-  "js_render": true
+    "startUrl": "/",
+    "selectors": [
+      {
+        "selector": "a", // 爬取所有链接
+        "exclude": ["/404.html"] // 排除某些页面
+      }
+    ]
+  }
 }
