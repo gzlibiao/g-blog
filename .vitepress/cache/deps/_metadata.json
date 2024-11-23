@@ -1,0 +1,23 @@
+{
+  "hash": "b57a63e7",
+  "browserHash": "32f52725",
+  "optimized": {
+    "vue": {
+      "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "e77e4410",
+      "needsInterop": false
+    },
+    "fighting-design": {
+      "src": "../../../node_modules/fighting-design/es/index.js",
+      "file": "fighting-design.js",
+      "fileHash": "1f1d3ac8",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-BCVXM6RM": {
+      "file": "chunk-BCVXM6RM.js"
+    }
+  }
+}
