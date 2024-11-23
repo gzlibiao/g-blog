@@ -4,16 +4,16 @@
 //   "rateLimit": 8,
 //   "maxDepth": 10,
 //   "selectors": {
-//     "lvl0": {
-//       "selector": "",
-//       "defaultValue": "Documentation"
-//     },
-//     "lvl1": ".content h1",
-//     "lvl2": ".content h2",
-//     "lvl3": ".content h3",
-//     "lvl4": ".content h4",
-//     "lvl5": ".content h5",
-//     "content": ".content p, .content li"
+// "lvl0": {
+//   "selector": "",
+//   "defaultValue": "Documentation"
+// },
+// "lvl1": ".content h1",
+// "lvl2": ".content h2",
+// "lvl3": ".content h3",
+// "lvl4": ".content h4",
+// "lvl5": ".content h5",
+// "content": ".content p, .content li"
 //   },
 //   "selectors_exclude": [
 //     "aside",
@@ -27,8 +27,9 @@
 {
   "baseUrl": "https://gsmart.netlify.app", // 网站的基础 URL
   "appId": "ADP3SOJ1MT",
-  "apiKey": "359390e798082ea43f1a80354a8db68a",
-  "indexName": "docs",
+  "apiKey": "e63fb8ff7d9525cbf2d16109af0ee4dd",
+  // "apiKey": "359390e798082ea43f1a80354a8db68a",
+  "indexName": "crawler_blog",
   "selectors": {
     "startUrl": "/",
     "selectors": [

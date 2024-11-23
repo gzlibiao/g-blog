@@ -1,4 +1,4 @@
-name: docs
+name: crawler_blog
 
 on:
   push:
