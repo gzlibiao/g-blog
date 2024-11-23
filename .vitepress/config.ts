@@ -3,8 +3,17 @@ import { nav } from './utils/nav'
 import { sidebar } from './utils/sidebar'
 import { description } from './utils/description'
 import { algolia } from './configs/algolia'
+// import { algoliaPlugin } from 'vitepress-plugin-algolia'
 
-const config = defineConfig({
+export default defineConfig({
+  // plugins: [algoliaPlugin(algolia)],
+  // plugins: [
+  //   algoliaPlugin({
+  //     apiKey: 'YOUR_API_KEY',
+  //     appId: 'YOUR_APP_ID',
+  //     indexName: 'YOUR_INDEX_NAME'
+  //   })
+  // ],
   title: 'BigOld',
   lang: 'zh-CN',
   lastUpdated: false,
@@ -14,7 +23,7 @@ const config = defineConfig({
       'link',
       {
         rel: 'icon',
-        href: 'https://jf-temp-1301446188.cos.ap-guangzhou.myqcloud.com/R09TUw==/eyJpZCI6IjBkYWFmMGRlLTRjNGYtNDU0OS1iNzVmLTc3YmZlNTU0YjdjZSIsIm5hbWUiOiJ3ZWNoYXQuYm1wIiwiZGlyIjoi5aS05YOPIn0='
+        href: 'https://jf-temp-1301446188.cos.ap-guangzhou.myqcloud.com/logo'
       }
     ],
     [
@@ -28,12 +37,6 @@ const config = defineConfig({
       }
     ],
     [
-      'script',
-      {
-        src: 'https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js'
-      }
-    ],
-    [
       'div',
       {
         id: 'music',
@@ -44,23 +47,27 @@ const config = defineConfig({
     [
       'script',
       {
-        async: 'true',
+        src: 'https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js'
+      }
+    ],
+    [
+      'script',
+      {
+        defer: 'true',
         id: 'xplayer',
         src: 'https://player.qsdurl.cn/Static/player9/js/player.js'
       }
     ]
   ],
-  // cacheDir: undefined,
   outDir: './public',
   markdown: {
-    theme: 'material-palenight',
     lineNumbers: true
   },
   themeConfig: {
     nav,
     sidebar,
     algolia,
-    logo: 'https://jf-temp-1301446188.cos.ap-guangzhou.myqcloud.com/R09TUw==/eyJpZCI6IjBkYWFmMGRlLTRjNGYtNDU0OS1iNzVmLTc3YmZlNTU0YjdjZSIsIm5hbWUiOiJ3ZWNoYXQuYm1wIiwiZGlyIjoi5aS05YOPIn0=',
+    logo: 'https://jf-temp-1301446188.cos.ap-guangzhou.myqcloud.com/logo2',
     outline: 'deep',
     docFooter: {
       prev: '上一篇',
@@ -68,8 +75,7 @@ const config = defineConfig({
     },
     outlineTitle: '导航栏',
     footer: {
-      message: `😋用心去做高质量的专业前端内容网站`
+      message: `😋用心去产出高质量的代码`
     }
   }
 })
-export default config

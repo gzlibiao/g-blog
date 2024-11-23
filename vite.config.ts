@@ -1,12 +1,9 @@
 import type { UserConfigExport, Plugin } from 'vite'
-// import vueJsx from "@vitejs/plugin-vue-jsx";
-// import { babel } from '@rollup/plugin-babel'
-// import vue from '@vitejs/plugin-vue'
 
 // https://github.com/vuejs/vitepress/discussions/1015#discussioncomment-3177860
 const NavLinkPatch = (): Plugin => ({
   name: 'override-target-blank',
-  enforce: 'pre',
+  enforce: 'pre'
   // transform: (code, id) => {
   //   if (id.endsWith('VPLink.vue')) {
   //     return code.replace('_blank', '_self')

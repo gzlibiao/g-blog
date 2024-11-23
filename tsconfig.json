@@ -19,6 +19,6 @@
     "docs",
     ".vitepress/components/*.vue",
     ".vitepress/*.ts"
-  ],
+, ".vitepress/config.tsx"  ],
   "exclude": ["**/node_modules/**", "**/dist/**"]
 }

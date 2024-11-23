@@ -42,3 +42,7 @@ ANDROID_SDK_ROOT="C:\Users\34377\AppData\Local\Android\Sdk"
 %ANDROID_SDK_ROOT%\tools\bin
 ```
 
+
+外部教程链接：https://wiki.ducafecat.tech/blog/translation/7-flutter-the-advanced-layout-rule-even-beginners-must-know.html
+
+

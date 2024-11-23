@@ -4,16 +4,13 @@
       <f-avatar
         :size="160"
         round
-        src="https://jf-temp-1301446188.cos.ap-guangzhou.myqcloud.com/R09TUw==/eyJpZCI6IjBkYWFmMGRlLTRjNGYtNDU0OS1iNzVmLTc3YmZlNTU0YjdjZSIsIm5hbWUiOiJ3ZWNoYXQuYm1wIiwiZGlyIjoi5aS05YOPIn0="
+        src="https://jf-temp-1301446188.cos.ap-guangzhou.myqcloud.com/logo2"
       />
     </f-text>
 
     <f-divider margin="32px" color="rgb(224, 224, 224)"></f-divider>
 
-    <f-text
-            center
-      >🎃 对于可控的事情保持警惕 , 对于不可控的事情保持乐观。
-    </f-text>
+    <f-text center>🎃 对于可控的事情保持警惕 , 对于不可控的事情保持乐观。 </f-text>
 
     <f-divider margin="32px" color="rgb(224, 224, 224)"></f-divider>
 
@@ -37,8 +34,7 @@
   </f-main>
 </template>
 
-<script>
-</script>
+<script></script>
 <style scoped>
 .iframe {
   width: 100%;
