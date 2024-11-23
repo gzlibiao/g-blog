@@ -26,7 +26,6 @@
   "dependencies": {
     "flexsearch": "^0.7.43",
     "markdown-it": "^14.1.0",
-    "vitepress-plugin-pagefind": "^0.4.11",
     "vitepress-plugin-search": "^1.0.4-alpha.22"
   }
 }
