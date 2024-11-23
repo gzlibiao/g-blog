@@ -1,42 +1,52 @@
-// {
-//   "index_name": "docs", // 填写自己的索引名称
-//   "start_urls": ["https://gsmart.netlify.app/"], // 填写自己的网站地址
-//   "rateLimit": 8,
-//   "maxDepth": 10,
-//   "selectors": {
-// "lvl0": {
-//   "selector": "",
-//   "defaultValue": "Documentation"
-// },
-// "lvl1": ".content h1",
-// "lvl2": ".content h2",
-// "lvl3": ".content h3",
-// "lvl4": ".content h4",
-// "lvl5": ".content h5",
-// "content": ".content p, .content li"
-//   },
-//   "selectors_exclude": [
-//     "aside",
-//     ".page-footer",
-//     ".next-and-prev-link",
-//     ".table-of-contents"
-//   ],
-//   "js_render": true
-// }
-
 {
-  "baseUrl": "https://gsmart.netlify.app", // 网站的基础 URL
+  "index_name": "crawler_blog",
+  "start_urls": ["https://gsmart.netlify.app"],
   "appId": "ADP3SOJ1MT",
   "apiKey": "e63fb8ff7d9525cbf2d16109af0ee4dd",
-  // "apiKey": "359390e798082ea43f1a80354a8db68a",
-  "indexName": "crawler_blog",
+  "rateLimit": 8,
+  "maxDepth": 10,
   "selectors": {
-    "startUrl": "/",
-    "selectors": [
-      {
-        "selector": "a", // 爬取所有链接
-        "exclude": ["/404.html"] // 排除某些页面
-      }
-    ]
-  }
+    "lvl0": {
+      "selector": "",
+      "defaultValue": "Documentation"
+    },
+    "lvl1": ".content h1",
+    "lvl2": ".content h2",
+    "lvl3": ".content h3",
+    "lvl4": ".content h4",
+    "lvl5": ".content h5",
+    "content": ".content p, .content li",
+    "lang": {
+      "selector": "/html/@lang",
+      "type": "xpath",
+      "global": true
+    }
+  },
+  "selectors_exclude": [
+    "aside",
+    ".page-footer",
+    ".next-and-prev-link",
+    ".table-of-contents"
+  ],
+  "custom_settings": {
+    "attributesForFaceting": ["lang", "tags"]
+  },
+  "js_render": true
 }
+
+// {
+//   "baseUrl": "https://gsmart.netlify.app", // 网站的基础 URL
+//   "appId": "ADP3SOJ1MT",
+//   "apiKey": "e63fb8ff7d9525cbf2d16109af0ee4dd",
+//   // "apiKey": "359390e798082ea43f1a80354a8db68a",
+//   "indexName": "crawler_blog",
+//   "selectors": {
+//     "startUrl": "/",
+//     "selectors": [
+//       {
+//         "selector": "a", // 爬取所有链接
+//         "exclude": ["/404.html"] // 排除某些页面
+//       }
+//     ]
+//   }
+// }

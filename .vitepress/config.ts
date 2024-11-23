@@ -65,7 +65,7 @@ export default defineConfig({
   themeConfig: {
     nav,
     sidebar,
-    algolia,
+    // algolia,
     logo: 'https://jf-temp-1301446188.cos.ap-guangzhou.myqcloud.com/logo2',
     outline: 'deep',
     docFooter: {
