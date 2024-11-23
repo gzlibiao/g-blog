@@ -1,5 +1,5 @@
 {
-  "index_name": "gsmart", // 填写自己的索引名称
+  "index_name": "docs", // 填写自己的索引名称
   "start_urls": ["https://gsmart.netlify.app/"], // 填写自己的网站地址
   "rateLimit": 8,
   "maxDepth": 10,
