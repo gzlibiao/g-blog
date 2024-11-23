@@ -10,7 +10,6 @@ const NavLinkPatch = (): Plugin => ({
   //   }
   // }
 })
-
 export default (): UserConfigExport => {
   return {
     plugins: [NavLinkPatch()],

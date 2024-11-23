@@ -1,6 +1,8 @@
 export const algolia = {
-  appId: '16NA1JC9XO',
-  apiKey: '839bf3f7b585e2af3d7bbf10e870f7c5',
+  appId: 'ADP3SOJ1MT',
+  // appId: '16NA1JC9XO',
+  apiKey: '359390e798082ea43f1a80354a8db68a',
+  // apiKey: '839bf3f7b585e2af3d7bbf10e870f7c5',
   indexName: 'docs',
   // appId: 'RHX6KGJ4PT',
   // apiKey: '9ccfcfff5b8b2ca6318229be055a524b',

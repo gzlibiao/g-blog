@@ -26,8 +26,8 @@
 
 {
   "baseUrl": "https://gsmart.netlify.app", // 网站的基础 URL
-  "appId": "16NA1JC9XO",
-  "apiKey": "839bf3f7b585e2af3d7bbf10e870f7c5",
+  "appId": "ADP3SOJ1MT",
+  "apiKey": "359390e798082ea43f1a80354a8db68a",
   "indexName": "docs",
   "selectors": {
     "startUrl": "/",

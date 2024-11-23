@@ -3,17 +3,8 @@ import { nav } from './utils/nav'
 import { sidebar } from './utils/sidebar'
 import { description } from './utils/description'
 import { algolia } from './configs/algolia'
-// import { algoliaPlugin } from 'vitepress-plugin-algolia'
 
 export default defineConfig({
-  // plugins: [algoliaPlugin(algolia)],
-  // plugins: [
-  //   algoliaPlugin({
-  //     apiKey: 'YOUR_API_KEY',
-  //     appId: 'YOUR_APP_ID',
-  //     indexName: 'YOUR_INDEX_NAME'
-  //   })
-  // ],
   title: 'BigOld',
   lang: 'zh-CN',
   lastUpdated: false,
