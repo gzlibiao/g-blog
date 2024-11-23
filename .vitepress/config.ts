@@ -10,6 +10,14 @@ export default defineConfig({
   lastUpdated: false,
   description,
   head: [
+    // <meta name="algolia-site-verification"  content="58CD97D2C008C200" />
+    [
+      'meta',
+      {
+        name: 'algolia-site-verification',
+        content: '58CD97D2C008C200'
+      }
+    ],
     [
       'link',
       {
