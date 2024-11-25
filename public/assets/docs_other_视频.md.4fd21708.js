@@ -1,0 +1,1 @@
+import{_ as t,r as o,o as a,c as r,e as s}from"./app.d0abd10b.js";const h=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/other/视频.md"}'),n={name:"docs/other/视频.md"};function c(_,p,d,l,m,i){const e=o("Play");return a(),r("div",null,[s(e)])}const u=t(n,[["render",c]]);export{h as __pageData,u as default};

@@ -1,0 +1,20 @@
+import{_ as n,o as a,c as e,a as l}from"./app.d0abd10b.js";const b=JSON.parse('{"title":"solid 5 大设计原则","description":"","frontmatter":{},"headers":[{"level":2,"title":"single 单一职责","slug":"single-单一职责","link":"#single-单一职责","children":[]},{"level":2,"title":"open close 开闭原则","slug":"open-close-开闭原则","link":"#open-close-开闭原则","children":[]},{"level":2,"title":"Li 李四替换","slug":"li-李四替换","link":"#li-李四替换","children":[]}],"relativePath":"docs/design-mode/solid.md"}'),p={name:"docs/design-mode/solid.md"};function i(r,s,c,o,t,d){return a(),e("div",null,s[0]||(s[0]=[l(`<h1 id="solid-5-大设计原则" tabindex="-1">solid 5 大设计原则 <a class="header-anchor" href="#solid-5-大设计原则" aria-hidden="true">#</a></h1><p>低耦合高内聚 灵活 健壮 稳定</p><h2 id="single-单一职责" tabindex="-1">single 单一职责 <a class="header-anchor" href="#single-单一职责" aria-hidden="true">#</a></h2><p>一个类只做单一功能</p><div class="language- line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang"></span><pre class="shiki material-palenight"><code><span class="line"><span style="color:#A6ACCD;">interface IAmount{</span></span>
+<span class="line"><span style="color:#A6ACCD;">  amount(){} // 订单额</span></span>
+<span class="line"><span style="color:#A6ACCD;">}</span></span>
+<span class="line"><span style="color:#A6ACCD;">class order implements IAmount{</span></span>
+<span class="line"><span style="color:#A6ACCD;">  amount(){}</span></span>
+<span class="line"><span style="color:#A6ACCD;">}</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;">clsas Subscription implements IAmount{</span></span>
+<span class="line"><span style="color:#A6ACCD;">  amount(){}</span></span>
+<span class="line"><span style="color:#A6ACCD;">}</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span>
+<span class="line"><span style="color:#A6ACCD;">class Membership implements IAmount{</span></span>
+<span class="line"><span style="color:#A6ACCD;">  amount(){}</span></span>
+<span class="line"><span style="color:#A6ACCD;">}</span></span>
+<span class="line"><span style="color:#A6ACCD;">class Payment{</span></span>
+<span class="line"><span style="color:#A6ACCD;">  pay(IAmount a){</span></span>
+<span class="line"><span style="color:#A6ACCD;">    a.amount();</span></span>
+<span class="line"><span style="color:#A6ACCD;">  }</span></span>
+<span class="line"><span style="color:#A6ACCD;">}</span></span>
+<span class="line"><span style="color:#A6ACCD;"></span></span></code></pre><div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h2 id="open-close-开闭原则" tabindex="-1">open close 开闭原则 <a class="header-anchor" href="#open-close-开闭原则" aria-hidden="true">#</a></h2><p>扩展开放,修改关闭 继承或者注入</p><h2 id="li-李四替换" tabindex="-1">Li 李四替换 <a class="header-anchor" href="#li-李四替换" aria-hidden="true">#</a></h2><p>年轻人固然有自己的想法，但是祖宗的规矩不能忘记 子类继承父类不要重写而是另启一个方法实现</p><ol><li>尽量不重写父类方法</li><li>重写的得保证没有副作用</li></ol><h1 id="iterface-接口分离" tabindex="-1">iterface 接口分离 <a class="header-anchor" href="#iterface-接口分离" aria-hidden="true">#</a></h1><p>interface 拆分更细粒度</p><h1 id="dependency-依赖倒置" tabindex="-1">dependency 依赖倒置 <a class="header-anchor" href="#dependency-依赖倒置" aria-hidden="true">#</a></h1><p>1.不要在一个类里面 new 另一个类, 而是应该注入使用 2.注入时应该用接口约束，而不是类约束</p>`,14)]))}const u=n(p,[["render",i]]);export{b as __pageData,u as default};

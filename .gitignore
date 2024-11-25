@@ -6,7 +6,7 @@ dist-ssr
 
 # Dependencies
 /node_modules
-/public
+# /public
 
 # Generated files
 .docusaurus

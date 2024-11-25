@@ -1,0 +1,1 @@
+import{_ as t,r as o,o as r,c as a,e as s}from"./app.d0abd10b.js";const h=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/other/图床.md"}'),n={name:"docs/other/图床.md"};function c(_,d,p,m,i,l){const e=o("Chartbed");return r(),a("div",null,[s(e)])}const u=t(n,[["render",c]]);export{h as __pageData,u as default};

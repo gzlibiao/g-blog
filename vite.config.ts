@@ -1,10 +1,10 @@
 import type { UserConfigExport, Plugin } from 'vite'
 import { SearchPlugin } from 'vitepress-plugin-search'
 // import { defineConfig } from "vite";
-import flexSearchIndexOptions from 'flexsearch'
+// import flexSearchIndexOptions from 'flexsearch'
 //default options
 var options = {
-  ...flexSearchIndexOptions,
+  // ...flexSearchIndexOptions,
   previewLength: 100, //搜索结果预览长度
   buttonLabel: '搜索',
   placeholder: '情输入关键词'
@@ -17,7 +17,8 @@ const NavLinkPatch = (): Plugin => ({
 
 export default (): UserConfigExport => {
   return {
-    plugins: [NavLinkPatch(), SearchPlugin(options)],
+    // , SearchPlugin(options)
+    plugins: [NavLinkPatch()],
     optimizeDeps: {
       exclude: ['vitepress']
     },
