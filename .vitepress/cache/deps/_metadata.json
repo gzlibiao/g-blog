@@ -5,13 +5,13 @@
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "2d14c5ed",
+      "fileHash": "610ec77c",
       "needsInterop": false
     },
     "fighting-design": {
       "src": "../../../node_modules/fighting-design/es/index.js",
       "file": "fighting-design.js",
-      "fileHash": "93d9c3e2",
+      "fileHash": "0ba5a62d",
       "needsInterop": false
     }
   },

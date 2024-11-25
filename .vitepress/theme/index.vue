@@ -34,15 +34,14 @@
       class="iframe"
       frameborder="0"
     />
-    <div style="height: 350px; width: 100%" />
-
     <iframe
       id="myRemark"
       src="https://hfymark.netlify.app/.netlify/functions/comment"
-      height="500"
       class="iframeMark"
       frameborder="0"
     />
+    <!-- height="500" -->
+    <!-- <div style="height: 350px; width: 100%" /> -->
   </f-main>
 </template>
 
@@ -50,7 +49,7 @@
   import { onMounted } from 'vue'
   function restry(iframe) {
     var retryCount = 0 // 初始化重试次数
-    var maxRetries = 3 // 最大重试次数
+    var maxRetries = 30 // 最大重试次数
     var timeoutDuration = 5000 // 超时时间，单位毫秒
     function retryIframeLoad() {
       if (retryCount < maxRetries) {
@@ -87,9 +86,9 @@
 <style scoped>
   .iframe {
     width: 100%;
-    position: absolute;
+    /* position: absolute;
     right: 0;
-    left: 0;
+    left: 0; */
     /* height: 400px; */
     /* @media (min-width: 1024px) {
         position: static;
@@ -98,10 +97,13 @@
   .iframeMark {
     /* height: 100vh; */
     /* margin-top: 30px; */
-    width: 100%;
+    /* width: 100%;
     position: absolute;
     left: 0;
-    right: 0;
+    right: 0; */
+    margin-top: 100px;
+    width: 100%;
+    height: 500px;
   }
 
   .f-main {

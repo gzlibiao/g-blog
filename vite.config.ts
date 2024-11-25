@@ -17,7 +17,7 @@ const NavLinkPatch = (): Plugin => ({
 
 export default (): UserConfigExport => {
   return {
-    // , SearchPlugin(options)
+    // SearchPlugin(options)
     plugins: [NavLinkPatch()],
     optimizeDeps: {
       exclude: ['vitepress']
